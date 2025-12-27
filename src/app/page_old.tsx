@@ -876,4 +876,18 @@ export default function Home() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
                     placeholder="Tell us about your interest in Maple Ford..."
                   ></textarea>
-                </div
+                </div>
+
+                <button type="submit" className="btn-primary w-full">
+                  Submit Enquiry
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <Footer />
+    </div>
+  );
+}
