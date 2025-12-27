@@ -639,7 +639,7 @@ export default function Home() {
           </div>
 
           {/* Stacked Cards Container */}
-          <div className="relative max-w-4xl mx-auto h-[600px]">
+          <div className="relative max-w-4xl mx-auto h-[630px] lg:h-[470px]">
             {[
               {
                 subject: "Science",
