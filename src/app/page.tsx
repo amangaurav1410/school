@@ -10,6 +10,8 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showEnquiryPopup, setShowEnquiryPopup] = useState(false);
   const [activeSubject, setActiveSubject] = useState(0);
+  const [activePillar, setActivePillar] = useState(0);
+  const [isPillarPaused, setIsPillarPaused] = useState(false);
   const [formData, setFormData] = useState({
     parentName: '',
     contactNumber: '',
@@ -42,6 +44,16 @@ export default function Home() {
     }, 5000);
     return () => clearInterval(interval);
   }, [heroImages.length]);
+
+  // Auto-rotate pillars
+  useEffect(() => {
+    if (!isPillarPaused) {
+      const pillarInterval = setInterval(() => {
+        setActivePillar((prev) => (prev + 1) % 4);
+      }, 5000);
+      return () => clearInterval(pillarInterval);
+    }
+  }, [isPillarPaused]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -184,15 +196,17 @@ export default function Home() {
       </section>
 
       {/* Brand Pillars / Core Values */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+      <section
+        className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent mb-6 hover:scale-105 transition-transform duration-300 cursor-pointer" style={{ textShadow: '2px 2px 4px rgba(239, 68, 68, 0.5)' }}>
+            <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-red-500 to-red-700 bg-clip-text text-transparent mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
               Our Core Pillars
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
@@ -200,45 +214,226 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {/* Progress Indicators with Names */}
+          <div className="flex flex-wrap justify-center gap-3 lg:gap-4 mb-12 px-4">
+            {[
+              { title: "Academic Excellence", shortTitle: "Academic", color: "from-blue-500 to-blue-600", bgColor: "bg-blue-500" },
+              { title: "Character Development", shortTitle: "Character", color: "from-green-500 to-green-600", bgColor: "bg-green-500" },
+              { title: "Innovation & Creativity", shortTitle: "Innovation", color: "from-purple-500 to-purple-600", bgColor: "bg-purple-500" },
+              { title: "Global Citizenship", shortTitle: "Global", color: "from-red-500 to-red-600", bgColor: "bg-red-500" }
+            ].map((pillar, index) => (
+              <motion.div
+                key={index}
+                className="flex flex-col items-center gap-2 cursor-pointer group"
+                onClick={() => setActivePillar(index)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className={`relative w-20 lg:w-24 h-1.5 rounded-full overflow-hidden transition-all duration-300 ${activePillar === index ? 'shadow-lg' : 'shadow-sm'}`}>
+                  <div className={`absolute inset-0 bg-gray-200 rounded-full`}></div>
+                  {activePillar === index ? (
+                    <motion.div
+                      className={`absolute inset-0 bg-gradient-to-r ${pillar.color} rounded-full`}
+                      initial={{ width: '0%' }}
+                      animate={{ width: '100%' }}
+                      transition={{ duration: isPillarPaused ? 0 : 5, ease: 'linear' }}
+                      key={`${activePillar}-${isPillarPaused}`}
+                    />
+                  ) : (
+                    <div className={`absolute inset-0 bg-gray-200 rounded-full`}></div>
+                  )}
+                </div>
+                <span className={`text-xs lg:text-sm font-semibold transition-all duration-300 ${activePillar === index ? `bg-gradient-to-r ${pillar.color} bg-clip-text text-transparent` : 'text-gray-400 group-hover:text-gray-600'}`}>
+                  {pillar.shortTitle}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Single Pillar Display */}
+          <div className="relative h-[550px] lg:h-[450px]">
             {[
               {
                 title: "Academic Excellence",
                 description: "Rigorous curriculum ensuring mastery of core subjects and critical thinking skills.",
                 icon: "🎓",
-                color: "from-blue-500 to-blue-600"
+                color: "from-blue-500 to-blue-600",
+                bgColor: "bg-blue-500"
               },
               {
                 title: "Character Development",
                 description: "Fostering integrity, empathy, and leadership through values-based education.",
                 icon: "💪",
-                color: "from-green-500 to-green-600"
+                color: "from-green-500 to-green-600",
+                bgColor: "bg-green-500"
               },
               {
                 title: "Innovation & Creativity",
                 description: "Encouraging creative expression and technological proficiency in all learners.",
                 icon: "🚀",
-                color: "from-purple-500 to-purple-600"
+                color: "from-purple-500 to-purple-600",
+                bgColor: "bg-purple-500"
               },
               {
                 title: "Global Citizenship",
                 description: "Preparing students to thrive in an interconnected world with cultural awareness.",
                 icon: "🌍",
-                color: "from-red-500 to-red-600"
+                color: "from-red-500 to-red-600",
+                bgColor: "bg-red-500"
               }
             ].map((pillar, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="bg-white/60 backdrop-blur-xl border border-white/30 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 p-8 text-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{
+                  opacity: activePillar === index ? 1 : 0,
+                  scale: activePillar === index ? 1 : 0.9,
+                  x: activePillar === index ? 0 : activePillar > index ? -100 : 100
+                }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+                className={`absolute inset-0 grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-12 items-center ${activePillar === index ? 'pointer-events-auto' : 'pointer-events-none'}`}
               >
-                <div className={`w-20 h-20 bg-gradient-to-br ${pillar.color} rounded-full flex items-center justify-center mx-auto mb-6 text-3xl`}>
-                  {pillar.icon}
-                </div>
-                <h3 className="text-xl font-bold text-navy-600 mb-4">{pillar.title}</h3>
-                <p className="text-gray-600">{pillar.description}</p>
+                {/* Content Side - Left */}
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{
+                    opacity: activePillar === index ? 1 : 0,
+                    x: activePillar === index ? 0 : -50
+                  }}
+                  transition={{ duration: 0.8, delay: activePillar === index ? 0.2 : 0 }}
+                  className="space-y-6 relative z-10 order-2 lg:order-1"
+                  onMouseEnter={() => setIsPillarPaused(true)}
+                  onMouseLeave={() => setIsPillarPaused(false)}
+                >
+                  <motion.div
+                    className="inline-block px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-md mb-2"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: activePillar === index ? 1 : 0, y: activePillar === index ? 0 : -20 }}
+                    transition={{ duration: 0.6, delay: activePillar === index ? 0.3 : 0 }}
+                  >
+                    <span className={`text-sm font-semibold bg-gradient-to-r ${pillar.color} bg-clip-text text-transparent`}>
+                      Pillar {index + 1} of 4
+                    </span>
+                  </motion.div>
+                  <motion.h3
+                    className={`text-4xl lg:text-6xl font-bold bg-gradient-to-r ${pillar.color} bg-clip-text text-transparent leading-tight`}
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: activePillar === index ? 1 : 0, y: activePillar === index ? 0 : 20 }}
+                    transition={{ duration: 0.8, delay: activePillar === index ? 0.4 : 0 }}
+                  >
+                    {pillar.title}
+                  </motion.h3>
+                  <motion.p
+                    className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-xl"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: activePillar === index ? 1 : 0, y: activePillar === index ? 0 : 20 }}
+                    transition={{ duration: 0.8, delay: activePillar === index ? 0.5 : 0 }}
+                  >
+                    {pillar.description}
+                  </motion.p>
+                  <motion.div
+                    className={`w-32 h-1.5 bg-gradient-to-r ${pillar.color} rounded-full shadow-lg`}
+                    initial={{ width: 0, opacity: 0 }}
+                    animate={{ width: activePillar === index ? 128 : 0, opacity: activePillar === index ? 1 : 0 }}
+                    transition={{ duration: 0.8, delay: activePillar === index ? 0.6 : 0 }}
+                  />
+                </motion.div>
+
+                {/* Animation Side - Right */}
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{
+                    opacity: activePillar === index ? 1 : 0,
+                    x: activePillar === index ? 0 : 50
+                  }}
+                  transition={{ duration: 0.8, delay: activePillar === index ? 0.2 : 0 }}
+                  className="relative h-64 lg:h-80 flex items-center justify-center order-1 lg:order-2"
+                  onMouseEnter={() => setIsPillarPaused(true)}
+                  onMouseLeave={() => setIsPillarPaused(false)}
+                >
+                  {/* Subtle Background Glow */}
+                  <motion.div
+                    className={`absolute w-48 h-48 lg:w-72 lg:h-72 bg-gradient-to-br ${pillar.color} rounded-full opacity-10 blur-3xl`}
+                    animate={{
+                      scale: activePillar === index && !isPillarPaused ? [1, 1.15, 1] : 1,
+                    }}
+                    transition={{
+                      duration: 6,
+                      repeat: activePillar === index && !isPillarPaused ? Infinity : 0,
+                      ease: "easeInOut"
+                    }}
+                  />
+
+                  {/* Main Icon Container */}
+                  <motion.div
+                    className={`relative w-40 h-40 lg:w-56 lg:h-56 bg-gradient-to-br ${pillar.color} rounded-full flex items-center justify-center shadow-xl`}
+                    style={{
+                      boxShadow: activePillar === index ? `0 0 40px rgba(${index === 0 ? '59, 130, 246' : index === 1 ? '34, 197, 94' : index === 2 ? '168, 85, 247' : '239, 68, 68'}, 0.3)` : 'none'
+                    }}
+                    animate={{
+                      y: activePillar === index && !isPillarPaused ? [0, -12, 0] : 0,
+                      scale: activePillar === index ? 1 : 0.8,
+                    }}
+                    transition={{
+                      y: {
+                        duration: 4,
+                        repeat: activePillar === index && !isPillarPaused ? Infinity : 0,
+                        ease: "easeInOut"
+                      },
+                      scale: {
+                        duration: 0.5
+                      }
+                    }}
+                  >
+                    {/* Subtle Inner Ring */}
+                    <motion.div
+                      className="absolute inset-4 lg:inset-6 rounded-full bg-white/10"
+                      animate={{
+                        opacity: activePillar === index ? [0.1, 0.2, 0.1] : 0,
+                      }}
+                      transition={{
+                        duration: 3,
+                        repeat: activePillar === index && !isPillarPaused ? Infinity : 0,
+                        ease: "easeInOut"
+                      }}
+                    />
+
+                    {/* Icon */}
+                    <motion.div
+                      className="text-6xl lg:text-9xl relative z-10"
+                      animate={{
+                        rotate: activePillar === index && !isPillarPaused ? [0, 5, -5, 0] : 0,
+                        scale: activePillar === index && !isPillarPaused ? [1, 1.05, 1] : 1,
+                      }}
+                      transition={{
+                        duration: 5,
+                        repeat: activePillar === index && !isPillarPaused ? Infinity : 0,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      {pillar.icon}
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Subtle Orbiting Particles - Reduced to 3 */}
+                  {[...Array(3)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className={`absolute w-2 h-2 lg:w-2.5 lg:h-2.5 ${pillar.bgColor} rounded-full opacity-50`}
+                      animate={{
+                        x: activePillar === index && !isPillarPaused ? [0, Math.cos(i * 120 * Math.PI / 180) * (typeof window !== 'undefined' && window.innerWidth < 1024 ? 75 : 110), 0] : 0,
+                        y: activePillar === index && !isPillarPaused ? [0, Math.sin(i * 120 * Math.PI / 180) * (typeof window !== 'undefined' && window.innerWidth < 1024 ? 75 : 110), 0] : 0,
+                      }}
+                      transition={{
+                        duration: 5 + i * 0.5,
+                        repeat: activePillar === index && !isPillarPaused ? Infinity : 0,
+                        ease: "linear",
+                        delay: i * 0.5
+                      }}
+                    />
+                  ))}
+                </motion.div>
               </motion.div>
             ))}
           </div>
@@ -508,25 +703,280 @@ export default function Home() {
                   </div>
 
                   {/* Visual Side */}
-                  <div className="flex-1 relative bg-gradient-to-br from-white/50 to-white/20 p-8 lg:p-12 flex items-center justify-center">
-                    <motion.div
-                      animate={{
-                        rotate: [0, 5, -5, 0],
-                        scale: [1, 1.05, 1]
-                      }}
-                      transition={{
-                        duration: 6,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                      className="text-8xl lg:text-9xl opacity-20"
-                    >
-                      {item.image}
-                    </motion.div>
+                  <div className="flex-1 relative bg-gradient-to-br from-white/50 to-white/20 p-8 lg:p-12 flex items-center justify-center overflow-hidden">
+                    {/* Science - Beaker with bubbles */}
+                    {index === 0 && (
+                      <div className="relative">
+                        {/* Beaker */}
+                        <motion.div
+                          className="relative w-32 h-40 border-4 border-blue-400 rounded-b-3xl bg-gradient-to-b from-blue-100/50 to-blue-300/50"
+                          style={{ borderTop: 'none' }}
+                          animate={{ y: [0, -5, 0] }}
+                          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                          {/* Liquid */}
+                          <motion.div
+                            className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-blue-400 to-cyan-300 rounded-b-3xl"
+                            animate={{ height: ['6rem', '7rem', '6rem'] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                          />
+                          {/* Bubbles */}
+                          {[...Array(5)].map((_, i) => (
+                            <motion.div
+                              key={i}
+                              className="absolute w-2 h-2 bg-white rounded-full opacity-60"
+                              style={{ left: `${20 + i * 15}%`, bottom: '10%' }}
+                              animate={{
+                                y: [-40, -80],
+                                opacity: [0.6, 0],
+                                scale: [1, 0.5]
+                              }}
+                              transition={{
+                                duration: 2 + i * 0.3,
+                                repeat: Infinity,
+                                delay: i * 0.4
+                              }}
+                            />
+                          ))}
+                        </motion.div>
+                        {/* Molecules */}
+                        {[...Array(3)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            className="absolute w-3 h-3 bg-blue-500 rounded-full"
+                            style={{ top: `${i * 30}%`, right: `${-20 + i * 10}px` }}
+                            animate={{
+                              x: [0, 10, 0],
+                              y: [0, -10, 0],
+                              scale: [1, 1.2, 1]
+                            }}
+                            transition={{
+                              duration: 3 + i,
+                              repeat: Infinity,
+                              delay: i * 0.5
+                            }}
+                          />
+                        ))}
+                      </div>
+                    )}
 
-                    {/* Decorative elements */}
-                    <div className={`absolute top-4 right-4 w-12 h-12 bg-gradient-to-br ${item.color} rounded-full opacity-30`}></div>
-                    <div className={`absolute bottom-4 left-4 w-8 h-8 bg-gradient-to-br ${item.color} rounded-full opacity-30`}></div>
+                    {/* Technology - Binary code flow */}
+                    {index === 1 && (
+                      <div className="relative w-full h-full">
+                        {[...Array(6)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            className="absolute text-2xl font-mono text-green-500 opacity-30"
+                            style={{
+                              left: `${i * 15}%`,
+                              top: `${Math.random() * 80}%`
+                            }}
+                            animate={{
+                              y: [-100, 300],
+                              opacity: [0, 0.5, 0]
+                            }}
+                            transition={{
+                              duration: 4 + i * 0.5,
+                              repeat: Infinity,
+                              delay: i * 0.8
+                            }}
+                          >
+                            {Math.random() > 0.5 ? '1' : '0'}
+                          </motion.div>
+                        ))}
+                        {/* Circuit board pattern */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <motion.svg width="200" height="200" className="opacity-20">
+                            <motion.circle
+                              cx="100"
+                              cy="100"
+                              r="60"
+                              stroke="#22c55e"
+                              strokeWidth="2"
+                              fill="none"
+                              animate={{ rotate: 360 }}
+                              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                            />
+                            <motion.line
+                              x1="100"
+                              y1="40"
+                              x2="100"
+                              y2="160"
+                              stroke="#22c55e"
+                              strokeWidth="2"
+                              animate={{ opacity: [0.3, 1, 0.3] }}
+                              transition={{ duration: 2, repeat: Infinity }}
+                            />
+                            <motion.line
+                              x1="40"
+                              y1="100"
+                              x2="160"
+                              y2="100"
+                              stroke="#22c55e"
+                              strokeWidth="2"
+                              animate={{ opacity: [1, 0.3, 1] }}
+                              transition={{ duration: 2, repeat: Infinity }}
+                            />
+                          </motion.svg>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Engineering - Rotating gears */}
+                    {index === 2 && (
+                      <div className="relative">
+                        {/* Large gear */}
+                        <motion.div
+                          className="w-32 h-32 rounded-full border-8 border-orange-400 relative"
+                          style={{
+                            background: 'conic-gradient(from 0deg, #fb923c, #f97316, #fb923c)'
+                          }}
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                        >
+                          {[...Array(8)].map((_, i) => (
+                            <div
+                              key={i}
+                              className="absolute w-3 h-6 bg-orange-500"
+                              style={{
+                                left: '50%',
+                                top: '50%',
+                                transform: `translate(-50%, -50%) rotate(${i * 45}deg) translateY(-70px)`
+                              }}
+                            />
+                          ))}
+                        </motion.div>
+                        {/* Small gear */}
+                        <motion.div
+                          className="absolute -right-8 top-16 w-20 h-20 rounded-full border-6 border-orange-300"
+                          style={{
+                            background: 'conic-gradient(from 0deg, #fdba74, #fb923c, #fdba74)'
+                          }}
+                          animate={{ rotate: -360 }}
+                          transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                        >
+                          {[...Array(6)].map((_, i) => (
+                            <div
+                              key={i}
+                              className="absolute w-2 h-4 bg-orange-400"
+                              style={{
+                                left: '50%',
+                                top: '50%',
+                                transform: `translate(-50%, -50%) rotate(${i * 60}deg) translateY(-45px)`
+                              }}
+                            />
+                          ))}
+                        </motion.div>
+                      </div>
+                    )}
+
+                    {/* Arts - Paint splashes */}
+                    {index === 3 && (
+                      <div className="relative w-full h-full">
+                        {/* Color palette */}
+                        <motion.div
+                          className="relative"
+                          animate={{ rotate: [0, 5, -5, 0] }}
+                          transition={{ duration: 4, repeat: Infinity }}
+                        >
+                          {['#a855f7', '#ec4899', '#f59e0b', '#10b981', '#3b82f6'].map((color, i) => (
+                            <motion.div
+                              key={i}
+                              className="absolute w-16 h-16 rounded-full"
+                              style={{
+                                backgroundColor: color,
+                                left: `${Math.cos(i * 72 * Math.PI / 180) * 60 + 80}px`,
+                                top: `${Math.sin(i * 72 * Math.PI / 180) * 60 + 80}px`
+                              }}
+                              animate={{
+                                scale: [1, 1.2, 1],
+                                opacity: [0.6, 0.9, 0.6]
+                              }}
+                              transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                delay: i * 0.3
+                              }}
+                            />
+                          ))}
+                        </motion.div>
+                        {/* Paint drops */}
+                        {[...Array(4)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            className="absolute w-4 h-6 bg-purple-400 rounded-full opacity-50"
+                            style={{ left: `${20 + i * 20}%`, top: '10%' }}
+                            animate={{
+                              y: [0, 200],
+                              opacity: [0.7, 0]
+                            }}
+                            transition={{
+                              duration: 2 + i * 0.5,
+                              repeat: Infinity,
+                              delay: i * 0.7
+                            }}
+                          />
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Mathematics - Geometric shapes & equations */}
+                    {index === 4 && (
+                      <div className="relative w-full h-full">
+                        {/* Floating equations */}
+                        <motion.div
+                          className="absolute text-3xl font-serif text-red-500 opacity-40"
+                          style={{ left: '20%', top: '20%' }}
+                          animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+                          transition={{ duration: 3, repeat: Infinity }}
+                        >
+                          π
+                        </motion.div>
+                        <motion.div
+                          className="absolute text-2xl font-mono text-red-600 opacity-40"
+                          style={{ right: '25%', top: '40%' }}
+                          animate={{ y: [0, 10, 0], rotate: [0, -5, 0] }}
+                          transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
+                        >
+                          x²
+                        </motion.div>
+                        <motion.div
+                          className="absolute text-2xl font-mono text-red-500 opacity-40"
+                          style={{ left: '30%', bottom: '30%' }}
+                          animate={{ y: [0, -8, 0] }}
+                          transition={{ duration: 3.5, repeat: Infinity, delay: 1 }}
+                        >
+                          ∑
+                        </motion.div>
+                        {/* Geometric shapes */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <motion.div
+                            className="relative"
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+                          >
+                            {/* Triangle */}
+                            <svg width="120" height="120" className="absolute" style={{ left: -60, top: -60 }}>
+                              <motion.polygon
+                                points="60,10 110,100 10,100"
+                                fill="none"
+                                stroke="#ef4444"
+                                strokeWidth="3"
+                                opacity="0.3"
+                                animate={{ scale: [1, 1.1, 1] }}
+                                transition={{ duration: 3, repeat: Infinity }}
+                              />
+                            </svg>
+                            {/* Circle */}
+                            <motion.div
+                              className="w-24 h-24 border-4 border-red-400 rounded-full opacity-30"
+                              animate={{ scale: [1.1, 1, 1.1] }}
+                              transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                            />
+                          </motion.div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -720,22 +1170,54 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
               {
-                title: "Our Mission",
+                title: "MISSION",
                 description: "To provide exceptional education that empowers students to become confident, compassionate global citizens.",
-                icon: "🎯"
+                icon: (
+                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="40" cy="40" r="24" stroke="currentColor" strokeWidth="2.5"/>
+                    <circle cx="40" cy="40" r="16" stroke="currentColor" strokeWidth="2.5"/>
+                    <circle cx="40" cy="40" r="8" stroke="currentColor" strokeWidth="2.5"/>
+                    <circle cx="40" cy="40" r="3" fill="currentColor"/>
+                    <path d="M56 24L44 36" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+                    <path d="M58 22L56 24L54 22" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                ),
+                outerRing: "bg-gradient-to-br from-[#F5B5B5] to-[#E89B9B]",
+                textColor: "text-[#E85D5D]",
+                iconColor: "text-gray-500"
               },
               {
-                title: "Our Vision",
+                title: "VISION",
                 description: "To be a leading international school recognized for excellence in education and holistic development.",
-                icon: "👁️"
+                icon: (
+                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="40" cy="40" rx="32" ry="20" stroke="currentColor" strokeWidth="2.5"/>
+                    <circle cx="40" cy="40" r="12" stroke="currentColor" strokeWidth="2.5"/>
+                    <circle cx="40" cy="40" r="6" fill="currentColor"/>
+                    <circle cx="40" cy="40" r="3" fill="white"/>
+                  </svg>
+                ),
+                outerRing: "bg-gradient-to-br from-[#A5D5F5] to-[#7DB9DE]",
+                textColor: "text-[#4A9FD8]",
+                iconColor: "text-gray-500"
               },
               {
-                title: "Our Values",
+                title: "VALUES",
                 description: "Integrity, innovation, inclusivity, and excellence guide everything we do.",
-                icon: "💎"
+                icon: (
+                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 16L50 32L48 52L40 64L32 52L30 32L40 16Z" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+                    <path d="M40 28L44 36L43 46L40 52L37 46L36 36L40 28Z" stroke="currentColor" strokeWidth="2.5" fill="none"/>
+                    <path d="M40 30L42 35L47 37L42 39L40 44L38 39L33 37L38 35L40 30Z" fill="currentColor"/>
+                    <circle cx="40" cy="40" r="2" fill="currentColor"/>
+                  </svg>
+                ),
+                outerRing: "bg-gradient-to-br from-[#B5E7C3] to-[#90D7A7]",
+                textColor: "text-[#5FBA7D]",
+                iconColor: "text-gray-500"
               }
             ].map((item, index) => (
               <motion.div
@@ -743,11 +1225,38 @@ export default function Home() {
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="bg-gray-50 p-8 rounded-2xl text-center hover:shadow-lg transition-shadow duration-300"
+                className="relative pt-20 group h-full"
               >
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-navy-600 mb-4">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                {/* Circular Icon Container - Overlapping the card */}
+                <div className="absolute left-1/2 -translate-x-1/2 top-0 z-10">
+                  <div className="relative w-40 h-40">
+                    {/* Outer colored ring with gradient */}
+                    <div className={`absolute inset-0 rounded-full ${item.outerRing} shadow-xl group-hover:scale-105 transition-transform duration-300`}></div>
+
+                    {/* Middle white ring */}
+                    <div className="absolute inset-2.5 rounded-full bg-white shadow-lg"></div>
+
+                    {/* Inner icon circle */}
+                    <div className="absolute inset-7 rounded-full bg-gray-50 flex items-center justify-center">
+                      <div className={`${item.iconColor} transform group-hover:scale-110 transition-transform duration-300`}>
+                        {item.icon}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="bg-gradient-to-b from-gray-100 to-gray-50 pt-24 pb-10 px-8 rounded-[3rem] text-center hover:shadow-2xl transition-all duration-300 h-full flex flex-col min-h-[320px]">
+                  {/* Title */}
+                  <h3 className={`text-xl font-bold ${item.textColor} mb-3 tracking-wider uppercase`}>
+                    {item.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-600 leading-relaxed text-sm flex-grow">
+                    {item.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -907,7 +1416,7 @@ export default function Home() {
 
               <button
                 type="submit"
-                className="w-full bg-red-600 text-white py-4 px-8 rounded-xl font-semibold text-lg hover:bg-red-700 transition-all duration-300 hover:scale-105"
+                className="btn-primary w-full py-4 px-8 text-lg"
               >
                 Submit
               </button>

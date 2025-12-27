@@ -4,7 +4,7 @@ import Inquiry from '@/models/Inquiry';
 import { verifyToken } from '@/lib/auth';
 
 // PUT - Update inquiry status
-export async function PUT(request: NextRequest, { params }: { params: { id: string } }) {
+export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const user = verifyToken(request);
     if (!user) {
@@ -12,8 +12,9 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
     }
 
     await connectDB();
+    const { id } = await params;
     const { status } = await request.json();
-    await Inquiry.findByIdAndUpdate(params.id, { status });
+    await Inquiry.findByIdAndUpdate(id, { status });
     return NextResponse.json({ message: 'Status updated successfully' });
   } catch (error) {
     console.error('Error updating inquiry:', error);
@@ -22,7 +23,7 @@ export async function PUT(request: NextRequest, { params }: { params: { id: stri
 }
 
 // DELETE - Delete inquiry
-export async function DELETE(request: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const user = verifyToken(request);
     if (!user) {
@@ -30,7 +31,8 @@ export async function DELETE(request: NextRequest, { params }: { params: { id: s
     }
 
     await connectDB();
-    await Inquiry.findByIdAndDelete(params.id);
+    const { id } = await params;
+    await Inquiry.findByIdAndDelete(id);
     return NextResponse.json({ message: 'Inquiry deleted successfully' });
   } catch (error) {
     console.error('Error deleting inquiry:', error);
