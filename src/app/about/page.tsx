@@ -233,36 +233,6 @@ export default function About() {
           </div>
         </section>
 
-        {/* Leadership / Team Teaser */}
-        <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2
-              className="text-5xl lg:text-6xl font-black mb-12 leading-tight text-[#1A1A1A]"
-              style={{ fontFamily: '"Raleway", sans-serif' }}
-            >
-              Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Team</span>
-            </h2>
-            <p className="text-xl text-[#4F4F4F] max-w-2xl mx-auto mb-16">
-              The passionate educators and visionaries driving the Mapleford mission forward.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="bg-white p-4 rounded-3xl shadow-lg hover:shadow-xl transition-all group">
-                  <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-4 bg-gray-200">
-                    <img
-                      src={`https://images.unsplash.com/photo-${i === 1 ? '1560250097-0b93528c311a' : i === 2 ? '1573496359142-b8d87734a5a2' : i === 3 ? '1519085360753-af0119f7cbe7' : '1507003211169-0a1dd7228f2d'}?w=600&h=800&fit=crop`}
-                      alt="Team Member"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#1A1A1A]">Leader Name</h3>
-                  <p className="text-[#8B1E1A] text-sm font-bold uppercase tracking-wider">Position</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
       </div>
       <Footer />

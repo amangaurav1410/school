@@ -120,23 +120,118 @@ export default function HighSchool() {
                     </div>
                 </section>
 
-                {/* CTA */}
-                <section className="py-24 bg-white">
-                    <div className="max-w-4xl mx-auto px-4 text-center">
-                        <div className="bg-[#1A1A1A] p-16 rounded-[4rem] text-white shadow-2xl relative overflow-hidden group">
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#8B1E1A] to-transparent opacity-30"></div>
-                            <div className="relative z-10">
-                                <h2 className="text-4xl font-black mb-8" style={{ fontFamily: '"Raleway", sans-serif', color: '#FFFFFF' }}>The Journey into <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Leadership</span></h2>
-                                <p className="text-xl mb-12 opacity-90">Prepare for a future without limits.</p>
-                                <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                                    <Link href="/admissions" className="px-10 py-5 bg-[#D6B25E] text-[#1A1A1A] rounded-2xl font-bold text-lg hover:scale-105 transition-transform shadow-xl">
+                {/* CTA - Redesigned to match homepage theme */}
+                <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+                    <div className="absolute inset-0 opacity-5">
+                        <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B1E1A] rounded-full blur-3xl"></div>
+                        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D6B25E] rounded-full blur-3xl"></div>
+                    </div>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            {/* Left Side - Content */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                            >
+                                <span className="text-5xl mb-4 block">👑</span>
+                                <h2
+                                    className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
+                                    style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
+                                >
+                                    The Journey into <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Leadership</span>
+                                </h2>
+                                <h3 className="text-2xl font-semibold mb-6" style={{ color: '#8B1E1A' }}>
+                                    From Students to Leaders of Tomorrow
+                                </h3>
+
+                                <div
+                                    className="inline-flex items-center gap-4 px-8 py-4 rounded-full mb-8"
+                                    style={{ background: 'linear-gradient(135deg, rgba(214,178,94,0.2), rgba(139,30,26,0.1))' }}
+                                >
+                                    <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Character</span>
+                                    <span className="text-2xl">+</span>
+                                    <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Confidence</span>
+                                    <span className="text-2xl">+</span>
+                                    <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Competence</span>
+                                </div>
+
+                                <p className="text-lg leading-relaxed mb-8" style={{ color: '#4F4F4F', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
+                                    Leadership is not just a position — it's a mindset we cultivate in every student. Through student council opportunities, community service projects, and leadership development programs, we help young minds discover their potential to lead with integrity, empathy, and vision. Prepare for a future without limits.
+                                </p>
+
+                                <div className="space-y-4">
+                                    {[
+                                        'Student council and peer leadership programs',
+                                        'Community service and social responsibility initiatives',
+                                        'Public speaking and communication skills development',
+                                        'Mentorship programs connecting students with role models'
+                                    ].map((item, index) => (
+                                        <motion.div
+                                            key={index}
+                                            initial={{ opacity: 0, x: -20 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay: index * 0.15, duration: 0.5 }}
+                                            className="flex items-start"
+                                        >
+                                            <span className="w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0" style={{ background: 'linear-gradient(145deg, #D6B25E, #C4A24E)' }}></span>
+                                            <span className="text-lg">{item}</span>
+                                        </motion.div>
+                                    ))}
+                                </div>
+
+                                <div className="flex flex-col sm:flex-row gap-6 mt-10">
+                                    <Link
+                                        href="/admissions"
+                                        className="inline-block px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl text-center"
+                                        style={{
+                                            background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                                            color: '#FFFFFF',
+                                            border: '1px solid rgba(255,255,255,0.1)'
+                                        }}
+                                    >
                                         Enquire Now
                                     </Link>
-                                    <Link href="/contact" className="px-10 py-5 bg-transparent border-2 border-white/30 text-white rounded-2xl font-bold text-lg hover:bg-white/10 transition-colors">
+                                    <Link
+                                        href="/contact"
+                                        className="inline-block px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl text-center"
+                                        style={{
+                                            background: 'transparent',
+                                            color: '#8B1E1A',
+                                            border: '2px solid #8B1E1A'
+                                        }}
+                                    >
                                         Visit Campus
                                     </Link>
                                 </div>
-                            </div>
+                            </motion.div>
+
+                            {/* Right Side - Visual Elements */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.3 }}
+                            >
+                                <motion.div
+                                    whileHover={{ scale: 1.02 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="rounded-3xl overflow-hidden shadow-2xl relative aspect-square lg:aspect-auto h-full"
+                                >
+                                    <img
+                                        src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1000&h=1200&fit=crop"
+                                        alt="The Journey into Leadership"
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                                    <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#D6B25E]/20">
+                                        <p className="font-bold text-[#8B1E1A]">Leadership:</p>
+                                        <p className="font-bold text-[#1A1A1A]">Service. Growth. Impact.</p>
+                                    </div>
+                                </motion.div>
+                            </motion.div>
                         </div>
                     </div>
                 </section>

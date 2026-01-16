@@ -113,12 +113,12 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-6 border-t border-[#D6B25E]/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-black text-xs" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
+          <p className="text-black text-[10px]" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
             © {new Date().getFullYear()} Mapleford International School. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link href="#" className="text-black hover:text-[#8B1E1A] transition-colors text-xs font-medium">Privacy Policy</Link>
-            <Link href="#" className="text-black hover:text-[#8B1E1A] transition-colors text-xs font-medium">Terms of Service</Link>
+            <Link href="/privacy-policy" className="text-black hover:text-[#8B1E1A] transition-colors text-xs font-medium">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="text-black hover:text-[#8B1E1A] transition-colors text-xs font-medium">Terms of Service</Link>
           </div>
         </div>
       </div>

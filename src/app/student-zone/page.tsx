@@ -10,25 +10,26 @@ export default function StudentZone() {
     <div className="min-h-screen bg-white">
       <Header />
       <div className="pt-24 min-h-screen bg-white">
-        {/* Hero Section */}
-        <section className="relative py-32 lg:py-48 overflow-hidden bg-[#1A1A1A]">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-[#8B1E1A]/40 blur-3xl rounded-full translate-x-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-1/3 h-full bg-[#D6B25E]/20 blur-3xl rounded-full -translate-x-1/2"></div>
+        {/* Hero Section - Redesigned without black background */}
+        <section className="relative py-32 lg:py-48 overflow-hidden bg-[#FDF6E3]/30">
+          <div className="absolute inset-0">
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#D6B25E]/10 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#8B1E1A]/5 rounded-full blur-3xl"></div>
+          </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.8 }}
             >
               <h1
-                className="text-6xl lg:text-9xl font-bold text-white mb-8 leading-none"
+                className="text-6xl lg:text-8xl font-bold mb-8 leading-none text-[#1A1A1A]"
                 style={{ fontFamily: '"Raleway", sans-serif' }}
               >
-                Student <span className="text-[#D6B25E]">Zone.</span>
+                Student <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Zone</span>
               </h1>
-              <p className="text-xl lg:text-3xl text-white/80 max-w-3xl mx-auto font-light italic">
+              <p className="text-xl lg:text-2xl text-[#4F4F4F] max-w-3xl mx-auto font-light italic leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
                 "Where talent meets opportunity and spirit meets action."
               </p>
             </motion.div>

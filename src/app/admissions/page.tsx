@@ -23,27 +23,54 @@ export default function Admissions() {
       <Header />
       <div className="pt-20">
         <div className="pt-24 min-h-screen bg-white text-[#1A1A1A]">
-          {/* Hero Section */}
-          <section className="relative py-32 lg:py-52 overflow-hidden bg-[#FDF6E3]/30">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#8B1E1A]/5 to-transparent"></div>
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1 }}
-              >
-                <span className="text-sm font-bold tracking-[0.5em] text-[#8B1E1A] uppercase mb-6 block">Join Our Legacy</span>
-                <h1
-                  className="text-6xl lg:text-9xl font-bold mb-8 leading-[0.9]"
-                  style={{ fontFamily: '"Raleway", sans-serif' }}
+          {/* Hero Section - Redesigned */}
+          <section className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-[#FDF6E3] via-white to-[#8B1E1A]/5">
+            <div className="absolute inset-0">
+              <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#D6B25E]/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-[#8B1E1A]/10 rounded-full blur-3xl"></div>
+            </div>
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
                 >
-                  Start Your <br />
-                  <span className="text-[#8B1E1A]">Journey.</span>
-                </h1>
-                <p className="text-xl lg:text-3xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed italic">
-                  "Simple steps towards a lifetime of excellence. Discover the process to become a Mapleite."
-                </p>
-              </motion.div>
+                  <span className="inline-block px-6 py-2 rounded-full bg-[#8B1E1A]/10 text-[#8B1E1A] font-bold text-sm tracking-wider uppercase mb-6">Join Our Legacy</span>
+                  <h1
+                    className="text-5xl lg:text-7xl font-bold mb-6 leading-tight"
+                    style={{ fontFamily: '"Raleway", sans-serif' }}
+                  >
+                    Begin Your Journey at <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B1E1A] to-[#D6B25E]">Mapleford</span>
+                  </h1>
+                  <p className="text-xl lg:text-2xl text-gray-600 mb-8 leading-relaxed">
+                    Discover a world of excellence where every child's potential is nurtured and celebrated.
+                  </p>
+                  <div className="flex flex-wrap gap-4">
+                    <a href="#enquiry-form" className="px-8 py-4 bg-[#8B1E1A] text-white rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg">
+                      Apply Now
+                    </a>
+                    <Link href="/campus" className="px-8 py-4 bg-white text-[#8B1E1A] border-2 border-[#8B1E1A] rounded-2xl font-bold hover:scale-105 transition-transform">
+                      Tour Campus
+                    </Link>
+                  </div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="relative"
+                >
+                  <div className="rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/3]">
+                    <img
+                      src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop"
+                      className="w-full h-full object-cover"
+                      alt="Happy Students"
+                    />
+                  </div>
+                  <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-[#D6B25E]/20 rounded-full blur-3xl -z-10"></div>
+                </motion.div>
+              </div>
             </div>
           </section>
 
@@ -145,24 +172,27 @@ export default function Admissions() {
             </div>
           </section>
 
-          {/* Enquiry Form Section - NOW AT THE BOTTOM */}
-          <section className="py-32 bg-[#1A1A1A] text-white relative overflow-hidden" id="enquiry-form">
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-[#8B1E1A]/10 -skew-x-12 translate-x-1/2"></div>
+          {/* Enquiry Form Section - Redesigned without black background */}
+          <section className="py-32 bg-gradient-to-br from-amber-50 via-white to-red-50 relative overflow-hidden" id="enquiry-form">
+            <div className="absolute inset-0 opacity-5">
+              <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B1E1A] rounded-full blur-3xl"></div>
+              <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D6B25E] rounded-full blur-3xl"></div>
+            </div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div>
-                  <h2 className="text-5xl lg:text-7xl font-black mb-8 leading-tight" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                  <h2 className="text-5xl lg:text-7xl font-black mb-8 leading-tight text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
                     Begin Your <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Application.</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Application</span>
                   </h2>
-                  <p className="text-xl text-white/70 mb-12 leading-relaxed">
+                  <p className="text-xl text-[#4F4F4F] mb-12 leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
                     Fill out this enquiry form, and our admissions office will get back to you within 24-48 hours with the next steps.
                   </p>
-                  <div className="flex items-center gap-6 p-8 rounded-3xl bg-white/5 border border-white/10">
+                  <div className="flex items-center gap-6 p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-[#D6B25E]/20 shadow-lg">
                     <div className="text-4xl">📞</div>
                     <div>
-                      <h4 className="font-bold text-white mb-1">Admissions Helplines</h4>
-                      <p className="text-[#D6B25E] font-bold text-lg">+91 000 000 0000 | +91 000 000 0000</p>
+                      <h4 className="font-bold text-[#1A1A1A] mb-1">Admissions Helplines</h4>
+                      <p className="text-[#8B1E1A] font-bold text-lg">+91 000 000 0000 | +91 000 000 0000</p>
                     </div>
                   </div>
                 </div>
@@ -171,7 +201,7 @@ export default function Admissions() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-12 lg:p-16 rounded-[4rem] shadow-2xl text-[#1A1A1A]"
+                  className="bg-white/95 backdrop-blur-sm p-12 lg:p-16 rounded-[4rem] shadow-2xl text-[#1A1A1A] border border-[#D6B25E]/20"
                 >
                   {!formSubmitted ? (
                     <form className="space-y-8" onSubmit={async (e) => {

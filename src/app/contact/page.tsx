@@ -20,26 +20,27 @@ export default function Contact() {
       <Header />
       <div className="pt-20">
         <div className="pt-24 min-h-screen bg-white text-[#1A1A1A]">
-          {/* Immersive Hero */}
-          <section className="relative py-32 lg:py-52 overflow-hidden bg-[#1A1A1A] text-white">
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-            <div className="absolute top-0 right-0 w-1/4 h-full bg-[#8B1E1A]/40 blur-3xl rounded-full translate-x-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-1/4 h-full bg-[#D6B25E]/20 blur-3xl rounded-full -translate-x-1/2"></div>
+          {/* Immersive Hero - Redesigned without black background */}
+          <section className="relative py-32 lg:py-48 overflow-hidden bg-[#FDF6E3]/30">
+            <div className="absolute inset-0">
+              <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#D6B25E]/10 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#8B1E1A]/5 rounded-full blur-3xl"></div>
+            </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.8 }}
               >
                 <h1
-                  className="text-6xl lg:text-9xl font-bold mb-8 leading-none"
+                  className="text-6xl lg:text-8xl font-bold mb-8 leading-none text-[#1A1A1A]"
                   style={{ fontFamily: '"Raleway", sans-serif' }}
                 >
-                  Let's <span className="text-[#D6B25E]">Talk.</span>
+                  Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Talk</span>
                 </h1>
-                <p className="text-xl lg:text-3xl text-white/70 max-w-3xl mx-auto font-light italic leading-relaxed">
-                  "Every great journey begins with a conversation. We’re here to listen, guide, and welcome you."
+                <p className="text-xl lg:text-2xl text-[#4F4F4F] max-w-3xl mx-auto font-light italic leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
+                  "Every great journey begins with a conversation. We're here to listen, guide, and welcome you."
                 </p>
               </motion.div>
             </div>
@@ -160,22 +161,31 @@ export default function Contact() {
             </div>
           </section>
 
-          {/* Dynamic Map - Aesthetic Placeholder */}
+          {/* Dynamic Map - Google Maps Embed */}
           <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="rounded-[4rem] overflow-hidden shadow-2xl h-[500px] relative group border-8 border-white">
-                <div className="absolute inset-0 bg-gray-200">
-                  {/* Placeholder for real map */}
-                  <div className="w-full h-full bg-[#1A1A1A]/5 flex flex-col items-center justify-center">
-                    <div className="text-5xl mb-4">🗺️</div>
-                    <p className="text-xl font-bold text-[#1A1A1A]/40 uppercase tracking-widest">Interactive Campus Map</p>
-                    <p className="text-sm text-[#1A1A1A]/30 mt-2 italic">Hayathnagar, Hyderabad</p>
-                  </div>
-                </div>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15238.123456789!2d78.5833!3d17.3333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a1234567890%3A0x1234567890abcdef!2sHayathnagar%2C%20Hyderabad%2C%20Telangana%20500070!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mapleford International School Location"
+                ></iframe>
                 <div className="absolute bottom-10 left-10 p-8 bg-white rounded-[2rem] shadow-2xl max-w-sm hidden lg:block">
                   <h4 className="text-xl font-bold mb-2">Mapleford Campus</h4>
-                  <p className="text-gray-500 mb-6">Discover our state-of-the-art infrastructure in person.</p>
-                  <button className="px-8 py-3 bg-[#D6B25E] text-white rounded-xl font-bold">Get Directions</button>
+                  <p className="text-gray-500 mb-4">Hayathnagar, Hyderabad, Telangana - 500070</p>
+                  <a 
+                    href="https://www.google.com/maps/search/?api=1&query=Hayathnagar+Hyderabad+Telangana+500070" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block px-8 py-3 bg-[#D6B25E] text-white rounded-xl font-bold hover:bg-[#8B1E1A] transition-colors"
+                  >
+                    Get Directions
+                  </a>
                 </div>
               </div>
             </div>

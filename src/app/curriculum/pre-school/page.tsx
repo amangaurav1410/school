@@ -114,23 +114,138 @@ export default function PreSchool() {
                     </div>
                 </section>
 
-                {/* CTA */}
-                <section className="py-24 bg-white">
-                    <div className="max-w-4xl mx-auto px-4 text-center">
-                        <div className="bg-[#8B1E1A] p-16 rounded-[4rem] text-white shadow-2xl relative overflow-hidden">
-                            <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-                            <div className="relative z-10">
-                                <h2 className="text-4xl font-black mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>Start Your Child's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Journey</span></h2>
-                                <p className="text-xl mb-12 opacity-90">Experience the unique blend of wisdom and wonder at Mapleford.</p>
-                                <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                                    <Link href="/admissions" className="px-10 py-5 bg-white text-[#8B1E1A] rounded-2xl font-bold text-lg hover:scale-105 transition-transform shadow-xl">
+                {/* CTA - Redesigned to match homepage theme */}
+                <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-red-50 relative overflow-hidden">
+                    <div className="absolute inset-0 opacity-100">
+                        <div className="absolute top-0 left-0 w-96 h-96 bg-[#D6B25E]/10 rounded-full blur-3xl"></div>
+                        <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#8B1E1A]/10 rounded-full blur-3xl"></div>
+                    </div>
+
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            {/* Left Side - Image and Content */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8 }}
+                                className="text-[#1A1A1A]"
+                            >
+                                <span className="text-5xl mb-4 block">🚀</span>
+                                <h2
+                                    className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
+                                    style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif" }}
+                                >
+                                    Start Your Child's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Journey</span>
+                                </h2>
+                                <h3 className="text-2xl font-semibold mb-6" style={{ color: '#8B1E1A' }}>
+                                    The First Step Towards Excellence
+                                </h3>
+                                <p className="text-[#4F4F4F] mb-8 text-lg leading-relaxed" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
+                                    Experience the unique blend of wisdom and wonder at Mapleford. Our pre-school program is designed to nurture curiosity, creativity, and confidence in every child, laying a strong foundation for lifelong learning.
+                                </p>
+
+                                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl mb-8">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&h=500&fit=crop"
+                                        alt="Pre-School at Mapleford"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+
+                                <div className="flex flex-col sm:flex-row items-center gap-4">
+                                    <Link
+                                        href="/admissions"
+                                        className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl w-full sm:w-auto"
+                                        style={{
+                                            background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                                            color: '#FFFFFF',
+                                            border: '1px solid rgba(255,255,255,0.1)'
+                                        }}
+                                    >
                                         Admissions Open
                                     </Link>
-                                    <Link href="/contact" className="px-10 py-5 bg-transparent border-2 border-white/30 text-white rounded-2xl font-bold text-lg hover:bg-white/10 transition-colors">
+                                    <Link
+                                        href="/contact"
+                                        className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl w-full sm:w-auto"
+                                        style={{
+                                            background: 'transparent',
+                                            color: '#8B1E1A',
+                                            border: '2px solid #8B1E1A'
+                                        }}
+                                    >
                                         Visit Us
                                     </Link>
                                 </div>
-                            </div>
+                            </motion.div>
+
+                            {/* Right Side - Form */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                            >
+                                <div
+                                    className="bg-white/95 backdrop-blur-sm p-10 rounded-3xl shadow-2xl"
+                                    style={{ border: '1px solid rgba(214,178,94,0.3)' }}
+                                >
+                                    <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">Quick Enquiry</h3>
+                                    <form className="space-y-5">
+                                        <div>
+                                            <label className="block text-gray-700 mb-2 font-medium text-sm">Parent / Guardian Name</label>
+                                            <input
+                                                type="text"
+                                                required
+                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
+                                                placeholder="Enter name"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-gray-700 mb-2 font-medium text-sm">Contact Number</label>
+                                            <input
+                                                type="tel"
+                                                required
+                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
+                                                placeholder="Enter number"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-gray-700 mb-2 font-medium text-sm">Email Address</label>
+                                            <input
+                                                type="email"
+                                                required
+                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
+                                                placeholder="Enter email"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block text-gray-700 mb-2 font-medium text-sm">Child&apos;s Age</label>
+                                            <select
+                                                required
+                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
+                                            >
+                                                <option value="">Select age</option>
+                                                <option value="2-3">2-3 Years (Nursery)</option>
+                                                <option value="3-4">3-4 Years (Jr. KG)</option>
+                                                <option value="4-5">4-5 Years (Sr. KG)</option>
+                                            </select>
+                                        </div>
+                                        <button
+                                            type="submit"
+                                            className="w-full py-4 px-8 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-xl hover:shadow-2xl"
+                                            style={{
+                                                background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                                                color: '#FFFFFF',
+                                                boxShadow: '0 8px 24px rgba(90,20,17,0.3)',
+                                                border: '1px solid rgba(255,255,255,0.1)'
+                                            }}
+                                        >
+                                            Submit Enquiry
+                                        </button>
+                                    </form>
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
                 </section>

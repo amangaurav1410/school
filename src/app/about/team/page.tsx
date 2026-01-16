@@ -201,40 +201,119 @@ export default function Team() {
                 </div>
               </section>
 
-              {/* CTA Section */}
-              <section className="py-24 bg-white">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="bg-gradient-to-br from-[#8B1E1A] via-[#A52A2A] to-[#D6B25E] rounded-[3rem] p-16 shadow-2xl relative overflow-hidden"
-                  >
-                    <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-                    <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 rounded-full blur-3xl"></div>
-                    <div className="relative z-10">
-                      <h2 className="text-4xl lg:text-5xl font-black text-white mb-6" style={{ fontFamily: '"Raleway", sans-serif' }}>
+              {/* CTA Section - Redesigned to match homepage theme */}
+              <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-red-50 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B1E1A] rounded-full blur-3xl"></div>
+                  <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D6B25E] rounded-full blur-3xl"></div>
+                </div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Left Side - Content */}
+                    <motion.div
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8 }}
+                    >
+                      <span className="text-5xl mb-4 block">🤝</span>
+                      <h2
+                        className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
+                        style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
+                      >
                         Join Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Mission</span>
                       </h2>
-                      <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        Be part of a community dedicated to shaping young minds and creating future leaders grounded in integrity.
+                      <h3 className="text-2xl font-semibold mb-6" style={{ color: '#8B1E1A' }}>
+                        Building Tomorrow's Leaders Together
+                      </h3>
+
+                      <div
+                        className="inline-flex items-center gap-4 px-8 py-4 rounded-full mb-8"
+                        style={{ background: 'linear-gradient(135deg, rgba(214,178,94,0.2), rgba(139,30,26,0.1))' }}
+                      >
+                        <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Passion</span>
+                        <span className="text-2xl">+</span>
+                        <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Purpose</span>
+                        <span className="text-2xl">+</span>
+                        <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Impact</span>
+                      </div>
+
+                      <p className="text-lg leading-relaxed mb-8" style={{ color: '#4F4F4F', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
+                        Be part of a community dedicated to shaping young minds and creating future leaders grounded in integrity. At Mapleford, we believe that great educators inspire greatness in others. Join us in our mission to transform education and empower the next generation.
                       </p>
-                      <div className="flex flex-col sm:flex-row gap-6 justify-center">
+
+                      <div className="space-y-4">
+                        {[
+                          'Collaborative and supportive work environment',
+                          'Professional development and growth opportunities',
+                          'Making a meaningful impact on young lives',
+                          'Being part of a legacy of educational excellence'
+                        ].map((item, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.15, duration: 0.5 }}
+                            className="flex items-start"
+                          >
+                            <span className="w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0" style={{ background: 'linear-gradient(145deg, #D6B25E, #C4A24E)' }}></span>
+                            <span className="text-lg">{item}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-6 mt-10">
                         <Link
                           href="/careers"
-                          className="bg-white text-[#8B1E1A] px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                          className="inline-block px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl text-center"
+                          style={{
+                            background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                            color: '#FFFFFF',
+                            border: '1px solid rgba(255,255,255,0.1)'
+                          }}
                         >
                           View Opportunities
                         </Link>
                         <Link
                           href="/contact"
-                          className="bg-transparent text-white border-2 border-white/40 px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 transition-all duration-300"
+                          className="inline-block px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl text-center"
+                          style={{
+                            background: 'transparent',
+                            color: '#8B1E1A',
+                            border: '2px solid #8B1E1A'
+                          }}
                         >
                           Contact Us
                         </Link>
                       </div>
-                    </div>
-                  </motion.div>
+                    </motion.div>
+
+                    {/* Right Side - Visual Elements */}
+                    <motion.div
+                      initial={{ opacity: 0, x: 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: 0.3 }}
+                    >
+                      <motion.div
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.3 }}
+                        className="rounded-3xl overflow-hidden shadow-2xl relative aspect-square lg:aspect-auto h-full"
+                      >
+                        <img
+                          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&h=1200&fit=crop"
+                          alt="Join Our Mission"
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                        <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#D6B25E]/20">
+                          <p className="font-bold text-[#8B1E1A]">Together We:</p>
+                          <p className="font-bold text-[#1A1A1A]">Inspire. Educate. Transform.</p>
+                        </div>
+                      </motion.div>
+                    </motion.div>
+                  </div>
                 </div>
               </section>
             </div>

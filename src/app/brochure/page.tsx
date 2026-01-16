@@ -5,70 +5,207 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 export default function Brochure() {
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 60 },
+        visible: { opacity: 1, y: 0 }
+    };
+
     return (
-        <div className="min-h-screen bg-white text-[#1A1A1A]">
+        <div className="min-h-screen bg-white">
             <Header />
-            <div className="pt-24 min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
-                {/* Background Elements */}
-                <div className="absolute top-0 right-0 w-1/3 h-full bg-[#FDF6E3]/50 -z-10"></div>
-                <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#8B1E1A]/5 rounded-full blur-3xl -z-10"></div>
 
-                <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-sm font-bold tracking-[0.3em] text-[#8B1E1A] uppercase mb-4 block"
-                    >
-                        Digital Prospectus
-                    </motion.span>
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-6xl lg:text-8xl font-black mb-8"
-                        style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}
-                    >
-                        School <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Brochure</span>
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-xl text-gray-600 mb-12 leading-relaxed"
-                    >
-                        Download our comprehensive brochure to learn more about our academic programs,
-                        world-class facilities, and the unique Mapleford edge.
-                    </motion.p>
-
+            {/* Hero Section */}
+            <section className="relative py-32 lg:py-48 overflow-hidden bg-gradient-to-br from-amber-50 via-white to-red-50">
+                <div className="absolute inset-0">
+                    <div className="absolute top-0 right-0 w-1/2 h-full bg-[#D6B25E]/10 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#8B1E1A]/5 rounded-full blur-3xl"></div>
+                </div>
+                <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.4 }}
-                        className="p-10 rounded-[3rem] bg-white shadow-2xl border border-[#D6B25E]/20 relative group"
+                        initial="hidden"
+                        animate="visible"
+                        variants={fadeInUp}
+                        transition={{ duration: 0.8 }}
                     >
-                        <div className="text-6xl mb-8">📄</div>
-                        <h2 className="text-2xl lg:text-3xl font-black mb-6" style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}>
-                            Prospectus <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">2024-25</span>
-                        </h2>
-
-                        <button
-                            className="px-12 py-5 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
-                            style={{
-                                background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
-                                color: '#FFFFFF',
-                                boxShadow: '0 8px 25px rgba(139,30,26,0.3)'
-                            }}
-                            onClick={() => {
-                                alert('Brochure download will be available soon!');
-                            }}
+                        <span className="text-5xl mb-4 block">📚</span>
+                        <h1
+                            className="text-5xl lg:text-7xl font-black mb-6 text-[#1A1A1A]"
+                            style={{ fontFamily: '"Raleway", sans-serif' }}
                         >
-                            Download PDF
-                        </button>
-
-                        <p className="mt-6 text-sm text-gray-400 italic">File size: ~5.4 MB</p>
+                            School <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Brochure</span>
+                        </h1>
+                        <p className="text-xl lg:text-2xl text-[#4F4F4F] max-w-3xl mx-auto leading-relaxed italic" style={{ fontFamily: '"Lato", sans-serif' }}>
+                            "Your gateway to understanding Mapleford International School — where excellence meets opportunity."
+                        </p>
                     </motion.div>
                 </div>
-            </div>
+            </section>
+
+            {/* Brochure Content Sections */}
+            <section className="py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeInUp}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <span className="text-5xl mb-4 block">📖</span>
+                            <h2
+                                className="text-5xl lg:text-6xl font-black mb-8 leading-tight text-[#1A1A1A]"
+                                style={{ fontFamily: '"Raleway", sans-serif' }}
+                            >
+                                Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Prospectus</span>
+                            </h2>
+                            <div className="space-y-6 text-lg text-[#4F4F4F] leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
+                                <p>
+                                    Our comprehensive brochure offers an in-depth look at Mapleford International School's unique blend of Canadian pedagogy and CBSE curriculum, world-class facilities, and the values that drive our educational philosophy.
+                                </p>
+                                <p>
+                                    Discover our 4-acre campus, specialized labs, sports arenas, and the nurturing environment that helps every child reach their full potential.
+                                </p>
+                                <div className="p-6 bg-amber-50 rounded-2xl border-l-4 border-[#D6B25E]">
+                                    <p className="italic font-medium text-[#8B1E1A]">
+                                        "This brochure is more than information — it's an invitation to join our community of learners and leaders."
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeInUp}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            className="relative"
+                        >
+                            <motion.div
+                                whileHover={{ scale: 1.02 }}
+                                transition={{ duration: 0.3 }}
+                                className="rounded-3xl overflow-hidden shadow-2xl relative aspect-[3/4]"
+                            >
+                                <img
+                                    src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=1000&fit=crop"
+                                    alt="School Brochure Preview"
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                                <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#D6B25E]/20">
+                                    <p className="font-bold text-[#8B1E1A]">Academic Excellence</p>
+                                    <p className="font-bold text-[#1A1A1A]">Global Standards</p>
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Download Section */}
+            <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2
+                            className="text-5xl lg:text-6xl font-black mb-8 leading-tight text-[#1A1A1A]"
+                            style={{ fontFamily: '"Raleway", sans-serif' }}
+                        >
+                            Download Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Brochure</span>
+                        </h2>
+                        <p className="text-xl max-w-4xl mx-auto text-[#4F4F4F] leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
+                            Get detailed insights into our curriculum, facilities, admission process, and the Mapleford experience.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {[
+                            {
+                                title: 'Academic Programs',
+                                desc: 'Detailed curriculum overview and learning pathways.',
+                                icon: '🎓',
+                                size: '2.8 MB'
+                            },
+                            {
+                                title: 'Campus Facilities',
+                                desc: 'Explore our world-class infrastructure and amenities.',
+                                icon: '🏫',
+                                size: '3.2 MB'
+                            },
+                            {
+                                title: 'Admission Guide',
+                                desc: 'Complete guide to joining the Mapleford family.',
+                                icon: '📝',
+                                size: '1.9 MB'
+                            }
+                        ].map((brochure, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: index * 0.2 }}
+                                whileHover={{ y: -10 }}
+                                className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500"
+                            >
+                                <div className="p-8 text-center">
+                                    <div className="text-6xl mb-6">{brochure.icon}</div>
+                                    <h3
+                                        className="text-2xl font-bold mb-4 text-[#1A1A1A]"
+                                        style={{ fontFamily: "'Raleway', sans-serif" }}
+                                    >
+                                        {brochure.title}
+                                    </h3>
+                                    <p className="text-[#4F4F4F] mb-6 leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>{brochure.desc}</p>
+                                    <p className="text-sm text-[#8B1E1A] font-semibold mb-6">File size: {brochure.size}</p>
+                                    <button
+                                        className="w-full px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                                        style={{
+                                            background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                                            color: '#FFFFFF'
+                                        }}
+                                        onClick={() => {
+                                            alert(`${brochure.title} download will be available soon!`);
+                                        }}
+                                    >
+                                        Download PDF
+                                    </button>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Call to Action */}
+            <section className="py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 className="text-4xl lg:text-5xl font-black mb-8 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                        Ready to Learn <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">More?</span>
+                    </h2>
+                    <p className="text-xl text-[#4F4F4F] mb-12 max-w-2xl mx-auto" style={{ fontFamily: '"Lato", sans-serif' }}>
+                        Have questions about our programs or want to schedule a campus visit? We're here to help.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                        <a
+                            href="/contact"
+                            className="px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+                            style={{
+                                background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                                color: '#FFFFFF'
+                            }}
+                        >
+                            Contact Us
+                        </a>
+                        <a
+                            href="/admissions"
+                            className="px-8 py-4 border-2 border-[#8B1E1A] text-[#8B1E1A] rounded-xl font-bold text-lg hover:bg-[#8B1E1A] hover:text-white transition-all duration-300"
+                        >
+                            Start Admission Process
+                        </a>
+                    </div>
+                </div>
+            </section>
+
             <Footer />
         </div>
     );
