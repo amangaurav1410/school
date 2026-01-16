@@ -1,0 +1,19 @@
+/* Red Section Dividers - Add this to any component that needs red section breaks */
+.section-divider-red {
+    border-color: #8B1E1A;
+}
+
+.border-red-school {
+    border-color: #8B1E1A !important;
+}
+
+.divide-red-school>*+* {
+    border-color: #8B1E1A !important;
+}
+
+/* Utility class for red horizontal rules */
+hr.red-divider {
+    border-color: #8B1E1A;
+    border-width: 2px;
+    opacity: 0.8;
+}
