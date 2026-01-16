@@ -224,12 +224,13 @@ export default function Campus() {
                 >
                   <div className="relative h-[450px] rounded-[3rem] overflow-hidden shadow-xl mb-8">
                     <img src={card.img} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={card.title} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/95 via-[#1A1A1A]/40 to-transparent group-hover:from-[#1A1A1A] transition-all"></div>
-                    <div className="absolute bottom-10 left-10 text-white drop-shadow-2xl">
-                      <span className="text-4xl mb-4 block drop-shadow-lg">{card.icon}</span>
-                      <h4 className="text-3xl font-bold mb-2 drop-shadow-lg" style={{ fontFamily: '"Raleway", sans-serif' }}>{card.title}</h4>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/70 to-[#1A1A1A]/20 group-hover:from-[#1A1A1A] transition-all"></div>
+                    <div className="absolute bottom-10 left-10 text-white">
+                      <span className="text-4xl mb-4 block" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.8)' }}>{card.icon}</span>
+                      <h4 className="text-3xl font-bold mb-2" style={{ fontFamily: '"Raleway", sans-serif', textShadow: '0 4px 12px rgba(0,0,0,0.8)' }}>{card.title}</h4>
                     </div>
-                  </div>                  <p className="text-lg text-gray-600 px-6 italic transition-colors group-hover:text-[#1A1A1A]">{card.desc}</p>
+                  </div>
+                  <p className="text-lg text-gray-600 px-6 italic transition-colors group-hover:text-[#1A1A1A]">{card.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -256,12 +257,12 @@ export default function Campus() {
                   className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
                   alt="Sports Field"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/95 via-[#1A1A1A]/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/60 to-[#1A1A1A]/10"></div>
                 <div className="absolute bottom-12 left-12">
-                  <h4 className="text-4xl font-bold text-white mb-4 drop-shadow-2xl">Multi-Purpose Field</h4>
+                  <h4 className="text-4xl font-bold text-white mb-4" style={{ textShadow: '0 4px 16px rgba(0,0,0,0.9)' }}>Multi-Purpose Field</h4>
                   <div className="flex gap-4">
-                    <span className="px-6 py-2 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30 text-sm font-bold shadow-lg">Football</span>
-                    <span className="px-6 py-2 rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30 text-sm font-bold shadow-lg">Athletics</span>
+                    <span className="px-6 py-2 rounded-full bg-white/30 backdrop-blur-md text-white border border-white/40 text-sm font-bold shadow-xl">Football</span>
+                    <span className="px-6 py-2 rounded-full bg-white/30 backdrop-blur-md text-white border border-white/40 text-sm font-bold shadow-xl">Athletics</span>
                   </div>
                 </div>
               </div>
@@ -272,10 +273,10 @@ export default function Campus() {
                 ].map((item, i) => (
                   <div key={i} className="relative h-[284px] rounded-[3rem] overflow-hidden shadow-xl group">
                     <img src={item.img} className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" alt={item.title} />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/95 via-[#1A1A1A]/30 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/60 to-[#1A1A1A]/10"></div>
                     <div className="absolute bottom-8 left-8">
-                      <h4 className="text-xl font-bold text-white mb-1 drop-shadow-lg">{item.title}</h4>
-                      <p className="text-white/90 text-sm drop-shadow-md">{item.desc}</p>
+                      <h4 className="text-xl font-bold text-white mb-1" style={{ textShadow: '0 4px 12px rgba(0,0,0,0.9)' }}>{item.title}</h4>
+                      <p className="text-white text-sm" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>{item.desc}</p>
                     </div>
                   </div>
                 ))}

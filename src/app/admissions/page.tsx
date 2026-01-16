@@ -48,9 +48,7 @@ export default function Admissions() {
                     Discover a world of excellence where every child's potential is nurtured and celebrated.
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <a href="#enquiry-form">
-                      <Button variant="primary" size="md">Apply Now</Button>
-                    </a>
+                    <Button href="#enquiry-form" variant="primary" size="md">Apply Now</Button>
                     <Button href="/campus" variant="outline" size="md">Tour Campus</Button>
                   </div>
                 </motion.div>

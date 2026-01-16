@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 import { useState } from 'react';
 
 export default function Contact() {
@@ -141,10 +142,9 @@ export default function Contact() {
                           ></textarea>
                         </div>
 
-                        <button className="w-full py-6 bg-[#8B1E1A] text-white rounded-2xl font-bold text-xl hover:shadow-2xl hover:scale-[1.02] transition-all relative overflow-hidden group">
-                          <span className="relative z-10">Send Message</span>
-                          <div className="absolute inset-0 bg-[#1A1A1A] translate-y-full group-hover:translate-y-0 transition-transform"></div>
-                        </button>
+                        <Button type="submit" variant="primary" size="lg" className="w-full">
+                          Send Message
+                        </Button>
                       </form>
                     ) : (
                       <div className="text-center py-12">
@@ -178,14 +178,13 @@ export default function Contact() {
                 <div className="absolute bottom-10 left-10 p-8 bg-white rounded-[2rem] shadow-2xl max-w-sm hidden lg:block">
                   <h4 className="text-xl font-bold mb-2">Mapleford Campus</h4>
                   <p className="text-gray-500 mb-4">Hayathnagar, Hyderabad, Telangana - 500070</p>
-                  <a 
-                    href="https://www.google.com/maps/search/?api=1&query=Hayathnagar+Hyderabad+Telangana+500070" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-block px-8 py-3 bg-[#D6B25E] text-white rounded-xl font-bold hover:bg-[#8B1E1A] transition-colors"
+                  <Button
+                    href="https://www.google.com/maps/search/?api=1&query=Hayathnagar+Hyderabad+Telangana+500070"
+                    variant="secondary"
+                    size="sm"
                   >
                     Get Directions
-                  </a>
+                  </Button>
                 </div>
               </div>
             </div>

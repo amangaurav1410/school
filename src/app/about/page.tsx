@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 export default function About() {
   const fadeInUp = {
@@ -225,9 +226,9 @@ export default function About() {
                 <p className="text-lg text-[#4F4F4F] mb-8 leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
                   We believe that education is not just about filling a bucket, but lighting a fire. Our philosophy centers on the child as an active participant in their own learning journey. By fostering a culture of inquiry, we encourage students to question, explore, and discover.
                 </p>
-                <button className="px-8 py-4 bg-[#1A1A1A] text-white rounded-xl font-bold hover:bg-[#8B1E1A] transition-colors shadow-lg">
+                <Button href="/vision" variant="primary" size="md">
                   Read Our Philosophy
-                </button>
+                </Button>
               </motion.div>
             </div>
           </div>
