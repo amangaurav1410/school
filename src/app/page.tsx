@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Button from '../components/Button';
 
 export default function Home() {
     const [showFrenchMotto, setShowFrenchMotto] = useState(true);
@@ -504,17 +505,9 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="mt-12 text-center">
-                    <Link
-                        href="/programs"
-                        className="inline-block px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
-                        style={{
-                            background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
-                            color: '#FFFFFF',
-                            border: '1px solid rgba(255,255,255,0.1)'
-                        }}
-                    >
+                    <Button href="/programs" variant="primary" size="lg">
                         Explore Our Curriculum
-                    </Link>
+                    </Button>
                 </div>
             </section>
 
@@ -733,17 +726,9 @@ export default function Home() {
                                 spaces come together to create an environment that supports academic focus, physical
                                 vitality, and overall well-being.
                             </p>
-                            <Link
-                                href="/campus"
-                                className="inline-block px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
-                                style={{
-                                    background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
-                                    color: '#FFFFFF',
-                                    border: '1px solid rgba(255,255,255,0.1)'
-                                }}
-                            >
+                            <Button href="/campus" variant="primary" size="lg">
                                 Explore Our Campus
-                            </Link>
+                            </Button>
                         </motion.div>
                         <motion.div
                             initial="hidden"

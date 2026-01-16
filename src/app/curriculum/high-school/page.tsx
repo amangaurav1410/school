@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import Link from 'next/link';
+import Button from '../../../components/Button';
 
 export default function HighSchool() {
     return (
@@ -183,28 +184,12 @@ export default function HighSchool() {
                                 </div>
 
                                 <div className="flex flex-col sm:flex-row gap-6 mt-10">
-                                    <Link
-                                        href="/admissions"
-                                        className="inline-block px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl text-center"
-                                        style={{
-                                            background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
-                                            color: '#FFFFFF',
-                                            border: '1px solid rgba(255,255,255,0.1)'
-                                        }}
-                                    >
+                                    <Button href="/admissions" variant="primary" size="md">
                                         Enquire Now
-                                    </Link>
-                                    <Link
-                                        href="/contact"
-                                        className="inline-block px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl text-center"
-                                        style={{
-                                            background: 'transparent',
-                                            color: '#8B1E1A',
-                                            border: '2px solid #8B1E1A'
-                                        }}
-                                    >
+                                    </Button>
+                                    <Button href="/contact" variant="outline" size="md">
                                         Visit Campus
-                                    </Link>
+                                    </Button>
                                 </div>
                             </motion.div>
 
