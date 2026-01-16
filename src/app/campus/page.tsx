@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 interface Facility {
   icon: string;
@@ -294,28 +295,12 @@ export default function Campus() {
               <h2 className="text-5xl lg:text-7xl font-black mb-10 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Come, Witness it <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Yourself</span></h2>
               <p className="text-xl text-[#4F4F4F] mb-14 max-w-2xl mx-auto italic" style={{ fontFamily: '"Lato", sans-serif' }}>Book a personalized campus tour and experience the world of Mapleford.</p>
               <div className="flex flex-col sm:flex-row gap-8 justify-center">
-                <Link
-                  href="/contact"
-                  className="px-12 py-6 rounded-[2rem] font-bold text-xl hover:scale-105 transition-transform shadow-2xl"
-                  style={{
-                    background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
-                    color: '#FFFFFF',
-                    border: '1px solid rgba(255,255,255,0.1)'
-                  }}
-                >
+                <Button href="/contact" variant="primary" size="lg">
                   Request a Tour
-                </Link>
-                <Link
-                  href="/"
-                  className="px-12 py-6 rounded-[2rem] font-bold text-xl hover:scale-105 transition-all shadow-xl"
-                  style={{
-                    background: 'transparent',
-                    color: '#8B1E1A',
-                    border: '2px solid #8B1E1A'
-                  }}
-                >
+                </Button>
+                <Button href="/" variant="outline" size="lg">
                   Back to Home
-                </Link>
+                </Button>
               </div>
             </div>
           </div>

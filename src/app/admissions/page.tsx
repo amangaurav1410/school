@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 export default function Admissions() {
   const [formData, setFormData] = useState({
@@ -47,12 +48,10 @@ export default function Admissions() {
                     Discover a world of excellence where every child's potential is nurtured and celebrated.
                   </p>
                   <div className="flex flex-wrap gap-4">
-                    <a href="#enquiry-form" className="px-8 py-4 bg-[#8B1E1A] text-white rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg">
-                      Apply Now
+                    <a href="#enquiry-form">
+                      <Button variant="primary" size="md">Apply Now</Button>
                     </a>
-                    <Link href="/campus" className="px-8 py-4 bg-white text-[#8B1E1A] border-2 border-[#8B1E1A] rounded-2xl font-bold hover:scale-105 transition-transform">
-                      Tour Campus
-                    </Link>
+                    <Button href="/campus" variant="outline" size="md">Tour Campus</Button>
                   </div>
                 </motion.div>
                 <motion.div
@@ -242,9 +241,9 @@ export default function Admissions() {
                         <label className="text-sm font-bold uppercase tracking-widest text-gray-500">Additional Message</label>
                         <textarea rows={4} className="w-full px-6 py-4 rounded-2xl bg-[#FDF6E3]/30 border border-gray-200 focus:border-[#8B1E1A] focus:outline-none text-[#1A1A1A]" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}></textarea>
                       </div>
-                      <button type="submit" className="w-full py-6 bg-[#8B1E1A] text-white rounded-2xl font-bold text-xl hover:scale-[1.02] transition-transform shadow-xl">
+                      <Button type="submit" variant="primary" size="lg" className="w-full">
                         Submit Enquiry
-                      </button>
+                      </Button>
                     </form>
                   ) : (
                     <div className="text-center py-12">
