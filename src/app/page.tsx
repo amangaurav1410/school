@@ -139,143 +139,59 @@ export default function Home() {
                 </motion.div>
             </section>
 
-            {/* Motto Section - Scrolling Marquee */}
-            {/* Motto Section - Modern Marquee */}
-            <section className="py-6 bg-gradient-to-r from-amber-50 via-white to-red-50 border-y border-[#D6B25E]/20 overflow-hidden relative">
-                <div className="absolute inset-0 bg-white/40 backdrop-blur-sm z-0"></div>
-                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
-                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
-
-                <div className="relative z-0 flex whitespace-nowrap overflow-hidden">
+            {/* Running Text Section */}
+            <section className="relative py-4 sm:py-6 bg-gradient-to-r from-[#8B1E1A] to-[#D6B25E] overflow-hidden">
+                <div className="relative">
                     <motion.div
-                        animate={{ x: [0, -1000] }}
-                        transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
-                        className="inline-flex items-center"
+                        className="flex whitespace-nowrap"
+                        animate={{ x: ["0%", "-50%"] }}
+                        transition={{
+                            duration: 25,
+                            repeat: Infinity,
+                            ease: "linear"
+                        }}
                     >
-                        {[1, 2, 3, 4].map((i) => (
-                            <span
-                                key={i}
-                                className="text-xl md:text-2xl font-bold px-8 uppercase tracking-widest text-[#8B1E1A]"
-                                style={{
-                                    fontFamily: '"Raleway", sans-serif',
-                                    textShadow: '0 2px 4px rgba(139,30,26,0.1)'
-                                }}
-                            >
-                                Igniting Knowledge <span className="text-[#D6B25E] px-2">•</span> Inspiring Integrity <span className="text-[#D6B25E] px-2">•</span> Instilling Excellence <span className="text-[#D6B25E] px-2">•</span>
-                            </span>
+                        {[...Array(2)].map((_, i) => (
+                            <div key={i} className="flex items-center">
+                                <span
+                                    className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide mx-6 sm:mx-8 md:mx-12"
+                                    style={{
+                                        fontFamily: '"Raleway", sans-serif',
+                                        color: '#FFFFFF',
+                                        textShadow: '0 2px 10px rgba(0,0,0,0.3)'
+                                    }}
+                                >
+                                    Igniting Knowledge
+                                </span>
+                                
+                                <span className="text-white/60 text-xl sm:text-2xl md:text-3xl mx-2 sm:mx-3 md:mx-4">|</span>
+                                
+                                <span
+                                    className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide mx-6 sm:mx-8 md:mx-12"
+                                    style={{
+                                        fontFamily: '"Raleway", sans-serif',
+                                        color: '#FFFFFF',
+                                        textShadow: '0 2px 10px rgba(0,0,0,0.3)'
+                                    }}
+                                >
+                                    Inspiring Integrity
+                                </span>
+                                
+                                <span className="text-white/60 text-xl sm:text-2xl md:text-3xl mx-2 sm:mx-3 md:mx-4">|</span>
+                                
+                                <span
+                                    className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide mx-6 sm:mx-8 md:mx-12"
+                                    style={{
+                                        fontFamily: '"Raleway", sans-serif',
+                                        color: '#FFFFFF',
+                                        textShadow: '0 2px 10px rgba(0,0,0,0.3)'
+                                    }}
+                                >
+                                    Instilling Excellence
+                                </span>
+                            </div>
                         ))}
                     </motion.div>
-                    <motion.div
-                        animate={{ x: [0, -1000] }}
-                        transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
-                        className="inline-flex items-center"
-                    >
-                        {[1, 2, 3, 4].map((i) => (
-                            <span
-                                key={i}
-                                className="text-xl md:text-2xl font-bold px-8 uppercase tracking-widest text-[#8B1E1A]"
-                                style={{
-                                    fontFamily: '"Raleway", sans-serif',
-                                    textShadow: '0 2px 4px rgba(139,30,26,0.1)'
-                                }}
-                            >
-                                Igniting Knowledge <span className="text-[#D6B25E] px-2">•</span> Inspiring Integrity <span className="text-[#D6B25E] px-2">•</span> Instilling Excellence <span className="text-[#D6B25E] px-2">•</span>
-                            </span>
-                        ))}
-                    </motion.div>
-                </div>
-            </section>
-
-            {/* Join Our Mission */}
-            <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-red-50 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-5">
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B1E1A] rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D6B25E] rounded-full blur-3xl"></div>
-                </div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        {/* Left Side - Content */}
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={fadeInUp}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <span className="text-5xl mb-4 block">🎯</span>
-                            <h2
-                                className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
-                                style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
-                            >
-                                Join Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Mission</span>
-                            </h2>
-                            <h3 className="text-2xl font-semibold mb-6" style={{ color: '#8B1E1A' }}>
-                                Building Tomorrow's Leaders Today
-                            </h3>
-
-                            <div
-                                className="inline-flex items-center gap-4 px-8 py-4 rounded-full mb-8"
-                                style={{ background: 'linear-gradient(135deg, rgba(214,178,94,0.2), rgba(139,30,26,0.1))' }}
-                            >
-                                <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Knowledge</span>
-                                <span className="text-2xl">+</span>
-                                <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Integrity</span>
-                                <span className="text-2xl">+</span>
-                                <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Excellence</span>
-                            </div>
-
-                            <p className="text-lg leading-relaxed mb-8" style={{ color: '#4F4F4F', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                At Mapleford International School, our mission is to ignite a passion for learning while fostering character, creativity, and global citizenship. We believe in nurturing young minds to become confident, compassionate leaders who make a positive impact on the world.
-                            </p>
-
-                            <div className="space-y-4">
-                                {[
-                                    'Holistic development through inquiry-based learning',
-                                    'Cultural diversity and inclusive education',
-                                    'Partnerships that extend learning beyond classrooms',
-                                    'Commitment to sustainability and community service'
-                                ].map((item, index) => (
-                                    <motion.div
-                                        key={index}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.15, duration: 0.5 }}
-                                        className="flex items-start"
-                                    >
-                                        <span className="w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0" style={{ background: 'linear-gradient(145deg, #D6B25E, #C4A24E)' }}></span>
-                                        <span className="text-lg">{item}</span>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-
-                        {/* Right Side - Visual Elements */}
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={fadeInUp}
-                            transition={{ duration: 0.8, delay: 0.3 }}
-                        >
-                            <motion.div
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.3 }}
-                                className="rounded-3xl overflow-hidden shadow-2xl relative aspect-square lg:aspect-auto h-full"
-                            >
-                                <img
-                                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000&h=1200&fit=crop"
-                                    alt="Join Our Mission"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#D6B25E]/20">
-                                    <p className="font-bold text-[#8B1E1A]">Our Mission:</p>
-                                    <p className="font-bold text-[#1A1A1A]">Empower. Inspire. Excel.</p>
-                                </div>
-                            </motion.div>
-                        </motion.div>
-                    </div>
                 </div>
             </section>
 
@@ -374,10 +290,10 @@ export default function Home() {
                                 className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
                                 style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
                             >
-                                Beyond the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Textbooks</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Curriculum</span>
                             </h2>
                             <h3 className="text-2xl font-semibold mb-6" style={{ color: '#8B1E1A' }}>
-                                Learning That Extends Beyond the Classroom
+                                A Seamless Blend of Two Powerful Systems
                             </h3>
 
                             <div
@@ -542,7 +458,10 @@ export default function Home() {
                                     <div className="relative z-10 flex items-center w-full">
                                         <span className="text-4xl mr-6 bg-gray-50 group-hover:bg-white w-16 h-16 flex items-center justify-center rounded-full shadow-sm group-hover:shadow-md transition-all duration-500 group-hover:scale-110">{item.icon}</span>
                                         <div className="text-left flex-grow">
-                                            <h4 className="text-2xl font-bold text-[#1A1A1A] group-hover:text-black transition-colors duration-300" style={{ fontFamily: "'Raleway', sans-serif" }}>{item.title}</h4>
+                                            <h4 className="text-2xl font-bold text-[#1A1A1A] group-hover:text-black transition-colors duration-300" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                                <span className="text-4xl font-black text-[#8B1E1A]">{item.title.charAt(0)}</span>
+                                                {item.title.slice(1)}
+                                            </h4>
                                             <p className="text-[#8B1E1A] font-medium italic text-sm group-hover:text-[#5A1411] transition-colors duration-300" style={{ fontFamily: '"Lato", sans-serif' }}>{item.query}</p>
                                         </div>
                                         <motion.div
@@ -595,102 +514,6 @@ export default function Home() {
                                     <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
                                 </Link>
                             </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
-            {/* The Journey into Leadership */}
-            <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-5">
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B1E1A] rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D6B25E] rounded-full blur-3xl"></div>
-                </div>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        {/* Left Side - Content */}
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={fadeInUp}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <span className="text-5xl mb-4 block">👑</span>
-                            <h2
-                                className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
-                                style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
-                            >
-                                The Journey into <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Leadership</span>
-                            </h2>
-                            <h3 className="text-2xl font-semibold mb-6" style={{ color: '#8B1E1A' }}>
-                                From Students to Leaders of Tomorrow
-                            </h3>
-
-                            <div
-                                className="inline-flex items-center gap-4 px-8 py-4 rounded-full mb-8"
-                                style={{ background: 'linear-gradient(135deg, rgba(214,178,94,0.2), rgba(139,30,26,0.1))' }}
-                            >
-                                <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Character</span>
-                                <span className="text-2xl">+</span>
-                                <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Confidence</span>
-                                <span className="text-2xl">+</span>
-                                <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Competence</span>
-                            </div>
-
-                            <p className="text-lg leading-relaxed mb-8" style={{ color: '#4F4F4F', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                Leadership is not just a position — it's a mindset we cultivate in every student. Through
-                                student council opportunities, community service projects, and leadership development
-                                programs, we help young minds discover their potential to lead with integrity, empathy,
-                                and vision.
-                            </p>
-
-                            <div className="space-y-4">
-                                {[
-                                    'Student council and peer leadership programs',
-                                    'Community service and social responsibility initiatives',
-                                    'Public speaking and communication skills development',
-                                    'Mentorship programs connecting students with role models'
-                                ].map((item, index) => (
-                                    <motion.div
-                                        key={index}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.15, duration: 0.5 }}
-                                        className="flex items-start"
-                                    >
-                                        <span className="w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0" style={{ background: 'linear-gradient(145deg, #D6B25E, #C4A24E)' }}></span>
-                                        <span className="text-lg">{item}</span>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-
-                        {/* Right Side - Visual Elements */}
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                            variants={fadeInUp}
-                            transition={{ duration: 0.8, delay: 0.3 }}
-                        >
-                            <motion.div
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.3 }}
-                                className="rounded-3xl overflow-hidden shadow-2xl relative aspect-square lg:aspect-auto h-full"
-                            >
-                                <img
-                                    src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1000&h=1200&fit=crop"
-                                    alt="The Journey into Leadership"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
-                                <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#D6B25E]/20">
-                                    <p className="font-bold text-[#8B1E1A]">Leadership:</p>
-                                    <p className="font-bold text-[#1A1A1A]">Service. Growth. Impact.</p>
-                                </div>
-                            </motion.div>
                         </motion.div>
                     </div>
                 </div>
