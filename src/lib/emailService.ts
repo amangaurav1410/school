@@ -1,31 +1,31 @@
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
-// Create email transporter
-// Note: You'll need to set environment variables for email configuration
-const transporter = nodemailer.createTransporter({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: false, // true for 465, false for other ports
-    auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-    },
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST || "smtp.gmail.com",
+  port: Number(process.env.SMTP_PORT) || 587,
+  secure: false, // true for 465, false for other ports
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
 });
 
+export default transporter;
+
 interface InquiryData {
-    parentName: string;
-    contactNumber: string;
-    email: string;
-    childName: string;
-    childDob: string;
-    gradeApplying: string;
-    message?: string;
+  parentName: string;
+  contactNumber: string;
+  email: string;
+  childName: string;
+  childDob: string;
+  gradeApplying: string;
+  message?: string;
 }
 
 export async function sendConfirmationEmail(inquiryData: InquiryData) {
-    const { parentName, email, childName, gradeApplying } = inquiryData;
+  const { parentName, email, childName, gradeApplying } = inquiryData;
 
-    const emailHtml = `
+  const emailHtml = `
     <!DOCTYPE html>
     <html>
     <head>
@@ -138,19 +138,19 @@ export async function sendConfirmationEmail(inquiryData: InquiryData) {
     </html>
   `;
 
-    const mailOptions = {
-        from: `"Maple Ford International School" <${process.env.SMTP_USER}>`,
-        to: email,
-        subject: `Admission Enquiry Confirmation - ${childName}`,
-        html: emailHtml,
-    };
+  const mailOptions = {
+    from: `"Maple Ford International School" <${process.env.SMTP_USER}>`,
+    to: email,
+    subject: `Admission Enquiry Confirmation - ${childName}`,
+    html: emailHtml,
+  };
 
-    try {
-        const info = await transporter.sendMail(mailOptions);
-        console.log('Message sent: %s', info.messageId);
-        return { success: true, messageId: info.messageId };
-    } catch (error) {
-        console.error('Error sending email:', error);
-        throw new Error('Failed to send confirmation email');
-    }
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Message sent: %s', info.messageId);
+    return { success: true, messageId: info.messageId };
+  } catch (error) {
+    console.error('Error sending email:', error);
+    throw new Error('Failed to send confirmation email');
+  }
 }
