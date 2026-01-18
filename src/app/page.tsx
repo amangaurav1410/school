@@ -139,62 +139,6 @@ export default function Home() {
                 </motion.div>
             </section>
 
-            {/* Running Text Section */}
-            <section className="relative py-4 sm:py-6 bg-gradient-to-r from-[#8B1E1A] to-[#D6B25E] overflow-hidden">
-                <div className="relative">
-                    <motion.div
-                        className="flex whitespace-nowrap"
-                        animate={{ x: ["0%", "-50%"] }}
-                        transition={{
-                            duration: 25,
-                            repeat: Infinity,
-                            ease: "linear"
-                        }}
-                    >
-                        {[...Array(2)].map((_, i) => (
-                            <div key={i} className="flex items-center">
-                                <span
-                                    className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide mx-6 sm:mx-8 md:mx-12"
-                                    style={{
-                                        fontFamily: '"Raleway", sans-serif',
-                                        color: '#FFFFFF',
-                                        textShadow: '0 2px 10px rgba(0,0,0,0.3)'
-                                    }}
-                                >
-                                    Igniting Knowledge
-                                </span>
-                                
-                                <span className="text-white/60 text-xl sm:text-2xl md:text-3xl mx-2 sm:mx-3 md:mx-4">|</span>
-                                
-                                <span
-                                    className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide mx-6 sm:mx-8 md:mx-12"
-                                    style={{
-                                        fontFamily: '"Raleway", sans-serif',
-                                        color: '#FFFFFF',
-                                        textShadow: '0 2px 10px rgba(0,0,0,0.3)'
-                                    }}
-                                >
-                                    Inspiring Integrity
-                                </span>
-                                
-                                <span className="text-white/60 text-xl sm:text-2xl md:text-3xl mx-2 sm:mx-3 md:mx-4">|</span>
-                                
-                                <span
-                                    className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide mx-6 sm:mx-8 md:mx-12"
-                                    style={{
-                                        fontFamily: '"Raleway", sans-serif',
-                                        color: '#FFFFFF',
-                                        textShadow: '0 2px 10px rgba(0,0,0,0.3)'
-                                    }}
-                                >
-                                    Instilling Excellence
-                                </span>
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
-            </section>
-
             {/* The Mapleford Edge */}
             <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -206,7 +150,6 @@ export default function Home() {
                             variants={fadeInUp}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-5xl mb-4 block">🍁</span>
                             <h2
                                 className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
                                 style={{
@@ -255,14 +198,13 @@ export default function Home() {
                             <motion.div
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.3 }}
-                                className="rounded-3xl overflow-hidden shadow-2xl relative"
+                                className="rounded-3xl overflow-hidden shadow-2xl relative flex items-center justify-center bg-white p-12"
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&h=800&fit=crop" // New Campus/Edge Image
+                                    src="/left-logo.png"
                                     alt="The Mapleford Edge"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-auto object-contain"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                             </motion.div>
                         </motion.div>
                     </div>
@@ -270,8 +212,8 @@ export default function Home() {
             </section>
 
             {/* Curriculum Section */}
-            <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-red-50 relative overflow-hidden">
-                <div className="absolute inset-0 opacity-5">
+            <section className="py-24 bg-gradient-to-br from-amber-100 via-orange-50 to-red-100 relative overflow-hidden">
+                <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B1E1A] rounded-full blur-3xl"></div>
                     <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D6B25E] rounded-full blur-3xl"></div>
                 </div>
@@ -285,7 +227,6 @@ export default function Home() {
                             variants={fadeInUp}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-5xl mb-4 block">📖</span>
                             <h2
                                 className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
                                 style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
@@ -350,7 +291,6 @@ export default function Home() {
             <section className="py-24 bg-white" id="continuum">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <span className="text-5xl mb-4 block">🎓</span>
                         <h2
                             className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
                             style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
@@ -484,14 +424,6 @@ export default function Home() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <motion.span
-                                className="text-6xl mb-6 block"
-                                animate={{ rotate: [0, 10, -10, 0] }}
-                                transition={{ repeat: Infinity, duration: 4, repeatDelay: 2 }}
-                            >
-                                💡
-                            </motion.span>
-
                             <h2 className="text-5xl lg:text-6xl font-black mb-8 leading-tight" style={{ color: '#1A1A1A', fontFamily: "'Raleway', sans-serif" }}>
                                 Where Logic Meets <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Imagination</span>
                             </h2>
@@ -530,7 +462,6 @@ export default function Home() {
                             variants={fadeInUp}
                             transition={{ duration: 0.8 }}
                         >
-                            <span className="text-5xl mb-4 block">🏫</span>
                             <h2
                                 className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
                                 style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
@@ -616,7 +547,6 @@ export default function Home() {
                             transition={{ duration: 0.8, delay: 0.3 }}
                             className="order-1 lg:order-2"
                         >
-                            <span className="text-5xl mb-4 block">⚽</span>
                             <h2
                                 className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
                                 style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
@@ -675,7 +605,6 @@ export default function Home() {
                             transition={{ duration: 0.8 }}
                             className="text-[#1A1A1A]"
                         >
-                            <span className="text-5xl mb-4 block">🚀</span>
                             <h2
                                 className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
                                 style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif" }}

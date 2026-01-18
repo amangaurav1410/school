@@ -86,27 +86,18 @@ export default function Header() {
         style={{
           background: '#FFFFFF',
           borderBottom: isScrolled ? '1px solid rgba(214, 178, 94, 0.2)' : '1px solid rgba(214, 178, 94, 0.15)',
-          height: isScrolled ? '80px' : '100px' // Increased slightly for bigger logo
+          height: isScrolled ? '90px' : '120px' // Increased for bigger logo
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex justify-between items-center h-full">
-            {/* Left - Logos */}
+            {/* Left - Logo */}
             <div className="flex items-center h-full gap-3 sm:gap-6">
               <Link href="/" className="flex items-center h-full py-3">
                 <img
-                  src="/left-logo.png"
+                  src="/maple-ford-logo.png"
                   alt="Logo"
                   className="h-full w-auto object-contain transition-transform duration-300 hover:scale-105"
-                />
-              </Link>
-
-              <Link href="/" className="flex items-center h-full py-1">
-                <img
-                  src="/maple-ford-logo.png"
-                  alt="Mapleford International School Logo"
-                  className="h-full w-auto object-contain transition-transform duration-300 hover:scale-105"
-                  style={{ maxHeight: '120%' }}
                 />
               </Link>
             </div>
@@ -121,8 +112,8 @@ export default function Header() {
                         onClick={() => setActiveDropdown(activeDropdown === item.title ? null : item.title)}
                         onMouseEnter={() => setActiveDropdown(item.title)}
                         className={`px-3 py-2 text-[14px] font-semibold transition-all duration-300 flex items-center gap-1 rounded-lg ${activeDropdown === item.title
-                          ? 'text-[#8B1E1A] bg-[#FDF6E3]'
-                          : 'text-[#1A1A1A] hover:text-[#8B1E1A] hover:bg-[#FDF6E3]'
+                          ? 'text-[#000000] bg-[#FDF6E3]'
+                          : 'text-[#000000] hover:text-[#000000] hover:bg-[#FDF6E3]'
                           }`}
                         style={{ fontFamily: '"Lato", sans-serif' }}
                       >
@@ -149,7 +140,7 @@ export default function Header() {
                             <Link
                               key={subIndex}
                               href={subItem.href}
-                              className="block px-4 py-2.5 text-[13px] text-[#4F4F4F] hover:text-[#8B1E1A] hover:bg-[#FDF6E3] transition-all duration-200"
+                              className="block px-4 py-2.5 text-[13px] text-[#000000] hover:text-[#000000] hover:bg-[#FDF6E3] transition-all duration-200"
                               style={{ fontFamily: '"Lato", sans-serif' }}
                               onClick={() => setActiveDropdown(null)}
                             >
@@ -162,7 +153,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className="px-3 py-2 text-[14px] font-semibold text-[#1A1A1A] hover:text-[#8B1E1A] hover:bg-[#FDF6E3] transition-all duration-300 rounded-lg"
+                      className="px-3 py-2 text-[14px] font-semibold text-[#000000] hover:text-[#000000] hover:bg-[#FDF6E3] transition-all duration-300 rounded-lg"
                       style={{ fontFamily: '"Lato", sans-serif' }}
                     >
                       {item.title}
@@ -190,7 +181,7 @@ export default function Header() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
-                className="lg:hidden flex items-center gap-2 text-[#1A1A1A] hover:text-[#8B1E1A] transition-all duration-300"
+                className="lg:hidden flex items-center gap-2 text-[#000000] hover:text-[#000000] transition-all duration-300"
               >
                 <svg
                   width="28"
@@ -241,7 +232,7 @@ export default function Header() {
                 </Link>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-2 text-[#1A1A1A] hover:text-[#8B1E1A] transition-all duration-300"
+                  className="flex items-center gap-2 text-[#000000] hover:text-[#000000] transition-all duration-300"
                 >
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -261,7 +252,7 @@ export default function Header() {
                     <div>
                       <button
                         onClick={() => toggleMobileSubmenu(item.title)}
-                        className="w-full flex items-center justify-between py-4 text-lg font-semibold text-[#1A1A1A] hover:text-[#8B1E1A] transition-colors"
+                        className="w-full flex items-center justify-between py-4 text-lg font-semibold text-[#000000] hover:text-[#000000] transition-colors"
                         style={{ fontFamily: "'Playfair Display', serif" }}
                       >
                         {item.title}
@@ -281,7 +272,7 @@ export default function Header() {
                             <Link
                               key={subIndex}
                               href={subItem.href}
-                              className="block py-2 text-[#5A1411] hover:text-[#D6B25E] transition-colors font-medium"
+                              className="block py-2 text-[#000000] hover:text-[#000000] transition-colors font-medium"
                               style={{ fontFamily: "'Inter', sans-serif" }}
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
@@ -294,7 +285,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className="block py-4 text-lg font-semibold text-[#1A1A1A] hover:text-[#8B1E1A] transition-colors"
+                      className="block py-4 text-lg font-semibold text-[#000000] hover:text-[#000000] transition-colors"
                       style={{ fontFamily: "'Playfair Display', serif" }}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
