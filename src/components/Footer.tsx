@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="lg:col-span-2 lg:col-start-6">
             <h4 className="text-base font-bold mb-4 text-black" style={{ fontFamily: "'Raleway', sans-serif" }}>Quick Links</h4>
             <ul className="space-y-2">
-              {['About Us', 'Admissions', 'Programs', 'Campus', 'Contact'].map((item) => (
+              {['About Us', 'Admissions', 'Curriculum', 'Campus', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase().replace(' ', '-')}`}
@@ -67,9 +67,9 @@ export default function Footer() {
             <h4 className="text-base font-bold mb-4 text-black" style={{ fontFamily: "'Raleway', sans-serif" }}>Academics</h4>
             <ul className="space-y-2">
               {[
-                { label: 'Pre-School', href: '/programs#preschool' },
-                { label: 'Elementary School', href: '/programs#elementary' },
-                { label: 'High School', href: '/programs#highschool' },
+                { label: 'Pre-School', href: '/curriculum' },
+                { label: 'Elementary School', href: '/curriculum' },
+                { label: 'High School', href: '/curriculum' },
                 { label: 'Student Zone', href: '/student-zone' }
               ].map((item) => (
                 <li key={item.label}>

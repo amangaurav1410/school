@@ -71,9 +71,7 @@ export default function PreSchool() {
                                 <h2 className="text-4xl lg:text-5xl font-black" style={{ fontFamily: '"Raleway", sans-serif' }}>The Foundation <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Years</span></h2>
                                 <div className="w-20 h-1.5 bg-[#D6B25E] rounded-full"></div>
                                 <p className="text-xl text-[#4F4F4F] leading-relaxed">
-                                    Through play-based exploration, storytelling, and creative discovery, pre-schoolers
-                                    develop early confidence, communication skills, and joy in learning. Our curriculum is designed
-                                    to nurture the whole child, focusing on cognitive, social, emotional, and physical growth.
+                                    The foundation years where curiosity blossoms and imagination leads learning. Through play-based exploration, storytelling, and creative discovery, pre-schoolers develop early confidence, communication skills, and joy in learning.
                                 </p>
                                 <ul className="space-y-4">
                                     {[

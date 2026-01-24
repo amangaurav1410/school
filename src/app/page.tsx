@@ -100,13 +100,13 @@ export default function Home() {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -20 }}
                                         transition={{ duration: 0.8 }}
-                                        className="font-bold"
+                                        className="font-bold flex flex-col items-center"
                                         style={{
                                             fontFamily: '"Raleway", Arial, Helvetica, sans-serif',
                                             textShadow: '0 4px 30px rgba(0,0,0,0.5)',
                                             letterSpacing: '0.05em',
                                             lineHeight: '1.2',
-                                            fontSize: 'clamp(28px, 5vw, 56px)',
+                                            fontSize: 'clamp(20px, 4vw, 42px)',
                                             background: 'linear-gradient(135deg, #FFFFFF 0%, #FFD700 50%, #FFA500 100%)',
                                             WebkitBackgroundClip: 'text',
                                             WebkitTextFillColor: 'transparent',
@@ -114,7 +114,7 @@ export default function Home() {
                                             filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))'
                                         }}
                                     >
-                                        Knowledge | Integrity | Excellence
+                                        <span className="mb-2">Knowledge | Integrity | Excellence</span>
                                     </motion.h1>
                                 )}
                             </AnimatePresence>
@@ -183,7 +183,7 @@ export default function Home() {
                                     ))}
                                 </ul>
                                 <p className="italic font-medium text-xl mt-8 p-6 rounded-2xl" style={{ color: '#5A1411', background: 'linear-gradient(135deg, rgba(214,178,94,0.1), rgba(139,30,26,0.05))' }}>
-                                    &quot;This is not just a transition — it&apos;s an evolution with purpose.&quot;
+                                    &quot;This is not just a transition — it’s an evolution with purpose&quot;
                                 </p>
                             </div>
                         </motion.div>
@@ -295,12 +295,10 @@ export default function Home() {
                             className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
                             style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
                         >
-                            Secure Your Child's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Future</span>
+                            The Continuum of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Learning</span>
                         </h2>
                         <p className="text-xl max-w-4xl mx-auto" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                            Building a strong foundation today for a bright and successful tomorrow. Our comprehensive
-                            educational pathway ensures every child develops the skills, knowledge, and character needed
-                            to thrive in an ever-changing world.
+                            Every stage of learning is a milestone in growth — thoughtfully designed to nurture young minds into competent whizz-kids with wisdom and wonder.
                         </p>
                     </div>
 
@@ -309,21 +307,21 @@ export default function Home() {
                             {
                                 stage: 'Pre-School',
                                 grades: '(Nursery, Jr. KG, Sr. KG)',
-                                description: 'The foundation years where curiosity blossoms and imagination leads learning. Through play-based exploration, storytelling, and creative discovery.',
+                                description: 'The foundation years where curiosity blossoms and imagination leads learning. Through play-based exploration, storytelling, and creative discovery, pre-schoolers develop early confidence, communication skills, and joy in learning.',
                                 image: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&h=600&fit=crop',
                                 color: '#E8F5E9'
                             },
                             {
                                 stage: 'Elementary',
                                 grades: '(Grades 1–5)',
-                                description: 'The building years of knowledge and expression — where students strengthen academics, values, and creativity through interactive classrooms.',
+                                description: 'The building years of knowledge and expression — where students strengthen academics, values, and creativity. Learning becomes meaningful through interactive classrooms and real-world applications.',
                                 image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=600&fit=crop',
                                 color: '#E3F2FD'
                             },
                             {
                                 stage: 'High School',
                                 grades: '(Grades 6–10)',
-                                description: "The transformation years that foster independence, discipline, and vision. With CBSE's structured framework and global exposure.",
+                                description: "The transformation years that foster independence, discipline, and vision. With CBSE’s structured framework and global exposure, learners evolve into confident aspirants — ready to lead, innovate, and explore the world beyond boundaries.",
                                 image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop',
                                 color: '#FFF3E0'
                             }
@@ -468,17 +466,14 @@ export default function Home() {
                             >
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Campus</span>
                             </h2>
-                            <h3 className="text-2xl font-semibold mb-4" style={{ color: '#8B1E1A' }}>
-                                A Space That Opens Horizons
+                            <h3 className="text-2xl font-bold mb-6 text-[#8B1E1A] italic" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                Spaces that Inspire | Designed for Discovery | Purposefully Equipped
                             </h3>
                             <p className="text-lg mb-6" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                Set across a sprawling 4-acre campus, Mapleford International School offers students
-                                the freedom to explore, learn, and thrive in an open, thoughtfully designed environment.
+                                Set across a sprawling 4-acre campus, Mapleford International School offers a thoughtfully designed environment where every corner is a space for discovery.
                             </p>
                             <p className="mb-8" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                Lush green landscapes, modern classrooms, innovation labs, sports arenas, and creative
-                                spaces come together to create an environment that supports academic focus, physical
-                                vitality, and overall well-being.
+                                From smart classrooms and innovation labs to vibrant sports arenas and creative studios, our campus is purposefully equipped to support academic focus, physical vitality, and holistic growth.
                             </p>
                             <Button href="/campus" variant="primary" size="lg">
                                 Explore Our Campus
@@ -563,8 +558,10 @@ export default function Home() {
                                 Where passion charges the field — and every sport, a lesson in excellence
                             </p>
                             <p className="mb-6" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                At Mapleford International School, growth isn&apos;t limited to books and classrooms — it
-                                thrives on the field, on the court, and in every challenge that builds spirit and strength.
+                                At Mapleford International School, growth isn’t limited to books and classrooms — it thrives on the field, on the court, and in every challenge that builds spirit and strength. Every match played, every goal scored, and every serve perfected shapes not just an athlete, but a resilient, disciplined, and determined individual.
+                            </p>
+                            <p className="mb-6" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
+                                With a vibrant sporting culture at its heart, Mapleford nurtures young talent through Football, Badminton, Tennis, and Athletics, encouraging every student to discover the joy of play and the power of perseverance. Our state-of-the-art infrastructure — from modern sports arenas to safe, well-equipped training zones — forms the backbone of an environment that fosters confidence, team spirit, and leadership.
                             </p>
                             <div className="grid grid-cols-2 gap-4 mb-8">
                                 {['Football', 'Badminton', 'Tennis', 'Athletics'].map((sport, index) => (
@@ -612,11 +609,11 @@ export default function Home() {
                                 Start Your Child's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Journey</span>
                             </h2>
                             <h3 className="text-2xl font-semibold mb-6" style={{ color: '#8B1E1A' }}>
-                                The First Step Towards Excellence
+                                Connect with Mapleford
                             </h3>
                             <p className="text-[#4F4F4F] mb-8 text-lg leading-relaxed" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                Do you have questions about admissions, curriculum, or campus visits? We&apos;re here to
-                                assist you at every step of your child&apos;s educational journey.
+                                Do you have questions about admissions, curriculum, or campus visits?
+                                We’re here to assist you at every step.
                             </p>
 
                             <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl mb-8">
@@ -760,7 +757,6 @@ export default function Home() {
                                             className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
                                         >
                                             <option value="">Select grade</option>
-                                            <option value="toddler">Toddler</option>
                                             <option value="nursery">Nursery</option>
                                             <option value="jr-kg">Jr. KG</option>
                                             <option value="sr-kg">Sr. KG</option>
@@ -791,7 +787,7 @@ export default function Home() {
                                             border: '1px solid rgba(255,255,255,0.1)'
                                         }}
                                     >
-                                        Submit Enquiry
+                                        Submit
                                     </button>
                                 </form>
                             ) : (

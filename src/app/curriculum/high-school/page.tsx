@@ -40,7 +40,7 @@ export default function HighSchool() {
                             className="text-xl lg:text-3xl text-[#4F4F4F] max-w-4xl mx-auto leading-relaxed italic"
                             style={{ fontFamily: '"Lato", sans-serif' }}
                         >
-                            "Fostering independence, discipline, and vision for the leaders of tomorrow."
+                            "The transformation years that foster independence, discipline, and vision. With CBSE’s structured framework and global exposure, learners evolve into confident aspirants — ready to lead, innovate, and explore the world beyond boundaries."
                         </motion.p>
                     </div>
                 </section>
@@ -76,8 +76,7 @@ export default function HighSchool() {
                                 <h2 className="text-4xl lg:text-5xl font-black leading-tight" style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}>The Transformation <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Years</span></h2>
                                 <div className="w-20 h-1.5 bg-[#D6B25E] rounded-full"></div>
                                 <p className="text-xl text-[#4F4F4F] leading-relaxed">
-                                    With CBSE's structured framework and global exposure, learners evolve into confident aspirants.
-                                    We focus on critical thinking, career readiness, and the development of a lifelong learning mindset.
+                                    The transformation years that foster independence, discipline, and vision. With CBSE’s structured framework and global exposure, learners evolve into confident aspirants — ready to lead, innovate, and explore the world beyond boundaries.
                                 </p>
                                 <div className="space-y-6">
                                     {[

@@ -542,7 +542,7 @@ export default function Admissions() {
                       type="submit"
                       className="w-full py-4 px-8 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-xl hover:shadow-2xl bg-gradient-to-r from-[#8B1E1A] to-[#5A1411] text-white"
                     >
-                      Submit Enquiry
+                      Submit
                     </button>
                   </form>
                 ) : (
@@ -550,7 +550,7 @@ export default function Admissions() {
                     <div className="text-6xl mb-6">✅</div>
                     <h3 className="text-2xl font-bold mb-4 text-[#1A1A1A]">Thank You!</h3>
                     <p className="text-lg text-[#4F4F4F]">
-                      Your enquiry has been received. Our admissions team will contact you within 24-48 hours.
+                      We appreciate your interest. Our team shall reach out to you promptly.
                     </p>
                   </div>
                 )}

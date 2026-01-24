@@ -58,8 +58,7 @@ export default function ElementarySchool() {
                                 <h2 className="text-4xl lg:text-5xl font-black" style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}>The Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Years</span></h2>
                                 <div className="w-20 h-1.5 bg-[#D6B25E] rounded-full"></div>
                                 <p className="text-xl text-[#4F4F4F] leading-relaxed">
-                                    The building years of knowledge and expression — where students strengthen academics, values, and creativity.
-                                    Learning becomes meaningful through interactive classrooms and pedagogical methods that encourage deep understanding.
+                                    The building years of knowledge and expression — where students strengthen academics, values, and creativity. Learning becomes meaningful through interactive classrooms and real-world applications.
                                 </p>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     {[

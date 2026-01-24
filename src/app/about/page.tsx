@@ -35,15 +35,15 @@ export default function About() {
               >
                 Who <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">We Are</span>
               </h1>
-              <p className="text-xl lg:text-2xl text-[#4F4F4F] max-w-3xl mx-auto leading-relaxed italic" style={{ fontFamily: '"Lato", sans-serif' }}>
-                "Rooted in a 30-year legacy of educational excellence, we are shaping the future leaders of tomorrow."
-              </p>
+              <h2 className="text-2xl lg:text-3xl font-bold text-[#8B1E1A] mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                Rooted in Legacy. Ready for Tomorrow.
+              </h2>
             </motion.div>
           </div>
         </section>
 
-        {/* Our Foundation / Legacy Section - Comparable to Homepage "Mapleford Edge" */}
-        <section className="py-24 bg-white" id="our-legacy">
+        {/* Who We Are Content */}
+        <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <motion.div
@@ -53,23 +53,19 @@ export default function About() {
                 variants={fadeInUp}
                 transition={{ duration: 0.8 }}
               >
-                <span className="text-5xl mb-4 block">🏛️</span>
-                <h2
-                  className="text-5xl lg:text-6xl font-black mb-8 leading-tight text-[#1A1A1A]"
-                  style={{ fontFamily: '"Raleway", sans-serif' }}
-                >
-                  Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Legacy</span>
-                </h2>
                 <div className="space-y-6 text-lg text-[#4F4F4F] leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
                   <p>
-                    Mapleford International School stands on the strong shoulders of a three-decade-long journey in education. Founded by <strong className="text-[#8B1E1A]">P. Subba Reddy</strong>, the visionary behind Maple Bear Global Schools (Hyderabad), our institution is a testament to enduring quality and commitment.
+                    Located in the heart of Hayathnagar, Hyderabad, <strong>Mapleford International School</strong> carries forward the distinguished three-decade legacy of <strong>Megacity High School</strong> - a trusted institution known for its strong values and commitment to quality education.
                   </p>
                   <p>
-                    From humble beginnings to a sprawling <strong>4-acre campus</strong> in Hayathnagar, we have evolved into a sanctuary for holistic learning. Our history is not just about time passed, but about the thousands of lives touched, minds ignited, and futures built.
+                    Today, this legacy is reimagined for a new era—one that embraces innovation, global horizons, and a future-ready learning experience.
                   </p>
-                  <div className="p-6 bg-amber-50 rounded-2xl border-l-4 border-[#D6B25E]">
-                    <p className="italic font-medium text-[#8B1E1A]">
-                      "We blend the best of global pedagogy with the richness of Indian values to create a truly world-class learning environment."
+                  <p>
+                    As a CBSE-affiliated co-education institution, Mapleford offers a structured, meticulous, and value-driven academic foundation. Through our collaboration with <strong>Maple Bear Canadian School</strong>, we bring international perspectives, modern pedagogy, holistic development, and global pathways to every learner — creating a harmonious blend of Indian academic depth and world-class educational insight.
+                  </p>
+                  <div className="p-8 bg-amber-50 rounded-3xl border-l-4 border-[#D6B25E] shadow-sm">
+                    <p className="italic font-bold text-[#8B1E1A] text-xl">
+                      "Empowering Mapleites to rise with Erudition, Ethos, and Excellence"
                     </p>
                   </div>
                 </div>
@@ -85,155 +81,140 @@ export default function About() {
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
-                  className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] relative"
+                  className="rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/3] relative"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1000&h=800&fit=crop"
-                    alt="Our Legacy"
+                    alt="Mapleford Legacy"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20">
-                      <div className="flex justify-between items-center text-center">
-                        <div>
-                          <div className="text-3xl font-black text-[#8B1E1A]">30+</div>
-                          <div className="text-xs uppercase font-bold text-gray-600">Years</div>
-                        </div>
-                        <div className="w-px h-10 bg-gray-300"></div>
-                        <div>
-                          <div className="text-3xl font-black text-[#D6B25E]">4</div>
-                          <div className="text-xs uppercase font-bold text-gray-600">Acres</div>
-                        </div>
-                        <div className="w-px h-10 bg-gray-300"></div>
-                        <div>
-                          <div className="text-3xl font-black text-[#1A1A1A]">1K+</div>
-                          <div className="text-xs uppercase font-bold text-gray-600">Students</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </motion.div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Vision & Mission - Comparable to Homepage "Continuum of Learning" Cards */}
+        {/* Our School of Thought / Philosophy */}
         <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-red-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <span className="text-5xl mb-4 block">🎯</span>
+              <span className="text-5xl mb-4 block">🧠</span>
               <h2
                 className="text-5xl lg:text-6xl font-black mb-8 leading-tight text-[#1A1A1A]"
                 style={{ fontFamily: '"Raleway", sans-serif' }}
               >
-                Vision & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Mission</span>
+                Our School of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Thought</span>
               </h2>
-              <p className="text-xl text-[#4F4F4F] max-w-3xl mx-auto" style={{ fontFamily: '"Lato", sans-serif' }}>
-                Guided by a clear purpose, we strive to create an educational ecosystem that inspires excellence and nurtures character.
+              <h3 className="text-2xl font-bold text-[#8B1E1A] mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                Knowledge in Pursuit of Integrity and Excellence
+              </h3>
+            </div>
+
+            <div className="max-w-4xl mx-auto text-center space-y-8 text-xl text-[#4F4F4F] leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
+              <p>
+                At Mapleford International School, the euphony of intellect and integrity nurtures young talent to discover the courage to question, the discipline to grow, and the humility to keep learning.
+              </p>
+              <p>
+                Our approach fosters disciplined thinking, ethical actions, and purposeful ambitions, shaping individuals to excel with conviction and contribute with conscience.
+              </p>
+              <p className="font-medium text-[#1A1A1A]">
+                We strive to raise curious thinkers, compassionate leaders, and confident achievers— grounded in enduring values and inspired to excel beyond boundaries.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Team Section */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2
+                className="text-5xl lg:text-6xl font-black mb-8 text-[#1A1A1A]"
+                style={{ fontFamily: '"Raleway", sans-serif' }}
+              >
+                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Team</span>
+              </h2>
+              <p className="text-xl text-[#4F4F4F] max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
+                The heart of Mapleford is an empathetic, compassionate, dynamic, and visionary team, a committed leadership, and devoted mentors at its core. Our compass guides students toward steadiness and inspiration.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Our Vision',
-                  icon: '👁️',
-                  desc: 'To be a beacon of educational excellence where every child is empowered to discover their potential and become a responsible global citizen.',
-                  color: 'border-l-4 border-[#8B1E1A]'
-                },
-                {
-                  title: 'Our Mission',
-                  icon: '🚀',
-                  desc: 'To provide a stimulating learning environment that fosters critical thinking, creativity, and integrity through a blend of innovative pedagogy and traditional values.',
-                  color: 'border-l-4 border-[#D6B25E]'
-                },
-                {
-                  title: 'Core Values',
-                  icon: '💎',
-                  desc: 'Integrity, Empathy, Excellence, and Respect form the bedrock of our culture. We believe in educating the heart as much as the mind.',
-                  color: 'border-l-4 border-[#1A1A1A]'
-                }
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2, duration: 0.6 }}
-                  className={`bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 ${item.color}`}
-                >
-                  <div className="text-5xl mb-6">{item.icon}</div>
-                  <h3 className="text-2xl font-bold mb-4 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>{item.title}</h3>
-                  <p className="text-[#4F4F4F] leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>{item.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* The Way We Think / Philosophy - Comparable to Homepage STEAM Section */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-32">
+              {/* Chairman Message */}
               <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeInUp}
-                transition={{ duration: 0.8 }}
-                className="order-2 lg:order-1"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start"
               >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {[
-                    { t: "Curiosity", i: "✨", d: "Sparking the desire to know" },
-                    { t: "Discipline", i: "⚖️", d: "Framing success with focus" },
-                    { t: "Humility", i: "🙏", d: "Learning with an open heart" },
-                    { t: "Excellence", i: "🏆", d: "Striving for the best, always" }
-                  ].map((val, idx) => (
-                    <motion.div
-                      key={idx}
-                      whileHover={{ scale: 1.05 }}
-                      className="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:border-[#D6B25E]/30 hover:shadow-lg transition-all"
-                    >
-                      <div className="text-4xl mb-3">{val.i}</div>
-                      <h4 className="text-xl font-bold text-[#1A1A1A] mb-1" style={{ fontFamily: '"Raleway", sans-serif' }}>{val.t}</h4>
-                      <p className="text-sm text-[#4F4F4F]">{val.d}</p>
-                    </motion.div>
-                  ))}
+                <div className="lg:col-span-4">
+                  <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop" alt="P. Subba Reddy - Chairman" className="w-full h-full object-cover" />
+                    <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
+                      <h4 className="text-2xl font-bold">P. Subba Reddy</h4>
+                      <p className="text-amber-400 font-medium">Chairman</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="lg:col-span-8 space-y-6 text-lg text-[#4F4F4F] leading-relaxed">
+                  <h3 className="text-3xl font-black text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Message From the Chairman</h3>
+                  <div className="w-20 h-1.5 bg-[#8B1E1A] rounded-full"></div>
+                  <p>
+                    At Mapleford International School, we believe that education is not merely the transfer of knowledge but the cultivation of character, curiosity, and compassion. As we carry forward the distinguished legacy of Megacity High School, our mission remains grounded in a simple truth: children learn best when they feel valued, supported, and inspired to discover who they are.
+                  </p>
+                  <p>
+                    For three decades, our journey has been shaped by the belief that schooling must prepare students for life, not just for examinations. Today, Mapleford stands as an evolution of that belief, embracing global perspectives while staying anchored in timeless values. We strive to create an environment where learning is joyful, where discipline is self-driven, and where every accomplishment is measured not only by success, but by sincerity and effort.
+                  </p>
+                  <p>
+                    I remain deeply committed to fostering a school community where every child feels empowered to learn, lead, and contribute meaningfully to society. Together, let us shape a future where every learning matters — the spark in a question, the pride in a goal, and the courage to try again.
+                  </p>
+                  <p className="font-bold text-[#1A1A1A] pt-4">
+                    P. Subba Reddy<br />
+                    <span className="text-sm font-medium text-gray-500">— Chairman, Mapleford International School</span>
+                  </p>
                 </div>
               </motion.div>
 
+              {/* Principal Message */}
               <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeInUp}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="order-1 lg:order-2"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start"
               >
-                <span className="text-5xl mb-4 block">🧠</span>
-                <h2
-                  className="text-5xl lg:text-6xl font-black mb-6 leading-tight text-[#1A1A1A]"
-                  style={{ fontFamily: '"Raleway", sans-serif' }}
-                >
-                  The Way We <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Think</span>
-                </h2>
-                <p className="text-xl font-medium text-[#8B1E1A] mb-6">
-                  "Igniting curiosity, instilling integrity, and inspiring excellence through an inquiry-driven culture."
-                </p>
-                <p className="text-lg text-[#4F4F4F] mb-8 leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
-                  We believe that education is not just about filling a bucket, but lighting a fire. Our philosophy centers on the child as an active participant in their own learning journey. By fostering a culture of inquiry, we encourage students to question, explore, and discover.
-                </p>
-                <Button href="/vision" variant="primary" size="md">
-                  Read Our Philosophy
-                </Button>
+                <div className="lg:col-span-8 order-2 lg:order-1 space-y-6 text-lg text-[#4F4F4F] leading-relaxed">
+                  <h3 className="text-3xl font-black text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Message from the Principal</h3>
+                  <div className="w-20 h-1.5 bg-[#D6B25E] rounded-full"></div>
+                  <p>
+                    Education, to us, is not a race but a journey. It is augmented through attentive listening, thoughtful guidance, and learning experiences that encourage children to think independently and understand deeply.
+                  </p>
+                  <p>
+                    Our faculty brings together expertise and empathy, ensuring that every learner is seen not just for their academic abilities, but for the individual they are becoming. We emphasize balance—between discipline and creativity, reflection and action, ambition and humility—so that students develop the confidence to succeed and the character to choose wisely.
+                  </p>
+                  <p>
+                    As Mapleford steps into a new chapter, my vision is to lead a school where learning feels alive, and every child leaves each day a little more empowered than the last. Together, we aim to shape individuals who not only excel in the world but also enrich it with their integrity, kindness, and courage.
+                  </p>
+                  <p className="font-bold text-[#1A1A1A] pt-4">
+                    [Principal Name]<br />
+                    <span className="text-sm font-medium text-gray-500">— Principal, Mapleford International School</span>
+                  </p>
+                </div>
+                <div className="lg:col-span-4 order-1 lg:order-2">
+                  <div className="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop" alt="Principal" className="w-full h-full object-cover" />
+                    <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
+                      <h4 className="text-2xl font-bold">[Principal Name]</h4>
+                      <p className="text-amber-400 font-medium">Principal</p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             </div>
           </div>
         </section>
-
 
       </div>
       <Footer />

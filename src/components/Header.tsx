@@ -31,14 +31,7 @@ export default function Header() {
         { title: 'Brochure', href: '/brochure' }
       ]
     },
-    {
-      title: 'Curriculum',
-      dropdown: [
-        { title: 'Pre-School', href: '/curriculum/pre-school' },
-        { title: 'Elementary School', href: '/curriculum/elementary' },
-        { title: 'High School', href: '/curriculum/high-school' }
-      ]
-    },
+    { title: 'Curriculum', href: '/curriculum' },
     { title: 'Campus', href: '/campus' },
     { title: 'Student Zone', href: '/student-zone' },
     { title: 'Admissions', href: '/admissions' },
