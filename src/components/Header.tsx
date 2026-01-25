@@ -23,14 +23,7 @@ export default function Header() {
 
   const menuItems: MenuItem[] = [
     { title: 'Home', href: '/' },
-    {
-      title: 'About Us',
-      dropdown: [
-        { title: 'Who we are', href: '/about' },
-        { title: 'Our Team', href: '/about/team' },
-        { title: 'Brochure', href: '/brochure' }
-      ]
-    },
+    { title: 'About Us', href: '/about' },
     { title: 'Curriculum', href: '/curriculum' },
     { title: 'Campus', href: '/campus' },
     { title: 'Student Zone', href: '/student-zone' },
@@ -162,9 +155,9 @@ export default function Header() {
                 href="/admissions"
                 className="hidden sm:block px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 hover:scale-[1.05] hover:shadow-xl"
                 style={{
-                  background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                  background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
                   color: '#FFFFFF',
-                  boxShadow: '0 4px 12px rgba(139,30,26,0.2)',
+                  boxShadow: '0 4px 12px rgba(208,48,43,0.2)',
                   fontFamily: '"Lato", sans-serif'
                 }}
               >
@@ -245,8 +238,8 @@ export default function Header() {
                     <div>
                       <button
                         onClick={() => toggleMobileSubmenu(item.title)}
-                        className="w-full flex items-center justify-between py-4 text-lg font-semibold text-[#000000] hover:text-[#000000] transition-colors"
-                        style={{ fontFamily: "'Playfair Display', serif" }}
+                        className="w-full flex items-center justify-between py-4 text-lg font-bold text-[#1A1A1A] hover:bg-amber-50 rounded-xl px-4 transition-colors"
+                        style={{ fontFamily: '"Raleway", sans-serif' }}
                       >
                         {item.title}
                         <svg
@@ -278,8 +271,8 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className="block py-4 text-lg font-semibold text-[#000000] hover:text-[#000000] transition-colors"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
+                      className="block py-4 text-lg font-bold text-[#1A1A1A] hover:bg-amber-50 rounded-xl px-4 transition-colors"
+                      style={{ fontFamily: '"Raleway", sans-serif' }}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.title}
@@ -298,7 +291,7 @@ export default function Header() {
                   fontFamily: "'Inter', sans-serif",
                   background: 'linear-gradient(180deg, #1A0F0A, #2C1810, #D6B25E)',
                   color: '#FFFFFF',
-                  boxShadow: '0 4px 12px rgba(90,20,17,0.3)'
+                  boxShadow: '0 4px 12px rgba(141,33,29,0.3)'
                 }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >

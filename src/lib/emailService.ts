@@ -42,7 +42,7 @@ export async function sendConfirmationEmail(inquiryData: InquiryData) {
           padding: 20px;
         }
         .header {
-          background: linear-gradient(135deg, #9B2621, #6F1613);
+          background: linear-gradient(135deg, #d0302b, #8d211d);
           color: white;
           padding: 30px;
           text-align: center;
@@ -62,11 +62,11 @@ export async function sendConfirmationEmail(inquiryData: InquiryData) {
         .details {
           background: #f8f8f8;
           padding: 20px;
-          border-left: 4px solid #8B1E1A;
+          border-left: 4px solid #d0302b;
           margin: 20px 0;
         }
         .details h3 {
-          color: #8B1E1A;
+          color: #d0302b;
           margin-top: 0;
         }
         .footer {
@@ -79,7 +79,7 @@ export async function sendConfirmationEmail(inquiryData: InquiryData) {
         }
         .button {
           display: inline-block;
-          background: linear-gradient(135deg, #9B2621, #6F1613);
+          background: linear-gradient(135deg, #d0302b, #8d211d);
           color: white;
           padding: 12px 30px;
           text-decoration: none;

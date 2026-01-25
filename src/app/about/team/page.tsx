@@ -17,13 +17,13 @@ export default function Team() {
               {/* Hero Section */}
               <section className="relative py-32 overflow-hidden bg-[#FDF6E3]/30">
                 <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#D6B25E]/10 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#8B1E1A]/5 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#d0302b]/5 rounded-full blur-3xl"></div>
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                   <motion.span
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-sm font-bold tracking-[0.3em] text-[#8B1E1A] uppercase mb-4 block"
+                    className="text-sm font-bold tracking-[0.3em] text-[#d0302b] uppercase mb-4 block"
                   >
                     Leadership & Vision
                   </motion.span>
@@ -34,7 +34,7 @@ export default function Team() {
                     className="text-5xl lg:text-7xl font-bold mb-8 leading-tight"
                     style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}
                   >
-                    Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B1E1A] to-[#D6B25E]">Team</span>
+                    Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d0302b] to-[#D6B25E]">Team</span>
                   </motion.h1>
                   <motion.p
                     initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export default function Team() {
                         </div>
                         <div className="mt-8 pt-6 border-t border-[#D6B25E]/30">
                           <p className="font-bold text-xl text-[#1A1A1A]">P. Subba Reddy</p>
-                          <p className="text-[#8B1E1A] font-medium">Chairman, Mapleford International School</p>
+                          <p className="text-[#d0302b] font-medium">Chairman, Mapleford International School</p>
                         </div>
                       </div>
                     </motion.div>
@@ -132,7 +132,7 @@ export default function Team() {
                         </div>
                         <div className="mt-8 pt-6 border-t border-[#D6B25E]/30">
                           <p className="font-bold text-xl text-[#1A1A1A]">Ms. Sarah Thompson</p>
-                          <p className="text-[#8B1E1A] font-medium">Principal, Mapleford International School</p>
+                          <p className="text-[#d0302b] font-medium">Principal, Mapleford International School</p>
                         </div>
                       </div>
                     </motion.div>
@@ -193,7 +193,7 @@ export default function Team() {
                         </div>
                         <div className="p-8 text-center bg-white">
                           <h3 className="text-2xl font-bold text-[#1A1A1A] mb-2">{member.name}</h3>
-                          <p className="text-[#8B1E1A] font-bold uppercase tracking-widest text-sm mb-4">{member.role}</p>
+                          <p className="text-[#d0302b] font-bold uppercase tracking-widest text-sm mb-4">{member.role}</p>
                           <p className="text-gray-600 leading-relaxed text-sm">{member.bio}</p>
                         </div>
                       </motion.div>
@@ -205,7 +205,7 @@ export default function Team() {
               {/* CTA Section - Redesigned to match homepage theme */}
               <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-red-50 relative overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
-                  <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B1E1A] rounded-full blur-3xl"></div>
+                  <div className="absolute top-20 left-10 w-72 h-72 bg-[#d0302b] rounded-full blur-3xl"></div>
                   <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D6B25E] rounded-full blur-3xl"></div>
                 </div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -224,19 +224,19 @@ export default function Team() {
                       >
                         Join Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Mission</span>
                       </h2>
-                      <h3 className="text-2xl font-semibold mb-6" style={{ color: '#8B1E1A' }}>
+                      <h3 className="text-2xl font-semibold mb-6" style={{ color: '#d0302b' }}>
                         Building Tomorrow's Leaders Together
                       </h3>
 
                       <div
                         className="inline-flex items-center gap-4 px-8 py-4 rounded-full mb-8"
-                        style={{ background: 'linear-gradient(135deg, rgba(214,178,94,0.2), rgba(139,30,26,0.1))' }}
+                        style={{ background: 'linear-gradient(135deg, rgba(214,178,94,0.2), rgba(208,48,43,0.1))' }}
                       >
-                        <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Passion</span>
+                        <span className="text-xl font-semibold" style={{ color: '#8d211d' }}>Passion</span>
                         <span className="text-2xl">+</span>
-                        <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Purpose</span>
+                        <span className="text-xl font-semibold" style={{ color: '#8d211d' }}>Purpose</span>
                         <span className="text-2xl">+</span>
-                        <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Impact</span>
+                        <span className="text-xl font-semibold" style={{ color: '#8d211d' }}>Impact</span>
                       </div>
 
                       <p className="text-lg leading-relaxed mb-8" style={{ color: '#4F4F4F', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
@@ -293,7 +293,7 @@ export default function Team() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                         <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#D6B25E]/20">
-                          <p className="font-bold text-[#8B1E1A]">Together We:</p>
+                          <p className="font-bold text-[#d0302b]">Together We:</p>
                           <p className="font-bold text-[#1A1A1A]">Inspire. Educate. Transform.</p>
                         </div>
                       </motion.div>

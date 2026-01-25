@@ -37,7 +37,7 @@ export default function Button({
   const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed hover:scale-100' : '';
 
   // For outline variant, add border and classes
-  const outlineClasses = variant === 'outline' ? 'border-2 border-[#8B1E1A] hover:bg-[#8B1E1A] shadow-none hover:shadow-xl' : '';
+  const outlineClasses = variant === 'outline' ? 'border-2 border-[#d0302b] hover:bg-[#d0302b] shadow-none hover:shadow-xl' : '';
 
   const combinedStyles = `${baseStyles} ${sizeStyles[size]} ${hoverStyles} ${outlineClasses} ${disabledStyles} ${className}`;
 
@@ -51,8 +51,8 @@ export default function Button({
     if (variant === 'primary') {
       return {
         ...baseStyle,
-        background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
-        boxShadow: '0 4px 12px rgba(139,30,26,0.2)',
+        background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
+        boxShadow: '0 4px 12px rgba(208,48,43,0.2)',
       };
     } else if (variant === 'secondary') {
       return {
@@ -63,7 +63,7 @@ export default function Button({
     } else { // outline
       return {
         fontFamily: '"Lato", sans-serif',
-        color: '#8B1E1A',
+        color: '#d0302b',
         background: 'transparent',
       };
     }
@@ -86,7 +86,7 @@ export default function Button({
           if (variant === 'primary' || variant === 'secondary') {
             e.currentTarget.style.color = '#FFFFFF';
           } else if (variant === 'outline') {
-            e.currentTarget.style.color = '#8B1E1A';
+            e.currentTarget.style.color = '#d0302b';
           }
         }}
       >
@@ -116,7 +116,7 @@ export default function Button({
           if (variant === 'primary' || variant === 'secondary') {
             e.currentTarget.style.color = '#FFFFFF';
           } else if (variant === 'outline') {
-            e.currentTarget.style.color = '#8B1E1A';
+            e.currentTarget.style.color = '#d0302b';
           }
         }
       }}

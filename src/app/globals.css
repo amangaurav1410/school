@@ -2,10 +2,16 @@
 @import "tailwindcss";
 
 :root {
+
+  /* No Italics Reset */
+  * {
+    font-style: normal !important;
+  }
+
   /* Premium Glassmorphism Colors from Maple Ford Logo */
-  --maple-crimson: #8B1E1A;
+  --maple-crimson: #d0302b;
   --antique-gold: #D6B25E;
-  --royal-maroon: #5A1411;
+  --royal-maroon: #8d211d;
   --ivory-glass: rgba(245, 242, 235, 0.65);
   --warm-frosted: rgba(255, 255, 255, 0.55);
 
@@ -17,17 +23,22 @@
 
   /* Glass Effects */
   --gold-glow: rgba(214, 178, 94, 0.45);
-  --soft-shadow: rgba(90, 20, 17, 0.18);
+  --soft-shadow: rgba(141, 33, 29, 0.18);
   --inner-border: rgba(255, 255, 255, 0.35);
 
   /* Gradients */
-  --primary-gradient: linear-gradient(145deg, #9B2621, #6F1613);
+  --primary-gradient: linear-gradient(145deg, #d0302b, #8d211d);
   --button-hover-glow: rgba(214, 178, 94, 0.5);
 
   /* Fonts */
-  --font-heading: 'Raleway', Arial, Helvetica, sans-serif;
-  --font-heading-display: 'Playfair Display', serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Raleway',
+  Arial,
+  Helvetica,
+  sans-serif;
+  --font-heading-display: 'Playfair Display',
+  serif;
+  --font-body: 'Inter',
+  sans-serif;
 }
 
 @theme inline {
@@ -60,7 +71,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(236, 32, 39, 0.05);
+  background-color: rgba(208, 48, 43, 0.05);
   z-index: -1;
   pointer-events: none;
 }
@@ -173,14 +184,14 @@ small,
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
   transform: scale(1);
-  box-shadow: 0 6px 18px rgba(90, 20, 17, 0.35);
+  box-shadow: 0 6px 18px rgba(141, 33, 29, 0.35);
   border: none;
   cursor: pointer;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px var(--button-hover-glow), 0 6px 18px rgba(90, 20, 17, 0.35);
+  box-shadow: 0 6px 18px var(--button-hover-glow), 0 6px 18px rgba(141, 33, 29, 0.35);
 }
 
 .btn-secondary {

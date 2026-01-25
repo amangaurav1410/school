@@ -18,7 +18,7 @@ export default function Brochure() {
             <section className="relative py-32 lg:py-48 overflow-hidden bg-gradient-to-br from-amber-50 via-white to-red-50">
                 <div className="absolute inset-0">
                     <div className="absolute top-0 right-0 w-1/2 h-full bg-[#D6B25E]/10 rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#8B1E1A]/5 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#d0302b]/5 rounded-full blur-3xl"></div>
                 </div>
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <motion.div
@@ -34,7 +34,7 @@ export default function Brochure() {
                         >
                             School <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Brochure</span>
                         </h1>
-                        <p className="text-xl lg:text-2xl text-[#4F4F4F] max-w-3xl mx-auto leading-relaxed italic" style={{ fontFamily: '"Lato", sans-serif' }}>
+                        <p className="text-xl lg:text-2xl text-[#4F4F4F] max-w-3xl mx-auto leading-relaxed " style={{ fontFamily: '"Lato", sans-serif' }}>
                             "Your gateway to understanding Mapleford International School — where excellence meets opportunity."
                         </p>
                     </motion.div>
@@ -67,7 +67,7 @@ export default function Brochure() {
                                     Discover our 4-acre campus, specialized labs, sports arenas, and the nurturing environment that helps every child reach their full potential.
                                 </p>
                                 <div className="p-6 bg-amber-50 rounded-2xl border-l-4 border-[#D6B25E]">
-                                    <p className="italic font-medium text-[#8B1E1A]">
+                                    <p className=" font-medium text-[#d0302b]">
                                         "This brochure is more than information — it's an invitation to join our community of learners and leaders."
                                     </p>
                                 </div>
@@ -93,7 +93,7 @@ export default function Brochure() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                                 <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#D6B25E]/20">
-                                    <p className="font-bold text-[#8B1E1A]">Academic Excellence</p>
+                                    <p className="font-bold text-[#d0302b]">Academic Excellence</p>
                                     <p className="font-bold text-[#1A1A1A]">Global Standards</p>
                                 </div>
                             </motion.div>
@@ -156,11 +156,11 @@ export default function Brochure() {
                                         {brochure.title}
                                     </h3>
                                     <p className="text-[#4F4F4F] mb-6 leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>{brochure.desc}</p>
-                                    <p className="text-sm text-[#8B1E1A] font-semibold mb-6">File size: {brochure.size}</p>
+                                    <p className="text-sm text-[#d0302b] font-semibold mb-6">File size: {brochure.size}</p>
                                     <button
                                         className="w-full px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                                         style={{
-                                            background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                                            background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
                                             color: '#FFFFFF'
                                         }}
                                         onClick={() => {
@@ -190,7 +190,7 @@ export default function Brochure() {
                             href="/contact"
                             className="px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
                             style={{
-                                background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                                background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
                                 color: '#FFFFFF'
                             }}
                         >
@@ -198,7 +198,7 @@ export default function Brochure() {
                         </a>
                         <a
                             href="/admissions"
-                            className="px-8 py-4 border-2 border-[#8B1E1A] text-[#8B1E1A] rounded-xl font-bold text-lg hover:bg-[#8B1E1A] hover:text-white transition-all duration-300"
+                            className="px-8 py-4 border-2 border-[#d0302b] text-[#d0302b] rounded-xl font-bold text-lg hover:bg-[#d0302b] hover:text-white transition-all duration-300"
                         >
                             Start Admission Process
                         </a>

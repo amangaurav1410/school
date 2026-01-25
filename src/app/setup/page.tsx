@@ -51,7 +51,7 @@ export default function Setup() {
                             type="text"
                             value={formData.username}
                             onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent"
+                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:border-transparent"
                             placeholder="Enter admin username"
                             required
                         />
@@ -62,7 +62,7 @@ export default function Setup() {
                             type="password"
                             value={formData.password}
                             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent"
+                            className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:border-transparent"
                             placeholder="Enter admin password"
                             required
                         />
@@ -71,9 +71,9 @@ export default function Setup() {
                         type="submit"
                         className="w-full py-4 px-6 rounded-xl font-bold text-sm transition-all duration-300 hover:scale-[1.05] hover:shadow-xl"
                         style={{
-                            background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                            background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
                             color: '#FFFFFF',
-                            boxShadow: '0 4px 12px rgba(139,30,26,0.2)',
+                            boxShadow: '0 4px 12px rgba(208,48,43,0.2)',
                             fontFamily: '"Lato", sans-serif'
                         }}
                         onMouseEnter={(e) => e.currentTarget.style.color = '#D6B25E'}
@@ -94,7 +94,7 @@ export default function Setup() {
                     <div className="mt-4 text-center">
                         <a
                             href="/admin"
-                            className="text-[#8B1E1A] font-bold hover:text-[#D6B25E] transition-colors"
+                            className="text-[#d0302b] font-bold hover:text-[#D6B25E] transition-colors"
                         >
                             Go to Admin Panel →
                         </a>

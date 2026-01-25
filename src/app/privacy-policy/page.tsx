@@ -23,7 +23,7 @@ export default function PrivacyPolicy() {
                   className="text-5xl lg:text-7xl font-bold mb-6 leading-tight"
                   style={{ fontFamily: '"Raleway", sans-serif' }}
                 >
-                  Privacy <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B1E1A] to-[#D6B25E]">Policy</span>
+                  Privacy <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d0302b] to-[#D6B25E]">Policy</span>
                 </h1>
                 <p className="text-lg text-gray-600">
                   Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
@@ -55,7 +55,7 @@ export default function PrivacyPolicy() {
                     <h2 className="text-3xl font-bold mb-6 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Information We Collect</h2>
                     <div className="space-y-6">
                       <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                        <h3 className="text-xl font-bold mb-3 text-[#8B1E1A]">Personal Information</h3>
+                        <h3 className="text-xl font-bold mb-3 text-[#d0302b]">Personal Information</h3>
                         <p className="text-gray-700 leading-relaxed mb-3">
                           We may collect personal information that you voluntarily provide to us when you:
                         </p>
@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
                       </div>
 
                       <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                        <h3 className="text-xl font-bold mb-3 text-[#8B1E1A]">Automatically Collected Information</h3>
+                        <h3 className="text-xl font-bold mb-3 text-[#d0302b]">Automatically Collected Information</h3>
                         <p className="text-gray-700 leading-relaxed">
                           When you visit our website, we may automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies installed on your device.
                         </p>
@@ -88,23 +88,23 @@ export default function PrivacyPolicy() {
                       </p>
                       <ul className="space-y-3 text-gray-700">
                         <li className="flex items-start gap-3">
-                          <span className="text-[#8B1E1A] mt-1">✓</span>
+                          <span className="text-[#d0302b] mt-1">✓</span>
                           <span>Process admission applications and inquiries</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-[#8B1E1A] mt-1">✓</span>
+                          <span className="text-[#d0302b] mt-1">✓</span>
                           <span>Communicate with parents, students, and prospective families</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-[#8B1E1A] mt-1">✓</span>
+                          <span className="text-[#d0302b] mt-1">✓</span>
                           <span>Send newsletters and updates about school activities</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-[#8B1E1A] mt-1">✓</span>
+                          <span className="text-[#d0302b] mt-1">✓</span>
                           <span>Improve our website and services</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-[#8B1E1A] mt-1">✓</span>
+                          <span className="text-[#d0302b] mt-1">✓</span>
                           <span>Comply with legal obligations</span>
                         </li>
                       </ul>
@@ -175,22 +175,22 @@ export default function PrivacyPolicy() {
                   </div>
 
                   {/* Contact Us */}
-                  <div className="bg-gradient-to-br from-[#8B1E1A]/5 to-[#D6B25E]/5 p-10 rounded-3xl border-2 border-[#D6B25E]/30">
+                  <div className="bg-gradient-to-br from-[#d0302b]/5 to-[#D6B25E]/5 p-10 rounded-3xl border-2 border-[#D6B25E]/30">
                     <h2 className="text-3xl font-bold mb-6 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Contact Us</h2>
                     <p className="text-gray-700 leading-relaxed mb-6">
                       If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:
                     </p>
                     <div className="space-y-3 text-gray-700">
                       <p className="flex items-center gap-3">
-                        <span className="text-[#8B1E1A] text-xl">📧</span>
+                        <span className="text-[#d0302b] text-xl">📧</span>
                         <span><strong>Email:</strong> info@mapleford.edu.in</span>
                       </p>
                       <p className="flex items-center gap-3">
-                        <span className="text-[#8B1E1A] text-xl">📞</span>
+                        <span className="text-[#d0302b] text-xl">📞</span>
                         <span><strong>Phone:</strong> +91 90005 68416</span>
                       </p>
                       <p className="flex items-start gap-3">
-                        <span className="text-[#8B1E1A] text-xl">📍</span>
+                        <span className="text-[#d0302b] text-xl">📍</span>
                         <span><strong>Address:</strong> Hayathnagar, Hyderabad, Telangana - 500070</span>
                       </p>
                     </div>

@@ -422,7 +422,7 @@ export default function Home() {
               <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-navy-600 via-red-600 to-navy-600 bg-clip-text text-transparent mb-6">
                 Chairman's Message
               </h2>
-              <blockquote className="text-lg text-gray-700 leading-relaxed mb-6 border-l-4 border-red-600 pl-6 italic">
+              <blockquote className="text-lg text-gray-700 leading-relaxed mb-6 border-l-4 border-red-600 pl-6 ">
                 "At Maple Ford International School, we believe that education is the foundation of a brighter future. Our commitment to excellence, innovation, and character development ensures that every student not only achieves academic success but also grows into compassionate, responsible global citizens."
               </blockquote>
               <p className="text-gray-700 mb-4">
@@ -449,7 +449,7 @@ export default function Home() {
               <h2 className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-navy-600 via-red-600 to-navy-600 bg-clip-text text-transparent mb-6">
                 Principal's Message
               </h2>
-              <blockquote className="text-lg text-gray-700 leading-relaxed mb-6 border-l-4 border-red-600 pl-6 italic">
+              <blockquote className="text-lg text-gray-700 leading-relaxed mb-6 border-l-4 border-red-600 pl-6 ">
                 "Welcome to Maple Ford International School, where we cultivate minds and hearts. Our dedicated faculty and innovative programs create an environment where students thrive academically, socially, and emotionally."
               </blockquote>
               <p className="text-gray-700 mb-4">

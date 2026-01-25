@@ -84,7 +84,7 @@ export default function Blogs() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-xl lg:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
               >
-                Insights, stories, and perspectives from <span className="text-[#8B1E1A] font-bold">Mapleford International School</span> community.
+                Insights, stories, and perspectives from <span className="text-[#d0302b] font-bold">Mapleford International School</span> community.
               </motion.p>
             </div>
           </section>

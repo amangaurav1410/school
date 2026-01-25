@@ -23,7 +23,7 @@ export default function TermsOfService() {
                   className="text-5xl lg:text-7xl font-bold mb-6 leading-tight"
                   style={{ fontFamily: '"Raleway", sans-serif' }}
                 >
-                  Terms of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B1E1A] to-[#D6B25E]">Service</span>
+                  Terms of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d0302b] to-[#D6B25E]">Service</span>
                 </h1>
                 <p className="text-lg text-gray-600">
                   Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
@@ -65,25 +65,25 @@ export default function TermsOfService() {
                     <h2 className="text-3xl font-bold mb-6 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Use of Website</h2>
                     <div className="space-y-6">
                       <div className="bg-gradient-to-br from-[#FDF6E3]/30 to-white p-8 rounded-3xl border border-[#D6B25E]/20">
-                        <h3 className="text-xl font-bold mb-3 text-[#8B1E1A]">Permitted Use</h3>
+                        <h3 className="text-xl font-bold mb-3 text-[#d0302b]">Permitted Use</h3>
                         <p className="text-gray-700 leading-relaxed mb-3">
                           You may use our website for lawful purposes only. You agree not to:
                         </p>
                         <ul className="space-y-2 text-gray-700">
                           <li className="flex items-start gap-3">
-                            <span className="text-[#8B1E1A] mt-1">•</span>
+                            <span className="text-[#d0302b] mt-1">•</span>
                             <span>Use the website in any way that violates any applicable laws or regulations</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <span className="text-[#8B1E1A] mt-1">•</span>
+                            <span className="text-[#d0302b] mt-1">•</span>
                             <span>Engage in any conduct that restricts or inhibits anyone's use of the website</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <span className="text-[#8B1E1A] mt-1">•</span>
+                            <span className="text-[#d0302b] mt-1">•</span>
                             <span>Attempt to gain unauthorized access to any portion of the website</span>
                           </li>
                           <li className="flex items-start gap-3">
-                            <span className="text-[#8B1E1A] mt-1">•</span>
+                            <span className="text-[#d0302b] mt-1">•</span>
                             <span>Use any automated system to access the website</span>
                           </li>
                         </ul>
@@ -143,15 +143,15 @@ export default function TermsOfService() {
                       </p>
                       <ul className="space-y-2 text-gray-700">
                         <li className="flex items-start gap-3">
-                          <span className="text-[#8B1E1A] mt-1">•</span>
+                          <span className="text-[#d0302b] mt-1">•</span>
                           <span>The accuracy, reliability, or completeness of any content</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-[#8B1E1A] mt-1">•</span>
+                          <span className="text-[#d0302b] mt-1">•</span>
                           <span>The availability or uninterrupted access to the website</span>
                         </li>
                         <li className="flex items-start gap-3">
-                          <span className="text-[#8B1E1A] mt-1">•</span>
+                          <span className="text-[#d0302b] mt-1">•</span>
                           <span>The security of data transmission</span>
                         </li>
                       </ul>
@@ -199,29 +199,29 @@ export default function TermsOfService() {
                   </div>
 
                   {/* Contact Information */}
-                  <div className="bg-gradient-to-br from-[#8B1E1A]/5 to-[#D6B25E]/5 p-10 rounded-3xl border-2 border-[#D6B25E]/30">
+                  <div className="bg-gradient-to-br from-[#d0302b]/5 to-[#D6B25E]/5 p-10 rounded-3xl border-2 border-[#D6B25E]/30">
                     <h2 className="text-3xl font-bold mb-6 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Contact Us</h2>
                     <p className="text-gray-700 leading-relaxed mb-6">
                       If you have any questions about these Terms of Service, please contact us:
                     </p>
                     <div className="space-y-3 text-gray-700">
                       <p className="flex items-center gap-3">
-                        <span className="text-[#8B1E1A] text-xl">📧</span>
+                        <span className="text-[#d0302b] text-xl">📧</span>
                         <span><strong>Email:</strong> info@mapleford.edu.in</span>
                       </p>
                       <p className="flex items-center gap-3">
-                        <span className="text-[#8B1E1A] text-xl">📞</span>
+                        <span className="text-[#d0302b] text-xl">📞</span>
                         <span><strong>Phone:</strong> +91 90005 68416</span>
                       </p>
                       <p className="flex items-start gap-3">
-                        <span className="text-[#8B1E1A] text-xl">📍</span>
+                        <span className="text-[#d0302b] text-xl">📍</span>
                         <span><strong>Address:</strong> Hayathnagar, Hyderabad, Telangana - 500070</span>
                       </p>
                     </div>
                   </div>
 
                   {/* Acknowledgment */}
-                  <div className="bg-white p-8 rounded-3xl border-2 border-[#8B1E1A]/20 shadow-lg">
+                  <div className="bg-white p-8 rounded-3xl border-2 border-[#d0302b]/20 shadow-lg">
                     <p className="text-gray-700 leading-relaxed text-center">
                       By using this website, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
                     </p>

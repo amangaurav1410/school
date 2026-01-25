@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Button from '../../components/Button';
 
 export default function Admissions() {
   const [formData, setFormData] = useState({
@@ -20,386 +19,196 @@ export default function Admissions() {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const fadeInUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-sans">
       <Header />
-      <div className="pt-20">
 
-        {/* Hero Section */}
-        <section className="relative py-32 lg:py-48 overflow-hidden bg-gradient-to-br from-[#FDF6E3] via-white to-[#8B1E1A]/5">
-          <div className="absolute inset-0">
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#D6B25E]/20 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-[#8B1E1A]/10 rounded-full blur-3xl"></div>
+      <div className="pt-20 overflow-hidden">
+        {/* Hero Section - Maximum Impact */}
+        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+          {/* Animated Background Shapes */}
+          <div className="absolute inset-0 z-0">
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                rotate: [0, 90, 0],
+                x: [0, 50, 0]
+              }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-gradient-to-br from-[#D6B25E]/10 to-[#FFA500]/5 rounded-full blur-3xl opacity-70"
+            />
+            <motion.div
+              animate={{
+                scale: [1.2, 1, 1.2],
+                rotate: [0, -90, 0],
+                x: [0, -50, 0]
+              }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              className="absolute -bottom-1/4 -left-1/4 w-[700px] h-[700px] bg-gradient-to-tr from-[#d0302b]/5 to-transparent rounded-full blur-3xl opacity-70"
+            />
           </div>
+
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/pinstripe-light.png')] opacity-[0.05]"></div>
+
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="space-y-8"
             >
-              <span className="inline-block px-6 py-2 rounded-full bg-[#8B1E1A]/10 text-[#8B1E1A] font-bold text-sm tracking-wider uppercase mb-6">Join Our Legacy</span>
+              <span className="inline-block px-8 py-2 rounded-full bg-[#d0302b]/10 text-[#d0302b] font-black text-sm tracking-[0.3em] uppercase mb-4 shadow-sm border border-[#d0302b]/10">
+                Join Our Legacy
+              </span>
               <h1
-                className="text-5xl lg:text-7xl font-black mb-6 leading-tight text-[#1A1A1A]"
+                className="text-6xl md:text-8xl lg:text-[10rem] font-black mb-8 leading-[0.85] tracking-tighter text-[#1A1A1A]"
                 style={{ fontFamily: '"Raleway", sans-serif' }}
               >
-                Begin Your Journey at <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B1E1A] to-[#D6B25E]">Mapleford</span>
+                Admissions <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] via-[#FFA500] to-[#d0302b] drop-shadow-sm">
+                  2024-25
+                </span>
               </h1>
-              <p className="text-xl lg:text-2xl text-[#4F4F4F] mb-8 leading-relaxed italic" style={{ fontFamily: '"Lato", sans-serif' }}>
-                "Discover a world of excellence where every child's potential is nurtured and celebrated."
+              <p className="text-2xl md:text-3xl font-bold text-[#1A1A1A] max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                Begin your journey at <span className="text-[#d0302b]">Mapleford.</span> Discover a world where potential is celebrated.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Button href="#enquiry-form" variant="primary" size="md">Apply Now</Button>
-                <Button href="/campus" variant="outline" size="md">Tour Campus</Button>
+
+              <div className="flex flex-wrap gap-6 justify-center pt-8">
+                <Link href="#enquiry-form" className="px-12 py-5 rounded-2xl font-black text-xl text-white shadow-2xl hover:scale-105 transition-all"
+                  style={{ background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)' }}>
+                  Apply Now
+                </Link>
+                <Link href="/campus" className="px-12 py-5 border-2 border-[#d0302b] text-[#d0302b] rounded-2xl font-black text-xl hover:bg-[#d0302b] hover:text-white transition-all">
+                  Tour Campus
+                </Link>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Admission Process */}
-        <section className="py-24 bg-white">
+        {/* Admission Process - Vertical Step High-impact */}
+        <section className="py-32 bg-white relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2
-                className="text-5xl lg:text-6xl font-black mb-8 leading-tight text-[#1A1A1A]"
-                style={{ fontFamily: '"Raleway", sans-serif' }}
-              >
+            <div className="text-center mb-24 space-y-6">
+              <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs block">The Road to Mapleford</span>
+              <h2 className="text-5xl lg:text-7xl font-black text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
                 Admission <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Process</span>
               </h2>
-              <p className="text-xl text-[#4F4F4F] max-w-3xl mx-auto" style={{ fontFamily: '"Lato", sans-serif' }}>
-                We believe in a transparent and welcoming admission journey designed to help you and your child smoothly integrate into the Mapleford family.
-              </p>
+              <p className="text-2xl text-gray-500 font-light max-w-3xl mx-auto">A transparent and welcoming journey designed for a smooth transition.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { step: "01", title: "Enquiry & Visit", desc: "Fill the enquiry form or visit our campus to experience the environment firsthand.", icon: "📝" },
-                { step: "02", title: "Interaction", desc: "A friendly interaction with the student and parents to align with school's philosophy.", icon: "💬" },
-                { step: "03", title: "Documentation", desc: "Submission of required documents including birth certificate, TC, and previous records.", icon: "📄" },
-                { step: "04", title: "Admission", desc: "Complete fee formalities and orientation to welcome the student into Mapleford.", icon: "🎓" }
-              ].map((step, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2, duration: 0.6 }}
-                  className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-[#8B1E1A]"
-                >
-                  <div className="text-6xl mb-4">{step.icon}</div>
-                  <div className="text-5xl font-black text-[#D6B25E]/20 mb-4" style={{ fontFamily: '"Raleway", sans-serif' }}>{step.step}</div>
-                  <h3 className="text-2xl font-bold mb-4 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>{step.title}</h3>
-                  <p className="text-[#4F4F4F] leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>{step.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Fee Structure Section */}
-        <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-red-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2
-                className="text-5xl lg:text-6xl font-black mb-8 leading-tight text-[#1A1A1A]"
-                style={{ fontFamily: '"Raleway", sans-serif' }}
-              >
-                Fee <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Structure</span>
-              </h2>
-              <p className="text-xl text-[#4F4F4F] max-w-3xl mx-auto" style={{ fontFamily: '"Lato", sans-serif' }}>
-                Transparent and inclusive fee structure designed to provide world-class education with exceptional value.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-              {[
-                {
-                  grade: "Pre-School",
-                  levels: "Nursery, Jr. KG, Sr. KG",
-                  tuitionFee: "₹1,20,000",
-                  admissionFee: "₹25,000",
-                  features: [
-                    "Play-based learning",
-                    "Canadian pedagogy",
-                    "Qualified staff",
-                    "Nutritious meals"
-                  ],
-                  color: "from-[#E8F5E9] to-[#C8E6C9]"
-                },
-                {
-                  grade: "Elementary",
-                  levels: "Grades 1-5",
-                  tuitionFee: "₹1,50,000",
-                  admissionFee: "₹30,000",
-                  features: [
-                    "CBSE curriculum",
-                    "STEAM labs",
-                    "Sports facilities",
-                    "Digital learning"
-                  ],
-                  color: "from-[#E3F2FD] to-[#BBDEFB]",
-                  recommended: true
-                },
-                {
-                  grade: "High School",
-                  levels: "Grades 6-10",
-                  tuitionFee: "₹1,80,000",
-                  admissionFee: "₹35,000",
-                  features: [
-                    "Advanced curriculum",
-                    "Career guidance",
-                    "Leadership programs",
-                    "Global exposure"
-                  ],
-                  color: "from-[#FFF3E0] to-[#FFE0B2]"
-                }
-              ].map((plan, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2, duration: 0.6 }}
-                  className={`relative bg-white rounded-3xl shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-300 ${plan.recommended ? 'ring-4 ring-[#8B1E1A]' : ''}`}
-                >
-                  {plan.recommended && (
-                    <div className="absolute top-4 right-4 bg-gradient-to-r from-[#8B1E1A] to-[#D6B25E] text-white px-4 py-2 rounded-full text-sm font-bold">
-                      Popular
-                    </div>
-                  )}
-                  <div className={`bg-gradient-to-br ${plan.color} p-8`}>
-                    <h3 className="text-3xl font-black mb-2 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>{plan.grade}</h3>
-                    <p className="text-[#8B1E1A] font-semibold mb-6">{plan.levels}</p>
-                  </div>
-                  <div className="p-8">
-                    <div className="mb-6">
-                      <div className="flex items-baseline mb-2">
-                        <span className="text-4xl font-black text-[#1A1A1A]">{plan.tuitionFee}</span>
-                        <span className="text-[#4F4F4F] ml-2">/year</span>
-                      </div>
-                      <p className="text-sm text-[#8B1E1A] font-semibold">+ Admission Fee: {plan.admissionFee} (One-time)</p>
-                    </div>
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-[#4F4F4F]">
-                          <span className="w-2 h-2 bg-[#D6B25E] rounded-full mr-3"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <Button href="#enquiry-form" variant="primary" size="md" className="w-full">
-                      Apply Now
-                    </Button>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Additional Fees Info */}
-            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-[#D6B25E]/20">
-              <h4 className="text-2xl font-bold mb-4 text-[#1A1A1A]">Additional Information</h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-[#4F4F4F]">
-                <div>
-                  <p className="mb-2"><strong className="text-[#8B1E1A]">📚 Books & Materials:</strong> ₹8,000 - ₹12,000 per year</p>
-                  <p className="mb-2"><strong className="text-[#8B1E1A]">🚌 Transport (Optional):</strong> ₹18,000 - ₹28,000 per year (based on distance)</p>
-                  <p className="mb-2"><strong className="text-[#8B1E1A]">🍱 Meals (Optional):</strong> ₹15,000 per year</p>
-                </div>
-                <div>
-                  <p className="mb-2"><strong className="text-[#8B1E1A]">👕 Uniform:</strong> ₹5,000 - ₹7,000 (one-time)</p>
-                  <p className="mb-2"><strong className="text-[#8B1E1A]">🎨 Activity Fees:</strong> Included in tuition</p>
-                  <p className="mb-2"><strong className="text-[#8B1E1A]">💳 Payment:</strong> Quarterly/Half-yearly/Annual options available</p>
-                </div>
-              </div>
-              <p className="mt-6 text-sm italic text-[#4F4F4F] border-l-4 border-[#D6B25E] pl-4">
-                * Fee structure is subject to annual revision. Sibling discounts and merit scholarships available. Contact our admissions office for more details.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Eligibility Guidelines */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2
-                className="text-5xl lg:text-6xl font-black mb-8 leading-tight text-[#1A1A1A]"
-                style={{ fontFamily: '"Raleway", sans-serif' }}
-              >
-                Eligibility <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Guidelines</span>
-              </h2>
-              <p className="text-xl text-[#4F4F4F] max-w-3xl mx-auto" style={{ fontFamily: '"Lato", sans-serif' }}>
-                Helping you find the right level for your child's growth and maturity.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { level: "Nursery", age: "3 Years", desc: "Developing basic motor skills and social comfort.", color: "bg-[#8B1E1A]", deadline: "March 31" },
-                { level: "Jr. KG", age: "4 Years", desc: "Introduction to phonetics and creative play.", color: "bg-[#D6B25E]", deadline: "March 31" },
-                { level: "Sr. KG", age: "5 Years", desc: "Preparing for formal schooling with structured learning.", color: "bg-[#1A1A1A]", deadline: "March 31" },
-                { level: "Grade 1", age: "6 Years", desc: "Beginning elementary education with CBSE curriculum.", color: "bg-[#8B1E1A]", deadline: "March 31" },
-                { level: "Grades 2-5", age: "7-11 Years", desc: "Advancing through elementary levels with holistic development.", color: "bg-[#D6B25E]", deadline: "March 31" },
-                { level: "Grades 6-10", age: "12+ Years", desc: "High school education with board exam preparation.", color: "bg-[#1A1A1A]", deadline: "March 31" }
-              ].map((card, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  whileHover={{ y: -10 }}
-                  className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300"
-                >
-                  <div className={`w-12 h-12 ${card.color} rounded-2xl mb-6`}></div>
-                  <h3 className="text-2xl font-bold mb-2 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>{card.level}</h3>
-                  <p className="text-[#8B1E1A] font-bold mb-4">Age: {card.age} (as of {card.deadline})</p>
-                  <p className="text-[#4F4F4F] leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>{card.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Document Checklist */}
-        <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                transition={{ duration: 0.8 }}
-              >
-                <h2
-                  className="text-5xl lg:text-6xl font-black mb-8 leading-tight text-[#1A1A1A]"
-                  style={{ fontFamily: '"Raleway", sans-serif' }}
-                >
-                  Documents <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Required</span>
-                </h2>
-                <p className="text-xl text-[#4F4F4F] mb-8 leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
-                  Please ensure you have the following documents ready for a smooth admission process.
-                </p>
-                <div className="space-y-4">
-                  {[
-                    "Birth Certificate (Original & Photocopy)",
-                    "Transfer Certificate (TC) from previous school",
-                    "Previous Year's Report Card / Marks Sheet",
-                    "Passport size photographs (4 Student + 2 Parents)",
-                    "Proof of Residence (Aadhar/Voter ID/Passport)",
-                    "Caste Certificate (if applicable)",
-                    "Medical Certificate / Immunization Records"
-                  ].map((doc, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1, duration: 0.5 }}
-                      className="flex items-center gap-4 p-4 rounded-xl bg-white shadow-lg"
-                    >
-                      <div className="w-8 h-8 rounded-full bg-[#8B1E1A] text-white flex items-center justify-center text-sm font-bold shrink-0">✓</div>
-                      <span className="text-lg font-semibold text-[#1A1A1A]">{doc}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeInUp}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="relative"
-              >
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                  className="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]"
-                >
-                  <img
-                    src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=600&fit=crop"
-                    alt="Documents Required"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Important Dates */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2
-                className="text-5xl lg:text-6xl font-black mb-8 leading-tight text-[#1A1A1A]"
-                style={{ fontFamily: '"Raleway", sans-serif' }}
-              >
-                Important <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Dates</span>
-              </h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { event: "Admission Open", date: "November 1", icon: "📅" },
-                { event: "Registration Deadline", date: "March 15", icon: "⏰" },
-                { event: "Interaction Period", date: "Dec - Feb", icon: "💬" },
-                { event: "Session Starts", date: "April 1", icon: "🎓" }
+                { step: "01", title: "Enquiry & Visit", desc: "Fill the enquiry form or visit our campus to experience the environment firsthand.", color: "bg-blue-50/50" },
+                { step: "02", title: "Interaction", desc: "A friendly interaction with the student and parents to align with our philosophy.", color: "bg-purple-50/50" },
+                { step: "03", title: "Documentation", desc: "Submission of required documents including birth certificate and previous records.", color: "bg-orange-50/50" },
+                { step: "04", title: "Final Admission", desc: "Complete fee formalities and orientation to welcome the student into the family.", color: "bg-green-50/50" }
               ].map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial="hidden"
+                  whileInView="visible"
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="text-center bg-gradient-to-br from-amber-50 to-white p-8 rounded-3xl shadow-xl"
+                  variants={fadeInUp}
+                  transition={{ delay: index * 0.1 }}
+                  className={`${item.color} p-12 rounded-[3rem] border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden`}
                 >
-                  <div className="text-6xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-bold mb-2 text-[#1A1A1A]">{item.event}</h3>
-                  <p className="text-3xl font-black text-[#8B1E1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>{item.date}</p>
+                  <div className="text-7xl font-black text-[#d0302b] opacity-10 mb-8 absolute -right-4 -top-4 group-hover:scale-150 transition-transform duration-700">{item.step}</div>
+                  <div className="relative z-10">
+                    <div className="text-4xl font-black text-[#d0302b] mb-6">{item.step}</div>
+                    <h3 className="text-2xl font-black mb-4 text-[#1A1A1A]">{item.title}</h3>
+                    <p className="text-gray-500 text-lg leading-relaxed font-medium">{item.desc}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Enquiry Form */}
-        <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-red-50 relative overflow-hidden" id="enquiry-form">
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B1E1A] rounded-full blur-3xl"></div>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D6B25E] rounded-full blur-3xl"></div>
-          </div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2
-                  className="text-5xl lg:text-7xl font-black mb-8 leading-tight text-[#1A1A1A]"
-                  style={{ fontFamily: '"Raleway", sans-serif' }}
+        {/* Fee Structure - Premium Table-like Design */}
+        <section className="py-32 bg-[#FDF6E3]/30 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-24 space-y-6">
+              <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs block">Investment in Value</span>
+              <h2 className="text-5xl lg:text-7xl font-black text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                Fee <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Structure</span>
+              </h2>
+              <p className="text-2xl text-gray-500 font-light max-w-3xl mx-auto">Transparent and inclusive, designed for world-class standards.</p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {[
+                { grade: "Pre-School", range: "Pre-Nursery to KG", tuition: "₹1.2L", admission: "₹25K", color: "from-blue-50 to-white" },
+                { grade: "Elementary", range: "Grades 1–5", tuition: "₹1.5L", admission: "₹30K", color: "from-red-50 to-white", best: true },
+                { grade: "High School", range: "Grades 6–10", tuition: "₹1.8L", admission: "₹35K", color: "from-amber-50 to-white" }
+              ].map((plan, idx) => (
+                <motion.div
+                  key={idx}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeInUp}
+                  className={`relative bg-gradient-to-br ${plan.color} p-12 rounded-[4rem] border shadow-xl flex flex-col items-center text-center group hover:shadow-2xl transition-all duration-500 ${plan.best ? 'border-[#d0302b] ring-4 ring-[#d0302b]/5 scale-105 z-10' : 'border-gray-100'}`}
                 >
-                  Begin Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Application</span>
-                </h2>
-                <p className="text-xl text-[#4F4F4F] mb-8 leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
-                  Fill out this enquiry form, and our admissions office will get back to you within 24-48 hours with the next steps.
-                </p>
-                <div className="flex items-center gap-6 p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-[#D6B25E]/20 shadow-lg mb-8">
-                  <div className="text-4xl">📞</div>
-                  <div>
-                    <h4 className="font-bold text-[#1A1A1A] mb-1">Admissions Helpline</h4>
-                    <p className="text-[#8B1E1A] font-bold text-lg">+91 90005 68416</p>
+                  {plan.best && <div className="absolute top-8 bg-[#d0302b] text-white px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest">Most Popular</div>}
+                  <h3 className="text-4xl font-black text-[#1A1A1A] mt-6 mb-2 uppercase tracking-tighter">{plan.grade}</h3>
+                  <p className="text-sm font-bold text-[#d0302b] mb-8 uppercase tracking-widest opacity-80">{plan.range}</p>
+                  <div className="mb-10">
+                    <span className="text-6xl font-black text-[#1A1A1A]">{plan.tuition}</span>
+                    <span className="text-gray-400 font-bold ml-2">/ YEAR</span>
                   </div>
-                </div>
-                <div className="flex items-center gap-6 p-8 rounded-3xl bg-white/80 backdrop-blur-sm border border-[#D6B25E]/20 shadow-lg">
-                  <div className="text-4xl">📧</div>
-                  <div>
-                    <h4 className="font-bold text-[#1A1A1A] mb-1">Email Us</h4>
-                    <p className="text-[#8B1E1A] font-bold text-lg">admissions@mapleford.edu.in</p>
+                  <div className="w-full h-[1px] bg-gray-200 mb-10"></div>
+                  <div className="space-y-4 text-gray-500 font-medium text-lg w-full text-left ml-4">
+                    <p>• CBSE Curriculum</p>
+                    <p>• Global Programs</p>
+                    <p>• Health & Fitness</p>
+                    <p>• Skill-based Labs</p>
+                  </div>
+                  <div className="mt-12 w-full">
+                    <Link href="#enquiry-form" className={`block w-full py-5 rounded-2xl font-black text-lg transition-transform hover:scale-[1.02] ${plan.best ? 'bg-[#1A1A1A] text-white' : 'bg-white border-2 border-gray-100 text-[#1A1A1A]'}`}>
+                      Apply Now
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Fine Print Card */}
+            <div className="mt-16 p-10 bg-white rounded-[3rem] shadow-xl border border-gray-100 flex flex-col md:flex-row gap-8 items-center justify-between">
+              <div className="space-y-2">
+                <p className="text-xl font-black text-[#1A1A1A]">Need a detailed breakup?</p>
+                <p className="text-gray-500 font-medium">Connect with our financial office for special scholarship details.</p>
+              </div>
+              <Link href="/contact" className="px-10 py-4 bg-[#D6B25E] text-white rounded-2xl font-black hover:bg-[#c4a155] transition-colors whitespace-nowrap">Talk to Us</Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Application Form - Redesigned for High Conversion */}
+        <section id="enquiry-form" className="py-32 bg-white relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+              <div>
+                <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-sm block mb-4">Admissions Inbox</span>
+                <h2 className="text-5xl lg:text-8xl font-black text-[#1A1A1A] leading-[0.9] mb-10" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                  Begin Your <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Application</span>
+                </h2>
+                <div className="space-y-8">
+                  <p className="text-xl text-gray-500 font-light leading-relaxed">Fill out this secure enquiry form, and our admissions office will reach back within 24 hours.</p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 group hover:border-[#d0302b]/30 transition-all">
+                      <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Call Office</p>
+                      <p className="text-xl font-black text-[#d0302b]">+91 90005 68416</p>
+                    </div>
+                    <div className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 group hover:border-[#d0302b]/30 transition-all">
+                      <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Email Admin</p>
+                      <p className="text-xl font-black text-[#d0302b]">info@mapleford.edu.in</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -408,158 +217,56 @@ export default function Admissions() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="bg-white/95 backdrop-blur-sm p-10 rounded-3xl shadow-2xl border border-[#D6B25E]/20"
+                className="bg-white p-12 rounded-[4rem] shadow-3xl border border-gray-100 relative"
               >
                 {!formSubmitted ? (
-                  <form
-                    onSubmit={async (e) => {
-                      e.preventDefault();
-                      try {
-                        const res = await fetch('/api/inquiries', {
-                          method: 'POST',
-                          headers: { 'Content-Type': 'application/json' },
-                          body: JSON.stringify(formData)
-                        });
-                        if (res.ok) {
-                          setFormSubmitted(true);
-                          setFormData({
-                            parentName: '',
-                            contactNumber: '',
-                            email: '',
-                            childName: '',
-                            childDob: '',
-                            gradeApplying: '',
-                            message: ''
-                          });
-                        } else {
-                          alert('Failed to submit. Please try again.');
-                        }
-                      } catch (error) {
-                        console.error('Submission error:', error);
-                        alert('An error occurred. Please try again.');
-                      }
-                    }}
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-[#1A1A1A]">Enquiry Form</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-                      <div>
-                        <label className="block text-gray-700 mb-2 font-medium text-sm">Parent / Guardian Name</label>
-                        <input
-                          type="text"
-                          required
-                          value={formData.parentName}
-                          onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
-                          placeholder="Enter name"
-                        />
+                  <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-xs font-black text-gray-400 uppercase tracking-widest">Guardian Name</label>
+                        <input type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:bg-white transition-all text-[#1A1A1A] font-bold" />
                       </div>
-                      <div>
-                        <label className="block text-gray-700 mb-2 font-medium text-sm">Contact Number</label>
-                        <input
-                          type="tel"
-                          required
-                          value={formData.contactNumber}
-                          onChange={(e) => setFormData({ ...formData, contactNumber: e.target.value })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
-                          placeholder="Enter number"
-                        />
+                      <div className="space-y-2">
+                        <label className="text-xs font-black text-gray-400 uppercase tracking-widest">Phone Number</label>
+                        <input type="tel" placeholder="+91 000 000 0000" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:bg-white transition-all text-[#1A1A1A] font-bold" />
                       </div>
                     </div>
-
-                    <div className="mb-5">
-                      <label className="block text-gray-700 mb-2 font-medium text-sm">Email Address</label>
-                      <input
-                        type="email"
-                        required
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
-                        placeholder="Enter email"
-                      />
+                    <div className="space-y-2">
+                      <label className="text-xs font-black text-gray-400 uppercase tracking-widest">Child Name</label>
+                      <input type="text" placeholder="Aiden Smith" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:bg-white transition-all text-[#1A1A1A] font-bold" />
                     </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-                      <div>
-                        <label className="block text-gray-700 mb-2 font-medium text-sm">Child's Name</label>
-                        <input
-                          type="text"
-                          required
-                          value={formData.childName}
-                          onChange={(e) => setFormData({ ...formData, childName: e.target.value })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
-                          placeholder="Enter child's name"
-                        />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-xs font-black text-gray-400 uppercase tracking-widest">Grade Applying</label>
+                        <select className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:bg-white transition-all text-[#1A1A1A] font-bold uppercase tracking-widest text-xs">
+                          <option>Select Grade</option>
+                          <option>Pre-School</option>
+                          <option>Elementary (1-5)</option>
+                          <option>Middle (6-8)</option>
+                          <option>High (9-10)</option>
+                        </select>
                       </div>
-                      <div>
-                        <label className="block text-gray-700 mb-2 font-medium text-sm">Date of Birth</label>
-                        <input
-                          type="date"
-                          required
-                          value={formData.childDob}
-                          onChange={(e) => setFormData({ ...formData, childDob: e.target.value })}
-                          className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
-                        />
+                      <div className="space-y-2">
+                        <label className="text-xs font-black text-gray-400 uppercase tracking-widest">Child DOB</label>
+                        <input type="date" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:bg-white transition-all text-[#1A1A1A] font-bold" />
                       </div>
                     </div>
-
-                    <div className="mb-5">
-                      <label className="block text-gray-700 mb-2 font-medium text-sm">Grade Applying For</label>
-                      <select
-                        required
-                        value={formData.gradeApplying}
-                        onChange={(e) => setFormData({ ...formData, gradeApplying: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
-                      >
-                        <option value="">Select grade</option>
-                        <option value="Nursery">Nursery</option>
-                        <option value="Jr. KG">Jr. KG</option>
-                        <option value="Sr. KG">Sr. KG</option>
-                        <option value="Grade 1">Grade 1</option>
-                        <option value="Grade 2">Grade 2</option>
-                        <option value="Grade 3">Grade 3</option>
-                        <option value="Grade 4">Grade 4</option>
-                        <option value="Grade 5">Grade 5</option>
-                        <option value="Grade 6">Grade 6</option>
-                        <option value="Grade 7">Grade 7</option>
-                        <option value="Grade 8">Grade 8</option>
-                        <option value="Grade 9">Grade 9</option>
-                        <option value="Grade 10">Grade 10</option>
-                      </select>
-                    </div>
-
-                    <div className="mb-5">
-                      <label className="block text-gray-700 mb-2 font-medium text-sm">Additional Message (Optional)</label>
-                      <textarea
-                        rows={4}
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
-                        placeholder="Any questions or special requirements?"
-                      ></textarea>
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full py-4 px-8 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-xl hover:shadow-2xl bg-gradient-to-r from-[#8B1E1A] to-[#5A1411] text-white"
-                    >
-                      Submit
-                    </button>
+                    <button type="submit" className="w-full py-5 bg-gradient-to-r from-[#d0302b] to-[#8d211d] text-white rounded-2xl font-black text-xl shadow-2xl hover:scale-[1.01] transition-all">Submit Application</button>
+                    <p className="text-center text-[10px] font-bold text-gray-300 uppercase tracking-widest">Safe & Secure encrypted Channel</p>
                   </form>
                 ) : (
-                  <div className="text-center py-12">
-                    <div className="text-6xl mb-6">✅</div>
-                    <h3 className="text-2xl font-bold mb-4 text-[#1A1A1A]">Thank You!</h3>
-                    <p className="text-lg text-[#4F4F4F]">
-                      We appreciate your interest. Our team shall reach out to you promptly.
-                    </p>
+                  <div className="text-center py-20 space-y-6">
+                    <div className="text-8xl">✨</div>
+                    <h3 className="text-4xl font-black text-[#1A1A1A]">Inquiry Sent!</h3>
+                    <p className="text-xl text-gray-500 font-medium">Our admissions officer will call you shortly.</p>
                   </div>
                 )}
               </motion.div>
             </div>
           </div>
         </section>
-
       </div>
+
       <Footer />
     </div>
   );

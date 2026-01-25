@@ -1,196 +1,195 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Button from '../../components/Button';
-import { useState } from 'react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
-  });
   const [formSubmitted, setFormSubmitted] = useState(false);
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-sans">
       <Header />
-      <div className="pt-20">
-        <div className="pt-24 min-h-screen bg-white text-[#1A1A1A]">
-          {/* Immersive Hero - Redesigned without black background */}
-          <section className="relative py-32 lg:py-48 overflow-hidden bg-[#FDF6E3]/30">
-            <div className="absolute inset-0">
-              <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#D6B25E]/10 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#8B1E1A]/5 rounded-full blur-3xl"></div>
-            </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+      <div className="pt-20 overflow-hidden text-[#1A1A1A]">
+        {/* Hero Section - Let's Talk */}
+        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+          {/* Animated Background Shapes */}
+          <div className="absolute inset-0 z-0 opacity-40">
+            <motion.div
+              animate={{
+                scale: [1, 1.1, 1],
+                rotate: [0, 90, 0],
+                x: [0, 30, 0]
+              }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-gradient-to-br from-[#d0302b]/10 to-transparent rounded-full blur-3xl"
+            />
+            <motion.div
+              animate={{
+                scale: [1.1, 1, 1.1],
+                rotate: [0, -90, 0],
+                y: [0, 40, 0]
+              }}
+              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+              className="absolute -bottom-1/4 -left-1/4 w-[700px] h-[700px] bg-gradient-to-tr from-[#D6B25E]/10 to-transparent rounded-full blur-3xl"
+            />
+          </div>
+
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="space-y-8"
+            >
+              <span className="inline-block px-8 py-2 rounded-full bg-[#d0302b]/10 text-[#d0302b] font-black text-sm tracking-[0.3em] uppercase mb-4 shadow-sm border border-[#d0302b]/10">
+                Connect With Us
+              </span>
+              <h1
+                className="text-6xl md:text-8xl lg:text-[10rem] font-black mb-8 leading-[0.85] tracking-tighter text-[#1A1A1A]"
+                style={{ fontFamily: '"Raleway", sans-serif' }}
               >
-                <h1
-                  className="text-6xl lg:text-8xl font-bold mb-8 leading-none text-[#1A1A1A]"
-                  style={{ fontFamily: '"Raleway", sans-serif' }}
-                >
-                  Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Talk</span>
-                </h1>
-                <p className="text-xl lg:text-2xl text-[#4F4F4F] max-w-3xl mx-auto font-light italic leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
-                  "Every great journey begins with a conversation. We're here to listen, guide, and welcome you."
-                </p>
-              </motion.div>
-            </div>
-          </section>
+                Let&apos;s <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] via-[#FFA500] to-[#d0302b] drop-shadow-sm">
+                  Talk
+                </span>
+              </h1>
+              <p className="text-2xl md:text-3xl font-bold text-gray-500 max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                &quot;Every great journey begins with a conversation. <span className="text-[#d0302b]">We&apos;re here to listen.&quot;</span>
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
-          {/* Contact Grid */}
-          <section className="py-32 bg-white relative -mt-10 rounded-t-[4rem] z-20">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+        {/* Contact Methods - Large Visual Blocks */}
+        <section className="py-32 bg-white relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
 
-                {/* Left: Contact Info Cards */}
-                <div className="lg:col-span-5 space-y-8">
-                  <div className="mb-12">
-                    <span className="text-sm font-bold tracking-[0.5em] text-[#8B1E1A] uppercase mb-4 block">Get in Touch</span>
-                    <h2 className="text-5xl lg:text-6xl font-black" style={{ fontFamily: '"Raleway", sans-serif' }}>Reach Out <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Directly</span></h2>
-                  </div>
+              {/* Left Column: Direct info */}
+              <div className="lg:col-span-5 space-y-12">
+                <div className="space-y-4">
+                  <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs block">Contact Points</span>
+                  <h2 className="text-5xl lg:text-7xl font-black text-[#1A1A1A] leading-tight" style={{ fontFamily: '"Raleway", sans-serif' }}>Reach out <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Directly.</span></h2>
+                </div>
 
+                <div className="grid grid-cols-1 gap-6">
                   {[
-                    { icon: "📍", title: "Visit Us", content: "Hayathnagar, Hyderabad, Telangana - 500070", label: "Open in Maps", link: "#" },
-                    { icon: "📞", title: "Call Us", content: "+91 90005 68416", label: "Tap to Call", link: "tel:+919000568416" },
-                    { icon: "✉️", title: "Email Us", content: "info@mapleford.edu.in", label: "Send an Email", link: "mailto:info@mapleford.edu.in" },
-                    { icon: "🕙", title: "Office Hours", content: "Mon - Sat: 8:30 AM - 4:30 PM", label: "Closed on Sundays" }
-                  ].map((card, i) => (
+                    { title: "Our Location", value: "Hayathnagar, Hyderabad, Telangana", icon: "📍", desc: "Visit our state-of-the-art campus" },
+                    { title: "Call Us", value: "+91 90005 68416", icon: "📞", desc: "Mon-Sat, 8:30am - 4:30pm" },
+                    { title: "Mail Us", value: "info@mapleford.edu.in", icon: "✉️", desc: "For general & administrative queries" }
+                  ].map((item, idx) => (
                     <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                      key={idx}
+                      initial="hidden"
+                      whileInView="visible"
                       viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 }}
-                      className="group flex items-center p-8 rounded-[2.5rem] bg-[#FDF6E3]/30 border border-gray-100 hover:bg-white hover:shadow-2xl transition-all cursor-pointer"
+                      variants={fadeInUp}
+                      transition={{ delay: idx * 0.1 }}
+                      className="p-10 rounded-[3rem] bg-gray-50 border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group"
                     >
-                      <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">{card.icon}</div>
-                      <div className="ml-8 outline-none">
-                        <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-1">{card.title}</h4>
-                        <p className="text-lg font-bold mb-1">{card.content}</p>
-                        {card.link ? (
-                          <a href={card.link} className="text-[#8B1E1A] text-sm font-bold inline-flex items-center gap-2">
-                            {card.label} <span>→</span>
-                          </a>
-                        ) : (
-                          <span className="text-gray-400 text-sm font-medium">{card.label}</span>
-                        )}
+                      <div className="flex items-start gap-8">
+                        <div className="text-4xl w-16 h-16 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+                          {item.icon}
+                        </div>
+                        <div className="space-y-1">
+                          <p className="text-xs font-black text-gray-400 uppercase tracking-widest">{item.title}</p>
+                          <p className="text-xl font-black text-[#1A1A1A] transition-colors group-hover:text-[#d0302b]">{item.value}</p>
+                          <p className="text-sm font-medium text-gray-500">{item.desc}</p>
+                        </div>
                       </div>
                     </motion.div>
                   ))}
                 </div>
-
-                {/* Right: Message Form */}
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="lg:col-span-7"
-                >
-                  <div className="bg-white p-12 lg:p-16 rounded-[4rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-gray-50">
-                    <h2 className="text-3xl lg:text-5xl font-black mb-10" style={{ fontFamily: '"Raleway", sans-serif' }}>Send a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Message</span></h2>
-
-                    {!formSubmitted ? (
-                      <form className="space-y-8" onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }}>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                          <div className="space-y-3">
-                            <label className="text-xs font-bold uppercase tracking-widest text-[#8B1E1A]">Full Name</label>
-                            <input
-                              type="text"
-                              className="w-full px-6 py-4 rounded-2xl bg-[#FDF6E3]/20 border border-transparent focus:bg-white focus:border-[#8B1E1A] focus:outline-none transition-all"
-                              placeholder="John Doe"
-                              required
-                            />
-                          </div>
-                          <div className="space-y-3">
-                            <label className="text-xs font-bold uppercase tracking-widest text-[#8B1E1A]">Email Address</label>
-                            <input
-                              type="email"
-                              className="w-full px-6 py-4 rounded-2xl bg-[#FDF6E3]/20 border border-transparent focus:bg-white focus:border-[#8B1E1A] focus:outline-none transition-all"
-                              placeholder="john@example.com"
-                              required
-                            />
-                          </div>
-                        </div>
-
-                        <div className="space-y-3">
-                          <label className="text-xs font-bold uppercase tracking-widest text-[#8B1E1A]">Subject</label>
-                          <select className="w-full px-6 py-4 rounded-2xl bg-[#FDF6E3]/20 border border-transparent focus:bg-white focus:border-[#8B1E1A] focus:outline-none transition-all">
-                            <option>General Inquiry</option>
-                            <option>Admissions</option>
-                            <option>Academics</option>
-                            <option>Careers</option>
-                          </select>
-                        </div>
-
-                        <div className="space-y-3">
-                          <label className="text-xs font-bold uppercase tracking-widest text-[#8B1E1A]">Your Message</label>
-                          <textarea
-                            rows={4}
-                            className="w-full px-6 py-4 rounded-2xl bg-[#FDF6E3]/20 border border-transparent focus:bg-white focus:border-[#8B1E1A] focus:outline-none transition-all resize-none"
-                            placeholder="How can we help you today?"
-                            required
-                          ></textarea>
-                        </div>
-
-                        <Button type="submit" variant="primary" size="lg" className="w-full">
-                          Send Message
-                        </Button>
-                      </form>
-                    ) : (
-                      <div className="text-center py-12">
-                        <div className="text-7xl mb-6">📩</div>
-                        <h3 className="text-3xl font-bold mb-4">Message Sent</h3>
-                        <p className="text-gray-500 text-lg mb-10">Thank you for reaching out. We've received your message and will respond shortly.</p>
-                        <button onClick={() => setFormSubmitted(false)} className="text-[#8B1E1A] font-bold border-b-2 border-[#8B1E1A]">Send another message</button>
-                      </div>
-                    )}
-                  </div>
-                </motion.div>
-
               </div>
-            </div>
-          </section>
 
-          {/* Dynamic Map - Google Maps Embed */}
-          <section className="py-24 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="rounded-[4rem] overflow-hidden shadow-2xl h-[500px] relative group border-8 border-white">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15238.123456789!2d78.5833!3d17.3333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a1234567890%3A0x1234567890abcdef!2sHayathnagar%2C%20Hyderabad%2C%20Telangana%20500070!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Mapleford International School Location"
-                ></iframe>
-                <div className="absolute bottom-10 left-10 p-8 bg-white rounded-[2rem] shadow-2xl max-w-sm hidden lg:block">
-                  <h4 className="text-xl font-bold mb-2">Mapleford Campus</h4>
-                  <p className="text-gray-500 mb-4">Hayathnagar, Hyderabad, Telangana - 500070</p>
-                  <Button
-                    href="https://www.google.com/maps/search/?api=1&query=Hayathnagar+Hyderabad+Telangana+500070"
-                    variant="secondary"
-                    size="sm"
-                  >
-                    Get Directions
-                  </Button>
+              {/* Right Column: Contact Form */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+                className="lg:col-span-7 bg-[#FDF6E3] p-12 lg:p-20 rounded-[4rem] shadow-xl relative overflow-hidden border border-[#D6B25E]/20"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#D6B25E]/10 rounded-bl-[100%]"></div>
+
+                {!formSubmitted ? (
+                  <div className="space-y-12 relative z-10">
+                    <div className="space-y-4 text-[#1A1A1A]">
+                      <h3 className="text-4xl font-black uppercase tracking-tighter">Send a Message</h3>
+                      <p className="text-[#4F4F4F] font-bold">We usually respond within 24 hours.</p>
+                    </div>
+
+                    <form className="space-y-8" onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }}>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Full Name</label>
+                          <input type="text" placeholder="Your Name" className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all" />
+                        </div>
+                        <div className="space-y-2">
+                          <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Email Address</label>
+                          <input type="email" placeholder="email@example.com" className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all" />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Subject</label>
+                        <select className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all appearance-none cursor-pointer">
+                          <option>General Inquiry</option>
+                          <option>Admissions</option>
+                          <option>Careers</option>
+                        </select>
+                      </div>
+                      <div className="space-y-2">
+                        <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Message</label>
+                        <textarea rows={4} placeholder="How can we help?" className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all resize-none"></textarea>
+                      </div>
+                      <button type="submit" className="w-full py-5 bg-gradient-to-r from-[#d0302b] to-[#8d211d] text-white rounded-2xl font-black text-xl shadow-xl hover:shadow-2xl transition-all">Submit Now</button>
+                    </form>
+                  </div>
+                ) : (
+                  <div className="text-center py-24 space-y-8 relative z-10 text-[#1A1A1A]">
+                    <div className="text-8xl">🚀</div>
+                    <h3 className="text-4xl font-black">Message Sent Successfully</h3>
+                    <p className="text-xl text-[#4F4F4F] max-w-sm mx-auto font-medium">One of our representatives will be in touch with you shortly.</p>
+                    <button onClick={() => setFormSubmitted(false)} className="text-[#d0302b] font-black uppercase tracking-widest text-sm border-b-2 border-current">Send another</button>
+                  </div>
+                )}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Map Section - Full Width */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-3xl border-8 border-white group">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.8242045580665!2d78.5833215!3d17.3333333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a1234567890%3A0x1234567890abcdef!2sHayathnagar%2C%20Hyderabad%2C%20Telangana%20500070!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+              {/* Floating Map Label */}
+              <div className="absolute top-10 right-10 p-10 bg-white rounded-[3rem] shadow-2xl max-w-xs transition-transform group-hover:-translate-y-2 lg:block hidden">
+                <div className="space-y-4">
+                  <span className="text-[#d0302b] font-black uppercase tracking-widest text-[10px] block">Find Us Here</span>
+                  <h4 className="text-2xl font-black leading-tight text-[#1A1A1A]">Hayathnagar <br /> Campus</h4>
+                  <p className="text-gray-400 font-medium text-sm">Hayathnagar, Hyderabad, Telangana - 500070</p>
+                  <a href="https://maps.google.com" target="_blank" className="inline-block pt-2 text-[#d0302b] font-black text-sm uppercase tracking-widest border-b-2 border-current">Open Maps</a>
                 </div>
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
+
       <Footer />
     </div>
   );

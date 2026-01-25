@@ -14,13 +14,13 @@ export default function ElementarySchool() {
                 {/* Hero Section */}
                 <section className="relative py-32 lg:py-48 overflow-hidden bg-[#FDF6E3]/30">
                     <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#D6B25E]/10 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#8B1E1A]/5 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#d0302b]/5 rounded-full blur-3xl"></div>
 
                     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-sm font-bold tracking-[0.3em] text-[#8B1E1A] uppercase mb-4 block"
+                            className="text-sm font-bold tracking-[0.3em] text-[#d0302b] uppercase mb-4 block"
                         >
                             Grades 1–5
                         </motion.span>
@@ -31,13 +31,13 @@ export default function ElementarySchool() {
                             className="text-6xl lg:text-8xl font-bold mb-8 leading-tight"
                             style={{ fontFamily: '"Raleway", sans-serif' }}
                         >
-                            Elementary <span className="text-[#8B1E1A]">School</span>
+                            Elementary <span className="text-[#d0302b]">School</span>
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-xl lg:text-3xl text-[#4F4F4F] max-w-4xl mx-auto leading-relaxed italic"
+                            className="text-xl lg:text-3xl text-[#4F4F4F] max-w-4xl mx-auto leading-relaxed "
                             style={{ fontFamily: '"Lato", sans-serif' }}
                         >
                             "Building knowledge and strengthening values through real-world applications."
@@ -68,7 +68,7 @@ export default function ElementarySchool() {
                                         { title: "Skill Focused", desc: "Emphasizing digital fluency and communication." }
                                     ].map((item, i) => (
                                         <div key={i} className="p-6 rounded-2xl bg-[#FDF6E3]/50 border border-[#D6B25E]/10">
-                                            <h4 className="font-bold text-[#8B1E1A] mb-2">{item.title}</h4>
+                                            <h4 className="font-bold text-[#d0302b] mb-2">{item.title}</h4>
                                             <p className="text-sm text-gray-600">{item.desc}</p>
                                         </div>
                                     ))}
@@ -95,7 +95,7 @@ export default function ElementarySchool() {
                 {/* Holistic Expansion - Redesigned to match homepage theme */}
                 <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-red-50 relative overflow-hidden">
                     <div className="absolute inset-0 opacity-5">
-                        <div className="absolute top-20 left-10 w-72 h-72 bg-[#8B1E1A] rounded-full blur-3xl"></div>
+                        <div className="absolute top-20 left-10 w-72 h-72 bg-[#d0302b] rounded-full blur-3xl"></div>
                         <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D6B25E] rounded-full blur-3xl"></div>
                     </div>
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -114,19 +114,19 @@ export default function ElementarySchool() {
                                 >
                                     Beyond the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Textbooks</span>
                                 </h2>
-                                <h3 className="text-2xl font-semibold mb-6" style={{ color: '#8B1E1A' }}>
+                                <h3 className="text-2xl font-semibold mb-6" style={{ color: '#d0302b' }}>
                                     Learning That Extends Beyond the Classroom
                                 </h3>
 
                                 <div
                                     className="inline-flex items-center gap-4 px-8 py-4 rounded-full mb-8"
-                                    style={{ background: 'linear-gradient(135deg, rgba(214,178,94,0.2), rgba(139,30,26,0.1))' }}
+                                    style={{ background: 'linear-gradient(135deg, rgba(214,178,94,0.2), rgba(208,48,43,0.1))' }}
                                 >
-                                    <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Academics</span>
+                                    <span className="text-xl font-semibold" style={{ color: '#8d211d' }}>Academics</span>
                                     <span className="text-2xl">+</span>
-                                    <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Arts</span>
+                                    <span className="text-xl font-semibold" style={{ color: '#8d211d' }}>Arts</span>
                                     <span className="text-2xl">+</span>
-                                    <span className="text-xl font-semibold" style={{ color: '#5A1411' }}>Sports</span>
+                                    <span className="text-xl font-semibold" style={{ color: '#8d211d' }}>Sports</span>
                                 </div>
 
                                 <p className="text-lg leading-relaxed mb-8" style={{ color: '#4F4F4F', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
@@ -174,7 +174,7 @@ export default function ElementarySchool() {
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                                     <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-[#D6B25E]/20">
-                                        <p className="font-bold text-[#8B1E1A]">Holistic Learning:</p>
+                                        <p className="font-bold text-[#d0302b]">Holistic Learning:</p>
                                         <p className="font-bold text-[#1A1A1A]">Mind. Body. Spirit.</p>
                                     </div>
                                 </motion.div>

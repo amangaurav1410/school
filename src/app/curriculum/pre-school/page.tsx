@@ -13,13 +13,13 @@ export default function PreSchool() {
                 {/* Hero Section */}
                 <section className="relative py-32 lg:py-48 overflow-hidden bg-[#FDF6E3]/30">
                     <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#D6B25E]/10 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#8B1E1A]/5 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-[#d0302b]/5 rounded-full blur-3xl"></div>
 
                     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-sm font-bold tracking-[0.3em] text-[#8B1E1A] uppercase mb-4 block"
+                            className="text-sm font-bold tracking-[0.3em] text-[#d0302b] uppercase mb-4 block"
                         >
                             Nursery | Jr. KG | Sr. KG
                         </motion.span>
@@ -30,13 +30,13 @@ export default function PreSchool() {
                             className="text-6xl lg:text-8xl font-bold mb-8 leading-tight"
                             style={{ fontFamily: '"Raleway", sans-serif' }}
                         >
-                            Pre-<span className="text-[#8B1E1A]">School</span>
+                            Pre-<span className="text-[#d0302b]">School</span>
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-xl lg:text-2xl text-[#4F4F4F] max-w-4xl mx-auto leading-relaxed italic"
+                            className="text-xl lg:text-2xl text-[#4F4F4F] max-w-4xl mx-auto leading-relaxed "
                             style={{ fontFamily: '"Lato", sans-serif' }}
                         >
                             "Where curiosity blossoms and imagination leads learning."
@@ -59,7 +59,7 @@ export default function PreSchool() {
                                         alt="Pre-School Learning"
                                         className="w-full h-full object-cover"
                                     />
-                                    <div className="absolute inset-0 bg-[#8B1E1A]/10"></div>
+                                    <div className="absolute inset-0 bg-[#d0302b]/10"></div>
                                 </div>
                             </motion.div>
                             <motion.div
@@ -82,7 +82,7 @@ export default function PreSchool() {
                                         "Safe and stimulating environment"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-center gap-4 text-lg font-semibold">
-                                            <span className="w-10 h-10 rounded-full bg-[#FDF6E3] flex items-center justify-center text-[#8B1E1A]">✓</span>
+                                            <span className="w-10 h-10 rounded-full bg-[#FDF6E3] flex items-center justify-center text-[#d0302b]">✓</span>
                                             {item}
                                         </li>
                                     ))}
@@ -116,7 +116,7 @@ export default function PreSchool() {
                 <section className="py-24 bg-gradient-to-br from-amber-50 via-white to-red-50 relative overflow-hidden">
                     <div className="absolute inset-0 opacity-100">
                         <div className="absolute top-0 left-0 w-96 h-96 bg-[#D6B25E]/10 rounded-full blur-3xl"></div>
-                        <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#8B1E1A]/10 rounded-full blur-3xl"></div>
+                        <div className="absolute bottom-0 right-0 w-72 h-72 bg-[#d0302b]/10 rounded-full blur-3xl"></div>
                     </div>
 
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -136,7 +136,7 @@ export default function PreSchool() {
                                 >
                                     Start Your Child's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Journey</span>
                                 </h2>
-                                <h3 className="text-2xl font-semibold mb-6" style={{ color: '#8B1E1A' }}>
+                                <h3 className="text-2xl font-semibold mb-6" style={{ color: '#d0302b' }}>
                                     The First Step Towards Excellence
                                 </h3>
                                 <p className="text-[#4F4F4F] mb-8 text-lg leading-relaxed" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
@@ -156,7 +156,7 @@ export default function PreSchool() {
                                         href="/admissions"
                                         className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl w-full sm:w-auto"
                                         style={{
-                                            background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                                            background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
                                             color: '#FFFFFF',
                                             border: '1px solid rgba(255,255,255,0.1)'
                                         }}
@@ -168,8 +168,8 @@ export default function PreSchool() {
                                         className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl w-full sm:w-auto"
                                         style={{
                                             background: 'transparent',
-                                            color: '#8B1E1A',
-                                            border: '2px solid #8B1E1A'
+                                            color: '#d0302b',
+                                            border: '2px solid #d0302b'
                                         }}
                                     >
                                         Visit Us
@@ -195,7 +195,7 @@ export default function PreSchool() {
                                             <input
                                                 type="text"
                                                 required
-                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
+                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:border-transparent transition-all"
                                                 placeholder="Enter name"
                                             />
                                         </div>
@@ -204,7 +204,7 @@ export default function PreSchool() {
                                             <input
                                                 type="tel"
                                                 required
-                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
+                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:border-transparent transition-all"
                                                 placeholder="Enter number"
                                             />
                                         </div>
@@ -213,7 +213,7 @@ export default function PreSchool() {
                                             <input
                                                 type="email"
                                                 required
-                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
+                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:border-transparent transition-all"
                                                 placeholder="Enter email"
                                             />
                                         </div>
@@ -221,7 +221,7 @@ export default function PreSchool() {
                                             <label className="block text-gray-700 mb-2 font-medium text-sm">Child&apos;s Age</label>
                                             <select
                                                 required
-                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#8B1E1A] focus:border-transparent transition-all"
+                                                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:border-transparent transition-all"
                                             >
                                                 <option value="">Select age</option>
                                                 <option value="2-3">2-3 Years (Nursery)</option>
@@ -233,9 +233,9 @@ export default function PreSchool() {
                                             type="submit"
                                             className="w-full py-4 px-8 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-xl hover:shadow-2xl"
                                             style={{
-                                                background: 'linear-gradient(135deg, #8B1E1A 0%, #5A1411 100%)',
+                                                background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
                                                 color: '#FFFFFF',
-                                                boxShadow: '0 8px 24px rgba(90,20,17,0.3)',
+                                                boxShadow: '0 8px 24px rgba(141,33,29,0.3)',
                                                 border: '1px solid rgba(255,255,255,0.1)'
                                             }}
                                         >

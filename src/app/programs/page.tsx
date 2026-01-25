@@ -30,7 +30,7 @@ export default function Programs() {
               >
                 Curriculum
               </h1>
-              <h2 className="text-2xl lg:text-4xl font-bold text-[#8B1E1A] mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>
+              <h2 className="text-2xl lg:text-4xl font-bold text-[#d0302b] mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>
                 Where CBSE Excellence Meets Canadian Innovation
               </h2>
             </motion.div>
@@ -62,11 +62,11 @@ export default function Programs() {
                     </h3>
                     <div
                       className="inline-flex items-center gap-4 px-8 py-4 rounded-full border border-[#D6B25E]/30"
-                      style={{ background: 'linear-gradient(135deg, rgba(214,178,94,0.1), rgba(139,30,26,0.05))' }}
+                      style={{ background: 'linear-gradient(135deg, rgba(214,178,94,0.1), rgba(208,48,43,0.05))' }}
                     >
-                      <span className="text-xl font-bold text-[#8B1E1A]">Canadian Pedagogy</span>
+                      <span className="text-xl font-bold text-[#d0302b]">Canadian Pedagogy</span>
                       <span className="text-2xl font-black">+</span>
-                      <span className="text-xl font-bold text-[#8B1E1A]">CBSE Curriculum</span>
+                      <span className="text-xl font-bold text-[#d0302b]">CBSE Curriculum</span>
                     </div>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ export default function Programs() {
                   transition={{ delay: idx * 0.1 }}
                   className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
                 >
-                  <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-[#8B1E1A] font-bold text-xl mb-6">
+                  <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-[#d0302b] font-bold text-xl mb-6">
                     0{idx + 1}
                   </div>
                   <h4 className="text-xl font-bold mb-4" style={{ fontFamily: '"Raleway", sans-serif' }}>{item.title}</h4>
@@ -135,7 +135,7 @@ export default function Programs() {
               >
                 <div className="text-5xl mb-8">🌱</div>
                 <h3 className="text-3xl font-black mb-6" style={{ fontFamily: '"Raleway", sans-serif' }}>Pre-School</h3>
-                <p className="text-gray-500 mb-8 italic">(Pre-Nursery to Kindergarten)</p>
+                <p className="text-gray-500 mb-8 ">(Pre-Nursery to Kindergarten)</p>
                 <p className="text-lg text-gray-700 mb-8 leading-relaxed">
                   Play-based, inquiry-led Maple Bear early learning model that develops:
                 </p>
@@ -166,7 +166,7 @@ export default function Programs() {
               >
                 <div className="text-5xl mb-8">📖</div>
                 <h3 className="text-3xl font-black mb-6" style={{ fontFamily: '"Raleway", sans-serif' }}>Elementary School</h3>
-                <p className="text-gray-500 mb-8 italic">(Grades 1 to 5)</p>
+                <p className="text-gray-500 mb-8 ">(Grades 1 to 5)</p>
                 <p className="text-lg text-gray-700 mb-8 leading-relaxed">
                   A progressive, concept-driven curriculum where:
                 </p>
@@ -194,7 +194,7 @@ export default function Programs() {
               >
                 <div className="text-5xl mb-8">🎓</div>
                 <h3 className="text-3xl font-black mb-6" style={{ fontFamily: '"Raleway", sans-serif' }}>High School</h3>
-                <p className="text-gray-500 mb-8 italic">(Grades 6 to 10)</p>
+                <p className="text-gray-500 mb-8 ">(Grades 6 to 10)</p>
                 <p className="text-lg text-gray-700 mb-8 leading-relaxed">
                   A strong CBSE academic roadmap strengthened by:
                 </p>
@@ -222,13 +222,13 @@ export default function Programs() {
         </section>
 
         {/* Admission CTA */}
-        <section className="py-32 bg-[#8B1E1A] text-white relative overflow-hidden">
+        <section className="py-32 bg-[#d0302b] text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-12 translate-x-1/2"></div>
           <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
             <h2 className="text-4xl lg:text-6xl font-black mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>Invest in Their <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Future.</span></h2>
             <p className="text-xl text-white/70 mb-12">Our admissions for the upcoming academic year are now open. Secure your child's seat today.</p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="/admissions" className="px-10 py-5 bg-white text-[#8B1E1A] font-bold rounded-2xl shadow-2xl hover:scale-105 transition-all">Begin Admission</Link>
+              <Link href="/admissions" className="px-10 py-5 bg-white text-[#d0302b] font-bold rounded-2xl shadow-2xl hover:scale-105 transition-all">Begin Admission</Link>
               <Link href="/contact" className="px-10 py-5 border-2 border-white/30 text-white font-bold rounded-2xl hover:bg-white/10 transition-all">Schedule a Tour</Link>
             </div>
           </div>
