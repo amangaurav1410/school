@@ -70,8 +70,8 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-md py-1' : 'shadow-sm py-2'
           }`}
         style={{
-          background: '#FFFFFF',
-          borderBottom: isScrolled ? '1px solid rgba(214, 178, 94, 0.2)' : '1px solid rgba(214, 178, 94, 0.15)',
+          background: '#000000',
+          borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid rgba(255, 255, 255, 0.05)',
           height: isScrolled ? '90px' : '120px' // Increased for bigger logo
         }}
       >
@@ -84,6 +84,7 @@ export default function Header() {
                   src="/maple-ford-logo.png"
                   alt="Logo"
                   className="h-full w-auto object-contain transition-transform duration-300 hover:scale-105"
+                  style={{ filter: isScrolled ? 'none' : 'brightness(1.2)' }}
                 />
               </Link>
             </div>
@@ -98,8 +99,8 @@ export default function Header() {
                         onClick={() => setActiveDropdown(activeDropdown === item.title ? null : item.title)}
                         onMouseEnter={() => setActiveDropdown(item.title)}
                         className={`px-3 py-2 text-[14px] font-semibold transition-all duration-300 flex items-center gap-1 rounded-lg ${activeDropdown === item.title
-                          ? 'text-[#000000] bg-[#FDF6E3]'
-                          : 'text-[#000000] hover:text-[#000000] hover:bg-[#FDF6E3]'
+                          ? 'text-[#FFFFFF] bg-white/10'
+                          : 'text-[#FFFFFF] hover:text-[#FFFFFF] hover:bg-white/10'
                           }`}
                         style={{ fontFamily: '"Lato", sans-serif' }}
                       >
@@ -116,7 +117,7 @@ export default function Header() {
                       </button>
                       {activeDropdown === item.title && (
                         <div
-                          className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-xl border border-[#D6B25E]/20 py-2 min-w-[240px] z-50"
+                          className="absolute top-full left-0 mt-2 bg-black rounded-xl shadow-xl border border-white/10 py-2 min-w-[240px] z-50"
                           onMouseLeave={() => setActiveDropdown(null)}
                           style={{
                             animation: 'fadeIn 0.2s ease-out'
@@ -126,7 +127,7 @@ export default function Header() {
                             <Link
                               key={subIndex}
                               href={subItem.href}
-                              className="block px-4 py-2.5 text-[13px] text-[#000000] hover:text-[#000000] hover:bg-[#FDF6E3] transition-all duration-200"
+                              className="block px-4 py-2.5 text-[13px] text-[#FFFFFF] hover:text-[#FFFFFF] hover:bg-white/10 transition-all duration-200"
                               style={{ fontFamily: '"Lato", sans-serif' }}
                               onClick={() => setActiveDropdown(null)}
                             >
@@ -139,7 +140,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className="px-3 py-2 text-[14px] font-semibold text-[#000000] hover:text-[#000000] hover:bg-[#FDF6E3] transition-all duration-300 rounded-lg"
+                      className="px-3 py-2 text-[14px] font-semibold text-[#FFFFFF] hover:text-[#FFFFFF] hover:bg-white/10 transition-all duration-300 rounded-lg"
                       style={{ fontFamily: '"Lato", sans-serif' }}
                     >
                       {item.title}
@@ -167,7 +168,7 @@ export default function Header() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
-                className="lg:hidden flex items-center gap-2 text-[#000000] hover:text-[#000000] transition-all duration-300"
+                className="lg:hidden flex items-center gap-2 text-[#FFFFFF] hover:text-[#FFFFFF] transition-all duration-300"
               >
                 <svg
                   width="28"
@@ -192,7 +193,7 @@ export default function Header() {
         <div
           className="fixed inset-0 z-[100] overflow-y-auto lg:hidden"
           style={{
-            background: 'rgba(255, 255, 255, 0.98)',
+            background: 'rgba(0, 0, 0, 0.98)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
             animation: 'fadeIn 0.3s ease-out'
@@ -202,9 +203,9 @@ export default function Header() {
           <div
             className="sticky top-0 z-10 border-b"
             style={{
-              background: 'rgba(255, 255, 255, 0.95)',
+              background: 'rgba(0, 0, 0, 0.95)',
               backdropFilter: 'blur(20px)',
-              borderBottom: '1px solid rgba(214, 178, 94, 0.2)'
+              borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
             }}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -213,12 +214,12 @@ export default function Header() {
                   <img
                     src="/maple-ford-logo.png"
                     alt="Mapleford International School Logo"
-                    className="h-16 sm:h-20 w-auto"
+                    className="h-16 sm:h-20 w-auto brightness-110"
                   />
                 </Link>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-2 text-[#000000] hover:text-[#000000] transition-all duration-300"
+                  className="flex items-center gap-2 text-[#FFFFFF] hover:text-[#FFFFFF] transition-all duration-300"
                 >
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -233,12 +234,12 @@ export default function Header() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <nav className="space-y-2">
               {menuItems.map((item, index) => (
-                <div key={index} className="border-b border-gray-100 last:border-b-0">
+                <div key={index} className="border-b border-white/10 last:border-b-0">
                   {item.dropdown ? (
                     <div>
                       <button
                         onClick={() => toggleMobileSubmenu(item.title)}
-                        className="w-full flex items-center justify-between py-4 text-lg font-bold text-[#1A1A1A] hover:bg-amber-50 rounded-xl px-4 transition-colors"
+                        className="w-full flex items-center justify-between py-4 text-lg font-bold text-[#FFFFFF] hover:bg-white/5 rounded-xl px-4 transition-colors"
                         style={{ fontFamily: '"Raleway", sans-serif' }}
                       >
                         {item.title}
@@ -258,7 +259,7 @@ export default function Header() {
                             <Link
                               key={subIndex}
                               href={subItem.href}
-                              className="block py-2 text-[#000000] hover:text-[#000000] transition-colors font-medium"
+                              className="block py-2 text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors font-medium"
                               style={{ fontFamily: "'Inter', sans-serif" }}
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
@@ -271,7 +272,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className="block py-4 text-lg font-bold text-[#1A1A1A] hover:bg-amber-50 rounded-xl px-4 transition-colors"
+                      className="block py-4 text-lg font-bold text-[#FFFFFF] hover:bg-white/5 rounded-xl px-4 transition-colors"
                       style={{ fontFamily: '"Raleway", sans-serif' }}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
