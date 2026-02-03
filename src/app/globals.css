@@ -228,6 +228,14 @@ a:hover {
   color: var(--antique-gold);
 }
 
+.menu-link {
+  color: #000000 !important;
+}
+
+.menu-link:hover {
+  color: #000000 !important;
+}
+
 *,
 :after,
 :before {

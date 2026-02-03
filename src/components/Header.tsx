@@ -192,7 +192,7 @@ export default function Header() {
         <div
           className="fixed inset-0 z-[100] overflow-y-auto lg:hidden"
           style={{
-            background: 'rgba(0, 0, 0, 0.98)',
+            background: 'rgba(255, 255, 255, 0.98)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
             animation: 'fadeIn 0.3s ease-out'
@@ -202,9 +202,9 @@ export default function Header() {
           <div
             className="sticky top-0 z-10 border-b"
             style={{
-              background: 'rgba(0, 0, 0, 0.95)',
+              background: 'rgba(255, 255, 255, 0.95)',
               backdropFilter: 'blur(20px)',
-              borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+              borderBottom: '1px solid rgba(214, 178, 94, 0.2)'
             }}
           >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -213,12 +213,12 @@ export default function Header() {
                   <img
                     src="/maple-ford-logo.png"
                     alt="Mapleford International School Logo"
-                    className="h-16 sm:h-20 w-auto brightness-110"
+                    className="h-16 sm:h-20 w-auto"
                   />
                 </Link>
                 <button
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-2 text-[#FFFFFF] hover:text-[#FFFFFF] transition-all duration-300"
+                  className="flex items-center gap-2 text-[#000000] hover:text-[#000000] transition-all duration-300"
                 >
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -233,12 +233,12 @@ export default function Header() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <nav className="space-y-2">
               {menuItems.map((item, index) => (
-                <div key={index} className="border-b border-white/10 last:border-b-0">
+                <div key={index} className="border-b border-gray-100 last:border-b-0">
                   {item.dropdown ? (
                     <div>
                       <button
                         onClick={() => toggleMobileSubmenu(item.title)}
-                        className="w-full flex items-center justify-between py-4 text-lg font-bold text-[#FFFFFF] hover:bg-white/5 rounded-xl px-4 transition-colors"
+                        className="menu-link w-full flex items-center justify-between py-4 text-lg font-bold hover:bg-black/5 rounded-xl px-4 transition-colors text-left"
                         style={{ fontFamily: '"Raleway", sans-serif' }}
                       >
                         {item.title}
@@ -258,7 +258,7 @@ export default function Header() {
                             <Link
                               key={subIndex}
                               href={subItem.href}
-                              className="block py-2 text-[#FFFFFF] hover:text-[#FFFFFF] transition-colors font-medium"
+                              className="menu-link block py-2 transition-colors font-medium"
                               style={{ fontFamily: "'Inter', sans-serif" }}
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
@@ -271,7 +271,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className="block py-4 text-lg font-bold text-[#FFFFFF] hover:bg-white/5 rounded-xl px-4 transition-colors"
+                      className="menu-link block py-4 text-lg font-bold hover:bg-black/5 rounded-xl px-4 transition-colors"
                       style={{ fontFamily: '"Raleway", sans-serif' }}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
@@ -283,15 +283,15 @@ export default function Header() {
             </nav>
 
             {/* Mobile CTA Button */}
-            <div className="mt-8 pt-8 border-t border-[#D6B25E]/30">
+            <div className="mt-8 pt-8 border-t border-gray-200">
               <Link
                 href="/admissions"
                 className="block w-full text-center px-6 py-4 rounded-xl font-semibold text-lg transition-all duration-300 relative overflow-hidden"
                 style={{
                   fontFamily: "'Inter', sans-serif",
-                  background: 'linear-gradient(180deg, #1A0F0A, #2C1810, #D6B25E)',
+                  background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
                   color: '#FFFFFF',
-                  boxShadow: '0 4px 12px rgba(141,33,29,0.3)'
+                  boxShadow: '0 4px 12px rgba(208,48,43,0.2)'
                 }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -302,7 +302,7 @@ export default function Header() {
                 href="https://wa.me/919000568416"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 mt-4 py-3 text-[#25D366] hover:text-[#128C7E] transition-colors font-semibold"
+                className="flex items-center justify-center gap-3 mt-4 py-3 text-[#000000] hover:text-[#000000] transition-colors font-semibold"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -316,12 +316,6 @@ export default function Header() {
       )}
 
       <style jsx>{`
-        .menu-link {
-          color: #000000 !important;
-        }
-        .menu-link:hover {
-          color: #000000 !important;
-        }
         @keyframes fadeIn {
           from {
             opacity: 0;
