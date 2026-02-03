@@ -97,9 +97,9 @@ export default function Header() {
                       <button
                         onClick={() => setActiveDropdown(activeDropdown === item.title ? null : item.title)}
                         onMouseEnter={() => setActiveDropdown(item.title)}
-                        className={`px-3 py-2 text-[14px] font-bold transition-all duration-300 flex items-center gap-1 rounded-lg ${activeDropdown === item.title
-                          ? 'text-[#000000] bg-black/5'
-                          : 'text-[#000000] hover:text-[#000000] hover:bg-black/5'
+                        className={`menu-link px-3 py-2 text-[14px] font-bold transition-all duration-300 flex items-center gap-1 rounded-lg ${activeDropdown === item.title
+                          ? 'bg-black/5'
+                          : 'hover:bg-black/5'
                           }`}
                         style={{ fontFamily: '"Lato", sans-serif' }}
                       >
@@ -126,7 +126,7 @@ export default function Header() {
                             <Link
                               key={subIndex}
                               href={subItem.href}
-                              className="block px-4 py-2.5 text-[13px] text-[#000000] hover:text-[#000000] hover:bg-black/5 transition-all duration-200"
+                              className="menu-link block px-4 py-2.5 text-[13px] hover:bg-black/5 transition-all duration-200"
                               style={{ fontFamily: '"Lato", sans-serif' }}
                               onClick={() => setActiveDropdown(null)}
                             >
@@ -139,7 +139,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className="px-3 py-2 text-[14px] font-bold text-[#000000] hover:text-[#000000] hover:bg-black/5 transition-all duration-300 rounded-lg"
+                      className="menu-link px-3 py-2 text-[14px] font-bold hover:bg-black/5 transition-all duration-300 rounded-lg"
                       style={{ fontFamily: '"Lato", sans-serif' }}
                     >
                       {item.title}
@@ -316,6 +316,12 @@ export default function Header() {
       )}
 
       <style jsx>{`
+        .menu-link {
+          color: #000000 !important;
+        }
+        .menu-link:hover {
+          color: #000000 !important;
+        }
         @keyframes fadeIn {
           from {
             opacity: 0;
