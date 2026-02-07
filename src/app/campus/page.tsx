@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRef } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 interface Facility {
   id: string;
@@ -23,83 +24,73 @@ export default function Campus() {
   const facilities: Facility[] = [
     {
       id: 'classrooms',
-      title: 'Classrooms',
-      subtitle: 'Smart, Bright, Engaging',
-      description: 'Our classrooms are designed to be open, bright, and technology-enabled—spaces where students learn with focus and comfort. Interactive boards, ergonomic seating, and natural light come together to create an environment that supports active engagement and clarity in thought.',
+      title: 'Smart & Well-ventilated Classrooms',
+      subtitle: 'Smart. Bright. Engaging',
+      description: 'Our classrooms are designed to be open, bright, and technology-enabled—spaces where students learn with focus and comfort. With digital boards and projectors, lessons become dynamic and visual—making learning engaging, interactive, and impactful.',
       image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1200&fit=crop',
       category: 'Academic',
-      features: ['Interactive Panels', 'Ergonomic Seating', 'Natural Lighting']
+      features: ['Digital Boards', 'Open Spaces', 'Interactive Learning']
+    },
+    {
+      id: 'science-labs',
+      title: 'Science Labs',
+      subtitle: 'Explore. Experiment. Discover.',
+      description: 'Dedicated Physics, Chemistry, and Biology laboratories provide students with hands-on learning experiences that bring science to life. Well-equipped and thoughtfully designed, these labs encourage observation, experimentation, and inquiry—helping students develop scientific thinking and a deeper understanding of the world around them.',
+      image: 'https://images.unsplash.com/photo-1564866657311-09b5123108c2?w=1200&fit=crop',
+      category: 'Science',
+      features: ['Physics Lab', 'Chemistry Lab', 'Biology Lab']
+    },
+    {
+      id: 'math-lab',
+      title: 'Mathematics Lab',
+      subtitle: 'Think. Solve. Apply.',
+      description: 'The Mathematics Lab transforms abstract concepts into practical understanding. Through activity-based learning and hands-on tools, students build logical reasoning, problem-solving skills, and confidence—making maths engaging, intuitive, and enjoyable.',
+      image: 'https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=1200&fit=crop',
+      category: 'Academic',
+      features: ['Activity-based', 'Hands-on Tools', 'Logical Reasoning']
+    },
+    {
+      id: 'computer-lab',
+      title: 'Computer Lab',
+      subtitle: 'Learn. Code. Innovate.',
+      description: 'Our modern computer lab supports technology-integrated learning and digital literacy across grades. With updated systems and guided instruction, students develop essential computing skills, responsible digital habits, and confidence in navigating today’s digital landscape.',
+      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&fit=crop',
+      category: 'Technology',
+      features: ['Modern Systems', 'Digital Literacy', 'Coding']
     },
     {
       id: 'library',
       title: 'Library',
-      subtitle: 'A Quiet World of Imagination',
-      description: 'The library is a calm and inviting corner of the campus, offering students a rich collection of books, reference materials, and digital resources. Thoughtfully arranged reading areas allow learners to slow down, explore ideas, and build a lasting love for literature.',
+      subtitle: 'Quiet. Inviting. Inspiring.',
+      description: 'Our library is a calm and welcoming space where curiosity finds direction. Stocked with a wide range of age-appropriate books, reference materials, and learning resources, it encourages students to read, research, and reflect. Comfortable reading corners and a peaceful ambience help nurture imagination and a lifelong love for learning.',
       image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=1200&fit=crop',
       category: 'Research',
-      features: ['Curated Collection', 'Reading Zones', 'Digital Resources']
+      features: ['Wide Range Books', 'Reading Corners', 'Peaceful Ambience']
     },
     {
-      id: 'steam-labs',
-      title: 'STEAM & Innovation Labs',
-      subtitle: 'Ideas in Motion',
-      description: 'Our innovation spaces, including the STEAM and robotics labs, bring learning to life through experimentation and hands-on exploration. Equipped with modern tools and creative resources, these labs encourage students to imagine, design, and build with confidence.',
-      image: 'https://images.unsplash.com/photo-1564866657311-09b5123108c2?w=1200&fit=crop',
-      category: 'Science',
-      features: ['Robotics Kits', '3D Printing', 'Experimentation Zones']
-    },
-    {
-      id: 'digital-lab',
-      title: 'Digital Learning Lab',
-      subtitle: 'Skills for a New Age',
-      description: 'The digital lab integrates essential technological skills into daily learning. With updated systems, guided modules, and safe browsing protocols, students develop digital fluency and responsible online habits in a structured, supervised environment.',
-      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&fit=crop',
-      category: 'Technology',
-      features: ['Safe Browsing', 'Guided Modules', 'Latest Hardware']
-    },
-    {
-      id: 'learning-resource',
-      title: 'Learning Resource Center',
-      subtitle: 'Research & Reflection',
-      description: 'The resource center provides a quiet, structured space for reading, research, and academic enrichment. Students use this space to clarify concepts, work independently, and explore subjects beyond the classroom.',
+      id: 'resource-rooms',
+      title: 'Resource Rooms',
+      subtitle: 'Supportive. Inclusive. Individualised.',
+      description: 'Dedicated resource rooms offer personalised academic and special education support in a nurturing setting. Designed to address diverse learning needs, these spaces ensure every child receives focused attention, encouragement, and the support required to learn at their own pace.',
       image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&fit=crop',
-      category: 'Academic',
-      features: ['Research Desks', 'Academic Enrichment', 'Quiet Zones']
-    },
-    {
-      id: 'sports',
-      title: 'Sports Arena',
-      subtitle: 'Fields for Strength & Spirit',
-      description: 'Our sports arena encourages movement, teamwork, and athletic discipline. The campus features a football field, badminton courts, a tennis court, and dedicated play zones, offering students a healthy balance of fitness, focus, and fun.',
-      image: 'https://images.unsplash.com/photo-1577412647305-991150c7d163?w=1200&fit=crop',
-      category: 'Sports',
-      features: ['Football Field', 'Tennis Court', 'Badminton Courts']
-    },
-    {
-      id: 'arts',
-      title: 'Creative Arts Studios',
-      subtitle: 'Expression Without Boundaries',
-      description: 'Art, music, and dance find their home in our creative studios. These spaces invite students to experiment with form, sound, and movement—nurturing imagination, confidence, and artistic curiosity.',
-      image: 'https://images.unsplash.com/photo-1460518451285-cd3af4402127?w=1200&fit=crop',
-      category: 'Arts',
-      features: ['Music Studio', 'Dance Floor', 'Visual Arts Space']
-    },
-    {
-      id: 'auditorium',
-      title: 'Auditorium',
-      subtitle: 'Where Voices Rise and Talent Shines',
-      description: 'The auditorium is a vibrant, multi-purpose space designed for performances, cultural events, assemblies, and guest sessions. Equipped with modern acoustics and a professional ambiance, it offers students a meaningful platform to communicate, collaborate, and express their talents with confidence.',
-      image: 'https://images.unsplash.com/photo-1503023345030-a79b9bd421b7?w=1200&fit=crop',
-      category: 'Culture',
-      features: ['Modern Acoustics', 'Multi-purpose Hall', 'Professional Ambiance']
+      category: 'Support',
+      features: ['Personalised Support', 'Special Education', 'Nurturing Setting']
     }
   ];
 
-  const others = [
-    { title: "Cafeteria", icon: "🥗", subtitle: "Hygienic, Fresh, Nourishing", desc: "Serving wholesome, hygienic meals in a clean, welcoming setting with regular quality checks." },
-    { title: "Safety & Security", icon: "🛡️", subtitle: "Protected at Every Step", desc: "24/7 surveillance, controlled entry points, and trained security staff." },
-    { title: "Transportation", icon: "🚌", subtitle: "Safe, Seamless Commute", desc: "GPS-enabled buses, trained drivers, and monitored routes for a reliable commute." }
+  const sports = [
+    { name: "Cricket", motto: "Skill. Strategy. Sportsmanship.", desc: "A dedicated cricket ground gives students the space to refine technique, build focus, and experience the spirit of team play—right from practice sessions to match days.", icon: "🏏" },
+    { name: "Basketball", motto: "Agility. Teamwork. Pace.", desc: "Our basketball court keeps the energy high, helping students develop quick thinking, coordination, and collaborative play through fast-paced action.", icon: "🏀" },
+    { name: "Skating", motto: "Balance. Confidence. Control.", desc: "A safe and engaging skating area allows children to build balance, coordination, and self-assurance—while enjoying movement with freedom and joy.", icon: "⛸️" },
+    { name: "Tennis", motto: "Precision. Endurance. Grace.", desc: "With tennis courts designed for both beginners and aspiring players, this space sharpens focus, coordination, and competitiveness.", icon: "🎾" },
+    { name: "Football", motto: "Strength. Teamwork. Spirit.", desc: "A lush football ground encourages students to play with passion, build resilience, and learn leadership through teamwork and strategy.", icon: "⚽" },
+    { name: "Athletics", motto: "Speed. Strength. Determination.", desc: "Athletics facilities encourage students to explore running, jumping, and field events—nurturing fitness, discipline, and individual bests.", icon: "🎽" },
+    { name: "Kids’ Play Area", motto: "Safe. Active. Joyful.", desc: "A colourful, secure play zone lets younger learners climb, explore, and socialise—building confidence through guided free play.", icon: "🪁" },
+    { name: "Badminton", motto: "Reflex. Rhythm. Focus.", desc: "Badminton courts promote agility and sharp reflexes, offering students a fast, engaging sport that builds coordination and concentration.", icon: "🏸" },
+    { name: "Indoor Play Area", motto: "All-Weather. Active. Inclusive.", desc: "Designed for year-round activity, the indoor play area keeps students moving and engaged—rain or shine—through structured and free play.", icon: "🏟️" }
   ];
+
+
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -188,21 +179,30 @@ export default function Campus() {
           </div>
         </section>
 
-        {/* Other Facilities Grid */}
+        {/* Sports Arena Section */}
         <section className="py-32 bg-gray-50/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-24">
-              <h2 className="text-4xl lg:text-6xl font-black text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Support <span className="text-[#d0302b]">& Services</span></h2>
+              <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs">Vitality & Vigor</span>
+              <h2 className="text-4xl lg:text-7xl font-black text-[#1A1A1A] mt-4" style={{ fontFamily: '"Raleway", sans-serif' }}>Sports <span className="text-[#d0302b]">Arena</span></h2>
+              <p className="text-xl text-gray-500 font-medium mt-6 max-w-2xl mx-auto">Spaces designed to build strength, confidence, and teamwork</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {others.map((item, idx) => (
-                <div key={idx} className="p-10 rounded-[3rem] bg-white shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
-                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">{item.icon}</div>
-                  <h4 className="text-2xl font-black text-[#1A1A1A] mb-2">{item.title}</h4>
-                  <p className="text-[#d0302b] font-bold text-sm mb-4 uppercase tracking-widest">{item.subtitle}</p>
-                  <p className="text-gray-500 font-medium leading-relaxed">{item.desc}</p>
-                </div>
+              {sports.map((sport, idx) => (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  key={idx}
+                  className="p-10 rounded-[3rem] bg-white shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group"
+                >
+                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform">{sport.icon}</div>
+                  <h4 className="text-2xl font-black text-[#1A1A1A] mb-2">{sport.name}</h4>
+                  <p className="text-[#d0302b] font-bold text-sm mb-4 uppercase tracking-widest">{sport.motto}</p>
+                  <p className="text-gray-500 font-medium leading-relaxed">{sport.desc}</p>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -226,8 +226,8 @@ export default function Campus() {
                 We welcome you to visit our campus and witness the environment that fuels our students&apos; ambitions every single day.
               </p>
               <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8">
-                <Link href="/contact" className="px-12 py-5 rounded-2xl font-black text-xl text-white shadow-2xl hover:scale-105 transition-all w-full sm:w-auto" style={{ background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)' }} > Request a Tour </Link>
-                <Link href="/admissions" className="px-12 py-5 border-2 border-[#1A1A1A]/10 text-[#1A1A1A] rounded-2xl font-black text-xl hover:bg-white/50 transition-all w-full sm:w-auto" > Join The Legacy </Link>
+                <Button href="/contact" variant="primary" size="lg" className="w-full sm:w-auto">Request a Tour</Button>
+                <Button href="/admissions" variant="outline" size="lg" className="w-full sm:w-auto">Join The Legacy</Button>
               </div>
             </motion.div>
           </div>

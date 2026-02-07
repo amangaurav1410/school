@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import Link from 'next/link';
+import Button from '../../../components/Button';
 
 export default function PreSchool() {
     return (
@@ -152,28 +153,22 @@ export default function PreSchool() {
                                 </div>
 
                                 <div className="flex flex-col sm:flex-row items-center gap-4">
-                                    <Link
+                                    <Button
                                         href="/admissions"
-                                        className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl w-full sm:w-auto"
-                                        style={{
-                                            background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
-                                            color: '#FFFFFF',
-                                            border: '1px solid rgba(255,255,255,0.1)'
-                                        }}
+                                        variant="primary"
+                                        size="lg"
+                                        className="w-full sm:w-auto shadow-xl hover:shadow-2xl"
                                     >
                                         Admissions Open
-                                    </Link>
-                                    <Link
+                                    </Button>
+                                    <Button
                                         href="/contact"
-                                        className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl w-full sm:w-auto"
-                                        style={{
-                                            background: 'transparent',
-                                            color: '#d0302b',
-                                            border: '2px solid #d0302b'
-                                        }}
+                                        variant="outline"
+                                        size="lg"
+                                        className="w-full sm:w-auto shadow-xl hover:shadow-2xl"
                                     >
                                         Visit Us
-                                    </Link>
+                                    </Button>
                                 </div>
                             </motion.div>
 
@@ -229,18 +224,14 @@ export default function PreSchool() {
                                                 <option value="4-5">4-5 Years (Sr. KG)</option>
                                             </select>
                                         </div>
-                                        <button
+                                        <Button
                                             type="submit"
-                                            className="w-full py-4 px-8 text-lg font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-xl hover:shadow-2xl"
-                                            style={{
-                                                background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
-                                                color: '#FFFFFF',
-                                                boxShadow: '0 8px 24px rgba(141,33,29,0.3)',
-                                                border: '1px solid rgba(255,255,255,0.1)'
-                                            }}
+                                            variant="primary"
+                                            size="lg"
+                                            className="w-full shadow-xl hover:shadow-2xl"
                                         >
                                             Submit Enquiry
-                                        </button>
+                                        </Button>
                                     </form>
                                 </div>
                             </motion.div>

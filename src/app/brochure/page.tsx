@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 export default function Brochure() {
     const fadeInUp = {
@@ -157,18 +158,16 @@ export default function Brochure() {
                                     </h3>
                                     <p className="text-[#4F4F4F] mb-6 leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>{brochure.desc}</p>
                                     <p className="text-sm text-[#d0302b] font-semibold mb-6">File size: {brochure.size}</p>
-                                    <button
-                                        className="w-full px-6 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                                        style={{
-                                            background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
-                                            color: '#FFFFFF'
-                                        }}
+                                    <Button
+                                        variant="primary"
+                                        size="lg"
+                                        className="w-full text-lg shadow-lg hover:shadow-xl"
                                         onClick={() => {
                                             alert(`${brochure.title} download will be available soon!`);
                                         }}
                                     >
                                         Download PDF
-                                    </button>
+                                    </Button>
                                 </div>
                             </motion.div>
                         ))}
@@ -186,22 +185,22 @@ export default function Brochure() {
                         Have questions about our programs or want to schedule a campus visit? We're here to help.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                        <a
+                        <Button
                             href="/contact"
-                            className="px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
-                            style={{
-                                background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
-                                color: '#FFFFFF'
-                            }}
+                            variant="primary"
+                            size="lg"
+                            className="text-lg shadow-xl hover:shadow-2xl"
                         >
                             Contact Us
-                        </a>
-                        <a
+                        </Button>
+                        <Button
                             href="/admissions"
-                            className="px-8 py-4 border-2 border-[#d0302b] text-[#d0302b] rounded-xl font-bold text-lg hover:bg-[#d0302b] hover:text-white transition-all duration-300"
+                            variant="outline"
+                            size="lg"
+                            className="text-lg"
                         >
                             Start Admission Process
-                        </a>
+                        </Button>
                     </div>
                 </div>
             </section>

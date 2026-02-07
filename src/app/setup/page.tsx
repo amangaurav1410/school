@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import Button from '../../components/Button';
 
 export default function Setup() {
     const [formData, setFormData] = useState({ username: '', password: '' });
@@ -67,20 +68,14 @@ export default function Setup() {
                             required
                         />
                     </div>
-                    <button
+                    <Button
                         type="submit"
-                        className="w-full py-4 px-6 rounded-xl font-bold text-sm transition-all duration-300 hover:scale-[1.05] hover:shadow-xl"
-                        style={{
-                            background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
-                            color: '#FFFFFF',
-                            boxShadow: '0 4px 12px rgba(208,48,43,0.2)',
-                            fontFamily: '"Lato", sans-serif'
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.color = '#D6B25E'}
-                        onMouseLeave={(e) => e.currentTarget.style.color = '#FFFFFF'}
+                        variant="primary"
+                        size="md"
+                        className="w-full"
                     >
                         Create Admin Account
-                    </button>
+                    </Button>
                 </form>
 
                 {message && (

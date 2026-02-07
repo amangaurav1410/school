@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Button from './Button';
 
 interface DropdownItem {
   title: string;
@@ -151,18 +152,14 @@ export default function Header() {
 
             {/* Right - CTA Button & Mobile Menu Toggle */}
             <div className="flex items-center gap-4">
-              <Link
+              <Button
                 href="/admissions"
-                className="hidden sm:block px-6 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 hover:scale-[1.05] hover:shadow-xl"
-                style={{
-                  background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
-                  color: '#FFFFFF',
-                  boxShadow: '0 4px 12px rgba(208,48,43,0.2)',
-                  fontFamily: '"Lato", sans-serif'
-                }}
+                variant="primary"
+                size="md"
+                className="hidden sm:inline-block"
               >
                 Admission Enquiry
-              </Link>
+              </Button>
 
               {/* Mobile Menu Button */}
               <button
@@ -284,19 +281,15 @@ export default function Header() {
 
             {/* Mobile CTA Button */}
             <div className="mt-8 pt-8 border-t border-gray-200">
-              <Link
+              <Button
                 href="/admissions"
-                className="block w-full text-center px-6 py-4 rounded-xl font-semibold text-lg transition-all duration-300 relative overflow-hidden"
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)',
-                  color: '#FFFFFF',
-                  boxShadow: '0 4px 12px rgba(208,48,43,0.2)'
-                }}
+                variant="primary"
+                size="lg"
+                className="block w-full"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Admission Enquiry
-              </Link>
+              </Button>
 
               <a
                 href="https://wa.me/919000568416"

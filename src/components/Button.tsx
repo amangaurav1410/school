@@ -4,11 +4,13 @@ interface ButtonProps {
   href?: string;
   onClick?: () => void;
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'white' | 'outline-white';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
+  target?: string;
+  rel?: string;
 }
 
 export default function Button({
@@ -19,7 +21,9 @@ export default function Button({
   size = 'md',
   className = '',
   type = 'button',
-  disabled = false
+  disabled = false,
+  target,
+  rel
 }: ButtonProps) {
   // Base styles
   const baseStyles = 'inline-block rounded-xl font-bold transition-all duration-300 text-center';
@@ -32,12 +36,17 @@ export default function Button({
   };
 
   // Hover scale and shadow
-  const hoverStyles = variant !== 'outline' ? 'hover:scale-[1.05] hover:shadow-xl' : '';
+  const hoverStyles = (variant !== 'outline' && variant !== 'outline-white') ? 'hover:scale-[1.05] hover:shadow-xl' : '';
 
   const disabledStyles = disabled ? 'opacity-50 cursor-not-allowed hover:scale-100' : '';
 
-  // For outline variant, add border and classes
-  const outlineClasses = variant === 'outline' ? 'border-2 border-[#d0302b] hover:bg-[#d0302b] shadow-none hover:shadow-xl' : '';
+  // For outline variants, add border and classes
+  let outlineClasses = '';
+  if (variant === 'outline') {
+    outlineClasses = 'border-2 border-[#d0302b] hover:bg-[#d0302b] shadow-none hover:shadow-xl';
+  } else if (variant === 'outline-white') {
+    outlineClasses = 'border-2 border-white/30 hover:bg-white/10 shadow-none hover:shadow-xl text-white';
+  }
 
   const combinedStyles = `${baseStyles} ${sizeStyles[size]} ${hoverStyles} ${outlineClasses} ${disabledStyles} ${className}`;
 
@@ -60,35 +69,53 @@ export default function Button({
         background: 'linear-gradient(135deg, #D6B25E 0%, #C5A04D 100%)',
         boxShadow: '0 4px 12px rgba(214,178,94,0.2)',
       };
-    } else { // outline
+    } else if (variant === 'white') {
+      return {
+        ...baseStyle,
+        background: '#FFFFFF',
+        color: '#d0302b',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+      }
+    } else if (variant === 'outline') {
       return {
         fontFamily: '"Lato", sans-serif',
         color: '#d0302b',
         background: 'transparent',
       };
+    } else if (variant === 'outline-white') {
+      return {
+        fontFamily: '"Lato", sans-serif',
+        color: '#FFFFFF',
+        background: 'transparent'
+      }
     }
+    return {};
   };
 
   if (href && !disabled) {
+    const isExternal = href.startsWith('http') || href.startsWith('mailto:');
+
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          className={combinedStyles}
+          style={getInlineStyles()}
+          target={target || '_blank'}
+          rel={rel || 'noopener noreferrer'}
+        >
+          {children}
+        </a>
+      );
+    }
+
     return (
       <Link
         href={href}
         className={combinedStyles}
         style={getInlineStyles()}
-        onMouseEnter={(e) => {
-          if (variant === 'primary' || variant === 'secondary') {
-            e.currentTarget.style.color = '#D6B25E';
-          } else if (variant === 'outline') {
-            e.currentTarget.style.color = '#D6B25E';
-          }
-        }}
-        onMouseLeave={(e) => {
-          if (variant === 'primary' || variant === 'secondary') {
-            e.currentTarget.style.color = '#FFFFFF';
-          } else if (variant === 'outline') {
-            e.currentTarget.style.color = '#d0302b';
-          }
-        }}
+        target={target}
+        rel={rel}
       >
         {children}
       </Link>
@@ -102,24 +129,6 @@ export default function Button({
       className={combinedStyles}
       style={getInlineStyles()}
       disabled={disabled}
-      onMouseEnter={(e) => {
-        if (!disabled) {
-          if (variant === 'primary' || variant === 'secondary') {
-            e.currentTarget.style.color = '#D6B25E';
-          } else if (variant === 'outline') {
-            e.currentTarget.style.color = '#D6B25E';
-          }
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (!disabled) {
-          if (variant === 'primary' || variant === 'secondary') {
-            e.currentTarget.style.color = '#FFFFFF';
-          } else if (variant === 'outline') {
-            e.currentTarget.style.color = '#d0302b';
-          }
-        }
-      }}
     >
       {children}
     </button>

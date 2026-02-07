@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 export default function Admissions() {
   const [formData, setFormData] = useState({
@@ -78,13 +79,8 @@ export default function Admissions() {
               </p>
 
               <div className="flex flex-wrap gap-6 justify-center pt-8">
-                <Link href="#enquiry-form" className="px-12 py-5 rounded-2xl font-black text-xl text-white shadow-2xl hover:scale-105 transition-all"
-                  style={{ background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)' }}>
-                  Apply Now
-                </Link>
-                <Link href="/campus" className="px-12 py-5 border-2 border-[#d0302b] text-[#d0302b] rounded-2xl font-black text-xl hover:bg-[#d0302b] hover:text-white transition-all">
-                  Tour Campus
-                </Link>
+                <Button href="#enquiry-form" variant="primary" size="lg">Apply Now</Button>
+                <Button href="/campus" variant="outline" size="lg">Tour Campus</Button>
               </div>
             </motion.div>
           </div>
@@ -169,9 +165,9 @@ export default function Admissions() {
                     <p>• Skill-based Labs</p>
                   </div>
                   <div className="mt-12 w-full">
-                    <Link href="#enquiry-form" className={`block w-full py-5 rounded-2xl font-black text-lg transition-transform hover:scale-[1.02] ${plan.best ? 'bg-[#1A1A1A] text-white' : 'bg-white border-2 border-gray-100 text-[#1A1A1A]'}`}>
+                    <Button href="#enquiry-form" variant={plan.best ? 'primary' : 'outline'} size="lg" className="w-full">
                       Apply Now
-                    </Link>
+                    </Button>
                   </div>
                 </motion.div>
               ))}
@@ -183,7 +179,7 @@ export default function Admissions() {
                 <p className="text-xl font-black text-[#1A1A1A]">Need a detailed breakup?</p>
                 <p className="text-gray-500 font-medium">Connect with our financial office for special scholarship details.</p>
               </div>
-              <Link href="/contact" className="px-10 py-4 bg-[#D6B25E] text-white rounded-2xl font-black hover:bg-[#c4a155] transition-colors whitespace-nowrap">Talk to Us</Link>
+              <Button href="/contact" variant="primary" size="lg" className="px-10 py-4 rounded-2xl whitespace-nowrap">Talk to Us</Button>
             </div>
           </div>
         </section>
@@ -251,7 +247,7 @@ export default function Admissions() {
                         <input type="date" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:bg-white transition-all text-[#1A1A1A] font-bold" />
                       </div>
                     </div>
-                    <button type="submit" className="w-full py-5 bg-gradient-to-r from-[#d0302b] to-[#8d211d] text-white rounded-2xl font-black text-xl shadow-2xl hover:scale-[1.01] transition-all">Submit Application</button>
+                    <Button type="submit" variant="primary" size="lg" className="w-full">Submit Application</Button>
                     <p className="text-center text-[10px] font-bold text-gray-300 uppercase tracking-widest">Safe & Secure encrypted Channel</p>
                   </form>
                 ) : (
@@ -265,9 +261,9 @@ export default function Admissions() {
             </div>
           </div>
         </section>
-      </div>
+      </div >
 
       <Footer />
-    </div>
+    </div >
   );
 }

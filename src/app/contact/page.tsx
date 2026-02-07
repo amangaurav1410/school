@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -152,7 +153,7 @@ export default function Contact() {
                         <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Message</label>
                         <textarea rows={4} placeholder="How can we help?" className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all resize-none"></textarea>
                       </div>
-                      <button type="submit" className="w-full py-5 bg-gradient-to-r from-[#d0302b] to-[#8d211d] text-white rounded-2xl font-black text-xl shadow-xl hover:shadow-2xl transition-all">Submit Now</button>
+                      <Button type="submit" variant="primary" size="lg" className="w-full">Submit Now</Button>
                     </form>
                   </div>
                 ) : (
@@ -166,10 +167,10 @@ export default function Contact() {
               </motion.div>
             </div>
           </div>
-        </section>
+        </section >
 
         {/* Map Section - Full Width */}
-        <section className="py-24 bg-white">
+        < section className="py-24 bg-white" >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative h-[600px] rounded-[4rem] overflow-hidden shadow-3xl border-8 border-white group">
               <iframe
@@ -187,10 +188,10 @@ export default function Contact() {
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </section >
+      </div >
 
       <Footer />
-    </div>
+    </div >
   );
 }

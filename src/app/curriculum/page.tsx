@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRef } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 export default function Curriculum() {
     const containerRef = useRef(null);
@@ -142,30 +143,40 @@ export default function Curriculum() {
                             {[
                                 {
                                     stage: "Pre-School",
-                                    grades: "Pre-Nursery to Kindergarten",
-                                    title: "Foundation of Wonder",
-                                    desc: "Play-based, inquiry-led Maple Bear early learning model that develops children through exploration across interactive learning centres such as reading, drama, water, sand, math, and music.",
-                                    points: ["Social and emotional growth", "Early literacy and numeracy", "Motor skills and creativity"],
+                                    grades: "Nursery, JKG, UKG",
+                                    title: "Pre-School",
+                                    desc: "Play-based, inquiry-led Maple Bear early learning model that develops: Social and emotional growth, Early literacy and numeracy, Motor skills and creativity. Children learn through exploration across interactive learning centres such as reading, drama, water, sand, math, and music.",
+                                    points: ["Social growth", "Early literacy", "Creativity"],
                                     img: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&fit=crop",
                                     color: "text-amber-500",
                                     bg: "bg-amber-50"
                                 },
                                 {
                                     stage: "Elementary School",
-                                    grades: "Grades 1–5",
-                                    title: "Discovery & Structure",
-                                    desc: "A progressive, concept-driven curriculum where CBSE learning milestones are integrated with Canadian instructional strategies. Lessons are designed to nurture curiosity, independence, and higher-order thinking.",
-                                    points: ["Concept-driven curriculum", "Hands-on learning", "Continuous feedback"],
+                                    grades: "Grade 1 to Grade 5",
+                                    title: "Elementary School",
+                                    desc: "A progressive, concept-driven curriculum where CBSE learning milestones are integrated with Canadian instructional strategies. Lessons are designed to nurture curiosity, independence, and higher-order thinking. Hands-on learning and continuous feedback help each child progress at their own pace.",
+                                    points: ["Concept-driven", "Hands-on learning", "Continuous feedback"],
                                     img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&fit=crop",
                                     color: "text-red-600",
                                     bg: "bg-red-50"
                                 },
                                 {
+                                    stage: "Middle School",
+                                    grades: "Grade 6 to Grade 8",
+                                    title: "Middle School",
+                                    desc: "A transition-focused, application-oriented curriculum where CBSE academic frameworks are strengthened through Canadian inquiry-based and interdisciplinary teaching. Lessons emphasise analytical thinking, problem-solving, and real-world application of concepts. Research, collaboration, and reflective learning build learner autonomy.",
+                                    points: ["Analytical thinking", "Problem-solving", "Learner autonomy"],
+                                    img: "https://images.unsplash.com/photo-1577896332616-e41b07283626?w=800&fit=crop",
+                                    color: "text-blue-600",
+                                    bg: "bg-blue-50"
+                                },
+                                {
                                     stage: "High School",
-                                    grades: "Secondary & Senior Secondary",
-                                    title: "Leadership & Future Path",
-                                    desc: "A strong CBSE academic roadmap strengthened by critical thinking frameworks, skill-based projects, and global citizenship programs preparing for senior board exams.",
-                                    points: ["Critical thinking frameworks", "Skill-based projects", "International collaboration"],
+                                    grades: "Grade 9 and Grade 10",
+                                    title: "High School",
+                                    desc: "A strong CBSE academic roadmap strengthened by: Critical thinking frameworks, Skill-based projects, Leadership and global citizenship programs. Opportunities for international collaboration and cultural exchanges.",
+                                    points: ["Critical thinking", "Skill-based projects", "Global citizenship"],
                                     img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&fit=crop",
                                     color: "text-indigo-900",
                                     bg: "bg-indigo-50"
@@ -236,19 +247,8 @@ export default function Curriculum() {
                                 Join a community of forward-thinking parents and passionate educators shaping the future of education.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-4">
-                                <Link
-                                    href="/admissions"
-                                    className="px-12 py-5 rounded-2xl font-black text-xl text-white shadow-2xl hover:scale-105 transition-all w-full sm:w-auto"
-                                    style={{ background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)' }}
-                                >
-                                    Apply Now
-                                </Link>
-                                <Link
-                                    href="/contact"
-                                    className="px-12 py-5 border-2 border-[#1A1A1A]/10 text-[#1A1A1A] rounded-2xl font-black text-xl hover:bg-white/50 transition-all w-full sm:w-auto"
-                                >
-                                    Enquire Today
-                                </Link>
+                                <Button href="/admissions" variant="primary" size="lg" className="w-full sm:w-auto">Apply Now</Button>
+                                <Button href="/contact" variant="outline" size="lg" className="w-full sm:w-auto">Enquire Today</Button>
                             </div>
                         </motion.div>
                     </div>

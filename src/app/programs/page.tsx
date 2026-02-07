@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 export default function Programs() {
   const fadeInUp = {
@@ -228,8 +229,8 @@ export default function Programs() {
             <h2 className="text-4xl lg:text-6xl font-black mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>Invest in Their <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Future.</span></h2>
             <p className="text-xl text-white/70 mb-12">Our admissions for the upcoming academic year are now open. Secure your child's seat today.</p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link href="/admissions" className="px-10 py-5 bg-white text-[#d0302b] font-bold rounded-2xl shadow-2xl hover:scale-105 transition-all">Begin Admission</Link>
-              <Link href="/contact" className="px-10 py-5 border-2 border-white/30 text-white font-bold rounded-2xl hover:bg-white/10 transition-all">Schedule a Tour</Link>
+              <Button href="/admissions" variant="white" size="lg">Begin Admission</Button>
+              <Button href="/contact" variant="outline-white" size="lg">Schedule a Tour</Button>
             </div>
           </div>
         </section>

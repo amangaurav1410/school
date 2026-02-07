@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="relative pt-24 pb-12 overflow-hidden bg-white border-t border-gray-100">
+    <footer className="relative pt-16 pb-8 overflow-hidden bg-white border-t border-gray-100">
       {/* Sleek Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#D6B25E]/5 rounded-full blur-[120px]"></div>
@@ -10,10 +10,10 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-20 pb-16 border-b border-gray-100">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12 pb-8 border-b border-gray-100">
 
           {/* Section 1: Brand & Identity (Span 4) */}
-          <div className="lg:col-span-4 space-y-8">
+          <div className="lg:col-span-4 space-y-4">
             <Link href="/" className="inline-block transition-transform hover:scale-105 duration-300">
               <img
                 src="/maple-ford-logo.png"
@@ -24,27 +24,13 @@ export default function Footer() {
             <p className="text-[#4F4F4F] text-base leading-relaxed font-medium max-w-sm" style={{ fontFamily: '"Lato", sans-serif' }}>
               Nurturing inquisitive minds and noble hearts through a legacy of excellence. We are dedicated to shaping the global leaders of tomorrow.
             </p>
-            <div className="flex gap-4">
-              {[
-                { icon: '📱', href: 'https://wa.me/919000568416' },
-                { icon: '📞', href: 'tel:+919000568416' },
-                { icon: '✉️', href: 'mailto:info@mapleford.edu.in' }
-              ].map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 bg-gray-50 hover:bg-[#d0302b] group border border-gray-100 shadow-sm"
-                >
-                  <span className="text-xl text-[#d0302b] group-hover:text-white transition-colors">{social.icon}</span>
-                </a>
-              ))}
-            </div>
+
           </div>
 
           {/* Section 2: Explore (Span 2) */}
-          <div className="lg:col-span-2 lg:col-start-6 space-y-8">
+          <div className="lg:col-span-2 lg:col-start-6 space-y-6">
             <div className="text-sm font-black text-[#1A1A1A] uppercase tracking-[0.3em]" style={{ fontFamily: "'Raleway', sans-serif" }}>Explore</div>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {['About Us', 'Admissions', 'Curriculum', 'Campus', 'Contact Us'].map((item) => (
                 <li key={item}>
                   <Link
@@ -60,9 +46,9 @@ export default function Footer() {
           </div>
 
           {/* Section 3: Academics (Span 2) */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-6">
             <div className="text-sm font-black text-[#1A1A1A] uppercase tracking-[0.3em]" style={{ fontFamily: "'Raleway', sans-serif" }}>Programs</div>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {[
                 { label: 'Pre-School', href: '/curriculum' },
                 { label: 'Elementary', href: '/curriculum' },
@@ -83,9 +69,9 @@ export default function Footer() {
           </div>
 
           {/* Section 4: Connect (Span 3) */}
-          <div className="lg:col-span-3 space-y-8">
+          <div className="lg:col-span-3 space-y-6">
             <div className="text-sm font-black text-[#1A1A1A] uppercase tracking-[0.3em]" style={{ fontFamily: "'Raleway', sans-serif" }}>Connect</div>
-            <div className="space-y-6">
+            <div className="space-y-4">
               <div className="flex items-start gap-4">
                 <div className="w-9 h-9 rounded-lg bg-gray-50 flex items-center justify-center shrink-0 border border-gray-100">📍</div>
                 <p className="text-[#4F4F4F] leading-relaxed font-bold text-base" style={{ fontFamily: '"Lato", sans-serif' }}>
@@ -110,7 +96,7 @@ export default function Footer() {
         </div>
 
         {/* Branding & Attribution */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="space-y-1 text-center md:text-left">
             <p className="text-[#1A1A1A] text-sm font-black" style={{ fontFamily: '"Lato", sans-serif' }}>
               © {new Date().getFullYear()} Mapleford International School. All rights reserved.

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 export default function Careers() {
   const jobOpenings = [
@@ -176,9 +177,13 @@ export default function Careers() {
                     <p className="text-gray-600 mb-4">{job.description}</p>
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-gray-500">📍 {job.location}</span>
-                      <button className="px-6 py-2 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300">
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        className="px-6"
+                      >
                         Apply Now
-                      </button>
+                      </Button>
                     </div>
                   </motion.div>
                 ))}
@@ -241,15 +246,21 @@ export default function Careers() {
                   Join our team and help shape the future of education.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
+                  <Button
                     href="/contact"
-                    className="bg-white text-red-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-red-50 transition-colors duration-300 shadow-lg"
+                    variant="white"
+                    size="lg"
+                    className="shadow-lg"
                   >
                     Contact HR
-                  </Link>
-                  <button className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors duration-300 shadow-lg">
+                  </Button>
+                  <Button
+                    variant="outline-white"
+                    size="lg"
+                    className="shadow-lg hover:bg-white/10"
+                  >
                     Download Application
-                  </button>
+                  </Button>
                 </div>
               </motion.div>
             </div>

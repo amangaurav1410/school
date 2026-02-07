@@ -5,6 +5,7 @@ import { useRef } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
+import Button from '../../components/Button';
 
 export default function About() {
   const fadeInUp: Variants = {
@@ -266,21 +267,22 @@ export default function About() {
                     </p>
 
                     <div className="flex flex-wrap gap-8 pt-4">
-                      <button
-                        className="px-14 py-6 rounded-3xl font-black text-xl text-white shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 group"
-                        style={{ background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)' }}
+                      <Button
+                        variant="primary"
+                        size="lg"
                         onClick={() => alert('Brochure coming soon!')}
                       >
                         Get Prospectus
-                        <span className="text-3xl group-hover:translate-x-2 transition-transform">→</span>
-                      </button>
+                        <span className="text-xl ml-4">→</span>
+                      </Button>
 
-                      <Link
+                      <Button
                         href="/admissions"
-                        className="px-14 py-6 rounded-3xl font-black text-xl text-[#1A1A1A] border border-gray-200 hover:bg-white transition-all hover:shadow-xl"
+                        variant="outline"
+                        size="lg"
                       >
                         Apply Online
-                      </Link>
+                      </Button>
                     </div>
                   </div>
 

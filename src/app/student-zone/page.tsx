@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 export default function StudentZone() {
   const fadeInUp = {
@@ -13,44 +14,44 @@ export default function StudentZone() {
 
   const houses = [
     {
+      name: "Terra",
+      color: "from-emerald-500 to-green-700",
+      accent: "#2ecc71",
+      text: "Earth",
+      motto: "Strong Roots. Steady Rise.",
+      rhyme: "Rooted deep! Standing tall! Terra power beats them all!",
+      desc: "Terra represents the stability and strength of Earth. Students in this house are grounded, resilient, and collaborative—growing steadily with strong roots and unwavering purpose.",
+      symbol: "🌱"
+    },
+    {
+      name: "Blaze",
+      color: "from-red-600 to-orange-600",
+      accent: "#e74c3c",
+      text: "Fire",
+      motto: "Fearless Hearts. Fierce Spirit.",
+      rhyme: "Heat it up! See the flame! Blaze is rising—own the game!",
+      desc: "Blaze embodies the passion and energy of Fire. Members of this house are dynamic, courageous, and enthusiastic leaders who light up every challenge they face.",
+      symbol: "🔥"
+    },
+    {
+      name: "Aero",
+      color: "from-yellow-400 to-amber-500",
+      accent: "#f1c40f",
+      text: "Air",
+      motto: "Move Fast. Rise Free.",
+      rhyme: "Swift and sharp, flying high—Aero spirit reach the sky!",
+      desc: "Aero captures the swiftness and freedom of Air. Students here are quick thinkers, adaptable changemakers, and innovative spirits who rise above limits.",
+      symbol: "💨"
+    },
+    {
       name: "Astra",
-      color: "from-amber-400 to-amber-600",
-      accent: "#F1C40F",
-      text: "Yellow House",
-      motto: "Rise Beyond the Horizon",
-      rhyme: "Up we rise, beyond the sky— Astra stars will always fly!",
-      desc: "Astra represents the spirit of aiming higher and dreaming boldly. Inspired by the luminosity of a star, this house nurtures visionaries — students who explore with curiosity, think creatively, and pursue excellence with optimism.",
-      symbol: "✦"
-    },
-    {
-      name: "Nova",
-      color: "from-red-600 to-red-800",
-      accent: "#E74C3C",
-      text: "Red House",
-      motto: "Ignite the Future",
-      rhyme: "Strike the spark, ignite the flame — Nova rises, claim the game!",
-      desc: "Nova stands for the spark that ignites change. Like a burst of new light in the universe, Nova inspires students to take initiative, lead with confidence, and transform challenges into opportunities.",
-      symbol: "✸"
-    },
-    {
-      name: "Verta",
-      color: "from-emerald-500 to-emerald-700",
-      accent: "#27AE60",
-      text: "Green House",
-      motto: "Stand True, Grow Strong",
-      rhyme: "Grounded roots, rising tall — Verta leads above them all!",
-      desc: "Verta symbolizes sincerity, responsibility, and strong moral grounding. It encourages students to make choices rooted in integrity, to act with empathy, and to grow steadily with wisdom and purpose.",
-      symbol: "❈"
-    },
-    {
-      name: "Cresta",
-      color: "from-sky-500 to-blue-700",
-      accent: "#2980B9",
-      text: "Blue House",
-      motto: "To the Summit, Always",
-      rhyme: "Step by step, we rise and climb — Cresta peak, it's our time!",
-      desc: "Cresta reflects the drive to reach one’s highest potential. Like a mountain peak that stands tall and unwavering, this house instills discipline, persistence, and an unwavering commitment to achieving one’s best.",
-      symbol: "▲"
+      color: "from-blue-600 to-indigo-700",
+      accent: "#3498db",
+      text: "Space",
+      motto: "Aim Higher. Go Beyond.",
+      rhyme: "Look up high! Feel the light! Astra leads with vision bright!",
+      desc: "Astra reflects the limitless potential of Space. Visionaries and explorers, students of Astra aim for the stars, dreaming big and leading with a bright, expanding perspective.",
+      symbol: "⭐"
     }
   ];
 
@@ -118,13 +119,13 @@ export default function StudentZone() {
         <section className="py-32 bg-white relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-32 space-y-6">
-              <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs">The Competition Begins</span>
+              <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs">Four Elements. One Unstoppable Spirit.</span>
               <h2 className="text-5xl lg:text-[5rem] font-black text-[#1A1A1A] leading-tight" style={{ fontFamily: '"Raleway", sans-serif' }}>
                 The House <br className="hidden sm:block" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Arena</span>
               </h2>
               <div className="max-w-3xl mx-auto space-y-4">
-                <p className="text-2xl text-[#d0302b] font-black">Celebrating Character, Community, and Champions.</p>
-                <p className="text-xl text-gray-500 font-light leading-relaxed">Each house embodies a distinct value that shapes the character of every Mapleite, encouraging them to grow with purpose and pride.</p>
+                <p className="text-2xl text-[#d0302b] font-black">Every Mapleite belongs to a force of nature.</p>
+                <p className="text-xl text-gray-500 font-light leading-relaxed">The House Arena makes the elements come alive—Earth, Fire, Air, and Space—each shaping how students learn, lead, play, compete, and celebrate together! Choose your element. Wear your colours. Raise your chant.</p>
               </div>
             </div>
 
@@ -184,6 +185,24 @@ export default function StudentZone() {
                 </motion.div>
               ))}
             </div>
+
+            <div className="mt-32 text-center">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="inline-block p-12 bg-[#FDF6E3] rounded-[3rem] border border-[#D6B25E]/20 relative overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#d0302b]/10 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#D6B25E]/10 rounded-full blur-3xl"></div>
+
+                <h3 className="text-3xl lg:text-5xl font-black text-[#1A1A1A] leading-tight mb-4" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                  "Earth and Fire! Air and Space!<br />
+                  Four strong houses—one proud place!<br />
+                  <span className="text-[#d0302b] text-4xl lg:text-6xl mt-4 block">MAPLEFORD!</span>"
+                </h3>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -209,19 +228,8 @@ export default function StudentZone() {
                 &quot;Every day is an opportunity to explore a new passion, build a new bridge, and take a new step toward who you want to be.&quot;
               </p>
               <div className="flex flex-col sm:flex-row gap-8 justify-center items-center pt-8">
-                <Link
-                  href="/campus"
-                  className="px-12 py-5 rounded-2xl font-black text-xl text-white shadow-2xl hover:scale-105 transition-all w-full sm:w-auto"
-                  style={{ background: 'linear-gradient(135deg, #d0302b 0%, #8d211d 100%)' }}
-                >
-                  Explore Campus
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-12 py-5 border-2 border-[#1A1A1A]/10 text-[#1A1A1A] rounded-2xl font-black text-xl hover:bg-white/50 transition-all w-full sm:w-auto"
-                >
-                  Join the Community
-                </Link>
+                <Button href="/campus" variant="primary" size="lg" className="w-full sm:w-auto">Explore Campus</Button>
+                <Button href="/contact" variant="outline" size="lg" className="w-full sm:w-auto">Join the Community</Button>
               </div>
             </motion.div>
           </div>

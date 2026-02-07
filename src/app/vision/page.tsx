@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 export default function Vision() {
   return (
@@ -290,18 +291,22 @@ export default function Vision() {
                   Join us in shaping the future of education and creating lasting impact.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
+                  <Button
                     href="/programs"
-                    className="bg-white text-red-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-red-50 transition-colors duration-300 shadow-lg"
+                    variant="white"
+                    size="lg"
+                    className="shadow-lg"
                   >
                     View Programs
-                  </Link>
-                  <Link
+                  </Button>
+                  <Button
                     href="/contact"
-                    className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors duration-300 shadow-lg"
+                    variant="outline-white"
+                    size="lg"
+                    className="shadow-lg hover:bg-white/10"
                   >
                     Contact Us
-                  </Link>
+                  </Button>
                 </div>
               </motion.div>
             </div>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 export default function Blogs() {
   const blogPosts = [
@@ -155,9 +156,13 @@ export default function Blogs() {
                     placeholder="Enter your email"
                     className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
                   />
-                  <button className="px-8 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300">
+                  <Button
+                    variant="primary"
+                    size="md"
+                    className="px-8"
+                  >
                     Subscribe
-                  </button>
+                  </Button>
                 </div>
               </motion.div>
             </div>
