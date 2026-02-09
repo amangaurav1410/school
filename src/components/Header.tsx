@@ -147,13 +147,19 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className={`menu-link px-3 py-2 text-[14px] font-bold transition-all duration-300 rounded-lg ${pathname === (item.href || '/')
-                        ? 'text-[#d0302b] bg-[#d0302b]/5'
+                      className={`menu-link px-3 py-2 text-[14px] font-bold transition-all duration-300 rounded-lg relative ${pathname === (item.href || '/')
+                        ? 'text-[#d0302b]'
                         : 'hover:bg-black/5'
                         }`}
                       style={{ fontFamily: '"Lato", sans-serif' }}
                     >
                       {item.title}
+                      {pathname === (item.href || '/') && (
+                        <motion.div
+                          layoutId="nav-underline"
+                          className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#d0302b]"
+                        />
+                      )}
                     </Link>
                   )}
                 </div>

@@ -156,32 +156,32 @@ export default function Home() {
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100"
+                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[350px]"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.22 PM.png"
                                         alt="Evolution 1"
-                                        className="w-full h-auto object-contain rounded-2xl"
+                                        className="w-full h-full object-cover rounded-2xl"
                                     />
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100"
+                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[350px]"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.26 PM.png"
                                         alt="Evolution 2"
-                                        className="w-full h-auto object-contain rounded-2xl"
+                                        className="w-full h-full object-cover rounded-2xl"
                                     />
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100"
+                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[350px]"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.30 PM.png"
                                         alt="Evolution 3"
-                                        className="w-full h-auto object-contain rounded-2xl"
+                                        className="w-full h-full object-cover rounded-2xl"
                                     />
                                 </motion.div>
                             </div>
@@ -287,7 +287,7 @@ export default function Home() {
                             </p>
 
                             <div className="flex justify-start">
-                                <Button href="/curriculum" variant="outline-white" size="lg" className="hover:bg-white hover:text-[#d0302b]">
+                                <Button href="/curriculum" variant="secondary" size="lg">
                                     Explore Our Curriculum
                                 </Button>
                             </div>
@@ -325,7 +325,7 @@ export default function Home() {
 
 
             {/* The Continuum of Learning */}
-            <section className="py-24 bg-white" id="continuum">
+            <section className="py-12 bg-white" id="continuum">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2
@@ -389,24 +389,24 @@ export default function Home() {
                                 <div className="h-[55%] p-6 text-center flex flex-col justify-between items-center bg-white">
                                     <div className="space-y-2">
                                         <h3
-                                            className="text-xl font-black"
-                                            style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
+                                            className="text-lg font-black"
+                                            style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#d0302b' }}
                                         >
                                             {stage.stage}
                                         </h3>
-                                        <p className="font-bold text-[13px] tracking-wider uppercase" style={{ color: '#d0302b' }}>
+                                        <p className="font-bold text-[11px] tracking-wider uppercase text-gray-400">
                                             {stage.grades}
                                         </p>
-                                        <p className="text-gray-500 leading-relaxed text-[14px] line-clamp-3 px-2" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
+                                        <p className="text-gray-500 leading-relaxed text-[13px] line-clamp-4 px-2" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
                                             {stage.description}
                                         </p>
                                     </div>
                                     <div className="pt-4 w-full">
                                         <Button
                                             href={`/curriculum#${stage.id}`}
-                                            variant="outline"
+                                            variant="primary"
                                             size="sm"
-                                            className="w-full rounded-none border-gray-200 text-[#1A1A1A] hover:bg-[#d0302b] hover:border-[#d0302b] hover:text-white font-bold transition-all duration-300 py-2"
+                                            className="w-full rounded-none font-bold transition-all duration-300 py-2"
                                         >
                                             Explore {stage.stage}
                                         </Button>
@@ -415,12 +415,6 @@ export default function Home() {
                             </motion.div>
                         ))}
                     </div>
-
-                </div>
-                <div className="mt-12 text-center">
-                    <Button href="/programs" variant="primary" size="lg">
-                        Explore Our Curriculum
-                    </Button>
                 </div>
             </section>
 
@@ -434,44 +428,61 @@ export default function Home() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
                         {/* Left Column: Dynamic Rotating Cards */}
-                        <div className="relative h-[600px] flex items-center justify-center pt-4">
-                            <div className="relative w-full max-w-[450px] h-full flex items-center justify-center">
+                        <div className="relative h-[600px] flex items-center justify-center pt-4" style={{ perspective: '1200px' }}>
+                            <div className="relative w-full max-w-[450px] h-full flex items-center justify-center" style={{ transformStyle: 'preserve-3d' }}>
                                 {[
-                                    { title: 'Science', query: 'with Imagination', icon: '🔬', color: 'from-blue-500/20 to-blue-600/10', glow: 'shadow-blue-500/20', index: 0 },
-                                    { title: 'Technology', query: 'with Innovation', icon: '💻', color: 'from-purple-500/20 to-purple-600/10', glow: 'shadow-purple-500/20', index: 1 },
-                                    { title: 'Engineering', query: 'with Design', icon: '⚙️', color: 'from-orange-500/20 to-orange-600/10', glow: 'shadow-orange-500/20', index: 2 },
-                                    { title: 'Arts', query: 'with Purpose', icon: '🎨', color: 'from-pink-500/20 to-pink-600/10', glow: 'shadow-pink-500/20', index: 3 },
-                                    { title: 'Mathematics', query: 'with Vision', icon: '📐', color: 'from-green-500/20 to-green-600/10', glow: 'shadow-green-500/20', index: 4 }
+                                    { title: 'Science', query: 'with Imagination', icon: '🔬', index: 0 },
+                                    { title: 'Technology', query: 'with Innovation', icon: '💻', index: 1 },
+                                    { title: 'Engineering', query: 'with Design', icon: '⚙️', index: 2 },
+                                    { title: 'Arts', query: 'with Purpose', icon: '🎨', index: 3 },
+                                    { title: 'Mathematics', query: 'with Vision', icon: '📐', index: 4 }
                                 ].map((item, idx) => {
+                                    const total = 5;
+                                    const angle = (idx * (360 / total) - steamIndex * (360 / total));
+
                                     return (
                                         <motion.div
                                             key={idx}
-                                            className={`absolute w-full p-8 rounded-[3rem] border border-white/20 bg-white shadow-2xl flex items-center gap-8 group cursor-default transition-all duration-700`}
+                                            className="absolute w-[380px] p-6 rounded-[2.5rem] border border-white/20 bg-white shadow-2xl flex items-center gap-6 group cursor-default"
                                             initial={false}
                                             animate={{
-                                                y: ((idx - steamIndex + 5) % 5 - 2) * 130,
-                                                scale: 1 - Math.abs(((idx - steamIndex + 5) % 5 - 2)) * 0.15,
-                                                opacity: 1 - Math.abs(((idx - steamIndex + 5) % 5 - 2)) * 0.4,
-                                                zIndex: 5 - Math.abs(((idx - steamIndex + 5) % 5 - 2)),
-                                                rotateX: ((idx - steamIndex + 5) % 5 - 2) * -10
+                                                rotateY: angle,
+                                                z: 320,
+                                                opacity: Math.cos(angle * Math.PI / 180) > -0.2 ? 1 : 0,
+                                                scale: 0.8 + (Math.cos(angle * Math.PI / 180) + 1) * 0.1,
                                             }}
                                             transition={{
                                                 type: "spring",
-                                                stiffness: 100,
-                                                damping: 20
+                                                stiffness: 40,
+                                                damping: 15
+                                            }}
+                                            style={{
+                                                transformOrigin: "center center",
+                                                backfaceVisibility: 'hidden',
+                                                // This makes the card face forward even as it rotates around the center
+                                                transformStyle: 'preserve-3d'
                                             }}
                                         >
-                                            <div className="relative z-10 flex items-center gap-8">
-                                                <div className="w-24 h-24 rounded-[2rem] bg-gray-50 flex items-center justify-center text-5xl group-hover:scale-110 transition-transform duration-500">
+                                            {/* Inner content rotates back to face user */}
+                                            <motion.div
+                                                className="flex items-center gap-6 w-full"
+                                                animate={{ rotateY: -angle }}
+                                                transition={{
+                                                    type: "spring",
+                                                    stiffness: 40,
+                                                    damping: 15
+                                                }}
+                                            >
+                                                <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-500 shadow-inner">
                                                     {item.icon}
                                                 </div>
                                                 <div className="text-left">
-                                                    <h4 className="text-3xl font-black text-[#1A1A1A]" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                                    <h4 className="text-xl font-black text-[#1A1A1A]" style={{ fontFamily: "'Raleway', sans-serif" }}>
                                                         <span className="text-[#d0302b]">{item.title.charAt(0)}</span>{item.title.slice(1)}
                                                     </h4>
-                                                    <p className="text-xl font-bold text-gray-400 group-hover:text-[#d0302b] transition-colors">{item.query}</p>
+                                                    <p className="text-xs font-bold text-gray-400 group-hover:text-[#d0302b] transition-colors">{item.query}</p>
                                                 </div>
-                                            </div>
+                                            </motion.div>
                                         </motion.div>
                                     );
                                 })}
@@ -506,7 +517,7 @@ export default function Home() {
                                     </p>
                                 </div>
 
-                                <div className="mt-12">
+                                <div className="mt-12 hidden">
                                     <Button href="/programs" variant="outline-white" size="lg" className="hover:bg-white hover:text-[#d0302b]">
                                         Discover our Labs →
                                     </Button>
