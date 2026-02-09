@@ -142,6 +142,7 @@ export default function Curriculum() {
                         <div className="space-y-40">
                             {[
                                 {
+                                    id: "pre-school",
                                     stage: "Pre-School",
                                     grades: "Nursery, JKG, UKG",
                                     title: "Pre-School",
@@ -152,6 +153,7 @@ export default function Curriculum() {
                                     bg: "bg-amber-50"
                                 },
                                 {
+                                    id: "elementary",
                                     stage: "Elementary School",
                                     grades: "Grade 1 to Grade 5",
                                     title: "Elementary School",
@@ -162,6 +164,7 @@ export default function Curriculum() {
                                     bg: "bg-red-50"
                                 },
                                 {
+                                    id: "middle-school",
                                     stage: "Middle School",
                                     grades: "Grade 6 to Grade 8",
                                     title: "Middle School",
@@ -172,6 +175,7 @@ export default function Curriculum() {
                                     bg: "bg-blue-50"
                                 },
                                 {
+                                    id: "high-school",
                                     stage: "High School",
                                     grades: "Grade 9 and Grade 10",
                                     title: "High School",
@@ -184,6 +188,7 @@ export default function Curriculum() {
                             ].map((path, idx) => (
                                 <motion.div
                                     key={idx}
+                                    id={path.id}
                                     initial="hidden"
                                     whileInView="visible"
                                     viewport={{ once: true, margin: "-100px" }}
