@@ -59,21 +59,16 @@ export default function About() {
               transition={{ duration: 1, ease: "easeOut" }}
               className="space-y-8"
             >
-              <span className="inline-block px-8 py-2 rounded-full bg-[#d0302b]/10 text-[#d0302b] font-black text-sm tracking-[0.3em] uppercase mb-4 shadow-sm border border-[#d0302b]/10">
-                Our Legacy
-              </span>
               <h1
-                className="text-6xl md:text-8xl lg:text-[10rem] font-black mb-8 leading-[0.85] tracking-tighter text-[#1A1A1A]"
+                className="text-7xl md:text-9xl lg:text-[12rem] font-black mb-8 leading-[0.85] tracking-tighter text-[#1A1A1A] uppercase"
                 style={{ fontFamily: '"Raleway", sans-serif' }}
               >
-                About <br />
+                Who We <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] via-[#FFA500] to-[#d0302b] drop-shadow-sm">
-                  Mapleford
+                  Are
                 </span>
               </h1>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#d0302b] max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: '"Raleway", sans-serif' }}>
-                Rooted in Legacy. <span className="text-[#1A1A1A]">Ready for Tomorrow.</span>
-              </h2>
+
             </motion.div>
           </div>
         </section>

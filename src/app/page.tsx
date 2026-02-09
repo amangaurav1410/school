@@ -141,7 +141,8 @@ export default function Home() {
             </section>
 
             {/* The Mapleford Edge */}
-            <section className="py-24 bg-white">
+            <section className="py-16 bg-white">
+
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <motion.div
@@ -161,7 +162,7 @@ export default function Home() {
                                 The Mapleford <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Edge</span>
                             </h2>
                             <div className="space-y-5 text-lg" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                <p className="text-xl font-medium" style={{ color: '#d0302b', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
+                                <p className="text-xl font-black" style={{ color: '#1A1A1A', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
                                     Honoring the three-decade legacy of Megacity High School
                                 </p>
                                 <ul className="space-y-4">
@@ -179,41 +180,72 @@ export default function Home() {
                                             className="flex items-start"
                                         >
                                             <span className="w-3 h-3 rounded-full mt-2 mr-4 flex-shrink-0" style={{ background: 'linear-gradient(145deg, #D6B25E, #C4A24E)' }}></span>
-                                            <span className="text-lg">{item}</span>
+                                            <span className="text-lg font-medium">{item}</span>
                                         </motion.li>
                                     ))}
                                 </ul>
-                                <p className="font-medium text-xl mt-8 p-6 rounded-2xl" style={{ color: '#8d211d', background: 'linear-gradient(135deg, rgba(214,178,94,0.1), rgba(208,48,43,0.05))', fontStyle: 'normal' }}>
+                                <p className="font-bold text-xl mt-8 p-6 rounded-2xl" style={{ color: '#1A1A1A', background: 'linear-gradient(135deg, rgba(214,178,94,0.1), rgba(208,48,43,0.05))', fontStyle: 'normal', borderLeft: '4px solid #D6B25E' }}>
                                     &quot;This is not just a transition — it’s an evolution with purpose&quot;
                                 </p>
+                                <div className="mt-8">
+                                    <Button href="/about" variant="primary" size="lg">
+                                        Learn More About Our Legacy
+                                    </Button>
+                                </div>
                             </div>
                         </motion.div>
+
+
+                        {/* Right - Clean 3-Image Grid (All Fully Visible) */}
                         <motion.div
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={fadeInUp}
                             transition={{ duration: 0.8, delay: 0.3 }}
-                            className="relative"
+                            className="flex flex-col gap-6"
                         >
+                            <div className="grid grid-cols-2 gap-6">
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100"
+                                >
+                                    <img
+                                        src="/images/Screenshot 2026-02-09 at 2.44.22 PM.png"
+                                        alt="Evolution 1"
+                                        className="w-full h-auto object-contain rounded-2xl"
+                                    />
+                                </motion.div>
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
+                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100"
+                                >
+                                    <img
+                                        src="/images/Screenshot 2026-02-09 at 2.44.26 PM.png"
+                                        alt="Evolution 2"
+                                        className="w-full h-auto object-contain rounded-2xl"
+                                    />
+                                </motion.div>
+                            </div>
                             <motion.div
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.3 }}
-                                className="rounded-3xl overflow-hidden shadow-2xl relative flex items-center justify-center bg-white p-12"
+                                whileHover={{ scale: 1.03 }}
+                                className="rounded-[2.5rem] overflow-hidden shadow-xl bg-white p-3 border border-[#D6B25E]/20 max-w-[70%] mx-auto"
                             >
                                 <img
-                                    src="/left-logo.png"
-                                    alt="The Mapleford Edge"
-                                    className="w-full h-auto object-contain"
+                                    src="/images/Screenshot 2026-02-09 at 2.44.30 PM.png"
+                                    alt="Evolution 3"
+                                    className="w-full h-auto object-contain rounded-[2rem]"
                                 />
                             </motion.div>
                         </motion.div>
+
                     </div>
                 </div>
             </section>
 
             {/* Curriculum Section */}
-            <section className="py-24 bg-gradient-to-br from-amber-100 via-orange-50 to-red-100 relative overflow-hidden">
+            <section className="py-16 bg-gradient-to-br from-amber-100 via-orange-50 to-red-100 relative overflow-hidden">
+
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-20 left-10 w-72 h-72 bg-[#d0302b] rounded-full blur-3xl"></div>
                     <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#D6B25E] rounded-full blur-3xl"></div>
@@ -256,8 +288,13 @@ export default function Home() {
                                 firmly aligned to India&apos;s robust CBSE curriculum.
                             </p>
 
-
+                            <div className="mt-4">
+                                <Button href="/curriculum" variant="primary" size="lg">
+                                    Explore Our Curriculum
+                                </Button>
+                            </div>
                         </motion.div>
+
 
                         {/* Right Side - Visual Elements */}
                         <motion.div

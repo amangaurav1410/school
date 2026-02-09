@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+
 import Button from './Button';
 import AdmissionModal from './AdmissionModal';
 
@@ -24,6 +26,8 @@ export default function Header() {
   const [mobileExpandedItems, setMobileExpandedItems] = useState<Record<string, boolean>>({});
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
 
   const menuItems: MenuItem[] = [
     { title: 'Home', href: '/' },
@@ -143,7 +147,10 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className="menu-link px-3 py-2 text-[14px] font-bold hover:bg-black/5 transition-all duration-300 rounded-lg"
+                      className={`menu-link px-3 py-2 text-[14px] font-bold transition-all duration-300 rounded-lg ${pathname === (item.href || '/')
+                        ? 'text-[#d0302b] bg-[#d0302b]/5'
+                        : 'hover:bg-black/5'
+                        }`}
                       style={{ fontFamily: '"Lato", sans-serif' }}
                     >
                       {item.title}
@@ -271,7 +278,10 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className="menu-link block py-4 text-lg font-bold hover:bg-black/5 rounded-xl px-4 transition-colors"
+                      className={`menu-link block py-4 text-lg font-bold rounded-xl px-4 transition-colors ${pathname === (item.href || '/')
+                        ? 'text-[#d0302b] bg-[#d0302b]/5'
+                        : 'hover:bg-black/5'
+                        }`}
                       style={{ fontFamily: '"Raleway", sans-serif' }}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
