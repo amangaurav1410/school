@@ -11,7 +11,7 @@ export default function Blogs() {
     {
       title: "The Importance of STEAM Education in Modern Learning",
       excerpt: "Discover how Science, Technology, Engineering, Arts, and Mathematics integration prepares students for future challenges.",
-      date: "December 20, 2024",
+      date: "December 20, 2025",
       category: "Education",
       image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop",
       readTime: "5 min read"
@@ -19,7 +19,7 @@ export default function Blogs() {
     {
       title: "Building Character Through Sports Excellence",
       excerpt: "How Maple Ford's sports programs develop leadership, discipline, and teamwork in our students.",
-      date: "December 18, 2024",
+      date: "December 18, 2025",
       category: "Sports",
       image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&h=400&fit=crop",
       readTime: "4 min read"
@@ -27,7 +27,7 @@ export default function Blogs() {
     {
       title: "Celebrating Cultural Diversity at Maple Ford",
       excerpt: "Our commitment to fostering global citizenship through multicultural events and celebrations.",
-      date: "December 15, 2024",
+      date: "December 15, 2025",
       category: "Culture",
       image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop",
       readTime: "6 min read"
@@ -35,7 +35,7 @@ export default function Blogs() {
     {
       title: "Digital Learning: Preparing Students for Tomorrow",
       excerpt: "How technology integration enhances educational outcomes and future readiness.",
-      date: "December 12, 2024",
+      date: "December 12, 2025",
       category: "Technology",
       image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop",
       readTime: "7 min read"
@@ -43,7 +43,7 @@ export default function Blogs() {
     {
       title: "The Power of Project-Based Learning",
       excerpt: "Real-world applications that make learning meaningful and memorable.",
-      date: "December 10, 2024",
+      date: "December 10, 2025",
       category: "Teaching",
       image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop",
       readTime: "5 min read"
@@ -51,7 +51,7 @@ export default function Blogs() {
     {
       title: "Parent-Teacher Partnership in Education",
       excerpt: "Building strong relationships for student success and well-being.",
-      date: "December 8, 2024",
+      date: "December 8, 2025",
       category: "Community",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop",
       readTime: "4 min read"

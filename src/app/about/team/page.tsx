@@ -43,7 +43,7 @@ export default function Team() {
                     className="text-xl lg:text-2xl text-[#4F4F4F] max-w-4xl mx-auto leading-relaxed"
                     style={{ fontFamily: '"Lato", sans-serif' }}
                   >
-                    The heart of Mapleford is an empathetic, compassionate, dynamic, and visionary team committed to nurturing future leaders.
+                    The heart of Mapleford is an empathetic, compassionate, dynamic, and visionary team, a committed leadership, and devoted mentors at its core. Our compass guides students toward steadiness and inspiration.
                   </motion.p>
                 </div>
               </section>
@@ -67,10 +67,13 @@ export default function Team() {
                         </h2>
                         <div className="space-y-6 text-lg text-[#4F4F4F] leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
                           <p>
-                            "At Mapleford International School, we believe that education is not merely the transfer of knowledge but the cultivation of character, curiosity, and compassion. Children learn best when they feel valued and inspired to discover who they are."
+                            "At Mapleford International School, we believe that education is not merely the transfer of knowledge but the cultivation of character, curiosity, and compassion. As we carry forward the distinguished legacy of Megacity High School, our mission remains grounded in a simple truth: children learn best when they feel valued, supported, and inspired to discover who they are."
                           </p>
                           <p>
-                            "I remains deeply committed to fostering a school community where every child feels empowered to learn, lead, and contribute meaningfully to society. Together, let us shape a future where every learning matters."
+                            "For three decades, our journey has been shaped by the belief that schooling must prepare students for life, not just for examinations. Today, Mapleford stands as an evolution of that belief, embracing global perspectives while staying anchored in timeless values. We strive to create an environment where learning is joyful, where discipline is self-driven, and where every accomplishment is measured not only by success, but by sincerity and effort."
+                          </p>
+                          <p>
+                            "I remain deeply committed to fostering a school community where every child feels empowered to learn, lead, and contribute meaningfully to society. Together, let us shape a future where every learning matters — the spark in a question, the pride in a goal, and the courage to try again."
                           </p>
                         </div>
                         <div className="mt-8 pt-6 border-t border-[#D6B25E]/30">
@@ -124,14 +127,17 @@ export default function Team() {
                         </h2>
                         <div className="space-y-6 text-lg text-[#4F4F4F] leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
                           <p>
-                            "Education, to us, is not a race but a journey. It is augmented through attentive listening, thoughtful guidance, and learning experiences that encourage children to think independently."
+                            "Education, to us, is not a race but a journey. It is augmented through attentive listening, thoughtful guidance, and learning experiences that encourage children to think independently and understand deeply."
                           </p>
                           <p>
-                            "Our faculty brings together expertise and empathy, ensuring that every learner is seen not just for their academic abilities, but for the individual they are becoming. We aim to shape individuals who enrich the world with their integrity."
+                            "Our faculty brings together expertise and empathy, ensuring that every learner is seen not just for their academic abilities, but for the individual they are becoming. We emphasize balance—between discipline and creativity, reflection and action, ambition and humility—so that students develop the confidence to succeed and the character to choose wisely."
+                          </p>
+                          <p>
+                            "As Mapleford steps into a new chapter, my vision is to lead a school where learning feels alive, and every child leaves each day a little more empowered than the last. Together, we aim to shape individuals who not only excel in the world but also enrich it with their integrity, kindness, and courage."
                           </p>
                         </div>
                         <div className="mt-8 pt-6 border-t border-[#D6B25E]/30">
-                          <p className="font-bold text-xl text-[#1A1A1A]">Ms. Sarah Thompson</p>
+                          <p className="font-bold text-xl text-[#1A1A1A]">XYZ</p>
                           <p className="text-[#d0302b] font-medium">Principal, Mapleford International School</p>
                         </div>
                       </div>
@@ -164,7 +170,7 @@ export default function Team() {
                         bio: "Visionary leader with three decades of experience in education, guiding Mapleford's transformation and growth."
                       },
                       {
-                        name: "Ms. Sarah Thompson",
+                        name: "XYZ",
                         role: "Principal",
                         image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop",
                         bio: "Experienced educator dedicated to fostering academic excellence and holistic development in every student."

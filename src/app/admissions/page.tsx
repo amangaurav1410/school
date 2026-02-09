@@ -6,18 +6,12 @@ import { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Button from '../../components/Button';
+import AdmissionModal from '../../components/AdmissionModal';
+
 
 export default function Admissions() {
-  const [formData, setFormData] = useState({
-    parentName: '',
-    contactNumber: '',
-    email: '',
-    childName: '',
-    childDob: '',
-    gradeApplying: '',
-    message: ''
-  });
-  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -71,7 +65,7 @@ export default function Admissions() {
               >
                 Admissions <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] via-[#FFA500] to-[#d0302b] drop-shadow-sm">
-                  2024-25
+                  2025-26
                 </span>
               </h1>
               <p className="text-2xl md:text-3xl font-bold text-[#1A1A1A] max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: '"Raleway", sans-serif' }}>
@@ -79,7 +73,7 @@ export default function Admissions() {
               </p>
 
               <div className="flex flex-wrap gap-6 justify-center pt-8">
-                <Button href="#enquiry-form" variant="primary" size="lg">Apply Now</Button>
+                <Button onClick={() => setIsModalOpen(true)} variant="primary" size="lg">Apply Now</Button>
                 <Button href="/campus" variant="outline" size="lg">Tour Campus</Button>
               </div>
             </motion.div>
@@ -125,145 +119,11 @@ export default function Admissions() {
           </div>
         </section>
 
-        {/* Fee Structure - Premium Table-like Design */}
-        <section className="py-32 bg-[#FDF6E3]/30 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-24 space-y-6">
-              <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs block">Investment in Value</span>
-              <h2 className="text-5xl lg:text-7xl font-black text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
-                Fee <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Structure</span>
-              </h2>
-              <p className="text-2xl text-gray-500 font-light max-w-3xl mx-auto">Transparent and inclusive, designed for world-class standards.</p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {[
-                { grade: "Pre-School", range: "Pre-Nursery to KG", tuition: "₹1.2L", admission: "₹25K", color: "from-blue-50 to-white" },
-                { grade: "Elementary", range: "Grades 1–5", tuition: "₹1.5L", admission: "₹30K", color: "from-red-50 to-white", best: true },
-                { grade: "High School", range: "Grades 6–10", tuition: "₹1.8L", admission: "₹35K", color: "from-amber-50 to-white" }
-              ].map((plan, idx) => (
-                <motion.div
-                  key={idx}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={fadeInUp}
-                  className={`relative bg-gradient-to-br ${plan.color} p-12 rounded-[4rem] border shadow-xl flex flex-col items-center text-center group hover:shadow-2xl transition-all duration-500 ${plan.best ? 'border-[#d0302b] ring-4 ring-[#d0302b]/5 scale-105 z-10' : 'border-gray-100'}`}
-                >
-                  {plan.best && <div className="absolute top-8 bg-[#d0302b] text-white px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest">Most Popular</div>}
-                  <h3 className="text-4xl font-black text-[#1A1A1A] mt-6 mb-2 uppercase tracking-tighter">{plan.grade}</h3>
-                  <p className="text-sm font-bold text-[#d0302b] mb-8 uppercase tracking-widest opacity-80">{plan.range}</p>
-                  <div className="mb-10">
-                    <span className="text-6xl font-black text-[#1A1A1A]">{plan.tuition}</span>
-                    <span className="text-gray-400 font-bold ml-2">/ YEAR</span>
-                  </div>
-                  <div className="w-full h-[1px] bg-gray-200 mb-10"></div>
-                  <div className="space-y-4 text-gray-500 font-medium text-lg w-full text-left ml-4">
-                    <p>• CBSE Curriculum</p>
-                    <p>• Global Programs</p>
-                    <p>• Health & Fitness</p>
-                    <p>• Skill-based Labs</p>
-                  </div>
-                  <div className="mt-12 w-full">
-                    <Button href="#enquiry-form" variant={plan.best ? 'primary' : 'outline'} size="lg" className="w-full">
-                      Apply Now
-                    </Button>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Fine Print Card */}
-            <div className="mt-16 p-10 bg-white rounded-[3rem] shadow-xl border border-gray-100 flex flex-col md:flex-row gap-8 items-center justify-between">
-              <div className="space-y-2">
-                <p className="text-xl font-black text-[#1A1A1A]">Need a detailed breakup?</p>
-                <p className="text-gray-500 font-medium">Connect with our financial office for special scholarship details.</p>
-              </div>
-              <Button href="/contact" variant="primary" size="lg" className="px-10 py-4 rounded-2xl whitespace-nowrap">Talk to Us</Button>
-            </div>
-          </div>
-        </section>
-
-        {/* Application Form - Redesigned for High Conversion */}
-        <section id="enquiry-form" className="py-32 bg-white relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-              <div>
-                <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-sm block mb-4">Admissions Inbox</span>
-                <h2 className="text-5xl lg:text-8xl font-black text-[#1A1A1A] leading-[0.9] mb-10" style={{ fontFamily: '"Raleway", sans-serif' }}>
-                  Begin Your <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Application</span>
-                </h2>
-                <div className="space-y-8">
-                  <p className="text-xl text-gray-500 font-light leading-relaxed">Fill out this secure enquiry form, and our admissions office will reach back within 24 hours.</p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 group hover:border-[#d0302b]/30 transition-all">
-                      <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Call Office</p>
-                      <p className="text-xl font-black text-[#d0302b]">+91 90005 68416</p>
-                    </div>
-                    <div className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 group hover:border-[#d0302b]/30 transition-all">
-                      <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-2">Email Admin</p>
-                      <p className="text-xl font-black text-[#d0302b]">info@mapleford.edu.in</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="bg-white p-12 rounded-[4rem] shadow-3xl border border-gray-100 relative"
-              >
-                {!formSubmitted ? (
-                  <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }}>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-xs font-black text-gray-400 uppercase tracking-widest">Guardian Name</label>
-                        <input type="text" placeholder="John Doe" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:bg-white transition-all text-[#1A1A1A] font-bold" />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-xs font-black text-gray-400 uppercase tracking-widest">Phone Number</label>
-                        <input type="tel" placeholder="+91 000 000 0000" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:bg-white transition-all text-[#1A1A1A] font-bold" />
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-xs font-black text-gray-400 uppercase tracking-widest">Child Name</label>
-                      <input type="text" placeholder="Aiden Smith" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:bg-white transition-all text-[#1A1A1A] font-bold" />
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-xs font-black text-gray-400 uppercase tracking-widest">Grade Applying</label>
-                        <select className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:bg-white transition-all text-[#1A1A1A] font-bold uppercase tracking-widest text-xs">
-                          <option>Select Grade</option>
-                          <option>Pre-School</option>
-                          <option>Elementary (1-5)</option>
-                          <option>Middle (6-8)</option>
-                          <option>High (9-10)</option>
-                        </select>
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-xs font-black text-gray-400 uppercase tracking-widest">Child DOB</label>
-                        <input type="date" className="w-full px-6 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#d0302b] focus:bg-white transition-all text-[#1A1A1A] font-bold" />
-                      </div>
-                    </div>
-                    <Button type="submit" variant="primary" size="lg" className="w-full">Submit Application</Button>
-                    <p className="text-center text-[10px] font-bold text-gray-300 uppercase tracking-widest">Safe & Secure encrypted Channel</p>
-                  </form>
-                ) : (
-                  <div className="text-center py-20 space-y-6">
-                    <div className="text-8xl">✨</div>
-                    <h3 className="text-4xl font-black text-[#1A1A1A]">Inquiry Sent!</h3>
-                    <p className="text-xl text-gray-500 font-medium">Our admissions officer will call you shortly.</p>
-                  </div>
-                )}
-              </motion.div>
-            </div>
-          </div>
-        </section>
       </div >
 
+      <AdmissionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Footer />
     </div >
+
   );
 }

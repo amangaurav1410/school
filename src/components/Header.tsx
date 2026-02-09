@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Button from './Button';
+import AdmissionModal from './AdmissionModal';
+
 
 interface DropdownItem {
   title: string;
@@ -20,6 +22,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileExpandedItems, setMobileExpandedItems] = useState<Record<string, boolean>>({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const menuItems: MenuItem[] = [
@@ -153,7 +156,7 @@ export default function Header() {
             {/* Right - CTA Button & Mobile Menu Toggle */}
             <div className="flex items-center gap-4">
               <Button
-                href="/admissions"
+                onClick={() => setIsModalOpen(true)}
                 variant="primary"
                 size="md"
                 className="hidden sm:inline-block"
@@ -282,11 +285,13 @@ export default function Header() {
             {/* Mobile CTA Button */}
             <div className="mt-8 pt-8 border-t border-gray-200">
               <Button
-                href="/admissions"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsModalOpen(true);
+                }}
                 variant="primary"
                 size="lg"
                 className="block w-full"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Admission Enquiry
               </Button>
@@ -320,6 +325,8 @@ export default function Header() {
           }
         }
       `}</style>
+
+      <AdmissionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 }

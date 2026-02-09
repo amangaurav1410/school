@@ -1,13 +1,17 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { useRef } from 'react';
+import { useState, useRef } from 'react';
+
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
 import Button from '../../components/Button';
+import AdmissionModal from '../../components/AdmissionModal';
+
 
 export default function About() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -283,14 +287,14 @@ export default function About() {
                       <Button
                         variant="primary"
                         size="lg"
-                        onClick={() => alert('Brochure coming soon!')}
+                        onClick={() => setIsModalOpen(true)}
                       >
                         Get Prospectus
                         <span className="text-xl ml-4">→</span>
                       </Button>
 
                       <Button
-                        href="/admissions"
+                        onClick={() => setIsModalOpen(true)}
                         variant="outline"
                         size="lg"
                       >
@@ -320,7 +324,7 @@ export default function About() {
                             ></motion.div>
                           </div>
                           <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-gray-400">
-                            <span>2024-25 Session</span>
+                            <span>2025-26 Session</span>
                             <span>Verified</span>
                           </div>
                         </div>
@@ -336,6 +340,7 @@ export default function About() {
         </section>
       </div>
 
+      <AdmissionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Footer />
     </div>
   );

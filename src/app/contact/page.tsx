@@ -8,6 +8,14 @@ import Button from '../../components/Button';
 
 export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    subject: 'General Inquiry',
+    message: ''
+  });
+
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -130,20 +138,68 @@ export default function Contact() {
                       <p className="text-[#4F4F4F] font-bold">We usually respond within 24 hours.</p>
                     </div>
 
-                    <form className="space-y-8" onSubmit={(e) => { e.preventDefault(); setFormSubmitted(true); }}>
+                    <form
+                      className="space-y-8"
+                      onSubmit={async (e) => {
+                        e.preventDefault();
+                        setIsSubmitting(true);
+                        try {
+                          const res = await fetch('/api/inquiries', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                              parentName: formData.fullName,
+                              email: formData.email,
+                              contactNumber: 'N/A', // Contact form doesn't have phone, or I should add it
+                              childName: 'Contact Form',
+                              childDob: new Date().toISOString(),
+                              gradeApplying: formData.subject,
+                              message: formData.message
+                            })
+                          });
+                          if (res.ok) {
+                            setFormSubmitted(true);
+                          } else {
+                            alert('Submission failed. Please try again.');
+                          }
+                        } catch (err) {
+                          alert('An error occurred.');
+                        } finally {
+                          setIsSubmitting(false);
+                        }
+                      }}
+                    >
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="space-y-2">
                           <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Full Name</label>
-                          <input type="text" placeholder="Your Name" className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all" />
+                          <input
+                            type="text"
+                            required
+                            value={formData.fullName}
+                            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                            placeholder="Your Name"
+                            className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all"
+                          />
                         </div>
                         <div className="space-y-2">
                           <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Email Address</label>
-                          <input type="email" placeholder="email@example.com" className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all" />
+                          <input
+                            type="email"
+                            required
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            placeholder="email@example.com"
+                            className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all"
+                          />
                         </div>
                       </div>
                       <div className="space-y-2">
                         <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Subject</label>
-                        <select className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all appearance-none cursor-pointer">
+                        <select
+                          value={formData.subject}
+                          onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                          className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all appearance-none cursor-pointer"
+                        >
                           <option>General Inquiry</option>
                           <option>Admissions</option>
                           <option>Careers</option>
@@ -151,10 +207,20 @@ export default function Contact() {
                       </div>
                       <div className="space-y-2">
                         <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Message</label>
-                        <textarea rows={4} placeholder="How can we help?" className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all resize-none"></textarea>
+                        <textarea
+                          required
+                          rows={4}
+                          value={formData.message}
+                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                          placeholder="How can we help?"
+                          className="w-full bg-white border border-gray-100 rounded-2xl px-6 py-4 text-[#1A1A1A] font-bold shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d0302b] transition-all resize-none"
+                        ></textarea>
                       </div>
-                      <Button type="submit" variant="primary" size="lg" className="w-full">Submit Now</Button>
+                      <Button type="submit" variant="primary" size="lg" className="w-full" disabled={isSubmitting}>
+                        {isSubmitting ? 'Sending...' : 'Submit Now'}
+                      </Button>
                     </form>
+
                   </div>
                 ) : (
                   <div className="text-center py-24 space-y-8 relative z-10 text-[#1A1A1A]">
