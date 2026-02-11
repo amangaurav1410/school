@@ -86,7 +86,7 @@ export default function About() {
               >
                 <div>
                   <span className="text-[#D6B25E] font-black uppercase tracking-[0.3em] text-sm mb-4 block">Who We Are</span>
-                  <h2 className="text-5xl lg:text-7xl font-black text-[#1A1A1A] leading-[1.1] mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                  <h2 className="text-[44px] lg:text-[68px] font-black text-[#1A1A1A] leading-[1.1] mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>
                     Three Decades <br /> of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d0302b] to-[#8d211d]">Excellence.</span>
                   </h2>
                   <div className="space-y-6 text-xl text-[#4F4F4F] leading-relaxed font-light" style={{ fontFamily: '"Lato", sans-serif' }}>
@@ -153,7 +153,7 @@ export default function About() {
               variants={fadeInUp}
               className="max-w-4xl mx-auto space-y-12"
             >
-              <h2 className="text-4xl lg:text-6xl font-black text-[#1A1A1A] mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>
+              <h2 className="text-[32px] lg:text-[56px] font-black text-[#1A1A1A] mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>
                 Our School of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Thought</span>
               </h2>
               <div className="space-y-8 text-xl lg:text-2xl text-[#4F4F4F] leading-relaxed font-light" style={{ fontFamily: '"Lato", sans-serif' }}>
@@ -179,7 +179,7 @@ export default function About() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-24 space-y-4">
               <span className="text-[#d0302b] font-black uppercase tracking-[0.3em] text-sm block">Our Team</span>
-              <h2 className="text-5xl lg:text-7xl font-black text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
+              <h2 className="text-[44px] lg:text-[68px] font-black text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
                 Leadership & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Mentors</span>
               </h2>
               <p className="text-xl text-[#4F4F4F] max-w-4xl mx-auto font-medium leading-relaxed">

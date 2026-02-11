@@ -28,7 +28,7 @@ export default function ElementarySchool() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
-                            className="text-6xl lg:text-8xl font-bold mb-8 leading-tight"
+                            className="text-[56px] lg:text-[92px] font-bold mb-8 leading-tight"
                             style={{ fontFamily: '"Raleway", sans-serif' }}
                         >
                             Elementary <span className="text-[#d0302b]">School</span>
@@ -55,7 +55,7 @@ export default function ElementarySchool() {
                                 viewport={{ once: true }}
                                 className="order-2 lg:order-1 space-y-8"
                             >
-                                <h2 className="text-4xl lg:text-5xl font-black" style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}>The Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Years</span></h2>
+                                <h2 className="text-[32px] lg:text-[44px] font-black" style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}>The Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Years</span></h2>
                                 <div className="w-20 h-1.5 bg-[#D6B25E] rounded-full"></div>
                                 <p className="text-xl text-[#4F4F4F] leading-relaxed">
                                     The building years of knowledge and expression — where students strengthen academics, values, and creativity. Learning becomes meaningful through interactive classrooms and real-world applications.
@@ -109,7 +109,7 @@ export default function ElementarySchool() {
                             >
                                 <span className="text-5xl mb-4 block">📖</span>
                                 <h2
-                                    className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
+                                    className="text-[44px] lg:text-[56px] font-black mb-8 leading-tight"
                                     style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
                                 >
                                     Beyond the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Textbooks</span>
@@ -189,7 +189,7 @@ export default function ElementarySchool() {
                         <div className="text-center mb-16">
                             <span className="text-5xl mb-4 block">🎓</span>
                             <h2
-                                className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
+                                className="text-[44px] lg:text-[56px] font-black mb-8 leading-tight"
                                 style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
                             >
                                 Secure Your Child's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Future</span>

@@ -88,7 +88,7 @@ export default function Contact() {
               <div className="lg:col-span-5 space-y-12">
                 <div className="space-y-4">
                   <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs block">Contact Points</span>
-                  <h2 className="text-5xl lg:text-7xl font-black text-[#1A1A1A] leading-tight" style={{ fontFamily: '"Raleway", sans-serif' }}>Reach out <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Directly.</span></h2>
+                  <h2 className="text-[44px] lg:text-[68px] font-black text-[#1A1A1A] leading-tight" style={{ fontFamily: '"Raleway", sans-serif' }}>Reach out <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Directly.</span></h2>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6">

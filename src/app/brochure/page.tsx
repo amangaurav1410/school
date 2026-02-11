@@ -30,7 +30,7 @@ export default function Brochure() {
                     >
                         <span className="text-5xl mb-4 block">📚</span>
                         <h1
-                            className="text-5xl lg:text-7xl font-black mb-6 text-[#1A1A1A]"
+                            className="text-[44px] lg:text-[68px] font-black mb-6 text-[#1A1A1A]"
                             style={{ fontFamily: '"Raleway", sans-serif' }}
                         >
                             School <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Brochure</span>
@@ -55,7 +55,7 @@ export default function Brochure() {
                         >
                             <span className="text-5xl mb-4 block">📖</span>
                             <h2
-                                className="text-5xl lg:text-6xl font-black mb-8 leading-tight text-[#1A1A1A]"
+                                className="text-[44px] lg:text-[56px] font-black mb-8 leading-tight text-[#1A1A1A]"
                                 style={{ fontFamily: '"Raleway", sans-serif' }}
                             >
                                 Digital <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Prospectus</span>
@@ -108,7 +108,7 @@ export default function Brochure() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2
-                            className="text-5xl lg:text-6xl font-black mb-8 leading-tight text-[#1A1A1A]"
+                            className="text-[44px] lg:text-[56px] font-black mb-8 leading-tight text-[#1A1A1A]"
                             style={{ fontFamily: '"Raleway", sans-serif' }}
                         >
                             Download Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Brochure</span>
@@ -178,7 +178,7 @@ export default function Brochure() {
             {/* Call to Action */}
             <section className="py-24 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 className="text-4xl lg:text-5xl font-black mb-8 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                    <h2 className="text-[32px] lg:text-[44px] font-black mb-8 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
                         Ready to Learn <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">More?</span>
                     </h2>
                     <p className="text-xl text-[#4F4F4F] mb-12 max-w-2xl mx-auto" style={{ fontFamily: '"Lato", sans-serif' }}>

@@ -85,7 +85,7 @@ export default function Admissions() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-24 space-y-6">
               <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs block">The Road to Mapleford</span>
-              <h2 className="text-5xl lg:text-7xl font-black text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
+              <h2 className="text-[44px] lg:text-[68px] font-black text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
                 Admission <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Process</span>
               </h2>
               <p className="text-2xl text-gray-500 font-light max-w-3xl mx-auto">A transparent and welcoming journey designed for a smooth transition.</p>

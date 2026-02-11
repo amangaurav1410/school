@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import Button from './Button';
 import AdmissionModal from './AdmissionModal';

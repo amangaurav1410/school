@@ -151,12 +151,12 @@ export default function Home() {
                             viewport={{ once: true, margin: "-100px" }}
                             variants={fadeInUp}
                             transition={{ duration: 0.8 }}
-                            className="w-full max-w-6xl mx-auto"
+                            className="w-full max-w-5xl mx-auto"
                         >
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[350px]"
+                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[300px]"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.22 PM.png"
@@ -166,7 +166,7 @@ export default function Home() {
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[350px]"
+                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[300px]"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.26 PM.png"
@@ -176,7 +176,7 @@ export default function Home() {
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[350px]"
+                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[300px]"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.30 PM.png"
@@ -198,43 +198,24 @@ export default function Home() {
                             className="text-center max-w-4xl"
                         >
                             <h2
-                                className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
+                                className="text-[44px] lg:text-[56px] font-black mb-8 leading-tight"
                                 style={{
                                     fontFamily: "'Raleway', Arial, Helvetica, sans-serif",
                                     color: '#1A1A1A'
                                 }}
                             >
-                                The Mapleford <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Edge</span>
+                                The Mapleford Edge
                             </h2>
-                            <div className="space-y-6 text-lg" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                <p className="text-2xl font-black text-[#1A1A1A]" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                    Honoring the three-decade legacy of Megacity High School
+                            <div className="space-y-8 text-lg" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
+                                <p className="text-xl leading-relaxed" style={{ color: '#4F4F4F' }}>
+                                    Rooted in the proud three-decade legacy of Megacity High School, representing a purposeful evolution in education, Mapleford International School carries forward time-tested values while redefining learning in a rapidly changing world.
                                 </p>
-                                <ul className="flex flex-wrap justify-center gap-x-12 gap-y-4 text-center">
-                                    {[
-                                        'Redefining the future of learning',
-                                        'Blending CBSE curriculum with global pathways',
-                                        'Academic collaboration with Maple Bear Canadian School'
-                                    ].map((item, index) => (
-                                        <motion.li
-                                            key={index}
-                                            initial={{ opacity: 0, y: 10 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: index * 0.15, duration: 0.5 }}
-                                            className="flex items-center"
-                                        >
-                                            <span className="w-2.5 h-2.5 rounded-full mr-3 flex-shrink-0" style={{ background: 'linear-gradient(145deg, #D6B25E, #C4A24E)' }}></span>
-                                            <span className="text-lg font-bold text-[#4F4F4F]">{item}</span>
-                                        </motion.li>
-                                    ))}
-                                </ul>
-                                <p className="font-bold text-xl mt-10 p-8 rounded-[2.5rem] bg-gradient-to-br from-[#D6B25E]/5 to-[#d0302b]/5 border-t border-b border-[#D6B25E]/10" style={{ color: '#1A1A1A', fontStyle: 'normal' }}>
-                                    &quot;This is not just a transition — it’s an evolution with purpose&quot;
+                                <p className="text-xl leading-relaxed" style={{ color: '#4F4F4F' }}>
+                                    Anchored in the strength of the CBSE curriculum and enriched through global learning pathways through our academic collaboration with Maple Bear Canadian School, students gain international perspectives through contemporary teaching approaches and the confidence to navigate global opportunities.
                                 </p>
                                 <div className="mt-12 flex justify-center">
                                     <Button href="/about" variant="primary" size="lg">
-                                        Learn More About Our Legacy
+                                        About Us
                                     </Button>
                                 </div>
                             </div>
@@ -262,14 +243,17 @@ export default function Home() {
                             className="text-white"
                         >
                             <h2
-                                className="text-5xl lg:text-7xl font-black mb-8 leading-tight"
+                                className="text-[44px] lg:text-[68px] font-black mb-8 leading-tight"
                                 style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#FFFFFF' }}
                             >
                                 <span style={{ color: '#FFFFFF' }}>Curriculum</span>
                             </h2>
-                            <h3 className="text-3xl font-bold mb-8" style={{ color: '#FFFFFF' }}>
+                            <h3 className="text-3xl font-bold mb-4" style={{ color: '#FFFFFF' }}>
                                 A Seamless Blend of Two Powerful Systems
                             </h3>
+                            <h4 className="text-2xl font-medium mb-8 opacity-90" style={{ color: '#FFFFFF', fontFamily: "'Raleway', sans-serif" }}>
+                                Canadian Pedagogy + CBSE Curriculum
+                            </h4>
 
                             <div
                                 className="inline-flex items-center gap-6 px-10 py-5 rounded-full mb-10 bg-white/10 backdrop-blur-md border border-white/30"
@@ -280,10 +264,7 @@ export default function Home() {
                             </div>
 
                             <p className="text-xl leading-relaxed mb-10" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif', color: '#FFFFFF' }}>
-                                At Mapleford International School, learning is shaped by a powerful collaboration with{' '}
-                                <span className="font-black" style={{ color: '#FFFFFF' }}>Maple Bear Global Schools, Canada</span>
-                                —a world leader in bilingual, inquiry-based education. Through this framework, our students benefit from the proven strengths
-                                of the Canadian education system while staying firmly aligned to India&apos;s robust CBSE curriculum.
+                                At Mapleford International School, learning is shaped by a powerful collaboration with <span className="font-black">Maple Bear Global Schools, Canada</span>, a world leader in bilingual, inquiry-based education operating across 35+ countries and 450+ schools. Through this framework, our students benefit from the proven strengths of the Canadian education system, consistently ranked among the world’s best, while staying firmly aligned to India’s robust CBSE curriculum.
                             </p>
 
                             <div className="flex justify-start">
@@ -325,90 +306,106 @@ export default function Home() {
 
 
             {/* The Continuum of Learning */}
-            <section className="py-12 bg-white" id="continuum">
+            <section className="py-24 bg-white" id="continuum">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2
-                            className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
-                            style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
+                    <div className="text-center mb-20">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
                         >
-                            The Continuum of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Learning</span>
-                        </h2>
-                        <p className="text-xl max-w-4xl mx-auto" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                            Every stage of learning is a milestone in growth — thoughtfully designed to nurture young minds into competent whizz-kids with wisdom and wonder.
-                        </p>
+                            <h2
+                                className="text-[44px] lg:text-[56px] font-black mb-8 leading-tight text-[#1A1A1A]"
+                                style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif" }}
+                            >
+                                The Continuum of Learning
+                            </h2>
+                            <p className="max-w-4xl mx-auto text-[#4F4F4F]" style={{ lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif', fontSize: '13px' }}>
+                                Every stage of learning is a critical milestone in a child’s developmental journey. Our curriculum is designed as a continuous and coherent pathway, where knowledge, skills, and values are systematically strengthened year after year.
+                            </p>
+                        </motion.div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
                             {
                                 id: 'pre-school',
                                 stage: 'Pre-School',
-                                grades: '(Nursery, Jr. KG, Sr. KG)',
-                                description: 'The foundation years where curiosity blossoms and imagination leads learning through play and discovery.',
+                                grades: 'Nursery - UKG',
+                                description: 'Play-based early learning that builds curiosity, confidence, and strong foundations.',
                                 image: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&h=800&fit=crop',
+                                step: '01'
                             },
                             {
                                 id: 'elementary',
                                 stage: 'Elementary',
-                                grades: '(Grades 1–5)',
-                                description: 'Strengthening academics, values, and creativity through interactive classrooms and real-world applications.',
+                                grades: 'Grade 1 - 5',
+                                description: 'Concept-driven learning that blends CBSE rigour with Canadian teaching practices.',
                                 image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=800&fit=crop',
+                                step: '02'
                             },
                             {
                                 id: 'middle-school',
                                 stage: 'Middle School',
-                                grades: '(Grades 6–8)',
-                                description: 'Deep inquiry and analytical thinking, bridging childhood and adolescence with diverse personal interests.',
+                                grades: 'Grade 6 - 8',
+                                description: 'Deeper subject learning with a focus on thinking, application, and collaboration.',
                                 image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&h=800&fit=crop',
+                                step: '03'
                             },
                             {
                                 id: 'high-school',
                                 stage: 'High School',
-                                grades: '(Grades 9–10)',
-                                description: "Transformation years that foster independence and vision, preparing learners to lead in a global landscape.",
+                                grades: 'Grade 9 - 10',
+                                description: "A CBSE-aligned programme that prepares students for academic success and future pathways.",
                                 image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=800&fit=crop',
+                                step: '04'
                             }
                         ].map((stage, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 50 }}
+                                initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="group bg-white shadow-[0_15px_40px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col h-[480px] hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)] transition-all duration-500 border border-gray-100 rounded-none"
+                                className="group bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col h-[520px] hover:shadow-[0_30px_80px_rgba(208,48,43,0.12)] transition-all duration-700 border border-gray-100 relative"
                             >
-                                <div className="h-[45%] overflow-hidden relative">
+                                <div className="h-[42%] overflow-hidden relative">
                                     <img
                                         src={stage.image}
-                                        alt={`${stage.stage} Class`}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 rounded-none"
+                                        alt={`${stage.stage}`}
+                                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                                    <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center shadow-lg">
+                                        <span className="text-[#d0302b] font-black text-sm">{stage.step}</span>
+                                    </div>
                                 </div>
-                                <div className="h-[55%] p-6 text-center flex flex-col justify-between items-center bg-white">
-                                    <div className="space-y-2">
+                                <div className="h-[58%] p-8 text-center flex flex-col justify-between items-center bg-white relative">
+                                    <div className="space-y-4">
                                         <h3
-                                            className="text-lg font-black"
-                                            style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#d0302b' }}
+                                            className="font-bold"
+                                            style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A', fontSize: 'clamp(24px, 3vw, 31px)' }}
                                         >
                                             {stage.stage}
                                         </h3>
-                                        <p className="font-bold text-[11px] tracking-wider uppercase text-gray-400">
-                                            {stage.grades}
-                                        </p>
-                                        <p className="text-gray-500 leading-relaxed text-[13px] line-clamp-4 px-2" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
+                                        <div className="inline-block px-4 py-1.5 rounded-full bg-gray-50 border border-gray-100">
+                                            <p className="font-bold text-[11px] tracking-[0.15em] uppercase text-[#d0302b]">
+                                                {stage.grades}
+                                            </p>
+                                        </div>
+                                        <p className="text-[#666666] leading-relaxed px-2 font-medium" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif', fontSize: '13px' }}>
                                             {stage.description}
                                         </p>
                                     </div>
-                                    <div className="pt-4 w-full">
+                                    <div className="pt-6 w-full">
                                         <Button
                                             href={`/curriculum#${stage.id}`}
-                                            variant="primary"
-                                            size="sm"
-                                            className="w-full rounded-none font-bold transition-all duration-300 py-2"
+                                            variant="outline"
+                                            size="md"
+                                            className="w-full rounded-2xl font-black transition-all duration-500 py-3 group-hover:bg-[#d0302b] group-hover:text-white group-hover:border-[#d0302b]"
                                         >
-                                            Explore {stage.stage}
+                                            Explore Stage
                                         </Button>
                                     </div>
                                 </div>
@@ -427,65 +424,130 @@ export default function Home() {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                        {/* Left Column: Dynamic Rotating Cards */}
-                        <div className="relative h-[600px] flex items-center justify-center pt-4" style={{ perspective: '1200px' }}>
-                            <div className="relative w-full max-w-[450px] h-full flex items-center justify-center" style={{ transformStyle: 'preserve-3d' }}>
+                        {/* Left Column: Circular STEAM Flow Animation */}
+                        <div className="relative w-full h-[680px] flex items-center justify-center pt-8">
+                            {/* Central STEAM Hub with Enhanced Pulse Effect and Letter Highlighting */}
+                            <motion.div
+                                className="absolute z-50 w-36 h-36 rounded-full bg-gradient-to-br from-white to-gray-50 flex flex-col items-center justify-center shadow-[0_0_80px_rgba(255,255,255,0.4)] border-[6px] border-white"
+                                animate={{
+                                    boxShadow: [
+                                        "0 0 40px rgba(255,255,255,0.3)",
+                                        "0 0 100px rgba(255,255,255,0.5)",
+                                        "0 0 40px rgba(255,255,255,0.3)"
+                                    ]
+                                }}
+                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                            >
+                                <div className="flex items-center gap-0.5" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                    {['S', 'T', 'E', 'A', 'M'].map((letter, idx) => (
+                                        <motion.span
+                                            key={letter}
+                                            className="text-3xl font-black tracking-tight"
+                                            animate={{
+                                                color: steamIndex === idx ? '#FFFFFF' : '#d0302b',
+                                                scale: steamIndex === idx ? 1.15 : 1,
+                                                textShadow: steamIndex === idx
+                                                    ? '0 0 20px rgba(208, 48, 43, 0.8), 0 0 40px rgba(208, 48, 43, 0.6)'
+                                                    : '0 0 0px rgba(208, 48, 43, 0)'
+                                            }}
+                                            transition={{ duration: 0.3 }}
+                                            style={{
+                                                backgroundColor: steamIndex === idx ? '#d0302b' : 'transparent',
+                                                padding: steamIndex === idx ? '2px 4px' : '0',
+                                                borderRadius: steamIndex === idx ? '4px' : '0',
+                                            }}
+                                        >
+                                            {letter}
+                                        </motion.span>
+                                    ))}
+                                </div>
+                                <div className="w-10 h-0.5 bg-gradient-to-r from-transparent via-[#d0302b]/20 to-transparent mt-1.5 rounded-full"></div>
+                            </motion.div>
+
+                            {/* Circular Steps Container */}
+                            <div className="relative w-[580px] h-[580px] flex items-center justify-center">
                                 {[
-                                    { title: 'Science', query: 'with Imagination', icon: '🔬', index: 0 },
-                                    { title: 'Technology', query: 'with Innovation', icon: '💻', index: 1 },
-                                    { title: 'Engineering', query: 'with Design', icon: '⚙️', index: 2 },
-                                    { title: 'Arts', query: 'with Purpose', icon: '🎨', index: 3 },
-                                    { title: 'Mathematics', query: 'with Vision', icon: '📐', index: 4 }
+                                    { title: 'Science', query: 'Discovery', icon: '🔬', color: '#FF5F5A', darkColor: '#D94F4A', num: '01' },
+                                    { title: 'Technology', query: 'Innovation', icon: '💻', color: '#F73B35', darkColor: '#C73028', num: '02' },
+                                    { title: 'Engineering', query: 'Design', icon: '⚙️', color: '#D0302B', darkColor: '#A02621', num: '03' },
+                                    { title: 'Arts', query: 'Purpose', icon: '🎨', color: '#A32622', darkColor: '#7A1D19', num: '04' },
+                                    { title: 'Mathematics', query: 'Vision', icon: '📐', color: '#761C18', darkColor: '#5A1512', num: '05' }
                                 ].map((item, idx) => {
                                     const total = 5;
-                                    const angle = (idx * (360 / total) - steamIndex * (360 / total));
+                                    const rotation = idx * (360 / total);
+                                    const isActive = steamIndex === idx;
 
                                     return (
                                         <motion.div
                                             key={idx}
-                                            className="absolute w-[380px] p-6 rounded-[2.5rem] border border-white/20 bg-white shadow-2xl flex items-center gap-6 group cursor-default"
-                                            initial={false}
-                                            animate={{
-                                                rotateY: angle,
-                                                z: 320,
-                                                opacity: Math.cos(angle * Math.PI / 180) > -0.2 ? 1 : 0,
-                                                scale: 0.8 + (Math.cos(angle * Math.PI / 180) + 1) * 0.1,
-                                            }}
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 40,
-                                                damping: 15
-                                            }}
-                                            style={{
-                                                transformOrigin: "center center",
-                                                backfaceVisibility: 'hidden',
-                                                // This makes the card face forward even as it rotates around the center
-                                                transformStyle: 'preserve-3d'
-                                            }}
+                                            className="absolute w-full h-full flex items-center justify-center pointer-events-none"
+                                            style={{ rotate: rotation }}
                                         >
-                                            {/* Inner content rotates back to face user */}
+                                            {/* Arrow Segment Shape Container */}
                                             <motion.div
-                                                className="flex items-center gap-6 w-full"
-                                                animate={{ rotateY: -angle }}
-                                                transition={{
-                                                    type: "spring",
-                                                    stiffness: 40,
-                                                    damping: 15
+                                                className="relative w-[220px] h-[145px] flex flex-col items-center justify-center pointer-events-auto cursor-pointer group"
+                                                animate={{
+                                                    y: isActive ? -200 : -190,
+                                                    scale: isActive ? 1.08 : 1,
                                                 }}
+                                                transition={{ type: 'spring', stiffness: 250, damping: 20 }}
+                                                onClick={() => setSteamIndex(idx)}
                                             >
-                                                <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center text-3xl group-hover:scale-110 transition-transform duration-500 shadow-inner">
-                                                    {item.icon}
-                                                </div>
-                                                <div className="text-left">
-                                                    <h4 className="text-xl font-black text-[#1A1A1A]" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                                                        <span className="text-[#d0302b]">{item.title.charAt(0)}</span>{item.title.slice(1)}
-                                                    </h4>
-                                                    <p className="text-xs font-bold text-gray-400 group-hover:text-[#d0302b] transition-colors">{item.query}</p>
-                                                </div>
+                                                {/* Glow effect for active state - behind */}
+                                                {isActive && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0 }}
+                                                        animate={{ opacity: 0.5 }}
+                                                        className="absolute inset-0 blur-3xl -z-10"
+                                                        style={{ backgroundColor: item.color }}
+                                                    />
+                                                )}
+
+                                                {/* The "Arrowhead" Box with gradient and refined clip-path */}
+                                                <div
+                                                    className="absolute inset-0 shadow-2xl transition-all duration-500 group-hover:shadow-[0_25px_70px_rgba(0,0,0,0.5)]"
+                                                    style={{
+                                                        background: `linear-gradient(145deg, ${item.color} 0%, ${item.darkColor} 100%)`,
+                                                        clipPath: 'polygon(8% 0%, 82% 0%, 100% 50%, 82% 100%, 8% 100%, 22% 50%)',
+                                                        filter: isActive ? 'brightness(1.25) saturate(1.15)' : 'brightness(1)',
+                                                        boxShadow: isActive
+                                                            ? `0 25px 60px ${item.color}50, 0 0 40px ${item.color}40 inset`
+                                                            : '0 12px 35px rgba(0,0,0,0.35)'
+                                                    }}
+                                                />
+
+                                                {/* Subtle overlay for depth */}
+                                                <div
+                                                    className="absolute inset-0 opacity-15 transition-opacity duration-500 group-hover:opacity-25"
+                                                    style={{
+                                                        clipPath: 'polygon(8% 0%, 82% 0%, 100% 50%, 82% 100%, 8% 100%, 22% 50%)',
+                                                        background: 'linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)'
+                                                    }}
+                                                />
+
+                                                {/* Content inside segment */}
+                                                <motion.div
+                                                    className="relative z-10 text-center flex flex-col items-center justify-center w-full px-5 py-3"
+                                                    animate={{ rotate: -rotation }} // Keep text upright
+                                                >
+                                                    <div className="flex items-center justify-center w-full mb-2">
+                                                        <span className="text-[8px] font-black tracking-[0.15em] opacity-70" style={{ color: '#FFFFFF' }}>{item.num}</span>
+                                                    </div>
+                                                    <h4 className="text-[10px] font-black uppercase tracking-[0.12em] mb-1 drop-shadow-[0_3px_6px_rgba(0,0,0,0.4)] leading-tight" style={{ color: '#FFFFFF' }}>{item.title}</h4>
+                                                    <p className="text-[8px] font-semibold uppercase tracking-[0.15em] opacity-90" style={{ color: '#FFFFFF' }}>{item.query}</p>
+                                                </motion.div>
                                             </motion.div>
                                         </motion.div>
                                     );
                                 })}
+
+                                {/* Background concentric rings for depth */}
+                                <div className="absolute w-[360px] h-[360px] rounded-full border border-white/5"></div>
+                                <motion.div
+                                    className="absolute w-[380px] h-[380px] rounded-full border-2 border-dashed border-white/8"
+                                    animate={{ rotate: 360 }}
+                                    transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                                />
                             </div>
                         </div>
 
@@ -501,19 +563,19 @@ export default function Home() {
                                 animate={{ y: [0, -10, 0] }}
                                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                             >
-                                <h2 className="text-5xl lg:text-7xl font-black mb-8 leading-tight" style={{ color: '#FFFFFF', fontFamily: "'Raleway', sans-serif" }}>
+                                <h2 className="text-[32px] lg:text-[44px] font-black mb-6 leading-tight" style={{ color: '#FFFFFF', fontFamily: "'Raleway', sans-serif" }}>
                                     Where Logic Meets <br /><span className="text-white">Imagination</span>
                                 </h2>
 
-                                <div className="space-y-8 text-xl leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
+                                <div className="space-y-6 text-base leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
                                     <p className="border-l-4 border-white pl-6 py-1 font-bold" style={{ color: '#FFFFFF' }}>
-                                        At Mapleford International School, STEAM education blends Science, Technology, Engineering, Arts, and Mathematics to cultivate learners who can think critically and innovate purposefully.
+                                        At Mapleford International School, STEAM education blends Science, Technology, Engineering, Arts, and Mathematics to cultivate learners who can think critically, design creatively, and innovate purposefully.
                                     </p>
                                     <p style={{ color: '#FFFFFF' }}>
-                                        Our classrooms are spaces of exploration — where scientific curiosity merges with artistic creativity, and technology becomes a canvas for expression.
+                                        Our classrooms are spaces of exploration, where scientific curiosity merges with artistic creativity, and technology becomes a canvas for expression.
                                     </p>
                                     <p style={{ color: '#FFFFFF' }}>
-                                        Students engage in hands-on design projects, robotics, visual arts, and coding, learning to see challenges from multiple perspectives.
+                                        Students engage in hands-on design projects, robotics, visual arts, coding, and creative problem-solving, learning to see challenges from multiple perspectives.
                                     </p>
                                 </div>
 
@@ -541,19 +603,16 @@ export default function Home() {
                             transition={{ duration: 0.8 }}
                         >
                             <h2
-                                className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
+                                className="text-[44px] lg:text-[56px] font-black mb-8 leading-tight"
                                 style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
                             >
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Campus</span>
+                                <span style={{ color: '#1A1A1A' }}>Campus</span>
                             </h2>
-                            <h3 className="text-2xl font-bold mb-6 text-[#d0302b]" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                                Spaces that Inspire | Designed for Discovery | Purposefully Equipped
+                            <h3 className="text-3xl font-bold mb-6 text-[#d0302b]" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                A Space That Opens Horizons
                             </h3>
-                            <p className="text-lg mb-6" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                Set across a sprawling 4-acre campus, Mapleford International School offers a thoughtfully designed environment where every corner is a space for discovery.
-                            </p>
-                            <p className="mb-8" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                From smart classrooms and innovation labs to vibrant sports arenas and creative studios, our campus is purposefully equipped to support academic focus, physical vitality, and holistic growth.
+                            <p className="text-lg mb-8" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
+                                Set across a sprawling 4-acre campus, Mapleford International School offers students the freedom to explore, learn, and thrive in an open, thoughtfully designed environment. Lush green landscapes, modern classrooms, innovation labs, sports arenas, and creative spaces come together to create an environment that supports academic focus, physical vitality, and overall well-being.
                             </p>
                             <Button href="/campus" variant="primary" size="lg">
                                 Explore Our Campus
@@ -623,35 +682,24 @@ export default function Home() {
                             className="order-1 lg:order-2 text-white"
                         >
                             <h2
-                                className="text-5xl lg:text-7xl font-black mb-8 leading-tight"
+                                className="text-[44px] lg:text-[68px] font-black mb-8 leading-tight"
                                 style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#FFFFFF' }}
                             >
                                 Sports <span className="text-white">Arena</span>
                             </h2>
                             <p
-                                className="text-3xl font-bold mb-6 text-white"
+                                className="text-3xl font-bold mb-2 text-white"
                                 style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif" }}
                             >
                                 Chasing Goals! Soaring Spirits High!
                             </p>
-                            <p className="mb-6 text-xl leading-relaxed" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif', color: 'rgba(255,255,255,0.9)' }}>
-                                At Mapleford International School, growth isn’t limited to books and classrooms — it thrives on the field, on the court, and in every challenge that builds spirit and strength. Every match played shapes not just an athlete, but a resilient individual.
+                            <p className="text-xl font-medium mb-8 opacity-90" style={{ color: '#FFFFFF' }}>
+                                Where passion charges the field, and every sport, a lesson in excellence
                             </p>
-                            <div className="grid grid-cols-2 gap-4 mb-10">
-                                {['Football', 'Badminton', 'Tennis', 'Athletics'].map((sport, index) => (
-                                    <motion.div
-                                        key={index}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        whileInView={{ opacity: 1, x: 0 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: index * 0.1, duration: 0.5 }}
-                                        className="flex items-center p-4 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-sm"
-                                    >
-                                        <span className="w-3 h-3 rounded-full mr-3 bg-white"></span>
-                                        <span className="font-bold text-white">{sport}</span>
-                                    </motion.div>
-                                ))}
-                            </div>
+                            <p className="mb-8 text-xl leading-relaxed" style={{ fontFamily: '"Lato", Arial, Helvetica, sans-serif', color: 'rgba(255,255,255,1)' }}>
+                                At Mapleford International School, growth isn’t limited to books and classrooms; it thrives on the field, on the court, and in every challenge that builds spirit and strength. Every match played, every goal scored, and every serve perfected shapes not just an athlete, but a resilient, disciplined, and determined individual. With a vibrant sporting culture at its heart, Mapleford nurtures young talent through Football, Badminton, Tennis, and Athletics, encouraging every student to discover the joy of play and the power of perseverance. Our state-of-the-art infrastructure, from modern sports arenas to safe, well-equipped training zones, forms the backbone of an environment that fosters confidence, team spirit, and leadership.
+                            </p>
+
                             <Button href="/campus" variant="outline-white" size="lg" className="hover:bg-white hover:text-[#d0302b]">
                                 Explore Sports Facilities
                             </Button>
@@ -681,10 +729,10 @@ export default function Home() {
                             className="text-[#1A1A1A]"
                         >
                             <h2
-                                className="text-5xl lg:text-7xl font-black mb-8 leading-tight uppercase tracking-tighter"
+                                className="text-[44px] lg:text-[68px] font-black mb-8 leading-tight uppercase tracking-tighter"
                                 style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif" }}
                             >
-                                Start Your Child&apos;s <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Journey</span>
+                                Start Your Child&apos;s <span style={{ color: '#1A1A1A' }}>Journey</span>
                             </h2>
                             <h3 className="text-3xl font-bold mb-8" style={{ color: '#d0302b' }}>
                                 Connect with Mapleford

@@ -122,7 +122,7 @@ export default function Campus() {
               <span className="inline-block px-6 py-2 rounded-full bg-[#D6B25E]/10 text-[#D6B25E] font-black text-sm tracking-[0.2em] uppercase mb-8 shadow-sm border border-[#D6B25E]/10">
                 World-Class Infrastructure
               </span>
-              <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black mb-10 leading-[0.85] tracking-tighter text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
+              <h1 className="text-[56px] md:text-[92px] lg:text-[156px] font-black mb-10 leading-[0.85] tracking-tighter text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>
                 Campus
               </h1>
               <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-xl md:text-2xl font-bold text-gray-500" style={{ fontFamily: '"Raleway", sans-serif' }}>
@@ -152,7 +152,7 @@ export default function Campus() {
                   <div className="w-full lg:w-1/2 space-y-10">
                     <div className="space-y-4">
                       <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs">Section: {fac.category}</span>
-                      <h2 className="text-5xl lg:text-7xl font-black text-[#1A1A1A] leading-tight" style={{ fontFamily: '"Raleway", sans-serif' }}>{fac.title}</h2>
+                      <h2 className="text-[44px] lg:text-[68px] font-black text-[#1A1A1A] leading-tight" style={{ fontFamily: '"Raleway", sans-serif' }}>{fac.title}</h2>
                       <h3 className="text-2xl font-bold text-[#D6B25E] italic" style={{ fontFamily: '"Raleway", sans-serif' }}>{fac.subtitle}</h3>
                     </div>
                     <p className="text-xl text-gray-600 leading-relaxed font-light" style={{ fontFamily: '"Lato", sans-serif' }}>{fac.description}</p>
@@ -184,7 +184,7 @@ export default function Campus() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-24">
               <span className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs">Vitality & Vigor</span>
-              <h2 className="text-4xl lg:text-7xl font-black text-[#1A1A1A] mt-4" style={{ fontFamily: '"Raleway", sans-serif' }}>Sports <span className="text-[#d0302b]">Arena</span></h2>
+              <h2 className="text-[32px] lg:text-[68px] font-black text-[#1A1A1A] mt-4" style={{ fontFamily: '"Raleway", sans-serif' }}>Sports <span className="text-[#d0302b]">Arena</span></h2>
               <p className="text-xl text-gray-500 font-medium mt-6 max-w-2xl mx-auto">Spaces designed to build strength, confidence, and teamwork</p>
             </div>
 
@@ -217,7 +217,7 @@ export default function Campus() {
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
             <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="space-y-12" >
-              <h2 className="text-5xl lg:text-8xl font-black text-[#1A1A1A] leading-[1] tracking-tighter" style={{ fontFamily: '"Raleway", sans-serif' }}>
+              <h2 className="text-[44px] lg:text-[92px] font-black text-[#1A1A1A] leading-[1] tracking-tighter" style={{ fontFamily: '"Raleway", sans-serif' }}>
                 Experience <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d0302b] via-[#D6B25E] to-[#FFA500]">The Magic </span>
                 In Person.

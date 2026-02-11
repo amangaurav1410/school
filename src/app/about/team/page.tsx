@@ -31,7 +31,7 @@ export default function Team() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-5xl lg:text-7xl font-bold mb-8 leading-tight"
+                    className="text-[44px] lg:text-[68px] font-bold mb-8 leading-tight"
                     style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}
                   >
                     Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d0302b] to-[#D6B25E]">Team</span>
@@ -62,7 +62,7 @@ export default function Team() {
                       <div className="absolute -inset-4 bg-[#FDF6E3] rounded-[2rem] -z-10 transform rotate-3"></div>
                       <div className="bg-white p-10 rounded-[2rem] shadow-xl border border-[#D6B25E]/20">
                         <span className="text-4xl mb-6 block">✉️</span>
-                        <h2 className="text-4xl lg:text-5xl font-black mb-6" style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}>
+                        <h2 className="text-[32px] lg:text-[44px] font-black mb-6" style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}>
                           Chairman's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Message</span>
                         </h2>
                         <div className="space-y-6 text-lg text-[#4F4F4F] leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
@@ -122,7 +122,7 @@ export default function Team() {
                       <div className="absolute -inset-4 bg-[#FDF6E3] rounded-[2rem] -z-10 transform -rotate-2"></div>
                       <div className="bg-white p-10 rounded-[2rem] shadow-xl border border-[#D6B25E]/20">
                         <span className="text-4xl mb-6 block">🎓</span>
-                        <h2 className="text-4xl lg:text-5xl font-black mb-6" style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}>
+                        <h2 className="text-[32px] lg:text-[44px] font-black mb-6" style={{ fontFamily: '"Raleway", sans-serif', color: '#1A1A1A' }}>
                           Principal's <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Message</span>
                         </h2>
                         <div className="space-y-6 text-lg text-[#4F4F4F] leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>
@@ -155,7 +155,7 @@ export default function Team() {
                     viewport={{ once: true }}
                     className="text-center mb-20"
                   >
-                    <h2 className="text-4xl lg:text-5xl font-black text-[#1A1A1A] mb-6" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                    <h2 className="text-[32px] lg:text-[44px] font-black text-[#1A1A1A] mb-6" style={{ fontFamily: '"Raleway", sans-serif' }}>
                       Leadership <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Team</span>
                     </h2>
                     <div className="w-24 h-1.5 bg-[#D6B25E] mx-auto rounded-full"></div>
@@ -225,7 +225,7 @@ export default function Team() {
                     >
                       <span className="text-5xl mb-4 block">🤝</span>
                       <h2
-                        className="text-5xl lg:text-6xl font-black mb-8 leading-tight"
+                        className="text-[44px] lg:text-[56px] font-black mb-8 leading-tight"
                         style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A' }}
                       >
                         Join Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D6B25E] to-[#FFA500]">Mission</span>
