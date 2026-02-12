@@ -85,7 +85,6 @@ export default function About() {
                 className="space-y-10"
               >
                 <div>
-                  <span className="text-[#D6B25E] font-black uppercase tracking-[0.3em] text-sm mb-4 block">Who We Are</span>
                   <h2 className="text-[44px] lg:text-[68px] font-black text-[#1A1A1A] leading-[1.1] mb-8" style={{ fontFamily: '"Raleway", sans-serif' }}>
                     Three Decades <br /> of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d0302b] to-[#8d211d]">Excellence.</span>
                   </h2>

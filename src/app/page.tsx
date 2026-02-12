@@ -153,35 +153,35 @@ export default function Home() {
                             transition={{ duration: 0.8 }}
                             className="w-full max-w-5xl mx-auto"
                         >
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[300px]"
+                                    className="rounded-3xl overflow-hidden bg-white p-6 border border-gray-100 flex items-center justify-center h-[200px] shadow-sm hover:shadow-md transition-all duration-300"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.22 PM.png"
                                         alt="Evolution 1"
-                                        className="w-full h-full object-cover rounded-2xl"
+                                        className="max-h-full w-auto object-contain"
                                     />
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[300px]"
+                                    className="rounded-3xl overflow-hidden bg-white p-6 border border-gray-100 flex items-center justify-center h-[200px] shadow-sm hover:shadow-md transition-all duration-300"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.26 PM.png"
                                         alt="Evolution 2"
-                                        className="w-full h-full object-cover rounded-2xl"
+                                        className="max-h-full w-auto object-contain"
                                     />
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden shadow-lg bg-white p-2 border border-gray-100 flex flex-col h-[300px]"
+                                    className="rounded-3xl overflow-hidden bg-white p-6 border border-gray-100 flex items-center justify-center h-[200px] shadow-sm hover:shadow-md transition-all duration-300"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.30 PM.png"
                                         alt="Evolution 3"
-                                        className="w-full h-full object-cover rounded-2xl"
+                                        className="max-h-full w-auto object-contain"
                                     />
                                 </motion.div>
                             </div>
@@ -334,32 +334,28 @@ export default function Home() {
                                 stage: 'Pre-School',
                                 grades: 'Nursery - UKG',
                                 description: 'Play-based early learning that builds curiosity, confidence, and strong foundations.',
-                                image: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&h=800&fit=crop',
-                                step: '01'
+                                image: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&h=800&fit=crop'
                             },
                             {
                                 id: 'elementary',
                                 stage: 'Elementary',
                                 grades: 'Grade 1 - 5',
                                 description: 'Concept-driven learning that blends CBSE rigour with Canadian teaching practices.',
-                                image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=800&fit=crop',
-                                step: '02'
+                                image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=800&fit=crop'
                             },
                             {
                                 id: 'middle-school',
                                 stage: 'Middle School',
                                 grades: 'Grade 6 - 8',
                                 description: 'Deeper subject learning with a focus on thinking, application, and collaboration.',
-                                image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&h=800&fit=crop',
-                                step: '03'
+                                image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&h=800&fit=crop'
                             },
                             {
                                 id: 'high-school',
                                 stage: 'High School',
                                 grades: 'Grade 9 - 10',
                                 description: "A CBSE-aligned programme that prepares students for academic success and future pathways.",
-                                image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=800&fit=crop',
-                                step: '04'
+                                image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=800&fit=crop'
                             }
                         ].map((stage, index) => (
                             <motion.div
@@ -377,9 +373,7 @@ export default function Home() {
                                         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                                    <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center shadow-lg">
-                                        <span className="text-[#d0302b] font-black text-sm">{stage.step}</span>
-                                    </div>
+
                                 </div>
                                 <div className="h-[58%] p-8 text-center flex flex-col justify-between items-center bg-white relative">
                                     <div className="space-y-4">
@@ -530,9 +524,7 @@ export default function Home() {
                                                     className="relative z-10 text-center flex flex-col items-center justify-center w-full px-5 py-3"
                                                     animate={{ rotate: -rotation }} // Keep text upright
                                                 >
-                                                    <div className="flex items-center justify-center w-full mb-2">
-                                                        <span className="text-[8px] font-black tracking-[0.15em] opacity-70" style={{ color: '#FFFFFF' }}>{item.num}</span>
-                                                    </div>
+
                                                     <h4 className="text-[10px] font-black uppercase tracking-[0.12em] mb-1 drop-shadow-[0_3px_6px_rgba(0,0,0,0.4)] leading-tight" style={{ color: '#FFFFFF' }}>{item.title}</h4>
                                                     <p className="text-[8px] font-semibold uppercase tracking-[0.15em] opacity-90" style={{ color: '#FFFFFF' }}>{item.query}</p>
                                                 </motion.div>
@@ -541,13 +533,9 @@ export default function Home() {
                                     );
                                 })}
 
-                                {/* Background concentric rings for depth */}
-                                <div className="absolute w-[360px] h-[360px] rounded-full border border-white/5"></div>
-                                <motion.div
-                                    className="absolute w-[380px] h-[380px] rounded-full border-2 border-dashed border-white/8"
-                                    animate={{ rotate: 360 }}
-                                    transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-                                />
+
+
+
                             </div>
                         </div>
 
@@ -561,7 +549,6 @@ export default function Home() {
                         >
                             <motion.div
                                 animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                             >
                                 <h2 className="text-[32px] lg:text-[44px] font-black mb-6 leading-tight" style={{ color: '#FFFFFF', fontFamily: "'Raleway', sans-serif" }}>
                                     Where Logic Meets <br /><span className="text-white">Imagination</span>
@@ -711,7 +698,7 @@ export default function Home() {
 
 
 
-            {/* Admission Enquiry CTA Section */}
+            {/* Get in Touch CTA Section */}
             <section className="py-24 relative overflow-hidden bg-gradient-to-br from-amber-50 via-white to-red-50">
                 <div className="absolute inset-0 opacity-100">
                     <div className="absolute top-0 left-0 w-96 h-96 bg-[#D6B25E]/10 rounded-full blur-3xl"></div>
@@ -749,7 +736,7 @@ export default function Home() {
                                     size="lg"
                                     className="w-full sm:w-auto px-12"
                                 >
-                                    Admission Enquiry
+                                    Get in Touch
                                 </Button>
                                 <Button
                                     href="https://wa.me/919000568416"
