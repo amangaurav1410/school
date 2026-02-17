@@ -141,22 +141,44 @@ export default function Home() {
             </section>
 
             {/* The Mapleford Edge */}
-            <section className="py-16 bg-white">
+            <section className="py-20 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col items-center gap-12">
-                        {/* Top - Clean 3-Image Row (All in one line) */}
+                    <div className="flex flex-col items-center gap-12 text-center">
+                        {/* Unified Shadow Box containing Title, Description, and Images */}
                         <motion.div
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={fadeInUp}
                             transition={{ duration: 0.8 }}
-                            className="w-full max-w-5xl mx-auto"
+                            className="w-full max-w-6xl mx-auto bg-white rounded-[3rem] shadow-[0_30px_100px_rgba(0,0,0,0.08)] p-8 md:p-16 border border-gray-50 flex flex-col items-center"
                         >
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                            {/* Title and Description */}
+                            <div className="max-w-4xl mx-auto mb-16">
+                                <h2
+                                    className="text-[44px] lg:text-[56px] font-black mb-8 leading-tight"
+                                    style={{
+                                        fontFamily: "'Raleway', Arial, Helvetica, sans-serif",
+                                        color: '#1A1A1A'
+                                    }}
+                                >
+                                    The Mapleford Edge
+                                </h2>
+                                <div className="space-y-6 text-lg" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
+                                    <p className="text-xl leading-relaxed">
+                                        Rooted in the proud three-decade legacy of Megacity High School, representing a purposeful evolution in education, Mapleford International School carries forward time-tested values while redefining learning in a rapidly changing world.
+                                    </p>
+                                    <p className="text-xl leading-relaxed">
+                                        Anchored in the strength of the CBSE curriculum and enriched through global learning pathways through our academic collaboration with Maple Bear Canadian School, students gain international perspectives through contemporary teaching approaches and the confidence to navigate global opportunities.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* 3 Images Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center w-full">
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden bg-white p-6 border border-gray-100 flex items-center justify-center h-[200px] shadow-sm hover:shadow-md transition-all duration-300"
+                                    className="flex items-center justify-center h-[180px]"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.22 PM.png"
@@ -166,7 +188,7 @@ export default function Home() {
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden bg-white p-6 border border-gray-100 flex items-center justify-center h-[200px] shadow-sm hover:shadow-md transition-all duration-300"
+                                    className="flex items-center justify-center h-[180px]"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.26 PM.png"
@@ -176,7 +198,7 @@ export default function Home() {
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="rounded-3xl overflow-hidden bg-white p-6 border border-gray-100 flex items-center justify-center h-[200px] shadow-sm hover:shadow-md transition-all duration-300"
+                                    className="flex items-center justify-center h-[180px]"
                                 >
                                     <img
                                         src="/images/Screenshot 2026-02-09 at 2.44.30 PM.png"
@@ -187,38 +209,17 @@ export default function Home() {
                             </div>
                         </motion.div>
 
-
-                        {/* Bottom - Content */}
+                        {/* Button outside the box */}
                         <motion.div
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, margin: "-100px" }}
                             variants={fadeInUp}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-center max-w-4xl"
                         >
-                            <h2
-                                className="text-[44px] lg:text-[56px] font-black mb-8 leading-tight"
-                                style={{
-                                    fontFamily: "'Raleway', Arial, Helvetica, sans-serif",
-                                    color: '#1A1A1A'
-                                }}
-                            >
-                                The Mapleford Edge
-                            </h2>
-                            <div className="space-y-8 text-lg" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
-                                <p className="text-xl leading-relaxed" style={{ color: '#4F4F4F' }}>
-                                    Rooted in the proud three-decade legacy of Megacity High School, representing a purposeful evolution in education, Mapleford International School carries forward time-tested values while redefining learning in a rapidly changing world.
-                                </p>
-                                <p className="text-xl leading-relaxed" style={{ color: '#4F4F4F' }}>
-                                    Anchored in the strength of the CBSE curriculum and enriched through global learning pathways through our academic collaboration with Maple Bear Canadian School, students gain international perspectives through contemporary teaching approaches and the confidence to navigate global opportunities.
-                                </p>
-                                <div className="mt-12 flex justify-center">
-                                    <Button href="/about" variant="primary" size="lg">
-                                        About Us
-                                    </Button>
-                                </div>
-                            </div>
+                            <Button href="/about" variant="primary" size="lg" className="px-10 py-5 text-base font-bold">
+                                Read More about Mapleford Edge
+                            </Button>
                         </motion.div>
                     </div>
                 </div>
@@ -226,7 +227,7 @@ export default function Home() {
 
 
             {/* Curriculum Section */}
-            <section className="py-12 bg-[#d0302b] relative overflow-hidden">
+            <section className="py-20 bg-[#d0302b] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
                     <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -269,7 +270,7 @@ export default function Home() {
 
                             <div className="flex justify-start">
                                 <Button href="/curriculum" variant="secondary" size="lg">
-                                    Explore Our Curriculum
+                                    Read More about Our Curriculum
                                 </Button>
                             </div>
                         </motion.div>
@@ -306,7 +307,7 @@ export default function Home() {
 
 
             {/* The Continuum of Learning */}
-            <section className="py-24 bg-white" id="continuum">
+            <section className="py-12 bg-white" id="continuum">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-20">
                         <motion.div
@@ -321,7 +322,7 @@ export default function Home() {
                             >
                                 The Continuum of Learning
                             </h2>
-                            <p className="max-w-4xl mx-auto text-[#4F4F4F]" style={{ lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif', fontSize: '13px' }}>
+                            <p className="max-w-4xl mx-auto text-[#4F4F4F]" style={{ lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif', fontSize: '16px' }}>
                                 Every stage of learning is a critical milestone in a child’s developmental journey. Our curriculum is designed as a continuous and coherent pathway, where knowledge, skills, and values are systematically strengthened year after year.
                             </p>
                         </motion.div>
@@ -364,7 +365,7 @@ export default function Home() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="group bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col h-[520px] hover:shadow-[0_30px_80px_rgba(208,48,43,0.12)] transition-all duration-700 border border-gray-100 relative"
+                                className="group bg-white rounded-none overflow-hidden flex flex-col h-[520px] hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)] transition-all duration-700 relative"
                             >
                                 <div className="h-[42%] overflow-hidden relative">
                                     <img
@@ -375,8 +376,8 @@ export default function Home() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
 
                                 </div>
-                                <div className="h-[58%] p-8 text-center flex flex-col justify-between items-center bg-white relative">
-                                    <div className="space-y-4">
+                                <div className="h-[58%] text-center flex flex-col justify-between items-center bg-white relative">
+                                    <div className="space-y-4 p-8 pb-4">
                                         <h3
                                             className="font-bold"
                                             style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif", color: '#1A1A1A', fontSize: 'clamp(24px, 3vw, 31px)' }}
@@ -392,14 +393,14 @@ export default function Home() {
                                             {stage.description}
                                         </p>
                                     </div>
-                                    <div className="pt-6 w-full">
+                                    <div className="w-full">
                                         <Button
                                             href={`/curriculum#${stage.id}`}
-                                            variant="outline"
+                                            variant="primary"
                                             size="md"
-                                            className="w-full rounded-2xl font-black transition-all duration-500 py-3 group-hover:bg-[#d0302b] group-hover:text-white group-hover:border-[#d0302b]"
+                                            className="w-full !rounded-none font-black transition-all duration-500 py-4"
                                         >
-                                            Explore Stage
+                                            Read More
                                         </Button>
                                     </div>
                                 </div>
@@ -461,11 +462,11 @@ export default function Home() {
                             {/* Circular Steps Container */}
                             <div className="relative w-[580px] h-[580px] flex items-center justify-center">
                                 {[
-                                    { title: 'Science', query: 'Discovery', icon: '🔬', color: '#FF5F5A', darkColor: '#D94F4A', num: '01' },
-                                    { title: 'Technology', query: 'Innovation', icon: '💻', color: '#F73B35', darkColor: '#C73028', num: '02' },
-                                    { title: 'Engineering', query: 'Design', icon: '⚙️', color: '#D0302B', darkColor: '#A02621', num: '03' },
-                                    { title: 'Arts', query: 'Purpose', icon: '🎨', color: '#A32622', darkColor: '#7A1D19', num: '04' },
-                                    { title: 'Mathematics', query: 'Vision', icon: '📐', color: '#761C18', darkColor: '#5A1512', num: '05' }
+                                    { title: 'Science', query: 'Discovery', icon: '🔬', color: '#FFD700', darkColor: '#B8860B', num: '01' },
+                                    { title: 'Technology', query: 'Innovation', icon: '💻', color: '#D4AF37', darkColor: '#996515', num: '02' },
+                                    { title: 'Engineering', query: 'Design', icon: '⚙️', color: '#C5B358', darkColor: '#85754D', num: '03' },
+                                    { title: 'Arts', query: 'Purpose', icon: '🎨', color: '#EAC117', darkColor: '#AF9B1E', num: '04' },
+                                    { title: 'Mathematics', query: 'Vision', icon: '📐', color: '#DAA520', darkColor: '#8B4513', num: '05' }
                                 ].map((item, idx) => {
                                     const total = 5;
                                     const rotation = idx * (360 / total);
@@ -579,7 +580,7 @@ export default function Home() {
 
 
             {/* Campus Section */}
-            <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50">
+            <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <motion.div
@@ -595,14 +596,14 @@ export default function Home() {
                             >
                                 <span style={{ color: '#1A1A1A' }}>Campus</span>
                             </h2>
-                            <h3 className="text-3xl font-bold mb-6 text-[#d0302b]" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                            <h3 className="text-3xl font-bold mb-6 text-black" style={{ fontFamily: "'Raleway', sans-serif" }}>
                                 A Space That Opens Horizons
                             </h3>
                             <p className="text-lg mb-8" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
                                 Set across a sprawling 4-acre campus, Mapleford International School offers students the freedom to explore, learn, and thrive in an open, thoughtfully designed environment. Lush green landscapes, modern classrooms, innovation labs, sports arenas, and creative spaces come together to create an environment that supports academic focus, physical vitality, and overall well-being.
                             </p>
                             <Button href="/campus" variant="primary" size="lg">
-                                Explore Our Campus
+                                Read more about Our Campus
                             </Button>
                         </motion.div>
                         <motion.div
@@ -632,7 +633,7 @@ export default function Home() {
 
 
             {/* Sports Arena Section */}
-            <section className="py-12 bg-[#d0302b] relative overflow-hidden">
+            <section className="py-20 bg-[#d0302b] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <div className="absolute top-20 left-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
                     <div className="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
