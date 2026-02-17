@@ -596,7 +596,7 @@ export default function Home() {
                             >
                                 <span style={{ color: '#1A1A1A' }}>Campus</span>
                             </h2>
-                            <h3 className="text-3xl font-bold mb-6 text-black" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                            <h3 className="text-3xl font-bold mb-6" style={{ fontFamily: "'Raleway', sans-serif", color: '#000000' }}>
                                 A Space That Opens Horizons
                             </h3>
                             <p className="text-lg mb-8" style={{ color: '#4F4F4F', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
@@ -688,8 +688,8 @@ export default function Home() {
                                 At Mapleford International School, growth isn’t limited to books and classrooms; it thrives on the field, on the court, and in every challenge that builds spirit and strength. Every match played, every goal scored, and every serve perfected shapes not just an athlete, but a resilient, disciplined, and determined individual. With a vibrant sporting culture at its heart, Mapleford nurtures young talent through Football, Badminton, Tennis, and Athletics, encouraging every student to discover the joy of play and the power of perseverance. Our state-of-the-art infrastructure, from modern sports arenas to safe, well-equipped training zones, forms the backbone of an environment that fosters confidence, team spirit, and leadership.
                             </p>
 
-                            <Button href="/campus" variant="outline-white" size="lg" className="hover:bg-white hover:text-[#d0302b]">
-                                Explore Sports Facilities
+                            <Button href="/campus" variant="secondary" size="lg">
+                                Read more about Sports Facilities
                             </Button>
                         </motion.div>
                     </div>
@@ -737,15 +737,7 @@ export default function Home() {
                                     size="lg"
                                     className="w-full sm:w-auto px-12"
                                 >
-                                    Get in Touch
-                                </Button>
-                                <Button
-                                    href="https://wa.me/919000568416"
-                                    variant="outline"
-                                    size="lg"
-                                    className="w-full sm:w-auto flex items-center justify-center gap-3"
-                                >
-                                    WhatsApp Us
+                                    Explore Now
                                 </Button>
                             </div>
                         </motion.div>
