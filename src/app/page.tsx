@@ -257,10 +257,10 @@ export default function Home() {
                             </h4>
 
                             <div
-                                className="inline-flex items-center gap-6 px-10 py-5 rounded-full mb-10 bg-white/10 backdrop-blur-md border border-white/30"
+                                className="inline-flex items-center gap-6 px-10 py-5 rounded-full mb-10 bg-gradient-to-r from-[#D6B25E] to-[#C5A04D] shadow-xl border border-[#B38D3C]"
                             >
                                 <span className="text-xl font-black" style={{ color: '#FFFFFF' }}>Canadian Pedagogy</span>
-                                <span className="text-3xl font-light" style={{ color: 'rgba(255,255,255,0.7)' }}>|</span>
+                                <span className="text-3xl font-light opacity-50" style={{ color: '#FFFFFF' }}>|</span>
                                 <span className="text-xl font-black" style={{ color: '#FFFFFF' }}>CBSE Curriculum</span>
                             </div>
 
@@ -364,8 +364,16 @@ export default function Home() {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
+                                whileHover={{
+                                    y: -20,
+                                    scale: 1.02,
+                                    rotateX: 2,
+                                    rotateY: -2,
+                                    transition: { duration: 0.4, ease: "easeOut" }
+                                }}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className="group bg-white rounded-none overflow-hidden flex flex-col h-[520px] hover:shadow-[0_30px_80px_rgba(0,0,0,0.12)] transition-all duration-700 relative"
+                                className="group bg-white rounded-none overflow-hidden flex flex-col h-[520px] shadow-[0_10px_40px_rgba(0,0,0,0.04)] hover:shadow-[0_45px_120px_rgba(0,0,0,0.18)] transition-all duration-500 relative z-10 hover:z-20 border-t border-gray-50"
+                                style={{ perspective: "1000px" }}
                             >
                                 <div className="h-[42%] overflow-hidden relative">
                                     <img
@@ -398,9 +406,10 @@ export default function Home() {
                                             href={`/curriculum#${stage.id}`}
                                             variant="primary"
                                             size="md"
-                                            className="w-full !rounded-none font-black transition-all duration-500 py-4"
+                                            className="w-full !rounded-none font-black transition-all duration-500 py-4 !shadow-none !bg-[#d0302b] !bg-none relative flex justify-end items-center pr-10 group"
                                         >
-                                            Read More
+                                            <div className="absolute -top-2 right-12 w-0 h-0 border-l-[12px] border-l-transparent border-r-[12px] border-r-transparent border-b-[12px] border-b-[#d0302b]" />
+                                            <span className="tracking-widest uppercase text-sm">Read More</span>
                                         </Button>
                                     </div>
                                 </div>
@@ -697,6 +706,83 @@ export default function Home() {
             </section>
 
 
+
+
+            {/* Testimonials Section */}
+            <section className="py-24 bg-slate-50 relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="text-center mb-16">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <h2
+                                className="text-[44px] lg:text-[56px] font-black mb-4 leading-tight text-[#1A1A1A]"
+                                style={{ fontFamily: "'Raleway', Arial, Helvetica, sans-serif" }}
+                            >
+                                Words from Our <span className="text-[#d0302b]">Community</span>
+                            </h2>
+                            <p className="max-w-2xl mx-auto text-[#4F4F4F] text-lg" style={{ fontFamily: '"Lato", sans-serif' }}>
+                                Discover why families trust Mapleford International school for their child&apos;s educational journey.
+                            </p>
+                        </motion.div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {[
+                            {
+                                name: "Arjun Sharma",
+                                role: "Parent (Grade 4)",
+                                content: "The blend of Canadian pedagogy and CBSE in Mapleford has transformed my son's approach to learning. He's more curious and confident than ever before.",
+                                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"
+                            },
+                            {
+                                name: "Dr. Priya Reddy",
+                                role: "Parent (Nursery)",
+                                content: "Choosing a preschool was stressful until we visited Mapleford. The warmth of the teachers and the play-based learning environment is exactly what our daughter needed.",
+                                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop"
+                            },
+                            {
+                                name: "Srinivas Rao",
+                                role: "Parent (Grade 8)",
+                                content: "The focus on STEAM and sports alongside academics at Mapleford is exceptional. My daughter loves the robotics lab as much as the football field.",
+                                image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop"
+                            }
+                        ].map((testimonial, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                                className="bg-white p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col justify-between"
+                            >
+                                <div>
+                                    <div className="text-[#d0302b] mb-6">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M14.017 21L14.017 18C14.017 16.8954 14.9125 16 16.0171 16H19.0171C19.5694 16 20.0171 15.5523 20.0171 15V9C20.0171 8.44772 19.5694 8 19.0171 8H15.0171C14.4648 8 14.0171 8.44772 14.0171 9V12C14.0171 12.5523 13.5694 13 13.0171 13H11.0171L11.0171 4H21.0171V15C21.0171 17.7614 18.7785 20 16.0171 20L14.017 21ZM3.01711 21L3.01711 18C3.01711 16.8954 3.91255 16 5.01711 16H8.01711C8.56939 16 9.01711 15.5523 9.01711 15V9C9.01711 8.44772 8.56939 8 8.01711 8H4.01711C3.46482 8 3.01711 8.44772 3.01711 9V12C3.01711 12.5523 2.56939 13 2.01711 13H0.0171094L0.0171094 4H10.0171V15C10.0171 17.7614 7.77853 20 5.01711 20L3.01711 21Z" />
+                                        </svg>
+                                    </div>
+                                    <p className="text-[#4F4F4F] text-lg leading-relaxed mb-8 italic" style={{ fontFamily: '"Lato", sans-serif' }}>
+                                        &quot;{testimonial.content}&quot;
+                                    </p>
+                                </div>
+                                <div className="flex items-center gap-4 border-t border-gray-100 pt-6">
+                                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#d0302b]/20">
+                                        <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-[#1A1A1A]" style={{ fontFamily: "'Raleway', sans-serif" }}>{testimonial.name}</h4>
+                                        <p className="text-sm text-[#666666]">{testimonial.role}</p>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
 
             {/* Get in Touch CTA Section */}

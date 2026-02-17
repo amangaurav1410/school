@@ -167,6 +167,15 @@ export default function Header() {
               ))}
             </nav>
 
+            {/* Middle Logo (Optional styling for desktop) */}
+            <div className="hidden lg:flex items-center h-full px-4 border-l border-r border-black/5 mx-2">
+              <img
+                src="/images/logo.png"
+                alt="Secondary Logo"
+                className="h-16 w-auto object-contain"
+              />
+            </div>
+
             {/* Right - CTA Button & Mobile Menu Toggle */}
             <div className="flex items-center gap-4">
               <Button
