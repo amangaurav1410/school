@@ -417,16 +417,15 @@ footer.bg-\[\#d0302b\] {
   background-color: #d0302b !important;
 }
 
-/* Ensure ALL text elements inside a red section are white */
+/* Ensure text elements inside a red section are white, excluding specific components */
 .bg-\[\#d0302b\] h1,
 .bg-\[\#d0302b\] h2,
 .bg-\[\#d0302b\] h3,
 .bg-\[\#d0302b\] h4,
 .bg-\[\#d0302b\] p,
-.bg-\[\#d0302b\] span,
+.bg-\[\#d0302b\] span:not(.steam-letter),
 .bg-\[\#d0302b\] li,
 .bg-\[\#d0302b\] strong,
-.bg-\[\#d0302b\] div,
 .bg-\[\#d0302b\] a,
 .bg-\[\#d0302b\] small,
 [class*="bg-[#d0302b]"] h1,
@@ -437,8 +436,7 @@ footer.bg-\[\#d0302b\] {
 [class*="bg-[#d0302b]"] li,
 [class*="bg-[#d0302b]"] strong,
 [class*="bg-[#d0302b]"] a,
-[class*="bg-[#d0302b]"] div,
-[class*="bg-[#d0302b]"] span:not(.text-gold),
+[class*="bg-[#d0302b]"] span:not(.text-gold):not(.steam-letter),
 .bg-red-section h1,
 .bg-red-section h2,
 .bg-red-section h3,
@@ -446,8 +444,13 @@ footer.bg-\[\#d0302b\] {
 .bg-red-section p,
 .bg-red-section li,
 .bg-red-section strong,
-.bg-red-section span:not(.text-gold) {
+.bg-red-section span:not(.text-gold):not(.steam-letter) {
   color: #FFFFFF !important;
+}
+
+/* Force STEAM center letters to be black */
+.steam-letter {
+  color: #000000 !important;
 }
 
 /* Button overrides in red sections */

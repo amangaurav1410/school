@@ -468,19 +468,16 @@ export default function Home() {
                                     {['S', 'T', 'E', 'A', 'M'].map((letter, idx) => (
                                         <motion.span
                                             key={letter}
-                                            className="text-3xl font-black tracking-tight"
+                                            className="steam-letter text-3xl font-black tracking-tight"
                                             animate={{
-                                                color: steamIndex === idx ? '#FFFFFF' : '#d0302b',
-                                                scale: steamIndex === idx ? 1.15 : 1,
-                                                textShadow: steamIndex === idx
-                                                    ? '0 0 20px rgba(208, 48, 43, 0.8), 0 0 40px rgba(208, 48, 43, 0.6)'
-                                                    : '0 0 0px rgba(208, 48, 43, 0)'
+                                                scale: steamIndex === idx ? 1.25 : 1,
                                             }}
                                             transition={{ duration: 0.3 }}
                                             style={{
-                                                backgroundColor: steamIndex === idx ? '#d0302b' : 'transparent',
-                                                padding: steamIndex === idx ? '2px 4px' : '0',
-                                                borderRadius: steamIndex === idx ? '4px' : '0',
+                                                color: '#000000',
+                                                backgroundColor: steamIndex === idx ? 'rgba(208, 48, 43, 0.15)' : 'transparent',
+                                                padding: '2px 4px',
+                                                borderRadius: '4px',
                                             }}
                                         >
                                             {letter}
@@ -836,78 +833,73 @@ export default function Home() {
                     </div>
 
                     {/* Carousel */}
-                    {(() => {
-                        const current = testimonialIndex; const t = testimonials[current]; return (
-                            <div className="relative">
-                                {/* Card */}
-                                <AnimatePresence mode="wait">
+                    <div className="relative">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {[0, 1, 2].map((offset) => {
+                                const index = (testimonialIndex + offset) % testimonials.length;
+                                const t = testimonials[index];
+                                return (
                                     <motion.div
-                                        key={current}
-                                        initial={{ opacity: 0, x: 60 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        exit={{ opacity: 0, x: -60 }}
-                                        transition={{ duration: 0.45, ease: 'easeInOut' }}
-                                        className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.08)] border border-gray-100 px-10 py-12 max-w-3xl mx-auto text-center"
+                                        key={index}
+                                        initial={{ opacity: 0, y: 30 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: offset * 0.1 }}
+                                        className="bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-gray-100 px-8 py-10 text-center flex flex-col items-center h-full"
                                     >
                                         {/* Quote icon */}
-                                        <div className="flex justify-center mb-6">
-                                            <svg width="44" height="44" viewBox="0 0 24 24" fill="#d0302b">
+                                        <div className="mb-6">
+                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="#d0302b">
                                                 <path d="M14.017 21L14.017 18C14.017 16.8954 14.9125 16 16.0171 16H19.0171C19.5694 16 20.0171 15.5523 20.0171 15V9C20.0171 8.44772 19.5694 8 19.0171 8H15.0171C14.4648 8 14.0171 8.44772 14.0171 9V12C14.0171 12.5523 13.5694 13 13.0171 13H11.0171L11.0171 4H21.0171V15C21.0171 17.7614 18.7785 20 16.0171 20L14.017 21ZM3.01711 21L3.01711 18C3.01711 16.8954 3.91255 16 5.01711 16H8.01711C8.56939 16 9.01711 15.5523 9.01711 15V9C9.01711 8.44772 8.56939 8 8.01711 8H4.01711C3.46482 8 3.01711 8.44772 3.01711 9V12C3.01711 12.5523 2.56939 13 2.01711 13H0.0171094L0.0171094 4H10.0171V15C10.0171 17.7614 7.77853 20 5.01711 20L3.01711 21Z" />
                                             </svg>
                                         </div>
 
                                         {/* Content */}
-                                        <p className="text-xl leading-relaxed mb-10 italic" style={{ fontFamily: '"Lato", sans-serif', color: '#000000' }}>
+                                        <p className="text-base leading-relaxed mb-8 italic flex-grow" style={{ fontFamily: '"Lato", sans-serif', color: '#000000' }}>
                                             &quot;{t.content}&quot;
                                         </p>
 
                                         {/* Avatar + Name */}
-                                        <div className="flex flex-col items-center gap-3">
-                                            <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#d0302b]/30">
+                                        <div className="flex flex-col items-center gap-3 mt-auto">
+                                            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#d0302b]/20">
                                                 <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
                                             </div>
                                             <div>
-                                                <h4 className="font-black text-lg" style={{ fontFamily: "'Raleway', sans-serif", color: '#000000' }}>{t.name}</h4>
-                                                <p className="text-sm font-semibold" style={{ color: '#000000' }}>{t.role}</p>
+                                                <h4 className="font-black text-base" style={{ fontFamily: "'Raleway', sans-serif", color: '#000000' }}>{t.name}</h4>
+                                                <p className="text-xs font-semibold" style={{ color: '#666666' }}>{t.role}</p>
                                             </div>
                                         </div>
                                     </motion.div>
-                                </AnimatePresence>
+                                );
+                            })}
+                        </div>
 
-                                {/* Prev / Next Arrows */}
+                        {/* Prev / Next Arrows */}
+                        <button
+                            onClick={prevTestimonial}
+                            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center hover:bg-[#d0302b] hover:text-white transition-all duration-200 z-20"
+                            style={{ color: '#000000' }}
+                        >
+                            <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                        </button>
+                        <button
+                            onClick={nextTestimonial}
+                            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center hover:bg-[#d0302b] hover:text-white transition-all duration-200 z-20"
+                            style={{ color: '#000000' }}
+                        >
+                            <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                        </button>
+
+                        {/* Dot Indicators */}
+                        <div className="flex justify-center gap-2 mt-12">
+                            {testimonials.map((_, i) => (
                                 <button
-                                    onClick={prevTestimonial}
-                                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-10 w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center hover:bg-[#d0302b] hover:text-white transition-all duration-200"
-                                    style={{ color: '#000000' }}
-                                >
-                                    <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                                </button>
-                                <button
-                                    onClick={nextTestimonial}
-                                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-10 w-11 h-11 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center hover:bg-[#d0302b] hover:text-white transition-all duration-200"
-                                    style={{ color: '#000000' }}
-                                >
-                                    <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                                </button>
-
-                                {/* Dot Indicators */}
-                                <div className="flex justify-center gap-2 mt-8">
-                                    {testimonials.map((_, i) => (
-                                        <button
-                                            key={i}
-                                            onClick={() => setTestimonialIndex(i)}
-                                            className={`rounded-full transition-all duration-300 ${i === current ? 'w-6 h-2.5 bg-[#d0302b]' : 'w-2.5 h-2.5 bg-gray-300 hover:bg-gray-400'}`}
-                                        />
-                                    ))}
-                                </div>
-
-                                {/* Counter */}
-                                <p className="text-center mt-4 text-sm font-semibold" style={{ color: '#000000' }}>
-                                    {current + 1} / {testimonials.length}
-                                </p>
-                            </div>
-                        );
-                    })()}
+                                    key={i}
+                                    onClick={() => setTestimonialIndex(i)}
+                                    className={`h-2.5 rounded-full transition-all duration-300 ${i === testimonialIndex ? 'w-8 bg-[#d0302b]' : 'w-2.5 bg-gray-300 hover:bg-gray-400'}`}
+                                />
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </section>
 

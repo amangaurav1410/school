@@ -168,7 +168,7 @@ export default function Header() {
             </nav>
 
             {/* Middle Logo (CBSE Affiliation) */}
-            <div className="hidden lg:flex flex-col items-center justify-center h-full px-4 border-l border-r border-black/5 mx-2">
+            <div className="hidden lg:flex flex-col items-center justify-center h-full px-4 mx-2">
               <img
                 src="/images/logo.png"
                 alt="CBSE Logo"
