@@ -2,14 +2,14 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="relative pt-8 pb-4 overflow-hidden bg-[#d0302b]" style={{ color: '#FFFFFF', fontStyle: 'normal' }}>
-      {/* Background with Campus Image and Deep Red Overlay */}
-      <div className="absolute inset-0 z-0">
+    <footer className="relative pt-8 pb-4 overflow-hidden bg-[#d0302b]/90" style={{ color: '#FFFFFF', fontStyle: 'normal' }}>
+      {/* Background with Custom Image and Deep Red Overlay */}
+      <div className="absolute inset-0 z-0 text-white">
         <div
-          className="absolute inset-0 bg-center bg-cover opacity-15 mix-blend-multiply"
-          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1541339907198-e08756ebafe1?w=1600&h=600&fit=crop")' }}
+          className="absolute inset-0 bg-center bg-cover opacity-50 mix-blend-overlay"
+          style={{ backgroundImage: 'url("/WhatsApp Image 2026-02-20 at 10.23.06.jpeg")' }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-[#d0302b] via-[#d0302b]/95 to-[#8d211d]/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#d0302b]/80 via-[#d0302b]/70 to-[#8d211d]/60"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -19,13 +19,11 @@ export default function Footer() {
           {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start pr-8 md:border-r md:border-white/10 py-4 h-full w-full">
             <Link href="/" className="inline-block transition-all hover:scale-105 duration-500">
-              <div className="bg-white/95 p-4 rounded-[1.5rem] shadow-xl border border-white/20">
-                <img
-                  src="/maple-ford-logo.png"
-                  alt="Mapleford International School Logo"
-                  className="h-20 w-auto"
-                />
-              </div>
+              <img
+                src="/images/footer-logo.png"
+                alt="Mapleford International School Logo"
+                className="h-40 w-auto"
+              />
             </Link>
           </div>
 

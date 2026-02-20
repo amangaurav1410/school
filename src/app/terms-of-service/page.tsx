@@ -9,7 +9,7 @@ export default function TermsOfService() {
     <div className="min-h-screen bg-white">
       <Header />
       <div className="pt-20">
-        <div className="pt-24 min-h-screen bg-white text-[#1A1A1A]">
+        <div className="pt-24 min-h-screen bg-white text-[#000000]">
           {/* Hero Section */}
           <section className="relative py-24 overflow-hidden bg-gradient-to-br from-[#FDF6E3] to-white">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +44,7 @@ export default function TermsOfService() {
                 <div className="space-y-12">
                   {/* Introduction */}
                   <div className="bg-gradient-to-br from-[#FDF6E3]/50 to-white p-8 rounded-3xl border border-[#D6B25E]/20">
-                    <h2 className="text-3xl font-bold mb-4 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Welcome to Mapleford International School</h2>
+                    <h2 className="text-3xl font-bold mb-4 text-[#000000]" style={{ fontFamily: '"Raleway", sans-serif' }}>Welcome to Mapleford International School</h2>
                     <p className="text-gray-700 leading-relaxed">
                       These Terms of Service ("Terms") govern your access to and use of the Mapleford International School website and services. By accessing or using our website, you agree to be bound by these Terms. If you do not agree with any part of these Terms, please do not use our website.
                     </p>
@@ -52,9 +52,9 @@ export default function TermsOfService() {
 
                   {/* Acceptance of Terms */}
                   <div>
-                    <h2 className="text-3xl font-bold mb-6 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Acceptance of Terms</h2>
+                    <h2 className="text-3xl font-bold mb-6 text-[#000000]" style={{ fontFamily: '"Raleway", sans-serif' }}>Acceptance of Terms</h2>
                     <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm">
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-[#000000] leading-relaxed">
                         By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. Additionally, when using particular services, you shall be subject to any posted guidelines or rules applicable to such services.
                       </p>
                     </div>
@@ -62,7 +62,7 @@ export default function TermsOfService() {
 
                   {/* Use of Website */}
                   <div>
-                    <h2 className="text-3xl font-bold mb-6 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Use of Website</h2>
+                    <h2 className="text-3xl font-bold mb-6 text-[#000000]" style={{ fontFamily: '"Raleway", sans-serif' }}>Use of Website</h2>
                     <div className="space-y-6">
                       <div className="bg-gradient-to-br from-[#FDF6E3]/30 to-white p-8 rounded-3xl border border-[#D6B25E]/20">
                         <h3 className="text-xl font-bold mb-3 text-[#d0302b]">Permitted Use</h3>
@@ -200,7 +200,7 @@ export default function TermsOfService() {
 
                   {/* Contact Information */}
                   <div className="bg-gradient-to-br from-[#d0302b]/5 to-[#D6B25E]/5 p-10 rounded-3xl border-2 border-[#D6B25E]/30">
-                    <h2 className="text-3xl font-bold mb-6 text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Contact Us</h2>
+                    <h2 className="text-3xl font-bold mb-6 text-[#000000]" style={{ fontFamily: '"Raleway", sans-serif' }}>Contact Us</h2>
                     <p className="text-gray-700 leading-relaxed mb-6">
                       If you have any questions about these Terms of Service, please contact us:
                     </p>

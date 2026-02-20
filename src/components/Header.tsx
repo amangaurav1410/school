@@ -90,7 +90,7 @@ export default function Header() {
             <div className="flex items-center h-full gap-3 sm:gap-6">
               <Link href="/" className="flex items-center h-full py-3">
                 <img
-                  src="/maple-ford-logo.png"
+                  src="/ChatGPT Image Jan 14, 2026, 09_10_49 PM.png"
                   alt="Logo"
                   className="h-full w-auto object-contain transition-transform duration-300 hover:scale-105"
                 />
@@ -149,7 +149,7 @@ export default function Header() {
                     <Link
                       href={item.href || '/'}
                       className={`menu-link px-3 py-2 text-[14px] font-bold transition-all duration-300 rounded-lg relative ${pathname === (item.href || '/')
-                        ? 'text-[#d0302b]'
+                        ? 'text-black'
                         : 'hover:bg-black/5'
                         }`}
                       style={{ fontFamily: '"Lato", sans-serif' }}
@@ -167,13 +167,16 @@ export default function Header() {
               ))}
             </nav>
 
-            {/* Middle Logo (Optional styling for desktop) */}
-            <div className="hidden lg:flex items-center h-full px-4 border-l border-r border-black/5 mx-2">
+            {/* Middle Logo (CBSE Affiliation) */}
+            <div className="hidden lg:flex flex-col items-center justify-center h-full px-4 border-l border-r border-black/5 mx-2">
               <img
                 src="/images/logo.png"
-                alt="Secondary Logo"
+                alt="CBSE Logo"
                 className="h-16 w-auto object-contain"
               />
+              <span className="text-[10px] font-bold text-gray-700 mt-1 leading-none">
+                Affiliation No: 3630573
+              </span>
             </div>
 
             {/* Right - CTA Button & Mobile Menu Toggle */}
@@ -234,7 +237,7 @@ export default function Header() {
               <div className="flex justify-between items-center py-1.5">
                 <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
                   <img
-                    src="/maple-ford-logo.png"
+                    src="/ChatGPT Image Jan 14, 2026, 09_10_49 PM.png"
                     alt="Mapleford International School Logo"
                     className="h-16 sm:h-20 w-auto"
                   />
@@ -294,9 +297,9 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href || '/'}
-                      className={`menu-link block py-4 text-lg font-bold rounded-xl px-4 transition-colors ${pathname === (item.href || '/')
-                        ? 'text-[#d0302b] bg-[#d0302b]/5'
-                        : 'hover:bg-black/5'
+                      className={`flex items-center justify-between p-4 rounded-xl transition-all ${pathname === (item.href || '/')
+                        ? 'bg-black/5 text-black font-black'
+                        : 'text-black'
                         }`}
                       style={{ fontFamily: '"Raleway", sans-serif' }}
                       onClick={() => setIsMobileMenuOpen(false)}
