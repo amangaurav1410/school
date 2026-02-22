@@ -188,10 +188,10 @@ export default function Home() {
                                 </h2>
                                 <div className="space-y-6 text-lg" style={{ color: '#000000', lineHeight: '1.8', fontFamily: '"Lato", Arial, Helvetica, sans-serif' }}>
                                     <p className="text-xl leading-relaxed">
-                                        Rooted in the proud three-decade legacy of Megacity High School, representing a purposeful evolution in education, Mapleford International School carries forward time-tested values while redefining learning in a rapidly changing world.
+                                        Rooted in the proud three-decade legacy of Megacity High School, a purposeful, progressive co-educational institution, Mapleford International School carries forward time-tested values while redefining learning in a rapidly changing world.
                                     </p>
                                     <p className="text-xl leading-relaxed">
-                                        Anchored in the strength of the CBSE curriculum and enriched through global learning pathways through our academic collaboration with Maple Bear Canadian School, students gain international perspectives through contemporary teaching approaches and the confidence to navigate global opportunities.
+                                        Anchored in the strength of the CBSE curriculum and enriched through global learning pathways through our academic collaboration with Maple Bear Global Schools, Canada, students gain international perspectives through contemporary teaching approaches and the confidence to navigate global opportunities.
                                     </p>
                                 </div>
                             </div>
@@ -357,28 +357,28 @@ export default function Home() {
                                 stage: 'Pre-School',
                                 grades: 'Nursery - UKG',
                                 description: 'Play-based early learning that builds curiosity, confidence, and strong foundations.',
-                                image: 'https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=800&h=800&fit=crop'
+                                image: '/images/continuum_preschool.png'
                             },
                             {
                                 id: 'elementary',
                                 stage: 'Elementary',
                                 grades: 'Grade 1 - 5',
                                 description: 'Concept-driven learning that blends CBSE rigour with Canadian teaching practices.',
-                                image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=800&fit=crop'
+                                image: '/images/continuum_elementary.png'
                             },
                             {
                                 id: 'middle-school',
                                 stage: 'Middle School',
                                 grades: 'Grade 6 - 8',
                                 description: 'Deeper subject learning with a focus on thinking, application, and collaboration.',
-                                image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&h=800&fit=crop'
+                                image: '/images/continuum_middleschool.png'
                             },
                             {
                                 id: 'high-school',
                                 stage: 'High School',
                                 grades: 'Grade 9 - 10',
                                 description: "A CBSE-aligned programme that prepares students for academic success and future pathways.",
-                                image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=800&fit=crop'
+                                image: '/images/continuum_highschool.png'
                             }
                         ].map((stage, index) => (
                             <motion.div
@@ -450,204 +450,214 @@ export default function Home() {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                        {/* Left Column: Circular STEAM Flow Animation */}
-                        <div className="relative w-full h-[680px] flex items-center justify-center pt-8">
-                            {/* Central STEAM Hub with Enhanced Pulse Effect and Letter Highlighting */}
-                            <motion.div
-                                className="absolute z-50 w-36 h-36 rounded-full bg-gradient-to-br from-white to-gray-50 flex flex-col items-center justify-center shadow-[0_0_80px_rgba(255,255,255,0.4)] border-[6px] border-white"
-                                animate={{
-                                    boxShadow: [
-                                        "0 0 40px rgba(255,255,255,0.3)",
-                                        "0 0 100px rgba(255,255,255,0.5)",
-                                        "0 0 40px rgba(255,255,255,0.3)"
-                                    ]
-                                }}
-                                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        {/* Left Column: Pure-SVG Circular Ring */}
+                        <div className="relative w-full h-[600px] flex items-center justify-center">
+                            <svg
+                                className="w-full h-full"
+                                viewBox="0 0 600 600"
+                                style={{ maxWidth: '600px' }}
                             >
-                                <div className="flex items-center gap-0.5" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                                    {['S', 'T', 'E', 'A', 'M'].map((letter, idx) => (
-                                        <motion.span
-                                            key={letter}
-                                            className="steam-letter text-3xl font-black tracking-tight"
-                                            animate={{
-                                                scale: steamIndex === idx ? 1.25 : 1,
-                                            }}
-                                            transition={{ duration: 0.3 }}
-                                            style={{
-                                                color: '#000000',
-                                                backgroundColor: steamIndex === idx ? 'rgba(208, 48, 43, 0.15)' : 'transparent',
-                                                padding: '2px 4px',
-                                                borderRadius: '4px',
-                                            }}
-                                        >
-                                            {letter}
-                                        </motion.span>
-                                    ))}
-                                </div>
-                                <div className="w-10 h-0.5 bg-gradient-to-r from-transparent via-[#d0302b]/20 to-transparent mt-1.5 rounded-full"></div>
-                            </motion.div>
-
-                            {/* Circular Steps Container - static (no orbit rotation) */}
-                            <div className="relative w-[580px] h-[580px] flex items-center justify-center">
                                 {[
                                     {
-                                        title: 'Science', color: '#FFD700', darkColor: '#B8860B',
-                                        icon: (
-                                            <svg width="70" height="70" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <circle cx="17" cy="17" r="3.5" fill="white" fillOpacity="0.95" />
-                                                <ellipse cx="17" cy="17" rx="13" ry="5" stroke="white" strokeOpacity="0.7" strokeWidth="1.2" fill="none" />
-                                                <ellipse cx="17" cy="17" rx="13" ry="5" stroke="white" strokeOpacity="0.7" strokeWidth="1.2" fill="none" transform="rotate(60 17 17)" />
-                                                <ellipse cx="17" cy="17" rx="13" ry="5" stroke="white" strokeOpacity="0.7" strokeWidth="1.2" fill="none" transform="rotate(-60 17 17)" />
-                                                <motion.circle cx="4" cy="17" r="2" fill="white"
-                                                    animate={{ rotate: [0, 360] }} style={{ originX: '17px', originY: '17px' }}
-                                                    transition={{ duration: 2, repeat: Infinity, ease: 'linear' }} />
-                                            </svg>
+                                        title: 'Science', color: '#FFD700',
+                                        renderIcon: () => (
+                                            <g transform="translate(0,-18)">
+                                                {/* Nucleus */}
+                                                <circle cx="0" cy="0" r="3" fill="white" fillOpacity="0.95">
+                                                    <animate attributeName="r" values="3;4.2;3" dur="2s" repeatCount="indefinite" />
+                                                </circle>
+                                                {/* Orbit 1 - spinning */}
+                                                <ellipse cx="0" cy="0" rx="12" ry="4.5" stroke="white" strokeWidth="1.4" fill="none" strokeOpacity="0.9">
+                                                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite" />
+                                                </ellipse>
+                                                {/* Orbit 2 */}
+                                                <ellipse cx="0" cy="0" rx="12" ry="4.5" stroke="white" strokeWidth="1.4" fill="none" strokeOpacity="0.6" transform="rotate(60)" />
+                                                {/* Orbit 3 */}
+                                                <ellipse cx="0" cy="0" rx="12" ry="4.5" stroke="white" strokeWidth="1.4" fill="none" strokeOpacity="0.4" transform="rotate(-60)" />
+                                                {/* Electron dot on orbit 1 */}
+                                                <circle cx="12" cy="0" r="1.8" fill="white" fillOpacity="0.95">
+                                                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite" />
+                                                </circle>
+                                            </g>
                                         )
                                     },
                                     {
-                                        title: 'Technology', color: '#D4AF37', darkColor: '#996515',
-                                        icon: (
-                                            <svg width="70" height="70" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="10" y="10" width="14" height="14" rx="2" stroke="white" strokeWidth="1.4" fill="white" fillOpacity="0.12" />
-                                                <line x1="14" y1="10" x2="14" y2="24" stroke="white" strokeOpacity="0.4" strokeWidth="0.8" />
-                                                <line x1="20" y1="10" x2="20" y2="24" stroke="white" strokeOpacity="0.4" strokeWidth="0.8" />
-                                                <line x1="10" y1="14" x2="24" y2="14" stroke="white" strokeOpacity="0.4" strokeWidth="0.8" />
-                                                <line x1="10" y1="20" x2="24" y2="20" stroke="white" strokeOpacity="0.4" strokeWidth="0.8" />
-                                                <line x1="14" y1="6" x2="14" y2="10" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-                                                <line x1="20" y1="6" x2="20" y2="10" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-                                                <line x1="14" y1="24" x2="14" y2="28" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-                                                <line x1="20" y1="24" x2="20" y2="28" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-                                                <line x1="6" y1="14" x2="10" y2="14" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-                                                <line x1="6" y1="20" x2="10" y2="20" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-                                                <line x1="24" y1="14" x2="28" y2="14" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-                                                <line x1="24" y1="20" x2="28" y2="20" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-                                                <motion.circle cx="17" cy="17" r="2" fill="white"
-                                                    animate={{ opacity: [1, 0.2, 1], scale: [1, 1.4, 1] }}
-                                                    transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }} />
-                                            </svg>
+                                        title: 'Technology', color: '#DAA520',
+                                        renderIcon: () => (
+                                            <g transform="translate(0,-18)">
+                                                {/* Chip body */}
+                                                <rect x="-8" y="-8" width="16" height="16" rx="2" stroke="white" strokeWidth="1.4" fill="white" fillOpacity="0.15" />
+                                                {/* Grid lines */}
+                                                <line x1="-3" y1="-8" x2="-3" y2="8" stroke="white" strokeOpacity="0.35" strokeWidth="0.8" />
+                                                <line x1="3" y1="-8" x2="3" y2="8" stroke="white" strokeOpacity="0.35" strokeWidth="0.8" />
+                                                <line x1="-8" y1="-3" x2="8" y2="-3" stroke="white" strokeOpacity="0.35" strokeWidth="0.8" />
+                                                <line x1="-8" y1="3" x2="8" y2="3" stroke="white" strokeOpacity="0.35" strokeWidth="0.8" />
+                                                {/* Pins */}
+                                                <line x1="-3" y1="-11" x2="-3" y2="-8" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                                                <line x1="3" y1="-11" x2="3" y2="-8" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                                                <line x1="-3" y1="8" x2="-3" y2="11" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                                                <line x1="3" y1="8" x2="3" y2="11" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                                                <line x1="-11" y1="-3" x2="-8" y2="-3" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                                                <line x1="-11" y1="3" x2="-8" y2="3" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                                                <line x1="8" y1="-3" x2="11" y2="-3" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                                                <line x1="8" y1="3" x2="11" y2="3" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                                                {/* Pulsing center dot */}
+                                                <circle cx="0" cy="0" r="2.5" fill="white" fillOpacity="0.95">
+                                                    <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite" />
+                                                    <animate attributeName="r" values="2.5;3.8;2.5" dur="1.2s" repeatCount="indefinite" />
+                                                </circle>
+                                            </g>
                                         )
                                     },
                                     {
-                                        title: 'Engineering', color: '#C5B358', darkColor: '#85754D',
-                                        icon: (
-                                            <motion.svg width="70" height="70" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                                animate={{ rotate: [0, 360] }}
-                                                transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}>
-                                                <path d="M17 3 L18.5 7 L22.5 5.5 L21.5 9.5 L25.5 10.5 L23 14 L27 16 L23 18 L25.5 21.5 L21.5 22.5 L22.5 26.5 L18.5 25 L17 29 L15.5 25 L11.5 26.5 L12.5 22.5 L8.5 21.5 L11 18 L7 16 L11 14 L8.5 10.5 L12.5 9.5 L11.5 5.5 L15.5 7 Z"
-                                                    stroke="white" strokeWidth="1.2" fill="white" fillOpacity="0.18" strokeLinejoin="round" />
-                                                <circle cx="17" cy="16" r="4.5" fill="white" fillOpacity="0.9" />
-                                                <circle cx="17" cy="16" r="2" fill="#C5B358" />
-                                            </motion.svg>
+                                        title: 'Engineering', color: '#FFA500',
+                                        renderIcon: () => (
+                                            <g transform="translate(0,-18)">
+                                                {/* Spinning gear */}
+                                                <g>
+                                                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite" />
+                                                    <path d="M0 -11 L1.5 -7 L4 -9 L5.5 -7 L3.5 -5 L7 -3.5 L7 0 L3.5 3.5 L5.5 7 L4 9 L1.5 7 L0 11 L-1.5 7 L-4 9 L-5.5 7 L-3.5 3.5 L-7 0 L-3.5 -3.5 L-5.5 -7 L-4 -9 L-1.5 -7 Z"
+                                                        stroke="white" strokeWidth="0.8" fill="white" fillOpacity="0.2" strokeLinejoin="round" />
+                                                    <circle cx="0" cy="0" r="4" fill="white" fillOpacity="0.9" />
+                                                    <circle cx="0" cy="0" r="2" fill="#FFA500" />
+                                                </g>
+                                            </g>
                                         )
                                     },
                                     {
-                                        title: 'Arts', color: '#EAC117', darkColor: '#AF9B1E',
-                                        icon: (
-                                            <svg width="70" height="70" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect x="15.5" y="4" width="3" height="16" rx="1.5" fill="white" fillOpacity="0.85" />
-                                                <rect x="14.5" y="18" width="5" height="3" rx="0.5" fill="white" fillOpacity="0.5" />
-                                                <path d="M14 21 Q17 26 14 29 Q17 27 20 29 Q17 26 20 21 Z" fill="white" fillOpacity="0.9" />
-                                                <motion.ellipse cx="17" cy="30" rx="1.8" ry="2.5" fill="white" fillOpacity="0.8"
-                                                    animate={{ cy: [29, 31, 29], ry: [2, 2.8, 2], opacity: [0.8, 0.3, 0.8] }}
-                                                    transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }} />
-                                                <motion.circle cx="6" cy="20" r="2" fill="white" fillOpacity="0.7"
-                                                    animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1.5, repeat: Infinity, delay: 0 }} />
-                                                <motion.circle cx="6" cy="14" r="2" fill="white" fillOpacity="0.5"
-                                                    animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }} />
-                                                <motion.circle cx="6" cy="8" r="2" fill="white" fillOpacity="0.35"
-                                                    animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1.5, repeat: Infinity, delay: 1 }} />
-                                            </svg>
+                                        title: 'Arts', color: '#B8860B',
+                                        renderIcon: () => (
+                                            <g transform="translate(0,-18)">
+                                                {/* Candle body */}
+                                                <rect x="-3" y="-2" width="6" height="10" rx="1" fill="white" fillOpacity="0.8" />
+                                                {/* Wick */}
+                                                <line x1="0" y1="-2" x2="0" y2="-5" stroke="white" strokeWidth="1" strokeLinecap="round" />
+                                                {/* Flickering flame */}
+                                                <path d="M0 -14 Q3 -10 2 -6 Q0 -4 -2 -6 Q-3 -10 0 -14 Z" fill="white" fillOpacity="0.9">
+                                                    <animate attributeName="d" values="M0 -14 Q3 -10 2 -6 Q0 -4 -2 -6 Q-3 -10 0 -14 Z;M0 -16 Q2 -10 1.5 -6 Q0 -3.5 -1.5 -6 Q-2 -10 0 -16 Z;M0 -14 Q3 -10 2 -6 Q0 -4 -2 -6 Q-3 -10 0 -14 Z" dur="0.8s" repeatCount="indefinite" />
+                                                    <animate attributeName="opacity" values="0.9;1;0.75;1;0.9" dur="0.8s" repeatCount="indefinite" />
+                                                </path>
+                                                {/* Wax drip dots */}
+                                                <circle cx="-4" cy="6" r="1.5" fill="white" fillOpacity="0.5">
+                                                    <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite" />
+                                                </circle>
+                                                <circle cx="5" cy="3" r="1.2" fill="white" fillOpacity="0.35">
+                                                    <animate attributeName="opacity" values="0.35;0.8;0.35" dur="1.5s" begin="0.5s" repeatCount="indefinite" />
+                                                </circle>
+                                            </g>
                                         )
                                     },
                                     {
-                                        title: 'Mathematics', color: '#DAA520', darkColor: '#8B4513',
-                                        icon: (
-                                            <svg width="70" height="70" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <text x="6" y="20" fontFamily="serif" fontSize="20" fontWeight="bold" fill="white" fillOpacity="0.95">Σ</text>
-                                                <text x="21" y="15" fontFamily="serif" fontSize="11" fontWeight="600" fill="white" fillOpacity="0.7">π</text>
-                                                <motion.path
-                                                    d="M4 27 Q8 23 12 27 Q16 31 20 27 Q24 23 28 27 Q30 29 32 27"
-                                                    stroke="white" strokeWidth="1.2" strokeOpacity="0.7" fill="none" strokeLinecap="round"
-                                                    animate={{
-                                                        d: [
-                                                            "M4 27 Q8 23 12 27 Q16 31 20 27 Q24 23 28 27 Q30 29 32 27",
-                                                            "M4 27 Q8 31 12 27 Q16 23 20 27 Q24 31 28 27 Q30 25 32 27",
-                                                            "M4 27 Q8 23 12 27 Q16 31 20 27 Q24 23 28 27 Q30 29 32 27",
-                                                        ]
-                                                    }}
-                                                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }} />
-                                            </svg>
+                                        title: 'Mathematics', color: '#F0C040',
+                                        renderIcon: () => (
+                                            <g transform="translate(0,-18)">
+                                                {/* Bold Plus Symbol */}
+                                                <g>
+                                                    <line x1="-7" y1="-5" x2="7" y2="-5" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
+                                                    <line x1="0" y1="-12" x2="0" y2="2" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
+                                                </g>
+                                                {/* Bold Minus Symbol */}
+                                                <line x1="-7" y1="10" x2="7" y2="10" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
+
+                                                {/* Subtle floating animation */}
+                                                <animateTransform
+                                                    attributeName="transform"
+                                                    type="translate"
+                                                    values="0,-18; 0,-20; 0,-18"
+                                                    dur="3s"
+                                                    repeatCount="indefinite"
+                                                />
+                                            </g>
                                         )
                                     },
-                                ].map((item, idx) => {
-                                    const total = 5;
-                                    const rotation = idx * (360 / total);
-                                    const isActive = steamIndex === idx;
+                                ].map((seg, i) => {
+                                    const R = 210, cx = 300, cy = 300;
+                                    const gapDeg = 8, arcSpan = 72 - gapDeg;
+                                    const startDeg = i * 72 - 90 + gapDeg / 2;
+                                    const arcEndDeg = startDeg + arcSpan;
+                                    const midDeg = startDeg + arcSpan / 2;
+                                    const toRad = (d: number) => d * Math.PI / 180;
+
+                                    const sx = cx + R * Math.cos(toRad(startDeg));
+                                    const sy = cy + R * Math.sin(toRad(startDeg));
+                                    const ex = cx + R * Math.cos(toRad(arcEndDeg));
+                                    const ey = cy + R * Math.sin(toRad(arcEndDeg));
+                                    const mx = cx + R * Math.cos(toRad(midDeg));
+                                    const my = cy + R * Math.sin(toRad(midDeg));
+
+                                    const rawRot = midDeg + 90;
+                                    const normRot = ((rawRot % 360) + 360) % 360;
+                                    const textRot = (normRot > 90 && normRot < 270) ? rawRot - 180 : rawRot;
+
+                                    const isActive = steamIndex === i;
+                                    const sw = isActive ? 170 : 150;
 
                                     return (
-                                        <motion.div
-                                            key={idx}
-                                            className="absolute w-full h-full flex items-center justify-center pointer-events-none"
-                                            style={{ rotate: rotation }}
-                                        >
-                                            <motion.div
-                                                className="relative w-[220px] h-[145px] flex flex-col items-center justify-center pointer-events-auto cursor-pointer group"
-                                                animate={{
-                                                    y: isActive ? -200 : -190,
-                                                    scale: isActive ? 1.1 : 1,
-                                                }}
-                                                transition={{ type: 'spring', stiffness: 320, damping: 22 }}
-                                                onClick={() => setSteamIndex(idx)}
-                                            >
-                                                {isActive && (
-                                                    <motion.div
-                                                        initial={{ opacity: 0, scale: 0.8 }}
-                                                        animate={{ opacity: 0.55, scale: 1 }}
-                                                        exit={{ opacity: 0 }}
-                                                        transition={{ duration: 0.4 }}
-                                                        className="absolute inset-0 blur-3xl -z-10"
-                                                        style={{ backgroundColor: item.color }}
-                                                    />
-                                                )}
-
-                                                <div
-                                                    className="absolute inset-0 shadow-2xl transition-all duration-500 group-hover:shadow-[0_25px_70px_rgba(0,0,0,0.5)]"
-                                                    style={{
-                                                        background: `linear-gradient(145deg, ${item.color} 0%, ${item.darkColor} 100%)`,
-                                                        clipPath: 'polygon(8% 0%, 82% 0%, 100% 50%, 82% 100%, 8% 100%, 22% 50%)',
-                                                        filter: isActive ? 'brightness(1.3) saturate(1.2)' : 'brightness(1)',
-                                                        boxShadow: isActive
-                                                            ? `0 25px 60px ${item.color}55, 0 0 40px ${item.color}45 inset`
-                                                            : '0 12px 35px rgba(0,0,0,0.35)',
-                                                        transition: 'filter 0.4s, box-shadow 0.4s',
-                                                    }}
-                                                />
-
-                                                <div
-                                                    className="absolute inset-0 opacity-15 transition-opacity duration-500 group-hover:opacity-25"
-                                                    style={{
-                                                        clipPath: 'polygon(8% 0%, 82% 0%, 100% 50%, 82% 100%, 8% 100%, 22% 50%)',
-                                                        background: 'linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%)'
-                                                    }}
-                                                />
-
-                                                <motion.div
-                                                    className="relative z-10 text-center flex flex-col items-center justify-center w-full px-4 py-1 gap-0.5"
-                                                    animate={{ rotate: -rotation }}
+                                        <g key={i} style={{ cursor: 'pointer' }} onClick={() => setSteamIndex(i)}>
+                                            {/* Thick arc segment */}
+                                            <path
+                                                d={`M ${sx} ${sy} A ${R} ${R} 0 0 1 ${ex} ${ey}`}
+                                                fill="none"
+                                                stroke={seg.color}
+                                                strokeWidth={sw}
+                                                strokeLinecap="butt"
+                                                opacity={isActive ? 1 : 0.82}
+                                                style={{ transition: 'stroke-width 0.35s, opacity 0.35s' }}
+                                            />
+                                            {/* Animated icon + title, tangentially rotated */}
+                                            <g transform={`translate(${mx},${my}) rotate(${textRot})`}>
+                                                {/* Animated icon — scaled up */}
+                                                <g transform="scale(1.7)">
+                                                    {seg.renderIcon()}
+                                                </g>
+                                                <text
+                                                    x="0" y="32"
+                                                    textAnchor="middle"
+                                                    dominantBaseline="middle"
+                                                    fontSize={isActive ? '13' : '11'}
+                                                    fontWeight="900"
+                                                    fill="white"
+                                                    fontFamily="Raleway, sans-serif"
+                                                    letterSpacing="2"
+                                                    style={{ transition: 'font-size 0.35s' }}
                                                 >
-                                                    <div className="flex items-center justify-center" style={{ height: '72px' }}>
-                                                        {item.icon}
-                                                    </div>
-                                                    <h4
-                                                        className="font-black uppercase leading-tight"
-                                                        style={{ color: '#FFFFFF', fontSize: '14px', letterSpacing: '0.12em', textShadow: '0 2px 6px rgba(0,0,0,0.5)' }}
-                                                    >{item.title}</h4>
-                                                </motion.div>
-                                            </motion.div>
-                                        </motion.div>
+                                                    {seg.title.toUpperCase()}
+                                                </text>
+                                            </g>
+                                        </g>
                                     );
                                 })}
-                            </div>
+
+                                {/* Center STEAM hub — pure SVG */}
+                                {/* White circle background */}
+                                <circle cx="300" cy="300" r="85" fill="white" style={{ filter: 'drop-shadow(0 0 30px rgba(255,255,255,0.6))' }} />
+                                <circle cx="300" cy="300" r="85" fill="none" stroke="white" strokeWidth="6" />
+                                {/* STEAM letters in red */}
+                                {['S', 'T', 'E', 'A', 'M'].map((letter, idx) => {
+                                    const isActive = steamIndex === idx;
+                                    const totalWidth = 5 * 22; // 5 letters × ~22px each
+                                    const startX = 300 - totalWidth / 2 + 11;
+                                    const x = startX + idx * 22;
+                                    return (
+                                        <text
+                                            key={letter}
+                                            x={x}
+                                            y="306"
+                                            textAnchor="middle"
+                                            dominantBaseline="middle"
+                                            fontSize={isActive ? '28' : '22'}
+                                            fontWeight="900"
+                                            fill="#d0302b"
+                                            fontFamily="Raleway, sans-serif"
+                                            style={{ transition: 'font-size 0.3s' }}
+                                        >
+                                            {letter}
+                                        </text>
+                                    );
+                                })}
+                                {/* Subtle underline */}
+                                <rect x="282" y="316" width="36" height="2" rx="1" fill="rgba(208,48,43,0.25)" />
+                            </svg>
                         </div>
 
                         {/* Right Column: Description */}
@@ -727,11 +737,11 @@ export default function Home() {
                             <motion.div
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ duration: 0.3 }}
-                                className="aspect-video rounded-3xl overflow-hidden shadow-2xl"
+                                className="aspect-square rounded-3xl overflow-hidden shadow-2xl"
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&h=900&fit=crop"
-                                    alt="Campus Overview"
+                                    src="/images/mapleford_campus_branded.png"
+                                    alt="Mapleford International School Campus"
                                     className="w-full h-full object-cover"
                                 />
                             </motion.div>
@@ -757,19 +767,50 @@ export default function Home() {
                             viewport={{ once: true }}
                             variants={fadeInUp}
                             transition={{ duration: 0.8 }}
-                            className="order-2 lg:order-1"
+                            className="order-2 lg:order-1 h-full"
                         >
-                            <motion.div
-                                whileHover={{ scale: 1.02 }}
-                                transition={{ duration: 0.3 }}
-                                className="aspect-video rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white/10"
-                            >
-                                <img
-                                    src="https://images.unsplash.com/photo-1577412647305-991150c7d163?w=1600&h=900&fit=crop"
-                                    alt="Sports Facilities - Students Playing"
-                                    className="w-full h-full object-cover"
-                                />
-                            </motion.div>
+                            <div className="grid grid-cols-2 gap-4 h-full">
+                                <motion.div
+                                    whileHover={{ scale: 1.05, rotate: -1 }}
+                                    className="aspect-square rounded-[2rem] overflow-hidden shadow-xl border-4 border-white/10"
+                                >
+                                    <img
+                                        src="/images/sports_football.png"
+                                        alt="Football"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </motion.div>
+                                <motion.div
+                                    whileHover={{ scale: 1.05, rotate: 1 }}
+                                    className="aspect-square rounded-[2rem] overflow-hidden shadow-xl border-4 border-white/10 mt-8"
+                                >
+                                    <img
+                                        src="/images/sports_badminton.png"
+                                        alt="Badminton"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </motion.div>
+                                <motion.div
+                                    whileHover={{ scale: 1.05, rotate: 1 }}
+                                    className="aspect-square rounded-[2rem] overflow-hidden shadow-xl border-4 border-white/10 -mt-8"
+                                >
+                                    <img
+                                        src="/images/sports_tennis.png"
+                                        alt="Tennis"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </motion.div>
+                                <motion.div
+                                    whileHover={{ scale: 1.05, rotate: -1 }}
+                                    className="aspect-square rounded-[2rem] overflow-hidden shadow-xl border-4 border-white/10"
+                                >
+                                    <img
+                                        src="/images/sports_athletics.png"
+                                        alt="Athletics"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </motion.div>
+                            </div>
                         </motion.div>
                         <motion.div
                             initial="hidden"
@@ -943,7 +984,7 @@ export default function Home() {
                                     size="lg"
                                     className="w-full sm:w-auto px-12"
                                 >
-                                    Explore Now
+                                    Enroll Now
                                 </Button>
                             </div>
                         </motion.div>
@@ -954,16 +995,33 @@ export default function Home() {
                             viewport={{ once: true }}
                             variants={fadeInUp}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="relative"
+                            className="relative h-[500px]"
                         >
-                            <div className="aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl">
-                                <img
-                                    src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&h=600&fit=crop"
-                                    alt="Students at Mapleford"
+                            <div className="absolute top-0 right-0 w-3/4 aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl z-20">
+                                <motion.img
+                                    whileHover={{ scale: 1.05 }}
+                                    src="/images/journey_collaborative.png"
+                                    alt="Collaborative Learning"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
-                            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-[#D6B25E]/20 rounded-full blur-3xl -z-10"></div>
+                            <div className="absolute top-1/2 -left-4 w-1/2 aspect-square rounded-[2rem] overflow-hidden shadow-xl z-30 border-4 border-white">
+                                <motion.img
+                                    whileHover={{ scale: 1.05 }}
+                                    src="/images/journey_innovation.png"
+                                    alt="Innovation"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className="absolute -bottom-8 right-12 w-1/2 aspect-square rounded-[2rem] overflow-hidden shadow-xl z-10 opacity-80">
+                                <motion.img
+                                    whileHover={{ scale: 1.05 }}
+                                    src="/images/journey_happy.png"
+                                    alt="Student Life"
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#D6B25E]/15 rounded-full blur-3xl -z-10"></div>
                         </motion.div>
                     </div>
                 </div>

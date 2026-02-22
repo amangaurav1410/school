@@ -8,11 +8,11 @@ import Button from '../../components/Button';
 const facilities = [
   {
     id: 'classrooms',
-    icon: '📗',
+    icon: '📘',
     title: 'Smart & Well-ventilated Classrooms',
     subtitle: 'Smart. Bright. Engaging',
     description: 'Our classrooms are designed to be open, bright, and technology-enabled—spaces where students learn with focus and comfort. With digital boards and projectors, lessons become dynamic and visual—making learning engaging, interactive, and impactful.',
-    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&fit=crop&q=90',
+    image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1200&fit=crop&q=80',
     category: 'Academic'
   },
   {
@@ -21,7 +21,7 @@ const facilities = [
     title: 'Science Labs',
     subtitle: 'Explore. Experiment. Discover.',
     description: 'Dedicated Physics, Chemistry, and Biology laboratories provide students with hands-on learning experiences that bring science to life. Well-equipped and thoughtfully designed, these labs encourage observation, experimentation, and inquiry—helping students develop scientific thinking and a deeper understanding of the world around them.',
-    image: 'https://images.unsplash.com/photo-1532094349884-543559373574?w=1200&fit=crop&q=90',
+    image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=1200&fit=crop&q=80',
     category: 'Science'
   },
   {
@@ -30,7 +30,7 @@ const facilities = [
     title: 'Mathematics Lab',
     subtitle: 'Think. Solve. Apply.',
     description: 'The Mathematics Lab transforms abstract concepts into practical understanding. Through activity-based learning and hands-on tools, students build logical reasoning, problem-solving skills, and confidence—making maths engaging, intuitive, and enjoyable.',
-    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=1200&fit=crop&q=90',
+    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&fit=crop&q=80',
     category: 'Academic'
   },
   {
@@ -39,7 +39,7 @@ const facilities = [
     title: 'Computer Lab',
     subtitle: 'Learn. Code. Innovate.',
     description: 'Our modern computer lab supports technology-integrated learning and digital literacy across grades. With updated systems and guided instruction, students develop essential computing skills, responsible digital habits, and confidence in navigating today’s digital landscape.',
-    image: 'https://images.unsplash.com/photo-1588702547919-26089e690ecc?w=1200&fit=crop&q=90',
+    image: 'https://images.unsplash.com/photo-1588702547923-34e2e2832814?w=1200&fit=crop&q=80',
     category: 'Technology'
   },
   {
@@ -48,7 +48,7 @@ const facilities = [
     title: 'Library',
     subtitle: 'Quiet. Inviting. Inspiring.',
     description: 'Our library is a calm and welcoming space where curiosity finds direction. Stocked with a wide range of age-appropriate books, reference materials, and learning resources, it encourages students to read, research, and reflect. Comfortable reading corners and a peaceful ambience help nurture imagination and a lifelong love for learning.',
-    image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1200&fit=crop&q=90',
+    image: 'https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1200&fit=crop&q=80',
     category: 'Research'
   },
   {
@@ -57,7 +57,7 @@ const facilities = [
     title: 'Resource Rooms',
     subtitle: 'Supportive. Inclusive. Individualised.',
     description: 'Dedicated resource rooms offer personalised academic and special education support in a nurturing setting. Designed to address diverse learning needs, these spaces ensure every child receives focused attention, encouragement, and the support required to learn at their own pace.',
-    image: 'https://images.unsplash.com/photo-1573495612890-430e3654c89d?w=1200&fit=crop&q=90',
+    image: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200&fit=crop&q=80',
     category: 'Support'
   }
 ];
@@ -69,9 +69,10 @@ const sports = [
   { name: "Tennis", motto: "Precision. Endurance. Grace.", desc: "With tennis courts designed for both beginners and aspiring players, this space sharpens focus, coordination, and competitiveness.", icon: "🎾" },
   { name: "Football", motto: "Strength. Teamwork. Spirit.", desc: "A lush football ground encourages students to play with passion, build resilience, and learn leadership through teamwork and strategy.", icon: "⚽" },
   { name: "Athletics", motto: "Speed. Strength. Determination.", desc: "Athletics facilities encourage students to explore running, jumping, and field events—nurturing fitness, discipline, and individual bests.", icon: "🎽" },
-  { name: "Kids’ Play Area", motto: "Safe. Active. Joyful.", desc: "A colourful, secure play zone lets younger learners climb, explore, and socialise—building confidence through guided free play.", icon: "🪁" },
   { name: "Badminton", motto: "Reflex. Rhythm. Focus.", desc: "Badminton courts promote agility and sharp reflexes, offering students a fast, engaging sport that builds coordination and concentration.", icon: "🏸" },
-  { name: "Indoor Play Area", motto: "All-Weather. Active. Inclusive.", desc: "Designed for year-round activity, the indoor play area keeps students engaged in rain or shine, through structured and free play.", icon: "🏟️" }
+  { name: "Swimming Pool", motto: "Strength. Skill. Confidence.", desc: "A well-maintained swimming pool provides students with structured training and supervised sessions that build stamina, coordination, and water safety skills.", icon: "🏊" },
+  { name: "Indoor Play Area", motto: "All-Weather. Active. Inclusive.", desc: "Designed for year-round activity, the indoor play area keeps students engaged in rain or shine, through structured and free play.", icon: "🏟️" },
+  { name: "Kids’ Play Area", motto: "Safe. Active. Joyful.", desc: "A colourful, secure play zone lets younger learners climb, explore, and socialise—building confidence through guided free play.", icon: "🪁" }
 ];
 
 export default function Campus() {

@@ -14,7 +14,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Sleek 3 Equal Columns Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 items-start mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-start mb-2">
 
           {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start pr-8 md:border-r md:border-white/10 py-4 h-full w-full">
@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
 
         {/* Navigation & Legal Links */}
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 pt-6 border-t border-white/10 mb-4">
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 pt-3 border-t border-white/10 mb-4">
           {[
             { label: 'Privacy Policy', href: '/privacy-policy' },
             { label: 'Terms & Conditions', href: '/terms-of-service' },
