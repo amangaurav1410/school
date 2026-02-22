@@ -96,58 +96,89 @@ export default function Curriculum() {
 
                             {/* Circular Holistic Approach Design */}
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 1.5, ease: "easeOut" }}
+                                transition={{ duration: 1 }}
                                 className="relative w-[340px] h-[340px] sm:w-[540px] sm:h-[540px] flex items-center justify-center shrink-0"
                             >
-                                {/* Continuous Background Rotation */}
+                                {/* Decorative Outer Glow */}
+                                <div className="absolute inset-0 rounded-full bg-[#d0302b]/5 blur-3xl scale-75 animate-pulse" />
+
+                                {/* Orbiting Rings */}
                                 <motion.div
                                     animate={{ rotate: 360 }}
-                                    transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                                    className="absolute inset-0"
-                                >
-                                    <div className="absolute inset-0 rounded-full border border-[#d0302b]/10 scale-110" />
-                                    <div className="absolute inset-0 rounded-full border-2 border-[#d0302b]/5" />
-                                    <div className="absolute inset-20 rounded-full border border-dashed border-[#d0302b]/20" />
-                                </motion.div>
-
-                                {/* Center Element with subtle pulse */}
+                                    transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                                    className="absolute inset-0 border border-dashed border-[#d0302b]/20 rounded-full"
+                                />
                                 <motion.div
-                                    animate={{ scale: [1, 1.05, 1] }}
-                                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                    className="relative z-10 w-32 h-32 sm:w-48 sm:h-48 rounded-full bg-white shadow-[0_20px_60px_-15px_rgba(208,48,43,0.3)] flex items-center justify-center border border-gray-100 p-8 text-center"
+                                    animate={{ rotate: -360 }}
+                                    transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+                                    className="absolute inset-16 border border-[#d0302b]/10 rounded-full"
+                                />
+
+                                {/* Center Element */}
+                                <motion.div
+                                    initial={{ scale: 0 }}
+                                    whileInView={{ scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
+                                    className="relative z-20 w-32 h-32 sm:w-48 sm:h-48 rounded-full bg-white shadow-[0_25px_60px_-15px_rgba(208,48,43,0.4)] flex flex-col items-center justify-center border border-gray-100 p-8 text-center"
                                 >
-                                    <span className="font-black text-[#d0302b] text-sm sm:text-xl uppercase tracking-[0.2em] leading-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                                        Holistic<br />Approach
+                                    <div className="absolute inset-2 rounded-full border-2 border-[#d0302b]/10 border-dashed" />
+                                    <span className="font-black text-[#d0302b] text-sm sm:text-xl uppercase tracking-[0.2em] leading-tight block mb-1">
+                                        Holistic
+                                    </span>
+                                    <span className="font-bold text-gray-500 text-[10px] sm:text-xs uppercase tracking-widest">
+                                        Approach
                                     </span>
                                 </motion.div>
 
-                                {/* Radial Values */}
+                                {/* Radial Values with Staggered Orbital Motion */}
                                 {[
-                                    "Citizenship", "Critical Thinking", "Building Confidence",
-                                    "Compassion", "Curiosity", "Creativity", "Communication"
+                                    { text: "Citizenship", icon: "🌍" },
+                                    { text: "Critical Thinking", icon: "🧩" },
+                                    { text: "Building Confidence", icon: "🦁" },
+                                    { text: "Compassion", icon: "❤️" },
+                                    { text: "Curiosity", icon: "🔍" },
+                                    { text: "Creativity", icon: "🎨" },
+                                    { text: "Communication", icon: "💬" }
                                 ].map((val, i, arr) => {
                                     const angle = (i * 360) / arr.length;
+                                    const delay = i * 0.15 + 0.5;
                                     return (
-                                        <div
-                                            key={val}
+                                        <motion.div
+                                            key={val.text}
+                                            initial={{ opacity: 0, scale: 0, rotate: angle }}
+                                            whileInView={{ opacity: 1, scale: 1 }}
+                                            viewport={{ once: true }}
+                                            transition={{ delay, type: "spring", stiffness: 80 }}
                                             className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                                            style={{ transform: `rotate(${angle}deg)` }}
+                                            style={{ rotate: `${angle}deg` }}
                                         >
                                             <div
                                                 className="w-full relative flex justify-end px-2 sm:px-6"
                                                 style={{ transform: `rotate(-${angle}deg)` }}
                                             >
                                                 <motion.div
-                                                    whileHover={{ scale: 1.1, backgroundColor: "#d0302b", color: "#ffffff" }}
-                                                    className="bg-white px-5 py-2.5 sm:px-8 sm:py-4 rounded-full shadow-[0_10px_30px_-5px_rgba(0,0,0,0.1)] border border-gray-100 pointer-events-auto transition-all duration-300 cursor-default"
+                                                    animate={{
+                                                        y: [0, -10, 0, 10, 0],
+                                                        x: [0, 5, 0, -5, 0]
+                                                    }}
+                                                    transition={{
+                                                        duration: 4 + Math.random() * 2,
+                                                        repeat: Infinity,
+                                                        ease: "easeInOut",
+                                                        delay: Math.random() * 2
+                                                    }}
+                                                    whileHover={{ scale: 1.1, zIndex: 30 }}
+                                                    className="bg-white px-4 py-2 sm:px-6 sm:py-3.5 rounded-2xl shadow-[0_15px_35px_-10px_rgba(0,0,0,0.15)] border border-gray-100 pointer-events-auto transition-all duration-300 cursor-default group flex items-center gap-2"
                                                 >
-                                                    <span className="text-[11px] sm:text-sm font-black uppercase tracking-[0.15em] whitespace-nowrap">{val}</span>
+                                                    <span className="text-base sm:text-xl grayscale group-hover:grayscale-0 transition-all">{val.icon}</span>
+                                                    <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.1em] text-gray-800 group-hover:text-[#d0302b] whitespace-nowrap">{val.text}</span>
                                                 </motion.div>
                                             </div>
-                                        </div>
+                                        </motion.div>
                                     )
                                 })}
                             </motion.div>

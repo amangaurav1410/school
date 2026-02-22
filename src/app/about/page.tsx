@@ -126,43 +126,15 @@ export default function About() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: "easeOut" }}
-                className="relative w-full aspect-square max-w-[600px] mx-auto flex items-center justify-center lg:mt-0 mt-8"
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="relative w-full flex items-center justify-center lg:mt-0 mt-8"
               >
-                {/* Ornamental Outer Rings */}
-                <div className="absolute inset-0 rounded-full border border-white/20 shadow-[0_0_80px_rgba(255,255,255,0.1)]" />
-                <div className="absolute inset-4 rounded-full border border-white/30 border-dashed" />
-                <div className="absolute inset-10 rounded-full border-2 border-white/40" />
-
-                {/* Circular Text Layout */}
-                <div className="absolute inset-6">
-                  {[
-                    "Values", "Innovation", "Discipline", "Leadership",
-                    "Empathy", "Global Pathways", "Aspiration", "Holistic Development"
-                  ].map((word, i, arr) => {
-                    const angle = (i * 360) / arr.length;
-                    return (
-                      <div key={word} className="absolute inset-0 flex justify-center" style={{ transform: `rotate(${angle}deg)` }}>
-                        <span
-                          className="text-white/90 text-xs sm:text-sm tracking-[0.2em] uppercase font-serif whitespace-nowrap"
-                          style={{ transform: `rotate(${angle > 90 && angle < 270 ? 180 : 0}deg)` }}
-                        >
-                          {word}
-                        </span>
-                      </div>
-                    )
-                  })}
-                </div>
-
-                {/* Center Crest Area */}
-                <div className="relative z-10 w-[250px] h-[300px] sm:w-[300px] sm:h-[350px] flex flex-col items-center justify-center">
-
+                <div className="relative z-10 w-full max-w-[650px]">
                   <img
-                    src="/SHEI.png"
-                    alt="School Emblem"
-                    className="w-[180px] h-auto object-contain z-30 drop-shadow-2xl"
+                    src="/images/zzzz.png"
+                    alt="Our School of Thought"
+                    className="w-full h-auto object-contain drop-shadow-2xl"
                   />
-
                 </div>
               </motion.div>
 
