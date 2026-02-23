@@ -312,14 +312,14 @@ export default function Home() {
                                 className="rounded-[3rem] overflow-hidden shadow-2xl relative aspect-square lg:aspect-auto h-[600px] border-8 border-white/10"
                             >
                                 <img
-                                    src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1200&h=1200&fit=crop"
+                                    src="/images/Screenshot 2026-02-23 at 3.45.51 PM.png"
                                     alt="Canadian Pedagogy + CBSE Curriculum"
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                                 <div className="absolute bottom-10 left-10 bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-xl text-left">
-                                    <p className="font-black text-2xl text-[#d0302b]" style={{ fontFamily: '"Raleway", sans-serif' }}>Global Standards.</p>
-                                    <p className="font-black text-2xl text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Indian Values.</p>
+                                    <p className="font-black text-2xl !text-[#d0302b]" style={{ fontFamily: '"Raleway", sans-serif' }}>Global Standards.</p>
+                                    <p className="font-black text-2xl !text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Indian Values.</p>
                                 </div>
                             </motion.div>
                         </motion.div>
@@ -513,13 +513,16 @@ export default function Home() {
                                         title: 'Engineering', color: '#FFA500',
                                         renderIcon: () => (
                                             <g transform="translate(0,-18)">
-                                                {/* Spinning gear */}
+                                                {/* Large Gear */}
                                                 <g>
-                                                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite" />
-                                                    <path d="M0 -11 L1.5 -7 L4 -9 L5.5 -7 L3.5 -5 L7 -3.5 L7 0 L3.5 3.5 L5.5 7 L4 9 L1.5 7 L0 11 L-1.5 7 L-4 9 L-5.5 7 L-3.5 3.5 L-7 0 L-3.5 -3.5 L-5.5 -7 L-4 -9 L-1.5 -7 Z"
-                                                        stroke="white" strokeWidth="0.8" fill="white" fillOpacity="0.2" strokeLinejoin="round" />
-                                                    <circle cx="0" cy="0" r="4" fill="white" fillOpacity="0.9" />
-                                                    <circle cx="0" cy="0" r="2" fill="#FFA500" />
+                                                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite" />
+                                                    <circle cx="0" cy="0" r="12" fill="none" stroke="white" strokeWidth="4" strokeDasharray="3,2" />
+                                                    <circle cx="0" cy="0" r="6" fill="white" fillOpacity="0.2" />
+                                                </g>
+                                                {/* Small Gear */}
+                                                <g transform="translate(14, 14)">
+                                                    <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="4s" repeatCount="indefinite" />
+                                                    <circle cx="0" cy="0" r="7" fill="none" stroke="white" strokeWidth="3" strokeDasharray="2,2" />
                                                 </g>
                                             </g>
                                         )
@@ -528,22 +531,14 @@ export default function Home() {
                                         title: 'Arts', color: '#B8860B',
                                         renderIcon: () => (
                                             <g transform="translate(0,-18)">
-                                                {/* Candle body */}
-                                                <rect x="-3" y="-2" width="6" height="10" rx="1" fill="white" fillOpacity="0.8" />
-                                                {/* Wick */}
-                                                <line x1="0" y1="-2" x2="0" y2="-5" stroke="white" strokeWidth="1" strokeLinecap="round" />
-                                                {/* Flickering flame */}
-                                                <path d="M0 -14 Q3 -10 2 -6 Q0 -4 -2 -6 Q-3 -10 0 -14 Z" fill="white" fillOpacity="0.9">
-                                                    <animate attributeName="d" values="M0 -14 Q3 -10 2 -6 Q0 -4 -2 -6 Q-3 -10 0 -14 Z;M0 -16 Q2 -10 1.5 -6 Q0 -3.5 -1.5 -6 Q-2 -10 0 -16 Z;M0 -14 Q3 -10 2 -6 Q0 -4 -2 -6 Q-3 -10 0 -14 Z" dur="0.8s" repeatCount="indefinite" />
-                                                    <animate attributeName="opacity" values="0.9;1;0.75;1;0.9" dur="0.8s" repeatCount="indefinite" />
-                                                </path>
-                                                {/* Wax drip dots */}
-                                                <circle cx="-4" cy="6" r="1.5" fill="white" fillOpacity="0.5">
-                                                    <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite" />
-                                                </circle>
-                                                <circle cx="5" cy="3" r="1.2" fill="white" fillOpacity="0.35">
-                                                    <animate attributeName="opacity" values="0.35;0.8;0.35" dur="1.5s" begin="0.5s" repeatCount="indefinite" />
-                                                </circle>
+                                                <path d="M-12,-4 C-12,-10 12,-10 12,-4 C12,4 4,12 -4,12 C-8,12 -12,8 -12,-4" fill="white" fillOpacity="0.2" stroke="white" strokeWidth="1.2" />
+                                                <circle cx="-4" cy="-3" r="1.5" fill="#FFD700" />
+                                                <circle cx="2" cy="-4" r="1.5" fill="#FF69B4" />
+                                                <circle cx="5" cy="1" r="1.5" fill="#00CED1" />
+                                                <g>
+                                                    <path d="M4,4 L10,10" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                                                    <animateTransform attributeName="transform" type="rotate" values="0 4 4; 25 4 4; 0 4 4" dur="2s" repeatCount="indefinite" />
+                                                </g>
                                             </g>
                                         )
                                     },
@@ -551,22 +546,25 @@ export default function Home() {
                                         title: 'Mathematics', color: '#F0C040',
                                         renderIcon: () => (
                                             <g transform="translate(0,-18)">
-                                                {/* Bold Plus Symbol */}
-                                                <g>
-                                                    <line x1="-7" y1="-5" x2="7" y2="-5" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
-                                                    <line x1="0" y1="-12" x2="0" y2="2" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
+                                                {/* Plus Symbol */}
+                                                <g transform="translate(-10,-5)">
+                                                    <line x1="-5" y1="0" x2="5" y2="0" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                                    <line x1="0" y1="-5" x2="0" y2="5" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                                    <animateTransform attributeName="transform" type="translate" values="-10,-5; -10,-8; -10,-5" dur="2s" repeatCount="indefinite" />
                                                 </g>
-                                                {/* Bold Minus Symbol */}
-                                                <line x1="-7" y1="10" x2="7" y2="10" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
-
-                                                {/* Subtle floating animation */}
-                                                <animateTransform
-                                                    attributeName="transform"
-                                                    type="translate"
-                                                    values="0,-18; 0,-20; 0,-18"
-                                                    dur="3s"
-                                                    repeatCount="indefinite"
-                                                />
+                                                {/* Minus Symbol */}
+                                                <g transform="translate(10,-5)">
+                                                    <line x1="-5" y1="0" x2="5" y2="0" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                                    <animateTransform attributeName="transform" type="translate" values="10,-5; 10,-2; 10,-5" dur="2s" repeatCount="indefinite" />
+                                                </g>
+                                                {/* Multiply Symbol */}
+                                                <g transform="translate(0,10)">
+                                                    <g transform="rotate(45)">
+                                                        <line x1="-5" y1="0" x2="5" y2="0" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                                        <line x1="0" y1="-5" x2="0" y2="5" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                                    </g>
+                                                    <animateTransform attributeName="transform" type="rotate" from="0 0 10" to="360 0 10" dur="4s" repeatCount="indefinite" />
+                                                </g>
                                             </g>
                                         )
                                     },
@@ -767,12 +765,12 @@ export default function Home() {
                             viewport={{ once: true }}
                             variants={fadeInUp}
                             transition={{ duration: 0.8 }}
-                            className="order-2 lg:order-1 h-full"
+                            className="order-2 lg:order-1"
                         >
-                            <div className="grid grid-cols-2 gap-4 h-full">
+                            <div className="grid grid-cols-2 gap-4">
                                 <motion.div
-                                    whileHover={{ scale: 1.05, rotate: -1 }}
-                                    className="aspect-square rounded-[2rem] overflow-hidden shadow-xl border-4 border-white/10"
+                                    whileHover={{ scale: 1.05 }}
+                                    className="aspect-square rounded-none overflow-hidden shadow-xl border-4 border-white/10"
                                 >
                                     <img
                                         src="/images/sports_football.png"
@@ -781,8 +779,8 @@ export default function Home() {
                                     />
                                 </motion.div>
                                 <motion.div
-                                    whileHover={{ scale: 1.05, rotate: 1 }}
-                                    className="aspect-square rounded-[2rem] overflow-hidden shadow-xl border-4 border-white/10 mt-8"
+                                    whileHover={{ scale: 1.05 }}
+                                    className="aspect-square rounded-none overflow-hidden shadow-xl border-4 border-white/10"
                                 >
                                     <img
                                         src="/images/sports_badminton.png"
@@ -791,8 +789,8 @@ export default function Home() {
                                     />
                                 </motion.div>
                                 <motion.div
-                                    whileHover={{ scale: 1.05, rotate: 1 }}
-                                    className="aspect-square rounded-[2rem] overflow-hidden shadow-xl border-4 border-white/10 -mt-8"
+                                    whileHover={{ scale: 1.05 }}
+                                    className="aspect-square rounded-none overflow-hidden shadow-xl border-4 border-white/10"
                                 >
                                     <img
                                         src="/images/sports_tennis.png"
@@ -801,8 +799,8 @@ export default function Home() {
                                     />
                                 </motion.div>
                                 <motion.div
-                                    whileHover={{ scale: 1.05, rotate: -1 }}
-                                    className="aspect-square rounded-[2rem] overflow-hidden shadow-xl border-4 border-white/10"
+                                    whileHover={{ scale: 1.05 }}
+                                    className="aspect-square rounded-none overflow-hidden shadow-xl border-4 border-white/10"
                                 >
                                     <img
                                         src="/images/sports_athletics.png"
@@ -997,28 +995,20 @@ export default function Home() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="relative h-[500px]"
                         >
-                            <div className="absolute top-0 right-0 w-3/4 aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl z-20">
+                            <div className="absolute top-0 right-0 w-[90%] rounded-[2.5rem] overflow-hidden shadow-2xl z-20 bg-white">
                                 <motion.img
                                     whileHover={{ scale: 1.05 }}
-                                    src="/images/journey_collaborative.png"
+                                    src="/images/Screenshot 2026-02-23 at 3.46.14 PM.png"
                                     alt="Collaborative Learning"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-auto object-contain"
                                 />
                             </div>
-                            <div className="absolute top-1/2 -left-4 w-1/2 aspect-square rounded-[2rem] overflow-hidden shadow-xl z-30 border-4 border-white">
+                            <div className="absolute bottom-0 left-0 w-[60%] rounded-[2rem] overflow-hidden shadow-xl z-30 border-8 border-white bg-white">
                                 <motion.img
                                     whileHover={{ scale: 1.05 }}
-                                    src="/images/journey_innovation.png"
+                                    src="/images/Screenshot 2026-02-23 at 3.46.21 PM.png"
                                     alt="Innovation"
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                            <div className="absolute -bottom-8 right-12 w-1/2 aspect-square rounded-[2rem] overflow-hidden shadow-xl z-10 opacity-80">
-                                <motion.img
-                                    whileHover={{ scale: 1.05 }}
-                                    src="/images/journey_happy.png"
-                                    alt="Student Life"
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-auto object-contain"
                                 />
                             </div>
                             <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#D6B25E]/15 rounded-full blur-3xl -z-10"></div>

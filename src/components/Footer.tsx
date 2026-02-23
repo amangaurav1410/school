@@ -14,10 +14,10 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Sleek 3 Equal Columns Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 items-start mb-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 items-start">
 
           {/* Logo Section */}
-          <div className="flex flex-col items-center md:items-start pr-8 md:border-r md:border-white/10 py-4 h-full w-full">
+          <div className="flex flex-col items-center md:items-start pr-8 md:border-r md:border-white/10 pt-2 pb-0 h-full w-full">
             <Link href="/" className="inline-block transition-all hover:scale-105 duration-500">
               <img
                 src="/images/footer-logo.png"
@@ -28,11 +28,11 @@ export default function Footer() {
           </div>
 
           {/* Location Section */}
-          <div className="flex flex-col items-center md:items-start px-8 md:border-r md:border-white/10 py-4 h-full w-full space-y-4">
+          <div className="flex flex-col items-center md:items-start px-8 md:border-r md:border-white/10 pt-2 pb-0 h-full w-full space-y-4">
             <div className="space-y-2 text-center md:text-left">
               <div className="flex flex-col gap-1">
                 <span className="text-[13px] uppercase tracking-widest font-bold" style={{ fontFamily: 'var(--font-body)', color: '#FFFFFF' }}>Location</span>
-                <p className="text-[17px] font-normal leading-relaxed mb-2" style={{ fontFamily: 'var(--font-body)', color: '#FFFFFF' }}>
+                <p className="text-[17px] font-normal leading-relaxed" style={{ fontFamily: 'var(--font-body)', color: '#FFFFFF' }}>
                   Hayathnagar, Hyderabad,<br />
                   Telangana - 500070
                 </p>
@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Connect Section */}
-          <div className="flex flex-col items-center md:items-start pl-8 py-4 h-full w-full space-y-2">
+          <div className="flex flex-col items-center md:items-start pl-8 pt-2 pb-0 h-full w-full space-y-2">
             <div className="text-center md:text-left space-y-2 w-full">
               <span className="text-[13px] uppercase tracking-widest font-bold" style={{ fontFamily: 'var(--font-body)', color: '#FFFFFF' }}>Quick Connect</span>
               <div className="space-y-1">
@@ -71,7 +71,7 @@ export default function Footer() {
         </div>
 
         {/* Navigation & Legal Links */}
-        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 pt-3 border-t border-white/10 mb-4">
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 pt-1 border-t border-white/10 mb-0">
           {[
             { label: 'Privacy Policy', href: '/privacy-policy' },
             { label: 'Terms & Conditions', href: '/terms-of-service' },
@@ -91,7 +91,7 @@ export default function Footer() {
         </div>
 
         {/* Global Branding Attribution */}
-        <div className="text-center pt-4 border-t border-white/5">
+        <div className="text-center pt-2 border-t border-white/5">
           <p className="text-[16px] font-normal transition-colors" style={{ fontFamily: 'var(--font-body)', color: '#FFFFFF' }}>
             © {new Date().getFullYear()} by Mapleford International School Group
           </p>
