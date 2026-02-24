@@ -9,15 +9,9 @@ import Button from '../components/Button';
 import AdmissionModal from '../components/AdmissionModal';
 
 const testimonials = [
-    { name: "Arjun Sharma", role: "Parent (Grade 4)", content: "The blend of Canadian pedagogy and CBSE in Mapleford has transformed my son's approach to learning. He's more curious and confident than ever before.", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" },
-    { name: "Dr. Priya Reddy", role: "Parent (Nursery)", content: "Choosing a preschool was stressful until we visited Mapleford. The warmth of the teachers and the play-based learning environment is exactly what our daughter needed.", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop" },
-    { name: "Srinivas Rao", role: "Parent (Grade 8)", content: "The focus on STEAM and sports alongside academics at Mapleford is exceptional. My daughter loves the robotics lab as much as the football field.", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop" },
-    { name: "Kavitha Menon", role: "Parent (Grade 2)", content: "Mapleford's teachers genuinely care about each child. The personalised attention my son receives has boosted his confidence tremendously.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop" },
-    { name: "Rajesh Verma", role: "Parent (Grade 6)", content: "The campus is stunning and the facilities are world-class. My child looks forward to school every single day—that says everything.", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop" },
-    { name: "Ananya Krishnan", role: "Parent (Pre-School)", content: "From the very first day, Mapleford felt like a second home. The nurturing environment gave our daughter the perfect foundation for life.", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop" },
-    { name: "Mohammed Irfan", role: "Parent (Grade 10)", content: "The holistic approach here is unmatched. My son excels academically and has also found his passion for music through the school's arts programme.", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop" },
-    { name: "Sunitha Reddy", role: "Parent (Grade 5)", content: "As a parent who values both tradition and innovation, Mapleford strikes the perfect balance. The CBSE rigour with a modern Canadian philosophy is exactly right.", image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop" },
-    { name: "Vikram Nair", role: "Parent (Grade 7)", content: "The sports infrastructure and coaching at Mapleford are at par with the best schools in the country. My son has grown into a disciplined, motivated young man.", image: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=150&h=150&fit=crop" },
+    { name: "Srinivas Rao", role: "Parent (Grade 8)", content: "Mapleford International School fosters a love for learning while maintaining high academic standards. Our son has excelled in ways we couldn’t have imagined, thanks to the dedicated teachers.", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" },
+    { name: "Dr. Priya Reddy", role: "Parent (Nursery)", content: "The way Mapleford International School integrates real-world applications into the curriculum is outstanding. My child is learning skills that prepare them for the future, and we couldn’t be happier.", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop" },
+    { name: "Arjun Sharma", role: "Parent (Grade 4)", content: "We are incredibly grateful to Mapleford International School for nurturing our child both academically and emotionally. The focus on values, discipline, and creativity has truly shaped a well-rounded individual.", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop" },
 ];
 
 export default function Home() {
@@ -173,10 +167,10 @@ export default function Home() {
                             viewport={{ once: true, margin: "-100px" }}
                             variants={fadeInUp}
                             transition={{ duration: 0.8 }}
-                            className="w-full max-w-6xl mx-auto bg-white rounded-[3rem] shadow-[0_30px_100px_rgba(0,0,0,0.08)] p-8 md:p-16 border border-gray-50 flex flex-col items-center"
+                            className="w-full max-w-[1400px] mx-auto bg-white rounded-3xl shadow-[0_30px_100px_rgba(0,0,0,0.08)] p-8 md:p-14 border border-gray-50 flex flex-col items-center"
                         >
                             {/* Title and Description */}
-                            <div className="max-w-4xl mx-auto mb-16">
+                            <div className="max-w-5xl mx-auto mb-16">
                                 <h2
                                     className="text-[44px] lg:text-[56px] font-black mb-8 leading-tight"
                                     style={{
@@ -316,11 +310,7 @@ export default function Home() {
                                     alt="Canadian Pedagogy + CBSE Curriculum"
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                                <div className="absolute bottom-10 left-10 bg-white/95 backdrop-blur-md p-8 rounded-3xl shadow-xl text-left">
-                                    <p className="font-black text-2xl !text-[#d0302b]" style={{ fontFamily: '"Raleway", sans-serif' }}>Global Standards.</p>
-                                    <p className="font-black text-2xl !text-[#1A1A1A]" style={{ fontFamily: '"Raleway", sans-serif' }}>Indian Values.</p>
-                                </div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                             </motion.div>
                         </motion.div>
                     </div>
@@ -547,23 +537,30 @@ export default function Home() {
                                         renderIcon: () => (
                                             <g transform="translate(0,-18)">
                                                 {/* Plus Symbol */}
-                                                <g transform="translate(-10,-5)">
-                                                    <line x1="-5" y1="0" x2="5" y2="0" stroke="white" strokeWidth="3" strokeLinecap="round" />
-                                                    <line x1="0" y1="-5" x2="0" y2="5" stroke="white" strokeWidth="3" strokeLinecap="round" />
-                                                    <animateTransform attributeName="transform" type="translate" values="-10,-5; -10,-8; -10,-5" dur="2s" repeatCount="indefinite" />
+                                                <g transform="translate(-12,-8)">
+                                                    <line x1="-4" y1="0" x2="4" y2="0" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                                                    <line x1="0" y1="-4" x2="0" y2="4" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                                                    <animateTransform attributeName="transform" type="translate" values="-12,-8; -12,-11; -12,-8" dur="2s" repeatCount="indefinite" />
                                                 </g>
                                                 {/* Minus Symbol */}
-                                                <g transform="translate(10,-5)">
-                                                    <line x1="-5" y1="0" x2="5" y2="0" stroke="white" strokeWidth="3" strokeLinecap="round" />
-                                                    <animateTransform attributeName="transform" type="translate" values="10,-5; 10,-2; 10,-5" dur="2s" repeatCount="indefinite" />
+                                                <g transform="translate(12,-8)">
+                                                    <line x1="-4" y1="0" x2="4" y2="0" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                                                    <animateTransform attributeName="transform" type="translate" values="12,-8; 12,-5; 12,-8" dur="2s" repeatCount="indefinite" />
                                                 </g>
                                                 {/* Multiply Symbol */}
-                                                <g transform="translate(0,10)">
+                                                <g transform="translate(-8,10)">
                                                     <g transform="rotate(45)">
-                                                        <line x1="-5" y1="0" x2="5" y2="0" stroke="white" strokeWidth="3" strokeLinecap="round" />
-                                                        <line x1="0" y1="-5" x2="0" y2="5" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                                        <line x1="-4" y1="0" x2="4" y2="0" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                                                        <line x1="0" y1="-4" x2="0" y2="4" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
                                                     </g>
-                                                    <animateTransform attributeName="transform" type="rotate" from="0 0 10" to="360 0 10" dur="4s" repeatCount="indefinite" />
+                                                    <animateTransform attributeName="transform" type="rotate" from="0 -8 10" to="360 -8 10" dur="4s" repeatCount="indefinite" />
+                                                </g>
+                                                {/* Division Symbol */}
+                                                <g transform="translate(8,10)">
+                                                    <line x1="-5" y1="0" x2="5" y2="0" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                                                    <circle cx="0" cy="-4" r="1.5" fill="white" />
+                                                    <circle cx="0" cy="4" r="1.5" fill="white" />
+                                                    <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
                                                 </g>
                                             </g>
                                         )
@@ -770,7 +767,7 @@ export default function Home() {
                             <div className="grid grid-cols-2 gap-4">
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="aspect-square rounded-none overflow-hidden shadow-xl border-4 border-white/10"
+                                    className="aspect-square rounded-3xl overflow-hidden shadow-xl border-4 border-white/10"
                                 >
                                     <img
                                         src="/images/sports_football.png"
@@ -780,7 +777,7 @@ export default function Home() {
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="aspect-square rounded-none overflow-hidden shadow-xl border-4 border-white/10"
+                                    className="aspect-square rounded-3xl overflow-hidden shadow-xl border-4 border-white/10"
                                 >
                                     <img
                                         src="/images/sports_badminton.png"
@@ -790,7 +787,7 @@ export default function Home() {
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="aspect-square rounded-none overflow-hidden shadow-xl border-4 border-white/10"
+                                    className="aspect-square rounded-3xl overflow-hidden shadow-xl border-4 border-white/10"
                                 >
                                     <img
                                         src="/images/sports_tennis.png"
@@ -800,7 +797,7 @@ export default function Home() {
                                 </motion.div>
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
-                                    className="aspect-square rounded-none overflow-hidden shadow-xl border-4 border-white/10"
+                                    className="aspect-square rounded-3xl overflow-hidden shadow-xl border-4 border-white/10"
                                 >
                                     <img
                                         src="/images/sports_athletics.png"
@@ -995,7 +992,7 @@ export default function Home() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="relative h-[500px]"
                         >
-                            <div className="absolute top-0 right-0 w-[90%] rounded-[2.5rem] overflow-hidden shadow-2xl z-20 bg-white">
+                            <div className="absolute top-0 right-10 w-[85%] rounded-[2.5rem] overflow-hidden shadow-2xl z-20 bg-white">
                                 <motion.img
                                     whileHover={{ scale: 1.05 }}
                                     src="/images/Screenshot 2026-02-23 at 3.46.14 PM.png"
@@ -1003,7 +1000,7 @@ export default function Home() {
                                     className="w-full h-auto object-contain"
                                 />
                             </div>
-                            <div className="absolute bottom-0 left-0 w-[60%] rounded-[2rem] overflow-hidden shadow-xl z-30 border-8 border-white bg-white">
+                            <div className="absolute bottom-4 left-0 w-[55%] rounded-[2rem] overflow-hidden shadow-xl z-30 border-8 border-white bg-white">
                                 <motion.img
                                     whileHover={{ scale: 1.05 }}
                                     src="/images/Screenshot 2026-02-23 at 3.46.21 PM.png"

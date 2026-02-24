@@ -5,35 +5,32 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Button from '../../components/Button';
 
-const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
-};
+
 
 const curriculumStages = [
     {
         title: "Pre-School",
         grades: "Nursery | JKG | UKG",
         description: "Our play-based, inquiry-led Maple Bear early learning model nurtures social-emotional growth while building strong foundations in early literacy and numeracy. With a strong focus on English language development, children learn through storytelling, songs, games, and creative play. The program encourages curiosity, problem-solving, confidence, and resilience, preparing young learners for future academic success.",
-        img: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1200&h=900&fit=crop&q=80"
+        img: "/images/stage_preschool.png"
     },
     {
         title: "Elementary School",
         grades: "Grade 1 to Grade 5",
         description: "Our Elementary programme integrates CBSE learning milestones with Canadian instructional strategies in a progressive, concept-driven framework. Through hands-on experiences and Instruction in English strengthens bilingual skills in a well-rounded, immersive learning environment, while equal emphasis on intellectual, social, and emotional growth prepares learners for sustained academic success.",
-        img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&h=900&fit=crop&q=80"
+        img: "/images/stage_elementary.png"
     },
     {
         title: "Middle School",
         grades: "Grade 6 - Grade 8",
         description: "A transition-focused, application-oriented curriculum where CBSE academic frameworks are strengthened through Canadian inquiry-based and interdisciplinary teaching. Lessons emphasise analytical thinking, problem-solving, and real-world application of concepts.",
-        img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&h=900&fit=crop&q=80"
+        img: "/images/stage_middle.png"
     },
     {
         title: "High School",
         grades: "Grade 9 and Grade 10",
         description: "A strong CBSE academic roadmap strengthened by: Critical thinking frameworks, skill-based projects. Through the Global Connect program, students engage virtually with peers around the world, fostering international collaborations, cultural exchanges, and broader global perspectives.",
-        img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=900&fit=crop&q=80"
+        img: "/images/stage_high.png"
     }
 ];
 
@@ -42,238 +39,201 @@ export default function Curriculum() {
         <div className="min-h-screen bg-white font-sans text-[#000000]">
             <Header />
             <div className="pt-[90px] lg:pt-[120px] overflow-hidden">
-                {/* SECTION 1 — RED BANNER (Hero) */}
-                <section className="bg-[#d0302b] py-20 px-4 text-center relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-10 pointer-events-none">
-                        <div className="absolute -top-20 -left-20 w-96 h-96 bg-white rounded-full blur-3xl" />
-                        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-white rounded-full blur-3xl" />
-                    </div>
-
+                {/* SECTION 1 — HERO BANNER */}
+                <section className="bg-[#d0302b] py-24 sm:py-32 px-4 text-center relative overflow-hidden">
                     <div className="max-w-7xl mx-auto relative z-10 text-center">
                         <motion.div
                             initial="hidden" animate="visible" variants={fadeInUp}
                             className="max-w-4xl mx-auto"
                         >
-                            <h1 className="text-[48px] sm:text-[64px] lg:text-[80px] font-black leading-tight text-white mb-4" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                            <h1 className="text-[56px] sm:text-[72px] lg:text-[90px] font-black leading-tight text-white mb-6 uppercase tracking-tighter" style={{ fontFamily: "'Raleway', sans-serif" }}>
                                 Curriculum
                             </h1>
-                            <p className="text-xl sm:text-2xl text-white/90 font-bold uppercase tracking-wide">
+                            <div className="w-32 h-2 bg-white/30 mx-auto mb-8 rounded-full" />
+                            <p className="text-xl sm:text-2xl lg:text-3xl text-white font-bold max-w-3xl mx-auto leading-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
                                 Where CBSE Excellence Meets Canadian Innovation
                             </p>
                         </motion.div>
                     </div>
                 </section>
 
-                {/* SECTION 2 — COLLABORATION BOX (Shadowed Box) */}
-                <section className="py-12 sm:py-16 bg-white px-4 relative -mt-10 sm:-mt-12 z-20">
-                    <div className="max-w-5xl mx-auto">
+                {/* SECTION 2 — COLLABORATION DESCRIPTION */}
+                <section className="py-20 bg-white px-4 relative -mt-16 z-20">
+                    <div className="max-w-6xl mx-auto">
                         <motion.div
                             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-                            className="bg-white rounded-[2rem] p-8 sm:p-14 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.12)] border border-gray-100 text-center"
+                            className="bg-white rounded-[3rem] p-10 sm:p-20 shadow-[0_45px_100px_-20px_rgba(0,0,0,0.1)] border border-gray-50 text-center"
                         >
-                            <p className="text-lg sm:text-2xl leading-relaxed text-gray-800 font-medium">
-                                At Mapleford International School, learning is shaped by a powerful collaboration with <strong>Maple Bear Global Schools, Canada</strong>, a world leader in bilingual, inquiry-based education operating across 35+ countries and 450+ schools. This association helps students benefit from the proven strengths of the Canadian education system, consistently ranked among the world’s best, while staying firmly aligned to India’s esteemed CBSE framework.
+                            <p className="text-xl sm:text-2xl lg:text-3xl leading-relaxed text-gray-900 font-medium" style={{ fontFamily: "'Lato', sans-serif" }}>
+                                At Mapleford International School, learning is shaped by a powerful collaboration with <span className="text-[#d0302b] font-black underline decoration-red-200 underline-offset-8">Maple Bear Global Schools, Canada</span>, a world leader in bilingual, inquiry-based education operating across 35+ countries and 450+ schools. This association helps students benefit from the proven strengths of the Canadian education system, consistently ranked among the world’s best, while staying firmly aligned to India’s esteemed CBSE framework.
                             </p>
                         </motion.div>
                     </div>
                 </section>
 
-                {/* SECTION 3 — SEAMLESS BLEND (Circular Design) */}
-                <section className="py-24 bg-gray-50 px-4 overflow-hidden">
+                {/* SECTION 3 — SEAMLESS BLEND */}
+                <section className="py-32 bg-slate-50 px-4 overflow-hidden">
                     <div className="max-w-7xl mx-auto">
-                        <motion.div
-                            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-                            className="text-center mb-16"
-                        >
-                            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 text-[#000000]" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                                A Seamless Blend of Two Powerful Systems
-                            </h2>
-                            <div className="w-24 h-1 bg-[#d0302b] mx-auto mb-6" />
-                            <p className="text-2xl font-bold text-[#d0302b]">Canadian Pedagogy + CBSE Curriculum</p>
-                        </motion.div>
+                        <div className="text-center mb-24">
+                            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                                <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-8 text-[#000000] leading-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                    A Seamless <span className="text-[#d0302b]">Blend</span> <br className="hidden sm:block" /> of Two Powerful Systems
+                                </h2>
+                                <p className="text-2xl sm:text-3xl font-bold text-gray-500 flex items-center justify-center gap-6">
+                                    <span className="w-12 h-1 bg-[#d0302b]" />
+                                    Canadian Pedagogy + CBSE Curriculum
+                                    <span className="w-12 h-1 bg-[#d0302b]" />
+                                </p>
+                            </motion.div>
+                        </div>
 
-                        <div className="flex flex-col lg:flex-row gap-16 items-center lg:items-start group">
-
-                            {/* Circular Holistic Approach Design */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-40">
                             <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
+                                initial={{ opacity: 0, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 1 }}
-                                className="relative w-[340px] h-[340px] sm:w-[540px] sm:h-[540px] flex items-center justify-center shrink-0"
+                                className="relative order-2 lg:order-1"
                             >
-                                {/* Decorative Outer Glow */}
-                                <div className="absolute inset-0 rounded-full bg-[#d0302b]/5 blur-3xl scale-75 animate-pulse" />
-
-                                {/* Orbiting Rings */}
-                                <motion.div
-                                    animate={{ rotate: 360 }}
-                                    transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-                                    className="absolute inset-0 border border-dashed border-[#d0302b]/20 rounded-full"
-                                />
-                                <motion.div
-                                    animate={{ rotate: -360 }}
-                                    transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-                                    className="absolute inset-16 border border-[#d0302b]/10 rounded-full"
-                                />
-
-                                {/* Center Element */}
-                                <motion.div
-                                    initial={{ scale: 0 }}
-                                    whileInView={{ scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ type: "spring", stiffness: 100, delay: 0.2 }}
-                                    className="relative z-20 w-32 h-32 sm:w-48 sm:h-48 rounded-full bg-white shadow-[0_25px_60px_-15px_rgba(208,48,43,0.4)] flex flex-col items-center justify-center border border-gray-100 p-8 text-center"
-                                >
-                                    <div className="absolute inset-2 rounded-full border-2 border-[#d0302b]/10 border-dashed" />
-                                    <span className="font-black text-[#d0302b] text-sm sm:text-xl uppercase tracking-[0.2em] leading-tight block mb-1">
-                                        Holistic
-                                    </span>
-                                    <span className="font-bold text-gray-500 text-[10px] sm:text-xs uppercase tracking-widest">
-                                        Approach
-                                    </span>
-                                </motion.div>
-
-                                {/* Radial Values with Staggered Orbital Motion */}
-                                {[
-                                    { text: "Citizenship", icon: "🌍" },
-                                    { text: "Critical Thinking", icon: "🧩" },
-                                    { text: "Building Confidence", icon: "🦁" },
-                                    { text: "Compassion", icon: "❤️" },
-                                    { text: "Curiosity", icon: "🔍" },
-                                    { text: "Creativity", icon: "🎨" },
-                                    { text: "Communication", icon: "💬" }
-                                ].map((val, i, arr) => {
-                                    const angle = (i * 360) / arr.length;
-                                    const delay = i * 0.15 + 0.5;
-                                    return (
-                                        <motion.div
-                                            key={val.text}
-                                            initial={{ opacity: 0, scale: 0, rotate: angle }}
-                                            whileInView={{ opacity: 1, scale: 1 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay, type: "spring", stiffness: 80 }}
-                                            className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                                            style={{ rotate: `${angle}deg` }}
-                                        >
-                                            <div
-                                                className="w-full relative flex justify-end px-2 sm:px-6"
-                                                style={{ transform: `rotate(-${angle}deg)` }}
-                                            >
-                                                <motion.div
-                                                    animate={{
-                                                        y: [0, -10, 0, 10, 0],
-                                                        x: [0, 5, 0, -5, 0]
-                                                    }}
-                                                    transition={{
-                                                        duration: 4 + Math.random() * 2,
-                                                        repeat: Infinity,
-                                                        ease: "easeInOut",
-                                                        delay: Math.random() * 2
-                                                    }}
-                                                    whileHover={{ scale: 1.1, zIndex: 30 }}
-                                                    className="bg-white px-4 py-2 sm:px-6 sm:py-3.5 rounded-2xl shadow-[0_15px_35px_-10px_rgba(0,0,0,0.15)] border border-gray-100 pointer-events-auto transition-all duration-300 cursor-default group flex items-center gap-2"
-                                                >
-                                                    <span className="text-base sm:text-xl grayscale group-hover:grayscale-0 transition-all">{val.icon}</span>
-                                                    <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.1em] text-gray-800 group-hover:text-[#d0302b] whitespace-nowrap">{val.text}</span>
-                                                </motion.div>
-                                            </div>
-                                        </motion.div>
-                                    )
-                                })}
+                                <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white">
+                                    <img src="/images/curriculum_blend.png" alt="Seamless Blend" className="w-full h-auto" />
+                                </div>
                             </motion.div>
 
-                            {/* Outcomes Box */}
                             <motion.div
                                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-                                className="bg-white p-10 sm:p-14 rounded-[2.5rem] shadow-xl border border-gray-100 relative overflow-hidden"
+                                className="order-1 lg:order-2 space-y-12"
                             >
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#d0302b]/5 rounded-bl-full" />
-                                <h3 className="text-2xl font-black mb-10 relative z-10 text-gray-800">What this means for learners:</h3>
-                                <ul className="space-y-8 relative z-10">
+                                <div className="space-y-4">
+                                    <h3 className="text-3xl sm:text-4xl font-black uppercase tracking-wider text-gray-900" style={{ fontFamily: "'Raleway', sans-serif" }}>Holistic Approach</h3>
+                                    <div className="w-24 h-1.5 bg-[#d0302b] rounded-full" />
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    {[
+                                        { text: "Citizenship", icon: "🌍" },
+                                        { text: "Critical Thinking", icon: "🧩" },
+                                        { text: "Building Confidence", icon: "🦁" },
+                                        { text: "Compassion", icon: "❤️" },
+                                        { text: "Curiosity", icon: "🔍" },
+                                        { text: "Creativity", icon: "🎨" },
+                                        { text: "Communication", icon: "💬" }
+                                    ].map((val) => (
+                                        <div key={val.text} className="flex items-center gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                                            <span className="text-2xl">{val.icon}</span>
+                                            <span className="text-sm font-black uppercase tracking-widest text-gray-800">{val.text}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        </div>
+
+                        {/* What this means for learners */}
+                        <motion.div
+                            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+                            className="bg-white p-12 sm:p-24 rounded-[4rem] shadow-2xl relative overflow-hidden mb-32"
+                        >
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                                <div className="relative z-10 flex flex-col justify-center">
+                                    <h3 className="text-4xl sm:text-5xl font-black mb-8 text-gray-900 leading-tight">What this means <br /> for <span className="text-[#d0302b]">learners</span>:</h3>
+                                    <div className="w-20 h-2 bg-[#D6B25E] rounded-full" />
+                                </div>
+                                <div className="relative z-10 grid grid-cols-1 gap-6">
                                     {[
                                         "Deep conceptual understanding instead of rote memory",
                                         "Inquiry, problem-solving, and project-based learning",
                                         "Continuous assessment aligned to Maple Bear learning outcomes",
                                         "Preparedness for CBSE board pathways in higher grades"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex gap-6 items-start">
-                                            <div className="w-8 h-8 rounded-full bg-[#d0302b]/10 flex items-center justify-center shrink-0 mt-1">
-                                                <svg className="w-5 h-5 text-[#d0302b]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <div key={i} className="flex gap-6 items-center p-6 rounded-2xl bg-slate-50 border border-gray-100">
+                                            <div className="w-10 h-10 rounded-full bg-[#d0302b] flex items-center justify-center shrink-0 shadow-lg shadow-red-200">
+                                                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                                 </svg>
                                             </div>
-                                            <p className="text-lg sm:text-xl font-medium text-gray-700">{item}</p>
-                                        </li>
+                                            <p className="text-lg font-black text-gray-800 uppercase tracking-wide text-sm">{item}</p>
+                                        </div>
                                     ))}
-                                </ul>
-                            </motion.div>
-                        </div>
+                                </div>
+                            </div>
+                        </motion.div>
 
                         <motion.div
                             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-                            className="mt-20 text-center p-12 bg-[#d0302b]/5 rounded-[2rem] border border-[#d0302b]/10"
+                            className="text-center p-12 bg-[#d0302b]/5 rounded-[3rem] border border-[#d0302b]/10"
                         >
-                            <p className="text-xl sm:text-3xl font-black leading-relaxed text-[#000000]">
-                                This dual approach ensures academic excellence, global exposure, and readiness for higher education in India or abroad.
+                            <p className="text-2xl sm:text-4xl font-black leading-relaxed text-gray-900" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                Dual Approach. Academic Excellence. Global Exposure
                             </p>
                         </motion.div>
                     </div>
                 </section>
 
-                {/* CURRICULUM PATHWAY RED SECTION */}
-                <section className="py-24 bg-[#d0302b] relative overflow-hidden px-4">
-                    <div className="absolute inset-0 opacity-10 pointer-events-none">
-                        <div className="absolute -top-20 -right-20 w-96 h-96 bg-white rounded-full blur-3xl" />
-                        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-white rounded-full blur-3xl" />
-                    </div>
-
+                {/* SECTION 4 — CURRICULUM PATHWAY */}
+                <section className="py-32 bg-[#d0302b] relative overflow-hidden px-4">
                     <div className="max-w-7xl mx-auto relative z-10">
-                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center max-w-5xl mx-auto">
-                            <h2 className="text-[36px] sm:text-[56px] lg:text-[64px] font-black mb-10 text-white leading-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                                Curriculum Pathway: <br className="hidden sm:block" /> From Early Years to Senior School
-                            </h2>
-
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 text-left">
-                                <div className="p-8 sm:p-10 bg-white/10 backdrop-blur-sm rounded-[2.5rem] border border-white/20">
-                                    <p className="text-xl sm:text-2xl text-white leading-relaxed font-bold">
-                                        Every stage of learning marks an important milestone in a child’s development. Our curriculum is thoughtfully designed as a continuous, coherent pathway.
-                                    </p>
-                                </div>
-                                <div className="p-4">
-                                    <p className="text-lg text-white/90 leading-relaxed font-medium">
+                        <div className="flex flex-col lg:flex-row gap-20 items-center">
+                            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="w-full lg:w-1/2">
+                                <h2 className="text-[44px] sm:text-[60px] lg:text-[76px] font-black mb-10 text-white leading-none uppercase tracking-tighter" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                    Curriculum <br /> <span className="text-white/40">Pathway:</span> <br /> <span className="text-3xl sm:text-4xl font-bold normal-case tracking-normal">From Early Years to Senior School</span>
+                                </h2>
+                                <div className="space-y-10">
+                                    <div className="p-10 bg-white/10 backdrop-blur-md rounded-[3rem] border border-white/20">
+                                        <p className="text-xl sm:text-2xl text-white leading-relaxed font-bold">
+                                            Every stage of learning marks an important milestone in a child’s development. Our curriculum is thoughtfully designed as a continuous, coherent pathway, wherein knowledge, skills, and values are progressively strengthened year after year.
+                                        </p>
+                                    </div>
+                                    <p className="text-xl text-white/90 leading-relaxed font-medium">
                                         Our holistic approach nurtures intellectual, social, emotional, and ethical growth while placing strong emphasis on reading, mathematics, science, and problem-solving. We enable students to succeed across disciplines and develop higher-order thinking skills essential for lifelong learning by building solid foundations in literacy, numeracy, and scientific understanding.
                                     </p>
                                 </div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1 }}
+                                className="w-full lg:w-1/2 relative"
+                            >
+                                <div className="relative rounded-[3rem] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.3)] border-8 border-white/10">
+                                    <img src="/images/curriculum_pathway_intro.png" alt="Pathways Roadmap" className="w-full h-auto" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#d0302b]/80 via-transparent to-transparent" />
+                                </div>
+                            </motion.div>
+                        </div>
                     </div>
                 </section>
 
-                {/* STAGES WHITE SECTION */}
-                <section className="py-24 bg-white px-4">
+                {/* SECTION 5 — THE STAGES */}
+                <section className="py-32 bg-white px-4">
                     <div className="max-w-7xl mx-auto">
-                        <div className="space-y-32">
+                        <div className="space-y-40">
                             {curriculumStages.map((stage, idx) => (
                                 <motion.div
                                     key={idx}
                                     initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
-                                    className={`flex flex-col ${idx % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-16 items-center`}
+                                    className={`flex flex-col ${idx % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-20 items-center`}
                                 >
-                                    <div className="w-full lg:w-1/2 space-y-8">
-                                        <h3 className="text-[36px] sm:text-[48px] font-black text-[#000000] leading-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                                            {stage.title}
-                                        </h3>
-                                        <p className="text-lg font-bold text-[#d0302b] uppercase tracking-widest">{stage.grades}</p>
-                                        <div className="w-12 h-1 bg-gray-100" />
-                                        <p className="text-xl leading-relaxed text-gray-700">
+                                    <div className="w-full lg:w-5/12 space-y-10">
+                                        <div className="space-y-4">
+
+                                            <h3 className="text-[44px] sm:text-[56px] font-black text-[#000000] leading-none" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                                {stage.title}
+                                            </h3>
+                                            <p className="text-xl font-bold text-gray-400 uppercase tracking-widest">{stage.grades}</p>
+                                        </div>
+                                        <div className="w-32 h-1.5 bg-[#D6B25E] rounded-full" />
+                                        <p className="text-xl leading-relaxed text-gray-700 font-medium">
                                             {stage.description}
                                         </p>
+                                        <Button href="/admissions" variant="primary" size="lg" className="px-10 py-5 rounded-full font-black text-xs uppercase tracking-widest shadow-xl shadow-red-100">
+                                            Apply for {stage.title}
+                                        </Button>
                                     </div>
-                                    <div className="w-full lg:w-1/2 relative">
-                                        <div className="absolute -inset-4 bg-gray-50 rounded-[3rem] -z-10" />
-                                        <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl">
+                                    <div className="w-full lg:w-7/12 relative group">
+                                        <div className="absolute -inset-8 bg-slate-50 rounded-[4rem] -z-10 group-hover:scale-105 transition-transform duration-700" />
+                                        <div className="relative aspect-[16/10] rounded-[3.5rem] overflow-hidden shadow-2xl transform group-hover:rotate-1 transition-transform duration-700">
                                             <img src={stage.img} alt={stage.title} className="w-full h-full object-cover" />
+                                            <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent" />
                                         </div>
                                     </div>
                                 </motion.div>
@@ -282,22 +242,22 @@ export default function Curriculum() {
                     </div>
                 </section>
 
-                {/* FINAL CTA (Changed from Black to Red) */}
-                <section className="py-24 bg-[#d0302b] px-4 relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-10 pointer-events-none">
-                        <div className="absolute top-0 right-1/4 w-64 h-64 bg-white rounded-full blur-3xl" />
-                    </div>
-                    <div className="max-w-4xl mx-auto text-center space-y-10 relative z-10">
+                {/* SECTION 6 — FINAL CTA */}
+                <section className="py-32 bg-[#d0302b] px-4 relative overflow-hidden">
+                    <div className="max-w-5xl mx-auto text-center space-y-12 relative z-10">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-                            <h2 className="text-4xl sm:text-6xl font-black text-white leading-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                                Prepare Your Child for <br className="hidden sm:block" /> a Global Future.
+                            <h2 className="text-[48px] sm:text-[72px] lg:text-[84px] font-black text-white leading-none tracking-tighter uppercase" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                                Prepare Your <br /> <span className="text-white/30">Global Future</span>
                             </h2>
-                            <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
-                                <Button href="/admissions" variant="primary" size="lg" className="bg-white text-[#d0302b] hover:bg-gray-100 rounded-full px-12">
-                                    Start Enrollment
+                            <p className="text-xl sm:text-2xl text-white/90 font-bold max-w-2xl mx-auto mt-8">
+                                Give your child the edge of a Canadian pedagogy and the strength of a CBSE curriculum.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-8 justify-center mt-16">
+                                <Button href="/admissions" variant="primary" size="lg" className="bg-white text-[#d0302b] hover:bg-gray-50 rounded-full px-16 py-6 font-black uppercase tracking-widest text-sm shadow-2xl">
+                                    Enroll Now
                                 </Button>
-                                <Button href="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-white/10 rounded-full px-12">
-                                    Contact Admissions
+                                <Button href="/contact" variant="outline" size="lg" className="border-white text-white hover:bg-white/10 rounded-full px-16 py-6 font-black uppercase tracking-widest text-sm backdrop-blur-sm">
+                                    Connect Us
                                 </Button>
                             </div>
                         </motion.div>
@@ -309,3 +269,10 @@ export default function Curriculum() {
         </div>
     );
 }
+
+const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+};
+
+

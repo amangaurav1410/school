@@ -187,7 +187,7 @@ export default function Header() {
                 size="md"
                 className="hidden sm:inline-block"
               >
-                Get in Touch
+                Enroll Now
               </Button>
 
               {/* Mobile Menu Button */}
@@ -322,7 +322,7 @@ export default function Header() {
                 size="lg"
                 className="block w-full"
               >
-                Get in Touch
+                Enroll Now
               </Button>
 
               <a
