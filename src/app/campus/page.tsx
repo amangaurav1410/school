@@ -105,7 +105,7 @@ export default function Campus() {
                   <div className="w-full lg:w-1/2 relative">
                     <div className="absolute -inset-4 bg-slate-50 rounded-[4rem] -z-10 rotate-2" />
                     <div className="relative aspect-[16/10] rounded-[3.5rem] overflow-hidden shadow-2xl group border-[12px] border-white">
-                      <img src={fac.image} alt={fac.header} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                      <img src={fac.image} alt={fac.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
                     </div>
                   </div>
 
