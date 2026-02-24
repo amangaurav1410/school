@@ -40,17 +40,24 @@ export default function Curriculum() {
             <Header />
             <div className="pt-[90px] lg:pt-[120px] overflow-hidden">
                 {/* SECTION 1 — HERO BANNER */}
-                <section className="bg-[#d0302b] py-24 sm:py-32 px-4 text-center relative overflow-hidden">
-                    <div className="max-w-7xl mx-auto relative z-10 text-center">
+                <section className="bg-[#d0302b] py-20 px-4 text-center relative overflow-hidden">
+                    <div className="absolute inset-0 opacity-10 pointer-events-none">
+                        <div className="absolute -top-20 -left-20 w-96 h-96 bg-white rounded-full blur-3xl" />
+                        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-white rounded-full blur-3xl" />
+                    </div>
+                    <div className="relative z-10 max-w-4xl mx-auto">
                         <motion.div
-                            initial="hidden" animate="visible" variants={fadeInUp}
-                            className="max-w-4xl mx-auto"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
                         >
-                            <h1 className="text-[56px] sm:text-[72px] lg:text-[90px] font-black leading-tight text-white mb-6 uppercase tracking-tighter" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                            <h1
+                                className="text-[48px] sm:text-[64px] lg:text-[80px] font-black text-white leading-tight mb-4"
+                                style={{ fontFamily: "'Raleway', sans-serif" }}
+                            >
                                 Curriculum
                             </h1>
-                            <div className="w-32 h-2 bg-white/30 mx-auto mb-8 rounded-full" />
-                            <p className="text-xl sm:text-2xl lg:text-3xl text-white font-bold max-w-3xl mx-auto leading-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                            <p className="text-white/90 text-xl sm:text-2xl max-w-2xl mx-auto font-bold tracking-wide italic">
                                 Where CBSE Excellence Meets Canadian Innovation
                             </p>
                         </motion.div>
@@ -58,13 +65,13 @@ export default function Curriculum() {
                 </section>
 
                 {/* SECTION 2 — COLLABORATION DESCRIPTION */}
-                <section className="py-20 bg-white px-4 relative -mt-16 z-20">
+                <section className="py-10 bg-white px-4">
                     <div className="max-w-6xl mx-auto">
                         <motion.div
                             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
                             className="bg-white rounded-[3rem] p-10 sm:p-20 shadow-[0_45px_100px_-20px_rgba(0,0,0,0.1)] border border-gray-50 text-center"
                         >
-                            <p className="text-xl sm:text-2xl lg:text-3xl leading-relaxed text-gray-900 font-medium" style={{ fontFamily: "'Lato', sans-serif" }}>
+                            <p className="text-xl sm:text-2xl lg:text-3xl leading-relaxed text-[#000000] font-medium" style={{ fontFamily: "'Lato', sans-serif" }}>
                                 At Mapleford International School, learning is shaped by a powerful collaboration with <span className="text-[#d0302b] font-black underline decoration-red-200 underline-offset-8">Maple Bear Global Schools, Canada</span>, a world leader in bilingual, inquiry-based education operating across 35+ countries and 450+ schools. This association helps students benefit from the proven strengths of the Canadian education system, consistently ranked among the world’s best, while staying firmly aligned to India’s esteemed CBSE framework.
                             </p>
                         </motion.div>
@@ -72,7 +79,7 @@ export default function Curriculum() {
                 </section>
 
                 {/* SECTION 3 — SEAMLESS BLEND */}
-                <section className="py-32 bg-slate-50 px-4 overflow-hidden">
+                <section className="py-12 bg-slate-50 px-4 overflow-hidden">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-24">
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
@@ -130,11 +137,11 @@ export default function Curriculum() {
                         {/* What this means for learners */}
                         <motion.div
                             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-                            className="bg-white p-12 sm:p-24 rounded-[4rem] shadow-2xl relative overflow-hidden mb-32"
+                            className="bg-white p-8 sm:p-16 rounded-[3rem] shadow-2xl relative overflow-hidden mb-20"
                         >
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
                                 <div className="relative z-10 flex flex-col justify-center">
-                                    <h3 className="text-4xl sm:text-5xl font-black mb-8 text-gray-900 leading-tight">What this means <br /> for <span className="text-[#d0302b]">learners</span>:</h3>
+                                    <h3 className="text-4xl sm:text-5xl font-black mb-8 text-[#000000] leading-tight">What this means <br /> for <span className="text-[#d0302b]">learners</span>:</h3>
                                     <div className="w-20 h-2 bg-[#D6B25E] rounded-full" />
                                 </div>
                                 <div className="relative z-10 grid grid-cols-1 gap-6">
@@ -150,7 +157,7 @@ export default function Curriculum() {
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                                                 </svg>
                                             </div>
-                                            <p className="text-lg font-black text-gray-800 uppercase tracking-wide text-sm">{item}</p>
+                                            <p className="text-lg font-black text-[#000000] uppercase tracking-wide text-sm" style={{ fontFamily: '"Lato", sans-serif' }}>{item}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -169,7 +176,7 @@ export default function Curriculum() {
                 </section>
 
                 {/* SECTION 4 — CURRICULUM PATHWAY */}
-                <section className="py-32 bg-[#d0302b] relative overflow-hidden px-4">
+                <section className="py-12 bg-[#d0302b] relative overflow-hidden px-4">
                     <div className="max-w-7xl mx-auto relative z-10">
                         <div className="flex flex-col lg:flex-row gap-20 items-center">
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="w-full lg:w-1/2">
@@ -204,9 +211,9 @@ export default function Curriculum() {
                 </section>
 
                 {/* SECTION 5 — THE STAGES */}
-                <section className="py-32 bg-white px-4">
+                <section className="py-12 bg-white px-4">
                     <div className="max-w-7xl mx-auto">
-                        <div className="space-y-40">
+                        <div className="space-y-16">
                             {curriculumStages.map((stage, idx) => (
                                 <motion.div
                                     key={idx}
@@ -243,7 +250,7 @@ export default function Curriculum() {
                 </section>
 
                 {/* SECTION 6 — FINAL CTA */}
-                <section className="py-32 bg-[#d0302b] px-4 relative overflow-hidden">
+                <section className="py-12 bg-[#d0302b] px-4 relative overflow-hidden">
                     <div className="max-w-5xl mx-auto text-center space-y-12 relative z-10">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
                             <h2 className="text-[48px] sm:text-[72px] lg:text-[84px] font-black text-white leading-none tracking-tighter uppercase" style={{ fontFamily: "'Raleway', sans-serif" }}>

@@ -19,13 +19,13 @@ export default function StudentZone() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans">
+    <div className="min-h-screen bg-white font-sans text-[#000000]">
       <Header />
 
       <div className="pt-[90px] lg:pt-[120px] overflow-hidden">
 
-        {/* BANNER — Red */}
-        <section className="bg-[#d0302b] py-16 sm:py-20 px-4 text-center relative overflow-hidden">
+        {/* BANNER — Standard Red */}
+        <section className="bg-[#d0302b] py-20 px-4 text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <div className="absolute -top-20 -right-20 w-96 h-96 bg-white rounded-full blur-3xl" />
             <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-white rounded-full blur-3xl" />
@@ -33,10 +33,10 @@ export default function StudentZone() {
           <div className="relative z-10 max-w-4xl mx-auto">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <p className="text-white/80 uppercase tracking-[0.3em] text-sm font-bold mb-4">Life at Mapleford</p>
-              <h1 className="text-[48px] sm:text-[64px] lg:text-[80px] font-black text-white leading-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
+              <h1 className="text-[48px] sm:text-[64px] lg:text-[80px] font-black text-white leading-tight uppercase tracking-tighter" style={{ fontFamily: "'Raleway', sans-serif" }}>
                 Student Zone
               </h1>
-              <p className="text-white/90 text-lg sm:text-xl mt-4 max-w-2xl mx-auto font-medium leading-relaxed">
+              <p className="text-white/90 text-lg sm:text-xl mt-4 max-w-2xl mx-auto font-medium leading-relaxed italic">
                 &quot;Where talent meets opportunity and spirit meets action.&quot;
               </p>
             </motion.div>
@@ -44,71 +44,112 @@ export default function StudentZone() {
         </section>
 
         {/* SECTION 1 — White: House Arena Intro */}
-        <section className="py-16 sm:py-24 bg-white">
+        <section className="py-16 bg-white relative">
+          <div className="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -skew-x-12 transform origin-top translate-x-1/2 -z-10" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 sm:mb-16">
-              <p className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs mb-3">Four Elements. One Unstoppable Spirit.</p>
-              <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-black text-[#000000]" style={{ fontFamily: '"Raleway", sans-serif' }}>
-                The House Arena
-              </h2>
-              <div className="max-w-3xl mx-auto space-y-3 mt-6">
-                <p className="text-xl text-[#d0302b] font-black">Every Mapleite belongs to a force of nature.</p>
-                <p className="text-lg text-[#000000] leading-relaxed">The House Arena makes the elements come alive — Earth, Fire, Air, and Space — each shaping how students learn, lead, play, compete, and celebrate together!</p>
-              </div>
+            <div className="text-center mb-16">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                <p className="text-[#d0302b] font-black uppercase tracking-[0.4em] text-xs mb-4">Four Elements. One Unstoppable Spirit.</p>
+                <h2 className="text-[44px] lg:text-[72px] font-black leading-none uppercase tracking-tighter text-[#000000]" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                  The House Arena
+                </h2>
+                <div className="w-24 h-1.5 bg-[#d0302b] mx-auto mt-8 mb-10 rounded-full" />
+                <div className="max-w-3xl mx-auto space-y-4">
+                  <p className="text-2xl sm:text-3xl font-bold text-[#000000] leading-tight">Every Mapleite belongs to a force of nature.</p>
+                  <p className="text-xl text-gray-500 font-medium leading-relaxed" style={{ fontFamily: '"Lato", sans-serif' }}>The House Arena makes the elements come alive — Earth, Fire, Air, and Space — each shaping how students learn, lead, play, compete, and celebrate together!</p>
+                </div>
+              </motion.div>
             </div>
 
-            {/* House Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
+            {/* House Cards Grid — Premium Redesign */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
               {houses.map((house, idx) => (
                 <motion.div
                   key={house.name}
-                  initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  initial="hidden" whileInView="visible" viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className={`relative rounded-3xl bg-gradient-to-br ${house.color} p-8 sm:p-10 text-white overflow-hidden group`}
+                  variants={fadeInUp}
+                  className="relative group h-full"
                 >
-                  <div className="absolute -top-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700" />
-                  <div className="relative z-10">
-                    <div className="text-5xl mb-4">{house.symbol}</div>
-                    <h3 className="text-3xl sm:text-4xl font-black uppercase mb-1" style={{ fontFamily: '"Raleway", sans-serif' }}>{house.name}</h3>
-                    <p className="text-white/70 text-sm font-bold uppercase tracking-widest mb-4">{house.text}</p>
-                    <p className="font-black text-lg mb-3">{house.motto}</p>
-                    <p className="text-white/80 text-sm italic mb-4">&quot;{house.rhyme}&quot;</p>
-                    <p className="text-white/80 leading-relaxed text-sm">{house.desc}</p>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${house.color} rounded-[3.5rem] transform group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl`} />
+                  <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[3.5rem]" />
+
+                  <div className="relative p-10 sm:p-14 text-white flex flex-col h-full z-10 overflow-hidden">
+                    {/* Floating Symbol Background Decorations */}
+                    <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+
+                    <div className="flex justify-between items-start mb-12">
+                      <motion.div
+                        animate={{
+                          y: [0, -20, 0],
+                          rotate: [0, 10, -10, 0]
+                        }}
+                        transition={{
+                          duration: 5,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                        className="text-7xl sm:text-8xl filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.3)]"
+                      >
+                        {house.symbol}
+                      </motion.div>
+                      <div className="text-right">
+                        <p className="text-white/60 text-sm font-black uppercase tracking-[0.2em] mb-1">{house.text}</p>
+                        <h3 className="text-5xl sm:text-6xl font-black uppercase tracking-tighter leading-none" style={{ fontFamily: '"Raleway", sans-serif' }}>{house.name}</h3>
+                      </div>
+                    </div>
+
+                    <div className="mt-auto space-y-8">
+                      <div className="space-y-4">
+                        <div className="inline-block px-6 py-2 bg-black/20 backdrop-blur-md rounded-full border border-white/10">
+                          <p className="font-black text-lg sm:text-xl uppercase tracking-wider">{house.motto}</p>
+                        </div>
+                        <p className="text-white/80 text-lg sm:text-xl italic font-bold leading-relaxed border-l-4 border-[#D6B25E] pl-6">&quot;{house.rhyme}&quot;</p>
+                      </div>
+                      <p className="text-white/90 leading-relaxed text-lg font-medium" style={{ fontFamily: '"Lato", sans-serif' }}>{house.desc}</p>
+                    </div>
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            {/* School Chant */}
+            {/* School Chant — Impactful & Standardized */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
-              className="bg-gray-50 rounded-3xl p-8 sm:p-12 text-center border border-gray-100"
+              initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              className="relative rounded-[4rem] overflow-hidden shadow-[0_50px_100px_rgba(208,48,43,0.2)]"
             >
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#000000] leading-tight" style={{ fontFamily: '"Raleway", sans-serif' }}>
-                &quot;Earth and Fire! Air and Space!<br />
-                Four strong houses—one proud place!<br />
-                <span className="text-[#d0302b] text-3xl sm:text-4xl lg:text-5xl mt-2 block">MAPLEFORD!&quot;</span>
-              </h3>
+              <div className="absolute inset-0 bg-[#d0302b]" />
+              <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+              <div className="absolute -top-32 -right-32 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+              <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#D6B25E]/20 rounded-full blur-3xl" />
+
+              <div className="relative z-10 py-16 sm:py-24 px-8 text-center">
+                <h3 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight uppercase tracking-tighter" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                  Earth and Fire! Air and Space!<br className="hidden sm:block" />
+                  Four strong houses—one proud place!<br />
+                  <span className="text-[#D6B25E] text-6xl sm:text-8xl lg:text-[10rem] mt-10 block transition-transform hover:scale-105 duration-500 leading-none drop-shadow-2xl">MAPLEFORD!</span>
+                </h3>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* SECTION 2 — Red: Life Beyond Lessons */}
-        <section className="py-16 sm:py-24 bg-[#d0302b] relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl" />
-          </div>
+        {/* SECTION 2 — Life Beyond Lessons */}
+        <section className="py-16 bg-slate-50 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-12">
-              <h2 className="text-[32px] sm:text-[44px] lg:text-[56px] font-black text-white leading-tight" style={{ fontFamily: '"Raleway", sans-serif' }}>
-                Life at Mapleford is<br />More Than Lessons.
-              </h2>
-              <p className="text-white/80 text-lg mt-6 max-w-2xl mx-auto italic">
-                &quot;Every day is an opportunity to explore a new passion, build a new bridge, and take a new step toward who you want to be.&quot;
-              </p>
+            <div className="text-center mb-16">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+                <h2 className="text-[44px] lg:text-[72px] font-black leading-[1.1] uppercase tracking-tighter text-[#000000]" style={{ fontFamily: '"Raleway", sans-serif' }}>
+                  Life at Mapleford is<br className="hidden sm:block" /> More Than <span className="text-[#d0302b]">Lessons</span>
+                </h2>
+                <div className="w-24 h-1.5 bg-[#d0302b] mx-auto mt-8 mb-10 rounded-full" />
+                <p className="text-xl sm:text-2xl text-gray-600 max-w-2xl mx-auto italic font-bold">
+                  &quot;Every day is an opportunity to explore a new passion, build a new bridge, and take a new step toward who you want to be.&quot;
+                </p>
+              </motion.div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
               {[
                 { icon: "🎨", title: "Arts & Culture", desc: "Music, dance, drama, and visual arts give every student a creative outlet and a stage to shine." },
                 { icon: "🏆", title: "Sports Excellence", desc: "From cricket to badminton, our arenas build discipline, teamwork, and physical well-being." },
@@ -119,20 +160,25 @@ export default function StudentZone() {
               ].map((item, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  initial="hidden" whileInView="visible" viewport={{ once: true }}
                   transition={{ delay: idx * 0.08 }}
-                  className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8 hover:bg-white/20 transition-all duration-300"
+                  variants={fadeInUp}
+                  className="bg-white rounded-[3rem] p-12 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 group flex flex-col items-center text-center"
                 >
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-black text-white mb-3">{item.title}</h3>
-                  <p className="text-white/80 leading-relaxed text-sm">{item.desc}</p>
+                  <div className="text-5xl mb-8 bg-slate-50 w-24 h-24 flex items-center justify-center rounded-[2rem] group-hover:scale-110 group-hover:bg-[#d0302b]/5 transition-all duration-500 shadow-sm">{item.icon}</div>
+                  <h3 className="text-2xl font-black text-[#000000] mb-4 uppercase tracking-tight" style={{ fontFamily: '"Raleway", sans-serif' }}>{item.title}</h3>
+                  <p className="text-gray-500 leading-relaxed font-medium text-lg" style={{ fontFamily: '"Lato", sans-serif' }}>{item.desc}</p>
                 </motion.div>
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-              <Button href="/campus" variant="primary" size="lg" className="bg-white text-[#d0302b] hover:bg-gray-100">Explore Campus</Button>
-              <Button href="/contact" variant="outline" size="lg" className="border-white text-white">Join the Community</Button>
+            <div className="flex flex-col sm:flex-row gap-8 justify-center mt-24">
+              <Button href="/campus" variant="primary" size="lg" className="px-12 py-5 text-base font-bold shadow-xl shadow-red-100">
+                Explore Campus
+              </Button>
+              <Button href="/contact" variant="outline" size="lg" className="px-12 py-5 text-base font-bold border-[#d0302b] text-[#d0302b] hover:bg-[#d0302b]/5">
+                Join the Community
+              </Button>
             </div>
           </div>
         </section>

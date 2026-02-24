@@ -7,32 +7,38 @@ import Button from '../../components/Button';
 
 const academicFacilities = [
   {
-    header: "Smart & Well-ventilated Classrooms | Smart. Bright. Engaging",
+    title: "Smart & Well-ventilated Classrooms",
+    subtitle: "Smart. Bright. Engaging",
     description: "Our classrooms are designed to be open, bright, and technology-enabled—spaces where students learn with focus and comfort. With digital boards and projectors, lessons become dynamic and visual—making learning engaging, interactive, and impactful.",
     image: "/images/campus_classroom.png",
   },
   {
-    header: "Science Labs | Explore. Experiment. Discover.",
+    title: "Science Labs",
+    subtitle: "Explore. Experiment. Discover.",
     description: "Dedicated Physics, Chemistry, and Biology laboratories provide students with hands-on learning experiences that bring science to life. Well-equipped and thoughtfully designed, these labs encourage observation, experimentation, and inquiry—helping students develop scientific thinking and a deeper understanding of the world around them.",
     image: "/images/campus_science_lab.png",
   },
   {
-    header: "Mathematics Lab | Think. Solve. Apply.",
+    title: "Mathematics Lab",
+    subtitle: "Think. Solve. Apply.",
     description: "The Mathematics Lab transforms abstract concepts into practical understanding. Through activity-based learning and hands-on tools, students build logical reasoning, problem-solving skills, and confidence—making maths engaging, intuitive, and enjoyable.",
     image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=2070&auto=format&fit=crop",
   },
   {
-    header: "Computer Lab | Learn. Code. Innovate.",
+    title: "Computer Lab",
+    subtitle: "Learn. Code. Innovate.",
     description: "Our modern computer lab supports technology-integrated learning and digital literacy across grades. With updated systems and guided instruction, students develop essential computing skills, responsible digital habits, and confidence in navigating today’s digital landscape.",
     image: "/images/campus_computer_lab.png",
   },
   {
-    header: "Library | Quiet. Inviting. Inspiring.",
+    title: "Library",
+    subtitle: "Quiet. Inviting. Inspiring.",
     description: "Our library is a calm and welcoming space where curiosity finds direction. Stocked with a wide range of age-appropriate books, reference materials, and learning resources, it encourages students to read, research, and reflect. Comfortable reading corners and a peaceful ambience help nurture imagination and a lifelong love for learning.",
     image: "/images/campus_library.png",
   },
   {
-    header: "Resource Rooms | Supportive. Inclusive. Individualised.",
+    title: "Resource Rooms",
+    subtitle: "Supportive. Inclusive. Individualised.",
     description: "Dedicated resource rooms offer personalised academic and special education support in a nurturing setting. Designed to address diverse learning needs, these spaces ensure every child receives focused attention, encouragement, and the support required to learn at their own pace.",
     image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?w=1200&fit=crop&q=80",
   }
@@ -62,14 +68,24 @@ export default function Campus() {
       <Header />
 
       <main className="pt-[90px] lg:pt-[120px]">
-        <section className="bg-[#d0302b] py-24 sm:py-32 px-4 text-center relative overflow-hidden">
-          <div className="max-w-7xl mx-auto relative z-10 text-center">
-            <motion.div initial="hidden" animate="visible" variants={fadeInUp} className="max-w-4xl mx-auto">
-              <h1 className="text-[56px] sm:text-[72px] lg:text-[90px] font-black text-white leading-tight uppercase tracking-tighter mb-6" style={{ fontFamily: "'Raleway', sans-serif" }}>
+        <section className="bg-[#d0302b] py-20 px-4 text-center relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <div className="absolute -top-20 -left-20 w-96 h-96 bg-white rounded-full blur-3xl" />
+            <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-white rounded-full blur-3xl" />
+          </div>
+          <div className="relative z-10 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1
+                className="text-[48px] sm:text-[64px] lg:text-[80px] font-black text-white leading-tight mb-4"
+                style={{ fontFamily: "'Raleway', sans-serif" }}
+              >
                 Campus
               </h1>
-              <div className="w-32 h-2 bg-white/30 mx-auto mb-8 rounded-full" />
-              <p className="text-xl sm:text-2xl lg:text-3xl text-white font-bold max-w-3xl mx-auto leading-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
+              <p className="text-white/90 text-xl sm:text-2xl max-w-2xl mx-auto font-bold tracking-wide italic">
                 Spaces that Inspire | Designed for Discovery | Purposefully Equipped
               </p>
             </motion.div>
@@ -77,9 +93,9 @@ export default function Campus() {
         </section>
 
         {/* ACADEMIC INFRASTRUCTURE — Alternating high-impact blocks */}
-        <section className="py-32 bg-white px-4">
+        <section className="py-12 bg-white px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="space-y-40 lg:space-y-64">
+            <div className="space-y-16">
               {academicFacilities.map((fac, idx) => (
                 <motion.div
                   key={idx}
@@ -94,13 +110,16 @@ export default function Campus() {
                   </div>
 
                   <div className="w-full lg:w-1/2 space-y-8">
-                    <div className="space-y-6">
-                      <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-black text-gray-900 leading-[1.1] tracking-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                        {fac.header}
+                    <div className="space-y-4">
+                      <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] font-black text-[#000000] leading-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                        {fac.title}
                       </h2>
+                      <p className="text-[#d0302b] text-xl font-bold italic" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                        {fac.subtitle}
+                      </p>
                       <div className="w-24 h-1.5 bg-[#d0302b] rounded-full" />
                     </div>
-                    <p className="text-xl text-gray-600 leading-relaxed font-medium">
+                    <p className="text-xl text-gray-700 leading-relaxed font-medium" style={{ fontFamily: "'Lato', sans-serif" }}>
                       {fac.description}
                     </p>
                   </div>
@@ -110,11 +129,29 @@ export default function Campus() {
           </div>
         </section>
 
-        <section className="py-40 bg-white px-4 relative overflow-hidden" id="sports">
+        {/* RED SECTION — Quote/Impact */}
+        <section className="py-16 bg-[#d0302b] relative overflow-hidden text-white">
+          <div className="absolute inset-0 opacity-10 pointer-events-none">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl" />
+          </div>
+          <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
+              <h2 className="text-3xl sm:text-5xl font-black mb-8 leading-tight" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                Designed for Excellence, Built for the Future.
+              </h2>
+              <p className="text-xl sm:text-2xl font-medium opacity-90 italic">
+                &quot;Every corner of Mapleford is a catalyst for discovery, blending modern technology with a nurturing environment.&quot;
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="py-12 bg-white px-4 relative overflow-hidden" id="sports">
           <div className="max-w-7xl mx-auto relative z-10">
-            <div className="text-center mb-32">
+            <div className="text-center mb-16">
               <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}>
-                <h2 className="text-[56px] sm:text-[72px] lg:text-[100px] font-black text-gray-900 leading-none uppercase tracking-tighter mb-8" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                <h2 className="text-[56px] sm:text-[72px] lg:text-[100px] font-black text-[#000000] leading-none uppercase tracking-tighter mb-8" style={{ fontFamily: "'Raleway', sans-serif" }}>
                   Sports Arena
                 </h2>
                 <div className="w-32 h-2 bg-[#d0302b] mx-auto mb-10 rounded-full" />
@@ -132,27 +169,33 @@ export default function Campus() {
                   whileInView="visible"
                   viewport={{ once: true, margin: "-50px" }}
                   variants={fadeInUp}
-                  className="group perspective-1000 h-[220px]"
+                  className="group perspective-1000 h-[260px]"
                 >
                   <motion.div
                     className="relative w-full h-full transition-all duration-700 preserve-3d group-hover:rotate-y-180 cursor-pointer"
                     style={{ transformStyle: 'preserve-3d' }}
                   >
-                    {/* FRONT: Title Only (Clean Homepage Style) */}
+                    {/* FRONT: Clean Style with Moving Icon */}
                     <div
-                      className="absolute inset-0 backface-hidden bg-white shadow-[0_10px_40px_rgba(0,0,0,0.06)] group-hover:shadow-[0_45px_120px_rgba(0,0,0,0.18)] transition-all duration-500 flex items-center justify-center p-12 border-t border-gray-50 overflow-hidden"
+                      className="absolute inset-0 backface-hidden bg-white shadow-[0_10px_40px_rgba(0,0,0,0.06)] group-hover:shadow-[0_45px_120px_rgba(0,0,0,0.18)] transition-all duration-500 flex flex-col items-center justify-center p-8 border-t border-gray-50 overflow-hidden rounded-3xl"
                       style={{ backfaceVisibility: 'hidden' }}
                     >
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-[#d0302b]/5 rounded-bl-full translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-700" />
-                      <h3 className="text-3xl sm:text-4xl font-black text-gray-900 uppercase tracking-tighter text-center relative z-10" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                      <motion.div
+                        animate={{ y: [0, -10, 0] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                        className="text-5xl mb-4 bg-gray-50 w-20 h-20 flex items-center justify-center rounded-full shadow-inner"
+                      >
+                        {sport.icon}
+                      </motion.div>
+                      <h3 className="text-2xl sm:text-3xl font-black text-gray-900 uppercase tracking-tighter text-center" style={{ fontFamily: "'Raleway', sans-serif" }}>
                         {sport.name}
                       </h3>
-                      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#d0302b] opacity-20" />
+                      <div className="w-12 h-1 bg-[#d0302b] mt-4 opacity-20" />
                     </div>
 
                     {/* BACK: Description (Premium Red) */}
                     <div
-                      className="absolute inset-0 backface-hidden bg-[#d0302b] shadow-2xl flex flex-col justify-center p-10 text-white rotate-y-180 border-t border-white/20"
+                      className="absolute inset-0 backface-hidden bg-[#d0302b] shadow-2xl flex flex-col justify-center p-10 text-white rotate-y-180 border-t border-white/20 rounded-3xl"
                       style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
                     >
                       <h4 className="text-sm font-black mb-4 uppercase tracking-[0.3em] text-[#D6B25E]">
@@ -172,27 +215,29 @@ export default function Campus() {
           </div>
         </section>
 
-        {/* SCHEDULE A VISIT — Final call to action */}
-        <section className="py-40 bg-white px-4">
-          <div className="max-w-5xl mx-auto">
+        {/* SCHEDULE A VISIT — Red & Gold */}
+        <section className="py-20 px-4">
+          <div className="max-w-6xl mx-auto">
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
-              className="bg-[#d0302b] p-20 sm:p-32 rounded-[5rem] text-center space-y-12 shadow-[0_50px_100px_rgba(208,48,43,0.3)] relative overflow-hidden"
+              className="bg-[#d0302b] p-16 sm:p-24 rounded-[4rem] text-center space-y-10 shadow-[0_50px_100px_rgba(208,48,43,0.3)] relative overflow-hidden"
             >
               <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <div className="absolute -top-20 -right-20 w-96 h-96 bg-white rounded-full blur-3xl" />
                 <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-white rounded-full blur-3xl" />
               </div>
-              <h2 className="text-[56px] sm:text-[72px] font-black text-white leading-[1] tracking-tighter uppercase" style={{ fontFamily: "'Raleway', sans-serif" }}>
-                Schedule a <span className="text-white/40">Campus Visit</span>
-              </h2>
-              <p className="text-2xl text-white/90 font-bold max-w-3xl mx-auto leading-relaxed">
-                Our admissions team will be happy to guide you through the campus and answer your questions.
-              </p>
-              <div className="pt-8">
-                <Button href="/enquiry" variant="primary" size="lg" className="bg-white text-[#d0302b] hover:bg-gray-50 rounded-full px-20 py-8 h-auto text-sm font-black uppercase tracking-[0.3em] shadow-2xl transition-all hover:scale-105">
-                  Enquiry Form
-                </Button>
+              <div className="relative z-10">
+                <h2 className="text-[44px] sm:text-[64px] font-black text-white leading-tight uppercase tracking-tighter mb-6" style={{ fontFamily: "'Raleway', sans-serif" }}>
+                  Schedule a <span className="text-white/40">Campus Visit</span>
+                </h2>
+                <p className="text-xl sm:text-2xl text-white/90 font-bold max-w-3xl mx-auto leading-relaxed">
+                  Our admissions team will be happy to guide you through the campus and answer your questions.
+                </p>
+                <div className="pt-10">
+                  <Button href="/enquiry" variant="secondary" size="lg" className="px-12 py-5 text-base font-bold">
+                    Enquiry Form
+                  </Button>
+                </div>
               </div>
             </motion.div>
           </div>
